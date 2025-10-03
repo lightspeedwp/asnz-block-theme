@@ -3,7 +3,7 @@
 
 .is-style-media-boxed {
 	background-color: var(--wp--preset--color--tertiary);
-	padding: var(--wp--preset--spacing--large);
+	padding: var(--wp--preset--spacing--spacing-40);
 	border-radius: 5px;
 }
 
@@ -18,5 +18,5 @@
 }
 
 .is-style-media-boxed figcaption {
-	margin-bottom: calc(var(--wp--preset--spacing--small) * -1) !important;
+	margin-bottom: calc(var(--wp--preset--spacing--spacing-20) * -1) !important;
 }

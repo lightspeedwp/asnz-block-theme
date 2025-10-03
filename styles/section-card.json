@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-card",
+  "title": "Card",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "color": {
+      "background": "var:preset|color|base-100",
+      "text": "var:preset|color|contrast-500"
+    },
+    "border": {
+      "radius": "8px"
+    },
+    "spacing": {
+  "blockGap": "var:preset|spacing|spacing-10"
+    },
+    "shadow": "var:preset|shadow|small-light",
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      }
+    }
+  }
+}

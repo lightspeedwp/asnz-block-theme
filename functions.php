@@ -32,97 +32,22 @@ function enqueue_style_sheet() {
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet' );
 
-
 /**
- * Add block style variations.
+ * Register custom button styles: CTA (large primary) and Card (compact full-width)
  */
-function register_block_styles() {
-
-	$block_styles = array(
-		'core/list'         => array(
-			'list-check'        => __( 'Check', 'ollie' ),
-			'list-check-circle' => __( 'Check Circle', 'ollie' ),
-			'list-boxed'        => __( 'Boxed', 'ollie' ),
-		),
-		'core/code'         => array(
-			'dark-code' => __( 'Dark', 'ollie' ),
-		),
-		'core/cover'        => array(
-			'blur-image-less' => __( 'Blur Image Less', 'ollie' ),
-			'blur-image-more' => __( 'Blur Image More', 'ollie' ),
-			'rounded-cover'   => __( 'Rounded', 'ollie' ),
-		),
-		'core/column'       => array(
-			'column-box-shadow' => __( 'Box Shadow', 'ollie' ),
-		),
-		'core/post-excerpt' => array(
-			'excerpt-truncate-2' => __( 'Truncate 2 Lines', 'ollie' ),
-			'excerpt-truncate-3' => __( 'Truncate 3 Lines', 'ollie' ),
-			'excerpt-truncate-4' => __( 'Truncate 4 Lines', 'ollie' ),
-		),
-		'core/group'        => array(
-			'column-box-shadow' => __( 'Box Shadow', 'ollie' ),
-			'background-blur'   => __( 'Background Blur', 'ollie' ),
-		),
-		'core/separator'    => array(
-			'separator-dotted' => __( 'Dotted', 'ollie' ),
-			'separator-thin'   => __( 'Thin', 'ollie' ),
-		),
-		'core/image'        => array(
-			'rounded-full' => __( 'Rounded Full', 'ollie' ),
-			'media-boxed'  => __( 'Boxed', 'ollie' ),
-		),
-		'core/preformatted' => array(
-			'preformatted-dark' => __( 'Dark Style', 'ollie' ),
-		),
-		'core/post-terms'   => array(
-			'term-button' => __( 'Button Style', 'ollie' ),
-		),
-		'core/video'        => array(
-			'media-boxed' => __( 'Boxed', 'ollie' ),
-		),
-	);
-
-	foreach ( $block_styles as $block => $styles ) {
-		foreach ( $styles as $style_name => $style_label ) {
-			register_block_style(
-				$block,
-				array(
-					'name'  => $style_name,
-					'label' => $style_label,
-				)
-			);
-		}
+function register_button_styles() {
+	if ( function_exists( 'register_block_style' ) ) {
+		register_block_style( 'core/button', array(
+			'name'  => 'cta',
+			'label' => __( 'CTA', 'ollie' ),
+		) );
+		register_block_style( 'core/button', array(
+			'name'  => 'card',
+			'label' => __( 'Card', 'ollie' ),
+		) );
 	}
 }
-add_action( 'init', __NAMESPACE__ . '\register_block_styles' );
-
-
-/**
- * Load custom block styles only when the block is used.
- */
-function enqueue_custom_block_styles() {
-
-	// Scan our styles folder to locate block styles.
-	$files = glob( get_template_directory() . '/assets/styles/*.css' );
-
-	foreach ( $files as $file ) {
-
-		// Get the filename and core block name.
-		$filename   = basename( $file, '.css' );
-		$block_name = str_replace( 'core-', 'core/', $filename );
-
-		wp_enqueue_block_style(
-			$block_name,
-			array(
-				'handle' => "ollie-block-{$filename}",
-				'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
-				'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
-			)
-		);
-	}
-}
-add_action( 'init', __NAMESPACE__ . '\enqueue_custom_block_styles' );
+add_action( 'init', __NAMESPACE__ . '\register_button_styles' );
 
 
 /**
@@ -212,3 +137,58 @@ function template_part_areas( array $areas ) {
 	return $areas;
 }
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
+
+/**
+ * Override / re-register Tour Operator plugin Tour Card pattern with extended meta.
+ * The plugin registers its patterns on init priority 10; we run late so our version wins.
+ */
+function override_tour_card_pattern() {
+	// Ensure pattern registration functions exist (WP 6.0+).
+	if ( ! function_exists( 'register_block_pattern' ) ) {
+		return;
+	}
+
+	$slug = 'lsx-tour-operator/tour-card';
+
+	// If already registered (by plugin), remove it so we can replace.
+	if ( function_exists( 'unregister_block_pattern' ) && \WP_Block_Patterns_Registry::get_instance()->is_registered( $slug ) ) {
+		unregister_block_pattern( $slug );
+	}
+
+	$pattern_file = get_template_directory() . '/patterns/tour-card.php';
+	$content = '';
+	$title = 'Tour Card';
+	$description = 'Tour Card';
+
+	if ( file_exists( $pattern_file ) ) {
+		$pattern_array = require $pattern_file;
+
+		if ( is_array( $pattern_array ) ) {
+			if ( isset( $pattern_array['content'] ) ) {
+				$content = $pattern_array['content'];
+			}
+			if ( isset( $pattern_array['title'] ) ) {
+				$title = $pattern_array['title'];
+			}
+			if ( isset( $pattern_array['description'] ) ) {
+				$description = $pattern_array['description'];
+			}
+		}
+	}
+
+	register_block_pattern(
+		$slug,
+		array(
+			'title'       => $title,
+			'description' => $description,
+			'categories'  => array( 'lsx-tour-operator' ),
+			'content'     => $content,
+			'inserter'    => true,
+		)
+	);
+}
+add_action( 'init', __NAMESPACE__ . '\override_tour_card_pattern', 99 );
+
+
+
+

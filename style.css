@@ -1,5 +1,5 @@
 /*
-Theme Name: Ollie
+Theme Name: African Safaris New Zealand
 Theme URI: olliewp.com
 Author: Mike McAlister
 Author URI: mikemcalister.com
@@ -45,12 +45,12 @@ ol:where(:not([class*="wp-block"])),
 ol:where(.wp-block-list),
 ul:where(:not([class*="wp-block"])),
 ul:where(.wp-block-list) {
-	padding-inline-start: var(--wp--preset--spacing--medium);
+	padding-inline-start: var(--wp--preset--spacing--spacing-20);
 }
 
 div[class*="wp-block-"] figcaption {
 	color: var(--wp--preset--color--secondary);
-	font-size: var(--wp--preset--font-size--x-small);
+	font-size: var(--wp--preset--font-size--font-size-100);
 	margin-bottom: 0;
 	margin-top: 20px;
 	text-align: center;
@@ -98,7 +98,7 @@ textarea,
 	border-radius: 5px;
 	border: solid 1px var(--wp--preset--color--border-light);
 	padding: .5em 1em;
-	font-size: var(--wp--preset--font-size--small);
+	font-size: var(--wp--preset--font-size--font-size-300);
 	background-color: #fff;
 }
 
@@ -120,12 +120,60 @@ label {
 
 ::placeholder {
 	color: var(--wp--preset--color--secondary);
-	font-size: var(--wp--preset--font-size--small);
+	font-size: var(--wp--preset--font-size--font-size-300);
 	opacity: 0.75;
 }
 
 /* Helper styles
 ---------------------------------------------------------------------------- */
+
+/* Button Style Variations */
+.wp-block-button.is-style-cta .wp-block-button__link {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+	font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+	font-weight: 600;
+	padding: 0.85em 1.5em;
+	border-radius: 8px;
+	line-height: 1.2;
+	box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+.wp-block-button.is-style-cta .wp-block-button__link:hover {
+	background: var(--wp--preset--color--primary-700);
+	text-decoration: none;
+}
+
+/* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
+.tour-card-title {
+	/* H3 uses font-size-500 (2rem). Two lines => 4rem height */
+	height: 4rem;
+	display: flex;
+	align-items: center; /* vertical centering */
+	justify-content: center; /* horizontal centering for nested title */
+	text-align: center;
+	overflow: hidden; /* ensure excess beyond two lines is clipped */
+}
+/* Allow graceful scaling if fluid typography reduces H3 size on smaller viewports */
+@supports (height: 1lh) {
+	/* Use line-height units where supported: 2 line boxes */
+	.tour-card-title { height: 2lh; }
+}
+
+.wp-block-button.is-style-card .wp-block-button__link {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+	font-size: var(--wp--preset--font-size--font-size-300);
+	font-weight: 600;
+	width: 100%;
+	padding: 0.65em 1em;
+	border-radius: 0 0 8px 8px;
+	line-height: 1.2;
+}
+.wp-block-button.is-style-card .wp-block-button__link:hover {
+	background: var(--wp--preset--color--primary-700);
+	text-decoration: none;
+}
+
 
 a.more-link {
 	display: block;

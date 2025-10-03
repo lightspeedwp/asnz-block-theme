@@ -70,7 +70,7 @@
 					"radius": "100px"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--base)",
+					"fontSize": "var(--wp--preset--font-size--font-size-200)",
 					"fontWeight": "var(--wp--custom--font-weight--semi-bold)"
 				},
 				"spacing": {

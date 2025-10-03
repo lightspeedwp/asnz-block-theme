@@ -3,7 +3,7 @@
 
 .wp-block-calendar table caption {
 	font-weight: var(--wp--custom--font-weight--bold);
-	margin-bottom: var(--wp--preset--spacing--small);
+	margin-bottom: var(--wp--preset--spacing--spacing-20);
 }
 
 .wp-block-calendar table caption,
@@ -24,5 +24,5 @@
 }
 
 .wp-block-calendar nav {
-	margin-top: var(--wp--preset--spacing--small);
+	margin-top: var(--wp--preset--spacing--spacing-20);
 }

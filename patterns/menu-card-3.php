@@ -11,15 +11,15 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Menu"},"style":{"spacing":{"blockGap":"var:preset|spacing|small","padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}},"dimensions":{"minHeight":""},"border":{"radius":"10px"},"shadow":"var:preset|shadow|small-light"},"backgroundColor":"base","borderColor":"border-light","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-border-color has-border-light-border-color has-base-background-color has-background" style="border-radius:10px;padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium);box-shadow:var(--wp--preset--shadow--small-light)"><!-- wp:group {"metadata":{"name":"Icon and Text"},"style":{"spacing":{"blockGap":"var:preset|spacing|medium"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
+<!-- wp:group {"metadata":{"name":"Menu"},"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-10","padding":{"top":"var:preset|spacing|spacing-30","bottom":"var:preset|spacing|spacing-30","left":"var:preset|spacing|spacing-30","right":"var:preset|spacing|spacing-30"}},"dimensions":{"minHeight":""},"border":{"radius":"10px"},"shadow":"var:preset|shadow|small-light"},"backgroundColor":"base","borderColor":"border-light","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-border-color has-border-light-border-color has-base-background-color has-background" style="border-radius:10px;padding-top:var(--wp--preset--spacing--spacing-30);padding-right:var(--wp--preset--spacing--spacing-30);padding-bottom:var(--wp--preset--spacing--spacing-30);padding-left:var(--wp--preset--spacing--spacing-30);box-shadow:var(--wp--preset--shadow--small-light)"><!-- wp:group {"metadata":{"name":"Icon and Text"},"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-30"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Text"},"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><strong><?php esc_html_e( 'Brand Identity', 'ollie' ); ?></strong></p>
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
+<p class="has-font-size-font-size-300"><strong><?php esc_html_e( 'Brand Identity', 'ollie' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Logo design, brand guidelines, and visual systems', 'ollie' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"font-size-100"} -->
+<p class="has-secondary-color has-text-color has-link-color has-font-size-font-size-100"><?php esc_html_e( 'Logo design, brand guidelines, and visual systems', 'ollie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -34,12 +34,12 @@
 
 <!-- wp:group {"metadata":{"name":"Icon and Text"},"style":{"spacing":{"blockGap":"var:preset|spacing|medium"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Text"},"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><strong><?php esc_html_e( 'Web Design', 'ollie' ); ?></strong></p>
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
+<p class="has-font-size-font-size-300"><strong><?php esc_html_e( 'Web Design', 'ollie' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Custom websites that captivate and convert', 'ollie' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"font-size-100"} -->
+<p class="has-secondary-color has-text-color has-link-color has-font-size-font-size-100"><?php esc_html_e( 'Custom websites that captivate and convert', 'ollie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -54,12 +54,12 @@
 
 <!-- wp:group {"metadata":{"name":"Icon and Text"},"style":{"spacing":{"blockGap":"var:preset|spacing|medium"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Text"},"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><strong><?php esc_html_e( 'Digital Marketing', 'ollie' ); ?></strong></p>
+<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
+<p class="has-font-size-font-size-300"><strong><?php esc_html_e( 'Digital Marketing', 'ollie' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'SEO, social media, and content strategies', 'ollie' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"font-size-100"} -->
+<p class="has-secondary-color has-text-color has-link-color has-font-size-font-size-100"><?php esc_html_e( 'SEO, social media, and content strategies', 'ollie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

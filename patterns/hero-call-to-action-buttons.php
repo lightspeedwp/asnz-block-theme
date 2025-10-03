@@ -16,11 +16,11 @@
 <div class="wp-block-group alignfull has-base-color has-text-color" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--xx-large);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--xx-large);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:group {"metadata":{"name":"Text and Buttons"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Titles"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"main-accent","fontSize":"small"} -->
-<p class="has-text-align-center has-main-accent-color has-text-color has-small-font-size" style="font-style:normal;font-weight:500"><?php esc_html_e( 'WordPress Reimagined', 'ollie' ); ?></p>
+<p class="has-text-align-center has-main-accent-color has-text-color has-font-size-font-size-300" style="font-style:normal;font-weight:500"><?php esc_html_e( 'WordPress Reimagined', 'ollie' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","className":"has-secondary-font-family","fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-secondary-font-family has-x-large-font-size"><?php esc_html_e( 'Design faster and publish sooner with Ollie', 'ollie' ); ?></h2>
+<h2 class="wp-block-heading has-text-align-center has-secondary-font-family has-font-size-font-size-600"><?php esc_html_e( 'Design faster and publish sooner with Ollie', 'ollie' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
