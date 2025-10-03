@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Mobile Menu 6
- * Slug: ollie/mobile-menu-6
+ * Slug: asnz/mobile-menu-6
  * Description: 
- * Categories: ollie/menu
+ * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card
  * Viewport Width: 600
  * Block Types: core/template-part/menu 
@@ -13,27 +13,27 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Menu"},"className":"is-style-background-blur","style":{"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"},"border":{"radius":"10px"}},"backgroundColor":"base","layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group is-style-background-blur has-base-background-color has-background" style="border-radius:10px;padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|large"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:search {"label":"<?php esc_html_e( 'Search', 'ollie' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'Search our site', 'ollie' ); ?>","buttonText":"<?php esc_html_e( 'Search', 'ollie' ); ?>","buttonUseIcon":true} /-->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:search {"label":"<?php esc_html_e( 'Search', 'asnz-block-theme' ); ?>","showLabel":false,"placeholder":"<?php esc_attr_e( 'Search our site', 'asnz-block-theme' ); ?>","buttonText":"<?php esc_html_e( 'Search', 'asnz-block-theme' ); ?>","buttonUseIcon":true} /-->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small"}}},"fontSize":"base"} -->
 <div class="wp-block-buttons has-custom-font-size has-base-font-size"><!-- wp:button {"textAlign":"left","width":100,"className":"is-style-secondary-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Builder', 'ollie' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Builder', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"textAlign":"left","width":100,"className":"is-style-secondary-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Components', 'ollie' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Components', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"textAlign":"left","width":100,"className":"is-style-secondary-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Automations', 'ollie' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Automations', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"textAlign":"left","width":100,"className":"is-style-secondary-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Gallery', 'ollie' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Gallery', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"textAlign":"left","width":100,"className":"is-style-secondary-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Resources', 'ollie' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-secondary-button"><a class="wp-block-button__link has-text-align-left wp-element-button"><?php esc_html_e( 'Resources', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -42,48 +42,48 @@
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="text-transform:uppercase"><strong><?php esc_html_e( 'Company', 'ollie' ); ?></strong></p>
+<p class="has-small-font-size" style="text-transform:uppercase"><strong><?php esc_html_e( 'Company', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"Links"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size"><?php esc_html_e( 'Blog', 'ollie' ); ?></p>
+<p class="has-base-font-size"><?php esc_html_e( 'Blog', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Careers', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Careers', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Pricing', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Pricing', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Customers', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Customers', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="text-transform:uppercase"><strong><?php esc_html_e( 'Resources', 'ollie' ); ?></strong></p>
+<p class="has-small-font-size" style="text-transform:uppercase"><strong><?php esc_html_e( 'Resources', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"Links"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"base"} -->
-<p class="has-base-font-size"><?php esc_html_e( 'Docs', 'ollie' ); ?></p>
+<p class="has-base-font-size"><?php esc_html_e( 'Docs', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'FAQs', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'FAQs', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Press', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Press', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Developers', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Developers', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -102,7 +102,7 @@
 <!-- /wp:social-links -->
 
 <!-- wp:paragraph {"fontSize":"x-small"} -->
-<p class="has-x-small-font-size"><?php esc_html_e( 'We\'re hiring! Join our growing team today.', 'ollie' ); ?></p>
+<p class="has-x-small-font-size"><?php esc_html_e( 'We\'re hiring! Join our growing team today.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

@@ -12,10 +12,10 @@
 
 /* Helper class to swap order on mobile */
 @media (max-width: 781px) {
-	.ollie-swap-order {
+	.ollie-swap-order, .asnz-swap-order {
 		flex-direction: column-reverse;
 	}
-	.ollie-row-reverse {
+	.ollie-row-reverse, .asnz-row-reverse {
 		flex-direction: row-reverse;
 	}
 }

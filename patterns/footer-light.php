@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer Light
- * Slug: ollie/footer-light
+ * Slug: asnz/footer-light
  * Description: 
  * Categories: footer
  * Keywords: 
@@ -17,7 +17,7 @@
 <div class="wp-block-column"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"textColor":"main"} /-->
 
 <!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required. Download for free today!', 'ollie' ); ?></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required. Download for free today!', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"main","iconBackgroundColorValue":"#14111f","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
@@ -35,72 +35,72 @@
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"metadata":{"name":"Nav Column"}} -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Company', 'ollie' ); ?></p>
+<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Company', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-font-size-font-size-300"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'About', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'About', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Careers', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Careers', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Brand Assets', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Brand Assets', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Contact', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Contact', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"metadata":{"name":"Nav Column"}} -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Resources', 'ollie' ); ?></p>
+<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Resources', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-font-size-font-size-300"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'Blog', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Blog', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Contact', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Contact', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Support Docs', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Support Docs', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Get Help', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Get Help', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"metadata":{"name":"Nav Column"}} -->
 <div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Product', 'ollie' ); ?></p>
+<p style="font-style:normal;font-weight:600"><?php esc_html_e( 'Product', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-font-size-font-size-300"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'Features', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Features', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Pricing', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Pricing', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Use Cases', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Use Cases', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Demo', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Demo', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -111,20 +111,20 @@
 <!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-40"}},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
 <div class="wp-block-group alignwide has-secondary-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--spacing-40)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025', 'ollie' ); ?><strong><?php esc_html_e( '·', 'ollie' ); ?></strong><?php esc_html_e( '&nbsp;Powered by WordPress and', 'ollie' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'ollie' ); ?></a></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025', 'asnz-block-theme' ); ?><strong><?php esc_html_e( '·', 'asnz-block-theme' ); ?></strong><?php esc_html_e( '&nbsp;Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group has-font-size-font-size-300"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'Download', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Download', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Ollie', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Visit Ollie', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Mike', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Visit Mike', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

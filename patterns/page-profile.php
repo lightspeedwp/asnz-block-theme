@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Profile Box
- * Slug: ollie/profile-box
+ * Slug: asnz/profile-box
  * Description: A profile box with an avatar, links to social media, and buttons
- * Categories: ollie/call-to-action, ollie/pages
+ * Categories: asnz/call-to-action, asnz/pages
  * Keywords: links, linktree, buttons, profile, bio
  * Viewport Width: 1500
  * Block Types:

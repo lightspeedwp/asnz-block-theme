@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Hero Light
- * Slug: ollie/hero-light
+ * Slug: asnz/hero-light
  * Description:
- * Categories: ollie/call-to-action, ollie/hero
+ * Categories: asnz/call-to-action, asnz/hero
  * Keywords: cta, call to action, buttons, homepage, header, hero, heading, screenshot
  * Viewport Width: 1500
  * Block Types:
@@ -16,31 +16,31 @@
 <div class="wp-block-group alignfull has-main-color has-text-color" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--spacing-60);padding-right:var(--wp--preset--spacing--spacing-30);padding-bottom:0px;padding-left:var(--wp--preset--spacing--spacing-30)"><!-- wp:group {"metadata":{"name":"Text and Buttons"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|spacing-60"}}}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--spacing-60)"><!-- wp:group {"metadata":{"name":"Titles"},"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"primary","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-font-size-font-size-300" style="font-style:normal;font-weight:500"><?php esc_html_e( 'WordPress Reimagined', 'ollie' ); ?></p>
+<p class="has-text-align-center has-primary-color has-text-color has-font-size-font-size-300" style="font-style:normal;font-weight:500"><?php esc_html_e( 'WordPress Reimagined', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center","level":1,"className":"has-secondary-font-family","style":{"typography":{"fontSize":"4rem"}}} -->
-<h1 class="wp-block-heading has-text-align-center has-secondary-font-family" style="font-size:4rem"><?php esc_html_e( 'Build your site with clicks, not code.', 'ollie' ); ?></h1>
+<h1 class="wp-block-heading has-text-align-center has-secondary-font-family" style="font-size:4rem"><?php esc_html_e( 'Build your site with clicks, not code.', 'asnz-block-theme' ); ?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"center","textColor":"secondary"} -->
-<p class="has-text-align-center has-secondary-color has-text-color"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required.', 'ollie' ); ?></p>
+<p class="has-text-align-center has-secondary-color has-text-color"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Download Ollie', 'ollie' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Download Ollie', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-secondary-button"} -->
-<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Ollie Features', 'ollie' ); ?></a></div>
+<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Ollie Features', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
 <!-- wp:image {"id":3024,"sizeSlug":"full","linkDestination":"none","align":"wide","className":"is-style-default"} -->
-<figure class="wp-block-image alignwide size-full is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/desktop.webp" alt="<?php esc_attr_e( 'Desktop screenshot', 'ollie' ); ?>" class="wp-image-3024"/></figure>
+<figure class="wp-block-image alignwide size-full is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/desktop.webp" alt="<?php esc_attr_e( 'Desktop screenshot', 'asnz-block-theme' ); ?>" class="wp-image-3024"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->

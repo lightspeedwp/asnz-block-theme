@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Page Wide
- * Slug: ollie/template-page-wide
+ * Slug: asnz/template-page-wide
  * Template Types: page
  * Description: This wide page layout where the content sits in a wide container that stretches the page area.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, centered
  * Viewport Width: 1500
  * Inserter: false

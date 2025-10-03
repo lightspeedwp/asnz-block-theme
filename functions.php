@@ -1,14 +1,17 @@
 <?php
 /**
- * This file adds functions to the Ollie WordPress theme.
+ * Theme bootstrap for the ASNZ Block Theme.
  *
- * @package ollie
- * @author  Mike McAlister
+ * Rebranded from the original Ollie theme; all pattern category slugs, text domains,
+ * and metadata have been updated to use the `asnz` namespace.
+ *
+ * @package asnz-block-theme
+ * @author  Lightspeed WP
  * @license GNU General Public License v2 or later
- * @link    https://olliewp.com
+ * @link    https://lightspeedwp.agency
  */
 
-namespace Ollie;
+namespace ASNZ;
 
 /**
  * Set up theme defaults and register various WordPress features.
@@ -39,11 +42,11 @@ function register_button_styles() {
 	if ( function_exists( 'register_block_style' ) ) {
 		register_block_style( 'core/button', array(
 			'name'  => 'cta',
-			'label' => __( 'CTA', 'ollie' ),
+			'label' => __( 'CTA', 'asnz-block-theme' ),
 		) );
 		register_block_style( 'core/button', array(
 			'name'  => 'card',
-			'label' => __( 'Card', 'ollie' ),
+			'label' => __( 'Card', 'asnz-block-theme' ),
 		) );
 	}
 }
@@ -74,32 +77,32 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_woocommerce_styles' 
 function pattern_categories() {
 
 	$block_pattern_categories = array(
-		'ollie/card'           => array(
-			'label' => __( 'Cards', 'ollie' ),
+		'asnz/card'           => array(
+			'label' => __( 'Cards', 'asnz-block-theme' ),
 		),
-		'ollie/call-to-action' => array(
-			'label' => __( 'Call To Action', 'ollie' ),
+		'asnz/call-to-action' => array(
+			'label' => __( 'Call To Action', 'asnz-block-theme' ),
 		),
-		'ollie/features'       => array(
-			'label' => __( 'Features', 'ollie' ),
+		'asnz/features'       => array(
+			'label' => __( 'Features', 'asnz-block-theme' ),
 		),
-		'ollie/hero'           => array(
-			'label' => __( 'Hero', 'ollie' ),
+		'asnz/hero'           => array(
+			'label' => __( 'Hero', 'asnz-block-theme' ),
 		),
-		'ollie/pages'          => array(
-			'label' => __( 'Pages', 'ollie' ),
+		'asnz/pages'          => array(
+			'label' => __( 'Pages', 'asnz-block-theme' ),
 		),
-		'ollie/posts'          => array(
-			'label' => __( 'Posts', 'ollie' ),
+		'asnz/posts'          => array(
+			'label' => __( 'Posts', 'asnz-block-theme' ),
 		),
-		'ollie/pricing'        => array(
-			'label' => __( 'Pricing', 'ollie' ),
+		'asnz/pricing'        => array(
+			'label' => __( 'Pricing', 'asnz-block-theme' ),
 		),
-		'ollie/testimonial'    => array(
-			'label' => __( 'Testimonials', 'ollie' ),
+		'asnz/testimonial'    => array(
+			'label' => __( 'Testimonials', 'asnz-block-theme' ),
 		),
-		'ollie/menu'    => array(
-			'label' => __( 'Menu', 'ollie' ),
+		'asnz/menu'    => array(
+			'label' => __( 'Menu', 'asnz-block-theme' ),
 		)
 	);
 
@@ -129,8 +132,8 @@ function template_part_areas( array $areas ) {
 	$areas[] = array(
 		'area'        => 'sidebar',
 		'area_tag'    => 'section',
-		'label'       => __( 'Sidebar', 'ollie' ),
-		'description' => __( 'The Sidebar template defines a page area that can be found on the Page (With Sidebar) template.', 'ollie' ),
+		'label'       => __( 'Sidebar', 'asnz-block-theme' ),
+		'description' => __( 'The Sidebar template defines a page area that can be found on the Page (With Sidebar) template.', 'asnz-block-theme' ),
 		'icon'        => 'sidebar',
 	);
 

@@ -22,7 +22,7 @@ return array(
 
 <!-- wp:group {"metadata":{"name":"Content"},"className":"tour-card-content","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}}} -->
 <div class="wp-block-group tour-card-content" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"metadata":{"name":"Tour Card Title"},"className":"tour-card-title is-style-default","style":{"layout":{"selfStretch":"fixed","flexSize":"100%"},"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group tour-card-title is-style-default" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast-900"}}}},"textColor":"contrast-900"} /--></div>
+<div class="wp-block-group tour-card-title is-style-default" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
@@ -90,7 +90,7 @@ return array(
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group tour-card-excerpt" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":25} /--></div>
+<div class="wp-block-group tour-card-excerpt" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast-900"}}}},"textColor":"contrast-900"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

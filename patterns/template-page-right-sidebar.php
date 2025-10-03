@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Page Right Sidebar
- * Slug: ollie/template-page-right-sidebar
+ * Slug: asnz/template-page-right-sidebar
  * Template Types: page
  * Description: A page layout with a right sidebar and left content area.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, sidebar
  * Viewport Width: 1500
  * Inserter: false
@@ -25,7 +25,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
-<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:template-part {"slug":"sidebar","theme":"ollie"} /--></div>
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:template-part {"slug":"sidebar","theme":"asnz-block-theme"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>
 <!-- /wp:group -->

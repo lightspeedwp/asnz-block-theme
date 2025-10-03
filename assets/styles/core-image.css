@@ -51,6 +51,7 @@ html .is-layout-flex .wp-block-image {
 	margin-bottom: calc(var(--wp--preset--spacing--spacing-10) * -1) !important;
 }
 
-.ollie-avatar-row > figure:not(:first-child) {
+.ollie-avatar-row > figure:not(:first-child),
+.asnz-avatar-row > figure:not(:first-child) {
 	margin-left: -10px !important;
 }

@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Page Full Width No Title
- * Slug: ollie/template-page-full
+ * Slug: asnz/template-page-full
  * Template Types: page
  * Description: This full page layout with no title, perfect for building pages with patterns.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, full-width
  * Viewport Width: 1500
  * Inserter: false

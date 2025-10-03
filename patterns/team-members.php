@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Team Members
- * Slug: ollie/team-members
+ * Slug: asnz/team-members
  * Description:
- * Categories: ollie/testimonial, ollie/features
+ * Categories: asnz/testimonial, asnz/features
  * Keywords: cta, call, to, action, button
  * Viewport Width: 1500
  * Block Types:
@@ -14,15 +14,15 @@
 <!-- wp:group {"metadata":{"name":"Team Members"},"align":"full","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","right":"var:preset|spacing|30","left":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|50"}},"backgroundColor":"tertiary","layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-tertiary-background-color has-background" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"metadata":{"name":"Titles"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"primary","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-primary-color has-text-color has-font-size-font-size-300" style="font-style:normal;font-weight:500"><?php esc_html_e( 'Meet Our People', 'ollie' ); ?></p>
+<p class="has-text-align-center has-primary-color has-text-color has-font-size-font-size-300" style="font-style:normal;font-weight:500"><?php esc_html_e( 'Meet Our People', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'A small but mighty team', 'ollie' ); ?></h2>
+<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'A small but mighty team', 'asnz-block-theme' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><?php esc_html_e( 'We\'re a small team of diverse creators with the aim of creating the best possible WordPress products for you. Join our team today!', 'ollie' ); ?></p>
+<p class="has-text-align-center"><?php esc_html_e( 'We\'re a small team of diverse creators with the aim of creating the best possible WordPress products for you. Join our team today!', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -31,11 +31,11 @@
 <div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-rounded-cover" style="border-radius:5px;padding-bottom:var(--wp--preset--spacing--30);min-height:500px"><span aria-hidden="true" class="wp-block-cover__background has-main-background-color has-background-dim"></span><img class="wp-block-cover__image-background wp-image-57" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/avatar-2.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"base"} -->
-<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Tracy Capitan', 'ollie' ); ?></h4>
+<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Tracy Capitan', 'asnz-block-theme' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'ollie' ); ?></p>
+<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -53,11 +53,11 @@
 <div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-rounded-cover" style="border-radius:5px;padding-bottom:var(--wp--preset--spacing--30);min-height:500px"><span aria-hidden="true" class="wp-block-cover__background has-main-background-color has-background-dim"></span><img class="wp-block-cover__image-background wp-image-56" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/avatar-1.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"base"} -->
-<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Michael Glacier', 'ollie' ); ?></h4>
+<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Michael Glacier', 'asnz-block-theme' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'ollie' ); ?></p>
+<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -75,11 +75,11 @@
 <div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center is-style-rounded-cover" style="border-radius:5px;padding-bottom:var(--wp--preset--spacing--30);min-height:500px"><span aria-hidden="true" class="wp-block-cover__background has-main-background-color has-background-dim"></span><img class="wp-block-cover__image-background wp-image-33154" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/avatar-3.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":4,"textColor":"base"} -->
-<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Maryann Alpine', 'ollie' ); ?></h4>
+<h4 class="wp-block-heading has-text-align-center has-base-color has-text-color"><?php esc_html_e( 'Maryann Alpine', 'asnz-block-theme' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","textColor":"tertiary","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'ollie' ); ?></p>
+<p class="has-text-align-center has-tertiary-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

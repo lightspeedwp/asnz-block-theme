@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Page Centered
- * Slug: ollie/template-page-centered
+ * Slug: asnz/template-page-centered
  * Template Types: page
  * Description: A centered page layout where the content sits in a container in the middle of the page.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, centered
  * Viewport Width: 1500
  * Inserter: false

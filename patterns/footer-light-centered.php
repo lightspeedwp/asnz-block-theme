@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer Centered Light
- * Slug: ollie/footer-light-centered
+ * Slug: asnz/footer-light-centered
  * Description: 
  * Categories: footer
  * Keywords: 
@@ -17,24 +17,24 @@
 
 <!-- wp:group {"metadata":{"name":"Links"},"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 <div class="wp-block-group has-font-size-font-size-300"><!-- wp:paragraph -->
-<p><?php esc_html_e( 'Download', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Download', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Ollie', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Visit Ollie', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Twitter', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Twitter', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Mike', 'ollie' ); ?></p>
+<p><?php esc_html_e( 'Visit Mike', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"font-size-300"} -->
-<p class="has-text-align-center has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'ollie' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'ollie' ); ?></a></p>
+<p class="has-text-align-center has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"main","iconBackgroundColorValue":"#14111f","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"center"}} -->

@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Search Results Page
- * Slug: ollie/template-page-search
+ * Slug: asnz/template-page-search
  * Description: The page that shows search results.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, full-width
  * Viewport Width: 1500
  * Inserter: false

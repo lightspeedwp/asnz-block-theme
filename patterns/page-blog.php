@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Blog Page
- * Slug: ollie/blog-page
+ * Slug: asnz/blog-page
  * Description: A full page design for a blog page
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, layout, design, template, blog, posts, query
  * Viewport Width: 1500
  * Block Types:
@@ -11,4 +11,4 @@
  * Inserter: true
  */
 ?>
-<!-- wp:pattern {"slug":"ollie/post-loop-grid"} /-->
+<!-- wp:pattern {"slug":"asnz/post-loop-grid"} /-->

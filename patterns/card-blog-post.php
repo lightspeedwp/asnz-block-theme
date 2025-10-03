@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Blog Post Card
- * Slug: ollie/blog-post-card
+ * Slug: asnz/blog-post-card
  * Description:
- * Categories: ollie/card, ollie/posts
+ * Categories: asnz/card, asnz/posts
  * Keywords: card, image, text, box, content, link, button
  * Viewport Width: 600
  * Block Types:
@@ -19,7 +19,7 @@
 <div class="wp-block-group has-secondary-color has-text-color has-link-color has-small-font-size"><!-- wp:post-author {"showAvatar":false} /-->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( '·', 'ollie' ); ?></p>
+<p><?php esc_html_e( '·', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-date /--></div>

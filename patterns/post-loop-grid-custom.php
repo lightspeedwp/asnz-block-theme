@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Post Loop Grid
- * Slug: ollie/post-loop-grid
+ * Slug: asnz/post-loop-grid
  * Description: This post loop grid is best used on custom pages where there is not a default post loop.
- * Categories: ollie/posts
+ * Categories: asnz/posts
  * Keywords: blog, posts, query, loop
  * Viewport Width: 1280
  * Block Types: core/query
@@ -22,7 +22,7 @@
 <div class="wp-block-group has-secondary-color has-text-color has-link-color has-x-small-font-size" style="margin-top:1.5rem"><!-- wp:post-author {"showAvatar":false} /-->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( '·', 'ollie' ); ?></p>
+<p><?php esc_html_e( '·', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-date /--></div>

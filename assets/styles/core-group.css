@@ -8,39 +8,43 @@
 
 /* Improvements for row group */
 @media (max-width: 781px) {
-	.ollie-row-stack {
+	/* Legacy Ollie prefix (retain for backward compatibility) */
+	.ollie-row-stack, .asnz-row-stack {
 		flex-direction: column;
 		align-items: flex-start !important;
 	}
 
-	.ollie-row-stack > * {
+	.ollie-row-stack > *, .asnz-row-stack > * {
 		flex-basis: 100% !important;
 	}
 
-	.ollie-flex-start {
+	.ollie-flex-start, .asnz-flex-start {
 		align-items: flex-start !important;
 	}
 
-	.ollie-justify-start {
+	.ollie-justify-start, .asnz-justify-start {
 		justify-content: flex-start !important;
 	}
 }
 
 .ollie-row-stack > .wp-block-buttons,
-.ollie-no-shrink {
+.asnz-row-stack > .wp-block-buttons,
+.ollie-no-shrink,
+.asnz-no-shrink {
 	flex-shrink: 0;
 }
 
-.wp-block-group.ollie-sticky-top {
+.wp-block-group.ollie-sticky-top,
+.wp-block-group.asnz-sticky-top {
 	top: calc(20px + var(--wp-admin--admin-bar--position-offset, 0px))
 }
 
 /* Helper class to swap order on mobile */
 @media (max-width: 781px) {
-	.ollie-swap-order {
+	.ollie-swap-order, .asnz-swap-order {
 		flex-direction: column-reverse;
 	}
-	.ollie-row-reverse {
+	.ollie-row-reverse, .asnz-row-reverse {
 		flex-direction: row-reverse;
 	}
 }

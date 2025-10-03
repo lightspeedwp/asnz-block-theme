@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Footer Minimal
- * Slug: ollie/footer-dark-minimal
+ * Slug: asnz/footer-dark-minimal
  * Description: 
  * Categories: footer
  * Keywords: 
@@ -16,7 +16,7 @@
 <div class="wp-block-group alignwide"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
 <!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'ollie' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'ollie' ); ?></a></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

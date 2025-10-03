@@ -1,19 +1,19 @@
 /*
-Theme Name: African Safaris New Zealand
-Theme URI: olliewp.com
-Author: Mike McAlister
-Author URI: mikemcalister.com
-Description: Launch a blazing-fast, pixel-perfect website with the Ollie WordPress block theme! Ollie features over 50 beautiful pattern designs, 7 full-page pattern layouts, and a fully-customizable design system with Global Styles. Ollie integrates seamlessly with all of the powerful new WordPress editor features, giving you the most lightweight and powerful website builder on the planet — no expensive page builder plugin required! ✶ Full demo: https://demo.olliewp.com ✶
-Tags: blog, portfolio, entertainment, grid-layout, one-column, two-columns, three-columns, four-columns, block-patterns, block-styles, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, full-width-template, rtl-language-support, style-variations, template-editing, theme-options, translation-ready, wide-blocks
+Theme Name: ASNZ Block Theme
+Theme URI: https://lightspeedwp.agency
+Author: Lightspeed WP
+Author URI: https://lightspeedwp.agency
+Description: Custom block theme for African Safaris New Zealand built on a modern fluid design token system (typography & spacing). Forked and refactored from the original Ollie theme; all branding and pattern/category slugs have been updated for ASNZ.
+Tags: blog, portfolio, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, full-width-template, style-variations, template-editing, translation-ready, block-patterns, block-styles, wide-blocks
 Tested up to: 6.7.1
-Requires PHP: 7.3
-Version: 1.5.2
+Requires PHP: 7.4
+Version: 0.1.0
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: ollie
+Text Domain: asnz-block-theme
+Domain Path: /languages
 
-Ollie WordPress Theme, (C) 2025 Mike McAlister.
-Ollie is distributed under the terms of the GNU GPL.
+Copyright (C) 2025 Lightspeed WP. Distributed under the terms of the GNU GPL.
 */
 
 /* CSS Reset
@@ -146,12 +146,12 @@ label {
 /* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
 .tour-card-title {
 	/* H3 uses font-size-500 (2rem). Two lines => 4rem height */
-	height: 4rem;
+	height: 2rem;
 	display: flex;
 	align-items: center; /* vertical centering */
 	justify-content: center; /* horizontal centering for nested title */
 	text-align: center;
-	overflow: hidden; /* ensure excess beyond two lines is clipped */
+	overflow: ellipsis; /* ensure excess beyond two lines is clipped */
 }
 /* Allow graceful scaling if fluid typography reduces H3 size on smaller viewports */
 @supports (height: 1lh) {
@@ -239,15 +239,16 @@ header:has(>.is-position-sticky) {
 /* Mobile helper classes */
 
 @media (max-width: 781px) {
-	.ollie-hide-on-mobile {
+	.ollie-hide-on-mobile, .asnz-hide-on-mobile {
 		display: none;
 	}
 
-	.ollie-unstick-mobile {
+	.ollie-unstick-mobile, .asnz-unstick-mobile {
 		position: static;
 	}
 
-	header:has(>.ollie-unstick-mobile) {
+	header:has(>.ollie-unstick-mobile),
+	header:has(>.asnz-unstick-mobile) {
 		position: static;
 	}
 }

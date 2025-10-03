@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Single Testimonial
- * Slug: ollie/single-testimonial
+ * Slug: asnz/single-testimonial
  * Description: 
- * Categories: ollie/testimonial, ollie/features, ollie/card
+ * Categories: asnz/testimonial, asnz/features, asnz/card
  * Keywords: testimonial, text, review, rating, avatar, card
  * Viewport Width: 600
  * Block Types: 
@@ -13,7 +13,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Testimonial"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-50","right":"var:preset|spacing|spacing-50","bottom":"var:preset|spacing|spacing-50","left":"var:preset|spacing|spacing-50"},"blockGap":"var:preset|spacing|spacing-40"}},"backgroundColor":"main","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-main-background-color has-background" style="padding-top:var(--wp--preset--spacing--spacing-50);padding-right:var(--wp--preset--spacing--spacing-50);padding-bottom:var(--wp--preset--spacing--spacing-50);padding-left:var(--wp--preset--spacing--spacing-50)"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.3"}},"textColor":"base","fontSize":"font-size-500"} -->
-<p class="has-base-color has-text-color has-font-size-font-size-500" style="line-height:1.3"><?php esc_html_e( 'Wow, I really can\'t believe how powerful the WordPress Site Editor is combined with Ollie. I don\'t even need a page builder anymore!', 'ollie' ); ?></p>
+<p class="has-base-color has-text-color has-font-size-font-size-500" style="line-height:1.3"><?php esc_html_e( 'Wow, I really can\'t believe how powerful the WordPress Site Editor is combined with Ollie. I don\'t even need a page builder anymore!', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-dark"} -->
@@ -27,11 +27,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"textColor":"base"} -->
-<p class="has-base-color has-text-color"><strong><?php esc_html_e( 'Maryann Alpine', 'ollie' ); ?></strong></p>
+<p class="has-base-color has-text-color"><strong><?php esc_html_e( 'Maryann Alpine', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"textColor":"main-accent","fontSize":"font-size-300"} -->
-<p class="has-main-accent-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'ollie' ); ?></p>
+<p class="has-main-accent-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Product Designer', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

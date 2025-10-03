@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header Light With Buttons
- * Slug: ollie/header-light-with-buttons
+ * Slug: asnz/header-light-with-buttons
  * Description: Header with nav and social icons
  * Categories: header
  * Keywords: header, nav, links, button
@@ -17,11 +17,11 @@
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-10"}}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Download Now', 'ollie' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Download Now', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-secondary-button"} -->
-<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Learn More', 'ollie' ); ?></a></div>
+<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Learn More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
