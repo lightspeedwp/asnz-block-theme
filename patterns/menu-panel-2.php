@@ -10,8 +10,8 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Menu"},"align":"wide","className":"is-style-background-blur","style":{"border":{"radius":"10px","width":"1px","color":"#E3E3F0"},"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|small-light"},"backgroundColor":"tertiary","layout":{"type":"constrained","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide is-style-background-blur has-border-color has-tertiary-background-color has-background" style="border-color:#E3E3F0;border-width:1px;border-radius:10px;padding-right:0;padding-left:0;box-shadow:var(--wp--preset--shadow--small-light)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|large"},"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
+<!-- wp:group {"metadata":{"name":"Menu"},"align":"wide","className":"is-style-background-blur","style":{"border":{"radius":"10px","width":"1px","color":"var:preset|color|neutral-400"},"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|elevation-1"},"backgroundColor":"tertiary","layout":{"type":"constrained","justifyContent":"center"}} -->
+<div class="wp-block-group alignwide is-style-background-blur has-border-color has-tertiary-background-color has-background" style="border-color:var(--wp--preset--color--neutral-400);border-width:1px;border-radius:10px;padding-right:0;padding-left:0;box-shadow:var(--wp--preset--shadow--elevation-1)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|large"},"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
 <div class="wp-block-columns alignwide" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}},"border":{"radius":"10px"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-column has-base-background-color has-background" style="border-radius:10px;padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"x-small"} -->
 <p class="has-x-small-font-size" style="text-transform:uppercase"><strong><?php esc_html_e( 'Platform Features', 'asnz-block-theme' ); ?></strong></p>
@@ -27,8 +27,8 @@
 <p class="has-small-font-size"><strong><?php esc_html_e( 'Real-time Analytics', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Track performance live', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Track performance live', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -43,8 +43,8 @@
 <p class="has-small-font-size"><strong><?php esc_html_e( 'Team Collaboration', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Work together seamlessly', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Work together seamlessly', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -59,8 +59,8 @@
 <p class="has-small-font-size"><strong><?php esc_html_e( 'API Integration', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Connect with existing tools', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Connect with existing tools', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -81,8 +81,8 @@
 <p class="has-small-font-size"><strong><?php esc_html_e( 'Advanced Security', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'SOC 2 compliant with E2E', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'SOC 2 compliant with E2E', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -97,8 +97,8 @@
 <p class="has-small-font-size"><strong><strong><?php esc_html_e( '99.9% Uptime', 'asnz-block-theme' ); ?></strong></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Reliable infrastructure that scales', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Reliable infrastructure that scales', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -113,8 +113,8 @@
 <p class="has-small-font-size"><strong><strong><?php esc_html_e( '24/7 Support', 'asnz-block-theme' ); ?></strong></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Expert help when you need it', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Expert help when you need it', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

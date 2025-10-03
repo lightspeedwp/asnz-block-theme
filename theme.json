@@ -3,42 +3,32 @@
 	"version": 3,
 	"settings": {
 		"appearanceTools": true,
+		"layout": {
+			"contentSize": "780px",
+			"wideSize": "1240px"
+		},
+		"custom": {
+			"line-height": {
+				"snug": "1.25",
+				"none": "1"
+			}
+		},
 		"color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
-			"duotone": [
-				{ "name": "Blue", "slug": "blue", "colors": ["#462CFF", "#ECE8FF"] },
-				{ "name": "Pink", "slug": "Pink", "colors": ["#F22AAA", "#FFDBF0"] },
-				{ "name": "Green", "slug": "green", "colors": ["#196A64", "#E0FFFD"] },
-				{ "name": "Yellow", "slug": "yellow", "colors": ["#4B420D", "#FFE465"] },
-				{ "name": "Red", "slug": "red", "colors": ["#33120B", "#FF756B"] },
-				{ "name": "Teal", "slug": "teal", "colors": ["#233938", "#67EBFF"] },
-				{ "name": "Orange", "slug": "orange", "colors": ["#31210D", "#FFA15B"] },
-				{ "name": "Punchy", "slug": "punchy", "colors": ["#00007e", "#6aff7e"] },
-				{ "name": "Blueberry", "slug": "blueberry", "colors": ["#7f02d3", "#00dbfe"] },
-				{ "name": "Lime", "slug": "lime", "colors": ["#02794c", "#fbf01a"] },
-				{ "name": "Sunset", "slug": "sunset", "colors": ["#FF3253", "#FFDC53"] },
-				{ "name": "Grayscale", "slug": "grayscale", "colors": ["#000", "#fff"] }
-			],
-			"gradients": [
-				{ "name": "Purple", "slug": "purple", "gradient": "linear-gradient(135deg, #4D34FA, #ad34fa)" },
-				{ "name": "Blue", "slug": "blue", "gradient": "linear-gradient(135deg, #0057FF, #31B5FF)" },
-				{ "name": "Pink", "slug": "pink", "gradient": "linear-gradient(135deg, #FF007A, #FF81BD)" },
-				{ "name": "Black", "slug": "black", "gradient": "linear-gradient(135deg, #14111E, #4B4462)" },
-				{ "name": "Heat", "slug": "heat", "gradient": "linear-gradient(135deg, #F32758, #FFC581)" }
-			],
 			"palette": [
-				{ "name": "Base 100", "slug": "base-100", "color": "#ffffff" },
-				{ "name": "Base 500", "slug": "base-500", "color": "#f5f5f5" },
-				{ "name": "Base 600", "slug": "base-600", "color": "#f0f0f0" },
-				{ "name": "Base 700", "slug": "base-700", "color": "#d0d0d0" },
-				{ "name": "Contrast 500", "slug": "contrast-500", "color": "#565656" },
-				{ "name": "Contrast 600", "slug": "contrast-600", "color": "#080808" },
-				{ "name": "Contrast 700", "slug": "contrast-700", "color": "#070707" },
-				{ "name": "Contrast 900", "slug": "contrast-900", "color": "#090909" },
-				{ "name": "Neutral 300", "slug": "neutral-300", "color": "#e4e4e4" },
-				{ "name": "Neutral 500", "slug": "neutral-500", "color": "#bebebe" },
+				{ "name": "Base", "slug": "base", "color": "#ffffff" },
+				{ "name": "Contrast", "slug": "contrast", "color": "#080808" },
+				{ "name": "Neutral 100", "slug": "neutral-100", "color": "#f9f9f9" },
+				{ "name": "Neutral 200", "slug": "neutral-200", "color": "#f5f5f5" },
+				{ "name": "Neutral 300", "slug": "neutral-300", "color": "#f0f0f0" },
+				{ "name": "Neutral 400", "slug": "neutral-400", "color": "#e4e4e4" },
+				{ "name": "Neutral 500", "slug": "neutral-500", "color": "#d0d0d0" },
+				{ "name": "Neutral 600", "slug": "neutral-600", "color": "#bebebe" },
+				{ "name": "Neutral 700", "slug": "neutral-700", "color": "#9a9a9a" },
+				{ "name": "Neutral 800", "slug": "neutral-800", "color": "#565656" },
+				{ "name": "Neutral 900", "slug": "neutral-900", "color": "#2f2f2f" },
 				{ "name": "CTA 100", "slug": "cta-100", "color": "#fff5eb" },
 				{ "name": "CTA 500", "slug": "cta-500", "color": "#f7941c" },
 				{ "name": "CTA 600", "slug": "cta-600", "color": "#e68012" },
@@ -47,6 +37,7 @@
 				{ "name": "Primary 200", "slug": "primary-200", "color": "#d8efca" },
 				{ "name": "Primary 300", "slug": "primary-300", "color": "#b7e296" },
 				{ "name": "Primary 500", "slug": "primary-500", "color": "#388d03" },
+				{ "name": "Primary 600", "slug": "primary-600", "color": "#307B02" },
 				{ "name": "Primary 700", "slug": "primary-700", "color": "#286902" },
 				{ "name": "Primary 800", "slug": "primary-800", "color": "#1f5601" },
 				{ "name": "Primary 900", "slug": "primary-900", "color": "#102800" },
@@ -58,68 +49,18 @@
 				{ "name": "Tertiary 500", "slug": "tertiary-500", "color": "#b7ac91" },
 				{ "name": "Tertiary 700", "slug": "tertiary-700", "color": "#8c8265" },
 				{ "name": "Tertiary 800", "slug": "tertiary-800", "color": "#736a53" },
-				{ "name": "Tertiary 900", "slug": "tertiary-900", "color": "#514b3a" },
-				{ "name": "Quaternary 100", "slug": "quaternary-100", "color": "#f8f7f5" },
-				{ "name": "Quaternary 200", "slug": "quaternary-200", "color": "#efede8" },
-				{ "name": "Quaternary 300", "slug": "quaternary-300", "color": "#dedacf" },
-				{ "name": "Quaternary 400", "slug": "quaternary-400", "color": "#ccc4b3" },
-				{ "name": "Quaternary 500", "slug": "quaternary-500", "color": "#ac9f7c" },
-				{ "name": "Quaternary 700", "slug": "quaternary-700", "color": "#8c8265" },
-				{ "name": "Quaternary 800", "slug": "quaternary-800", "color": "#736a53" },
-				{ "name": "Quaternary 900", "slug": "quaternary-900", "color": "#514b3a" }
-
-				,
-				{ "name": "Base (Alias)", "slug": "base", "color": "#ffffff" },
-				{ "name": "Main (Alias)", "slug": "main", "color": "#080808" },
-				{ "name": "Tertiary (Alias)", "slug": "tertiary", "color": "#b7ac91" }
+				{ "name": "Tertiary 900", "slug": "tertiary-900", "color": "#514b3a" }
 			],
 			"link": true
 		},
 		"shadow": {
 			"defaultPresets": false,
-            "presets": [
-                {
-                    "name": "Extra Large Dark",
-                    "slug": "extra-large-dark",
-                    "shadow": "0px 536px 150px 0px rgba(20, 17, 31, 0.00), 0px 343px 137px 0px rgba(20, 17, 31, 0.01), 0px 193px 116px 0px rgba(20, 17, 31, 0.05), 0px 86px 86px 0px rgba(20, 17, 31, 0.09), 0px 21px 47px 0px rgba(20, 17, 31, 0.10)"
-                },
-				{
-                    "name": "Large Dark",
-                    "slug": "large-dark",
-                    "shadow": "0px 219px 61px 0px rgba(20, 17, 31, 0.00), 0px 140px 56px 0px rgba(20, 17, 31, 0.01), 0px 79px 47px 0px rgba(20, 17, 31, 0.05), 0px 35px 35px 0px rgba(20, 17, 31, 0.09), 0px 9px 19px 0px rgba(20, 17, 31, 0.10)"
-                },
-				{
-                    "name": "Medium Dark",
-                    "slug": "medium-dark",
-                    "shadow": "0px 66px 18px 0px rgba(20, 17, 31, 0.00), 0px 42px 17px 0px rgba(20, 17, 31, 0.01), 0px 24px 14px 0px rgba(20, 17, 31, 0.05), 0px 10px 10px 0px rgba(20, 17, 31, 0.09), 0px 3px 6px 0px rgba(20, 17, 31, 0.10)"
-                },
-				{
-                    "name": "Small Dark",
-                    "slug": "small-dark",
-                    "shadow": "0px 16px 4px 0px rgba(20, 17, 31, 0.00), 0px 10px 4px 0px rgba(20, 17, 31, 0.01), 0px 6px 3px 0px rgba(20, 17, 31, 0.05), 0px 3px 3px 0px rgba(20, 17, 31, 0.09), 0px 1px 1px 0px rgba(20, 17, 31, 0.10)"
-                },
-				{
-                    "name": "Extra Large Light",
-                    "slug": "extra-large-light",
-                    "shadow": "0px 536px 150px 0px rgba(20, 17, 31, 0.00), 0px 343px 137px 0px rgba(20, 17, 31, 0.01), 0px 193px 116px 0px rgba(20, 17, 31, 0.03), 0px 86px 86px 0px rgba(20, 17, 31, 0.04), 0px 21px 47px 0px rgba(20, 17, 31, 0.05)"
-                },
-				{
-                    "name": "Large Light",
-                    "slug": "large-light",
-                    "shadow": "0px 219px 61px 0px rgba(20, 17, 31, 0.00), 0px 140px 56px 0px rgba(20, 17, 31, 0.01), 0px 79px 47px 0px rgba(20, 17, 31, 0.03), 0px 35px 35px 0px rgba(20, 17, 31, 0.04), 0px 9px 19px 0px rgba(20, 17, 31, 0.05)"
-                },
-				{
-                    "name": "Medium Light",
-                    "slug": "medium-light",
-                    "shadow": "0px 69px 19px 0px rgba(20, 17, 31, 0.00), 0px 44px 18px 0px rgba(20, 17, 31, 0.01), 0px 25px 15px 0px rgba(20, 17, 31, 0.03), 0px 11px 11px 0px rgba(20, 17, 31, 0.04), 0px 3px 6px 0px rgba(20, 17, 31, 0.05)"
-                },
-				{
-                    "name": "Small Light",
-                    "slug": "small-light",
-                    "shadow": "0px 16px 5px 0px rgba(20, 17, 31, 0.00), 0px 10px 4px 0px rgba(20, 17, 31, 0.00), 0px 6px 4px 0px rgba(20, 17, 31, 0.02), 0px 3px 3px 0px rgba(20, 17, 31, 0.03), 0px 1px 1px 0px rgba(20, 17, 31, 0.03)"
-                }
-            ]
-        },
+			"presets": [
+				{ "name": "Elevation 1", "slug": "elevation-1", "shadow": "0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.12)" },
+				{ "name": "Elevation 2", "slug": "elevation-2", "shadow": "0 2px 4px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.12)" },
+				{ "name": "Elevation 3", "slug": "elevation-3", "shadow": "0 4px 8px rgba(0,0,0,0.10), 0 8px 16px rgba(0,0,0,0.14)" }
+			]
+		},
 		"spacing": {
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
@@ -155,16 +96,12 @@
 					"name": "Primary (Lato)",
 					"slug": "primary",
 					"fontFace": [
-						{ "fontFamily": "Lato", "fontWeight": "100", "fontStyle": "normal", "src": ["file:./assets/fonts/lato/Lato-Thin.ttf"], "fontDisplay": "swap" },
-						{ "fontFamily": "Lato", "fontWeight": "100", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-ThinItalic.ttf"], "fontDisplay": "swap" },
 						{ "fontFamily": "Lato", "fontWeight": "300", "fontStyle": "normal", "src": ["file:./assets/fonts/lato/Lato-Light.ttf"], "fontDisplay": "swap" },
 						{ "fontFamily": "Lato", "fontWeight": "300", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-LightItalic.ttf"], "fontDisplay": "swap" },
 						{ "fontFamily": "Lato", "fontWeight": "400", "fontStyle": "normal", "src": ["file:./assets/fonts/lato/Lato-Regular.ttf"], "fontDisplay": "swap" },
 						{ "fontFamily": "Lato", "fontWeight": "400", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-Italic.ttf"], "fontDisplay": "swap" },
 						{ "fontFamily": "Lato", "fontWeight": "700", "fontStyle": "normal", "src": ["file:./assets/fonts/lato/Lato-Bold.ttf"], "fontDisplay": "swap" },
-						{ "fontFamily": "Lato", "fontWeight": "700", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-BoldItalic.ttf"], "fontDisplay": "swap" },
-						{ "fontFamily": "Lato", "fontWeight": "900", "fontStyle": "normal", "src": ["file:./assets/fonts/lato/Lato-Black.ttf"], "fontDisplay": "swap" },
-						{ "fontFamily": "Lato", "fontWeight": "900", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-BlackItalic.ttf"], "fontDisplay": "swap" }
+						{ "fontFamily": "Lato", "fontWeight": "700", "fontStyle": "italic", "src": ["file:./assets/fonts/lato/Lato-BoldItalic.ttf"], "fontDisplay": "swap" }
 					]
 				},
 				{
@@ -205,8 +142,8 @@
 					"width": "0px"
 				},
 				"color": {
-					"background": "var:preset|color|tertiary",
-					"text": "var:preset|color|main"
+					"background": "var:preset|color|tertiary-100",
+					"text": "var:preset|color|contrast"
 				},
 				"spacing": {
 					"padding": {
@@ -238,7 +175,7 @@
 			"core/comment-content": {
 				"spacing": {
 					"margin": {
-						"top": "20px !important"
+						"top": "20px"
 					}
 				}
 			},
@@ -352,8 +289,8 @@
 					"radius": "5px"
 				},
 				"color": {
-					"background": "var:preset|color|tertiary",
-					"text": "var:preset|color|main"
+					"background": "var:preset|color|tertiary-100",
+					"text": "var:preset|color|contrast"
 				},
 				"spacing": {
 					"padding": {
@@ -375,12 +312,12 @@
 							"fontSize": "var:preset|font-size|font-size-200"
 						},
 						"color": {
-							"text": "var:preset|color|secondary"
+							"text": "var:preset|color|secondary-500"
 						}
 					}
 				},
 				"border": {
-					"color": "var:preset|color|primary",
+					"color": "var:preset|color|primary-500",
 					"top": {
 						"style": "solid",
 						"width": "5px"
@@ -438,7 +375,7 @@
 							"fontSize": "var:preset|font-size|font-size-200"
 						},
 						"color": {
-							"text": "var:preset|color|secondary"
+							"text": "var:preset|color|secondary-500"
 						}
 					}
 				},
@@ -446,8 +383,8 @@
 				"border": {
 					"radius": "0",
 					"style": "solid",
-					"width": "0 0 0 5px !important",
-					"color": "var:preset|color|primary"
+					"width": "0 0 0 5px",
+					"color": "var:preset|color|primary-500"
 				},
 				"spacing": {
 					"padding": {
@@ -469,7 +406,7 @@
 			},
 			"core/separator": {
 				"color": {
-					"text": "var:preset|color|main"
+					"text": "var:preset|color|contrast"
 				}
 			},
 			"core/site-tagline": {
@@ -505,14 +442,14 @@
 			"core/template-part": {
 				"spacing": {
 					"margin": {
-						"top": "0px !important"
+						"top": "0px"
 					}
 				}
 			}
 		},
 		"color": {
 			"background": "var:preset|color|base",
-			"text": "var:preset|color|main"
+			"text": "var:preset|color|contrast"
 		},
 		"elements": {
 			"button": {
@@ -521,7 +458,7 @@
 					"width": "0"
 				},
 				"color": {
-					"background": "var:preset|color|main",
+					"background": "var:preset|color|contrast",
 					"text": "var:preset|color|base"
 				},
 				"spacing": {
@@ -538,12 +475,15 @@
 				},
 				":hover": {
 					"color": {
-						"background": "var:preset|color|main",
+						"background": "var:preset|color|contrast",
 						"text": "var:preset|color|base"
 					},
 					"typography": {
 						"textDecoration": "underline"
 					}
+				},
+				":focus": {
+					"css": ":where(.wp-block-button__link:focus){outline:2px solid var(--wp--preset--color--primary-500);outline-offset:2px;text-decoration:underline;}"
 				}
 			},
 			"h1": {
@@ -587,7 +527,18 @@
 			},
 			"link": {
 				"color": {
-					"text": "var:preset|color|main"
+					"text": "var:preset|color|primary-600"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|primary-800"
+					},
+					"typography": {
+						"textDecoration": "underline"
+					}
+				},
+				":focus": {
+					"css": ":where(a:focus){outline:2px solid var(--wp--preset--color--primary-500);outline-offset:2px;text-decoration:underline;}"
 				}
 			}
 		},
@@ -603,7 +554,7 @@
 		"typography": {
 			"fontFamily": "var:preset|font-family|secondary",
 			"fontSize": "var:preset|font-size|font-size-300",
-			"fontWeight": "430",
+			"fontWeight": "400",
 			"lineHeight": "1.5"
 		}
 	},

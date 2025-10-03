@@ -17,8 +17,8 @@
 <p class="has-x-small-font-size" style="letter-spacing:1px;text-transform:uppercase"><strong><strong><?php esc_html_e( 'Design', 'asnz-block-theme' ); ?></strong></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Navs"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
@@ -41,8 +41,8 @@
 <p class="has-x-small-font-size" style="letter-spacing:1px;text-transform:uppercase"><strong><strong><?php esc_html_e( 'Build', 'asnz-block-theme' ); ?></strong></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Navs"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
@@ -65,8 +65,8 @@
 <p class="has-x-small-font-size" style="letter-spacing:1px;text-transform:uppercase"><strong><strong><?php esc_html_e( 'Publish', 'asnz-block-theme' ); ?></strong></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Navs"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
@@ -91,8 +91,8 @@
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"small"} -->
-<p class="has-text-align-center has-secondary-color has-text-color has-link-color has-small-font-size"><?php esc_html_e( 'Find out how we can help you scale.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
+<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"small"} -->
+<p class="has-text-align-center has-primary-500-color has-text-color has-link-color has-small-font-size"><?php esc_html_e( 'Find out how we can help you scale.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

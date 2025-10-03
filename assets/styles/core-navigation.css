@@ -17,7 +17,7 @@
 	padding: 0;
 	z-index: 20 !important;
 	border-radius: 5px;
-	box-shadow: var(--wp--preset--shadow--small-light);
+	box-shadow: var(--wp--preset--shadow--elevation-1);
 }
 
 /* Drop nav submenu */
@@ -148,13 +148,13 @@ body.rtl .wp-block-navigation__responsive-container.is-menu-open .wp-block-navig
 	padding: 4px;
 	border-radius: 3px;
 	background: var(--wp--preset--color--tertiary);
-	color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--contrast);
 }
 
 /* Mobile menu close button */
 .wp-block-navigation__responsive-container-close {
 	background: var(--wp--preset--color--tertiary);
-	color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--contrast);
 }
 
 .wp-block-ollie-mega-menu__menu-container,

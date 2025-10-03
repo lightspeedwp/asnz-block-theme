@@ -8,12 +8,13 @@
 
 .wp-block-calendar table caption,
 .wp-block-calendar table tbody {
-	color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--contrast);
 }
+
 
 .wp-block-calendar table th {
 	background-color: var(--wp--preset--color--tertiary);
-	color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--contrast);
 	font-weight: var(--wp--custom--font-weight--bold);
 }
 

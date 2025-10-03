@@ -23,15 +23,15 @@
 <p class="has-medium-font-size"><strong><?php esc_html_e( 'Margo Middleton', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
-<p class="has-secondary-color has-text-color has-link-color"><?php esc_html_e( 'Director of AI', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500"} -->
+<p class="has-primary-500-color has-text-color has-link-color"><?php esc_html_e( 'Director of AI', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"fontSize":"medium","layout":{"type":"constrained"}} -->
@@ -39,32 +39,32 @@
 <p><a href="#"><?php esc_html_e( 'Pre-designed Patterns', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
 <p><a href="#"></a><a href="#"><?php esc_html_e( 'Built for the Future', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
 <p><a href="#"></a><a href="#"><?php esc_html_e( 'Easy to Extend', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
 <p><a href="#"></a><a href="#"><?php esc_html_e( 'Developer Friendly', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
@@ -72,12 +72,12 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"main","iconBackgroundColorValue":"#0E0E0E","className":"is-style-pill-shape","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:social-links {"iconColor":"base","iconBackgroundColor":"contrast","className":"is-style-pill-shape","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|small"}}}} -->
 <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-pill-shape"><!-- wp:social-link {"url":"#","service":"youtube"} /-->
 
 <!-- wp:social-link {"url":"#","service":"x"} /-->
@@ -87,8 +87,8 @@
 <!-- wp:social-link {"url":"#","service":"mail"} /--></ul>
 <!-- /wp:social-links -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
-<p class="has-secondary-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Check out my new podcast, VectorAI.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
+<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Check out my new podcast, VectorAI.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

@@ -94,7 +94,7 @@ select,
 textarea,
 .wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]),
 .wp-block-post-comments-form textarea {
-	color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--contrast);
 	border-radius: 5px;
 	border: solid 1px var(--wp--preset--color--border-light);
 	padding: .5em 1em;
@@ -180,6 +180,7 @@ a.more-link {
 }
 
 /* Inline code */
+
 *:not(.wp-block-code) > code {
 	background-color: var(--wp--preset--color--tertiary);
 	padding: 3px 5px;

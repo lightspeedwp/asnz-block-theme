@@ -11,16 +11,16 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-60","bottom":"var:preset|spacing|spacing-60","right":"var:preset|spacing|spacing-30","left":"var:preset|spacing|spacing-30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|spacing-40"},"elements":{"link":{"color":{"text":"var:preset|color|main"}}},"border":{"top":{"color":"var:preset|color|border-light","width":"1px"},"right":[],"bottom":[],"left":[]}},"backgroundColor":"base","textColor":"main","layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-main-color has-base-background-color has-text-color has-background has-link-color" style="border-top-color:var(--wp--preset--color--border-light);border-top-width:1px;margin-top:0px;padding-top:var(--wp--preset--spacing--spacing-60);padding-right:var(--wp--preset--spacing--spacing-30);padding-bottom:var(--wp--preset--spacing--spacing-60);padding-left:var(--wp--preset--spacing--spacing-30)"><!-- wp:columns {"metadata":{"name":"Footer Columns"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-50","left":"var:preset|spacing|spacing-50"}}}} -->
+<!-- wp:group {"metadata":{"name":"Footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-60","bottom":"var:preset|spacing|spacing-60","right":"var:preset|spacing|spacing-30","left":"var:preset|spacing|spacing-30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|spacing-40"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"border":{"top":{"color":"var:preset|color|neutral-300","width":"1px"},"right":[],"bottom":[],"left":[]}},"backgroundColor":"base","textColor":"contrast","layout":{"inherit":true,"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-contrast-color has-base-background-color has-text-color has-background has-link-color" style="border-top-color:var(--wp--preset--color--neutral-300);border-top-width:1px;margin-top:0px;padding-top:var(--wp--preset--spacing--spacing-60);padding-right:var(--wp--preset--spacing--spacing-30);padding-bottom:var(--wp--preset--spacing--spacing-60);padding-left:var(--wp--preset--spacing--spacing-30)"><!-- wp:columns {"metadata":{"name":"Footer Columns"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-50","left":"var:preset|spacing|spacing-50"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|main"}}}},"textColor":"main"} /-->
+<div class="wp-block-column"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} /-->
 
 <!-- wp:paragraph {"fontSize":"font-size-300"} -->
 <p class="has-font-size-font-size-300"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required. Download for free today!', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"main","iconBackgroundColorValue":"#14111f","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
+<!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"contrast","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
 <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
 
 <!-- wp:social-link {"url":"#","service":"instagram"} /-->
@@ -108,8 +108,8 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-40"}},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
-<div class="wp-block-group alignwide has-secondary-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--spacing-40)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-40"}},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500"} -->
+<div class="wp-block-group alignwide has-primary-500-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--spacing-40)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
 <p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025', 'asnz-block-theme' ); ?><strong><?php esc_html_e( '·', 'asnz-block-theme' ); ?></strong><?php esc_html_e( '&nbsp;Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->

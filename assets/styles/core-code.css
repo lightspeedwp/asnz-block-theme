@@ -17,6 +17,6 @@
 
 .is-style-dark-code,
 .editor-styles-wrapper .wp-block-code.is-style-dark-code {
-	background-color: var(--wp--preset--color--main);
+	background-color: var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
 }

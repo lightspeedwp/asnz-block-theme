@@ -23,8 +23,8 @@
 <p class="has-text-align-center has-medium-font-size"><strong><?php esc_html_e( 'Margo Middleton', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary"} -->
-<p class="has-text-align-center has-secondary-color has-text-color has-link-color"><?php esc_html_e( 'Director of AI', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500"} -->
+<p class="has-text-align-center has-primary-500-color has-text-color has-link-color"><?php esc_html_e( 'Director of AI', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -48,8 +48,8 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"border-light"} -->
-<hr class="wp-block-separator has-text-color has-border-light-color has-alpha-channel-opacity has-border-light-background-color has-background is-style-separator-thin"/>
+<!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
+<hr class="wp-block-separator has-text-color has-neutral-300-color has-alpha-channel-opacity has-neutral-300-background-color has-background is-style-separator-thin"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
@@ -59,8 +59,8 @@
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
-<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"small"} -->
-<p class="has-text-align-center has-secondary-color has-text-color has-link-color has-small-font-size"><?php esc_html_e( 'Find out how we can help you scale.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
+<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"small"} -->
+<p class="has-text-align-center has-primary-500-color has-text-color has-link-color has-small-font-size"><?php esc_html_e( 'Find out how we can help you scale.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

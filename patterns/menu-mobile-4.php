@@ -11,21 +11,21 @@
  * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Menu"},"className":"is-style-default","style":{"position":{"type":""},"spacing":{"padding":{"right":"var:preset|spacing|large","left":"var:preset|spacing|large","top":"var:preset|spacing|large","bottom":"var:preset|spacing|large"},"blockGap":"var:preset|spacing|x-large"},"border":{"radius":"10px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"main","textColor":"base","layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group is-style-default has-base-color has-main-background-color has-text-color has-background has-link-color" style="border-radius:10px;padding-top:var(--wp--preset--spacing--large);padding-right:var(--wp--preset--spacing--large);padding-bottom:var(--wp--preset--spacing--large);padding-left:var(--wp--preset--spacing--large)"><!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Menu"},"className":"is-style-default","style":{"position":{"type":""},"spacing":{"padding":{"right":"var:preset|spacing|large","left":"var:preset|spacing|large","top":"var:preset|spacing|large","bottom":"var:preset|spacing|large"},"blockGap":"var:preset|spacing|x-large"},"border":{"radius":"10px"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained","justifyContent":"left"}} -->
+<div class="wp-block-group is-style-default has-base-color has-contrast-background-color has-text-color has-background has-link-color" style="border-radius:10px;padding-top:var(--wp--preset--spacing--large);padding-right:var(--wp--preset--spacing--large);padding-bottom:var(--wp--preset--spacing--large);padding-left:var(--wp--preset--spacing--large)"><!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"metadata":{"name":"Title"},"style":{"spacing":{"blockGap":"0px"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"medium"} -->
 <p class="has-medium-font-size"><strong><?php esc_html_e( 'Prism AI', 'asnz-block-theme' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|main-accent"}}}},"textColor":"main-accent"} -->
-<p class="has-main-accent-color has-text-color has-link-color"><?php esc_html_e( 'Design solutions that scale', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-600"}}}},"textColor":"neutral-600"} -->
+<p class="has-neutral-600-color has-text-color has-link-color"><?php esc_html_e( 'Design solutions that scale', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"medium","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-main-accent-color has-text-color has-medium-font-size"><!-- wp:paragraph {"style":{"typography":{"textDecoration":"none"}}} -->
+<!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"neutral-600","fontSize":"medium","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-neutral-600-color has-text-color has-medium-font-size"><!-- wp:paragraph {"style":{"typography":{"textDecoration":"none"}}} -->
 <p style="text-decoration:none"><a href="#"><?php esc_html_e( 'Pre-designed Patterns', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
@@ -53,8 +53,8 @@
 <!-- /wp:buttons -->
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|main-accent"}}},"typography":{"textTransform":"uppercase"}},"textColor":"main-accent","fontSize":"small"} -->
-<p class="has-main-accent-color has-text-color has-link-color has-small-font-size" style="text-transform:uppercase"><?php esc_html_e( 'Contact Us', 'asnz-block-theme' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-600"}}},"typography":{"textTransform":"uppercase"}},"textColor":"neutral-600","fontSize":"small"} -->
+<p class="has-neutral-600-color has-text-color has-link-color has-small-font-size" style="text-transform:uppercase"><?php esc_html_e( 'Contact Us', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"metadata":{"name":"Links"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
@@ -69,7 +69,7 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:social-links {"iconColor":"main","iconColorValue":"#0E0E0E","iconBackgroundColor":"base","iconBackgroundColorValue":"#fff","className":"is-style-default","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|small"}}}} -->
+<div class="wp-block-group"><!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#0E0E0E","iconBackgroundColor":"base","iconBackgroundColorValue":"#fff","className":"is-style-default","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|small"}}}} -->
 <ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"youtube"} /-->
 
 <!-- wp:social-link {"url":"#","service":"x"} /-->
@@ -79,8 +79,8 @@
 <!-- wp:social-link {"url":"#","service":"mail"} /--></ul>
 <!-- /wp:social-links -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|main-accent"}}}},"textColor":"main-accent","fontSize":"x-small"} -->
-<p class="has-main-accent-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'We\'re hiring! Join our growing team today.', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|neutral-600"}}}},"textColor":"neutral-600","fontSize":"x-small"} -->
+<p class="has-neutral-600-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'We\'re hiring! Join our growing team today.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
