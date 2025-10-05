@@ -79,6 +79,30 @@ select {
 	font: inherit;
 }
 
+/* Utility: center content vertically within a flex container */
+.center-vertically {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
+/* Pattern/Card Title Style
+-------------------------------------------------- */
+.is-style-card-title,
+.is-style-card-title :where(p, h1, h2, h3, h4, h5, h6, a) {
+	color: var(--wp--preset--color--contrast);
+}
+.is-style-card-title a {
+	text-decoration: none;
+	transition: color .18s ease-in-out;
+}
+.is-style-card-title a:hover,
+.is-style-card-title a:focus {
+	color: var(--wp--preset--color--cta-600);
+}
+
 input[type="button"],
 input[type="email"],
 input[type="search"],
@@ -131,7 +155,7 @@ label {
 .wp-block-button.is-style-cta .wp-block-button__link {
 	background: var(--wp--preset--color--primary-500);
 	color: var(--wp--preset--color--base);
-	font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+	font-size: var(--wp--preset--font-size--font-size-300);
 	font-weight: 600;
 	padding: 0.85em 1.5em;
 	border-radius: 8px;
@@ -146,18 +170,14 @@ label {
 /* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
 .tour-card-title {
 	/* H3 uses font-size-500 (2rem). Two lines => 4rem height */
-	height: 2rem;
+	min-height: 3rem;
 	display: flex;
 	align-items: center; /* vertical centering */
 	justify-content: center; /* horizontal centering for nested title */
 	text-align: center;
 	overflow: ellipsis; /* ensure excess beyond two lines is clipped */
 }
-/* Allow graceful scaling if fluid typography reduces H3 size on smaller viewports */
-@supports (height: 1lh) {
-	/* Use line-height units where supported: 2 line boxes */
-	.tour-card-title { height: 2lh; }
-}
+
 
 .wp-block-button.is-style-card .wp-block-button__link {
 	background: var(--wp--preset--color--primary-500);
