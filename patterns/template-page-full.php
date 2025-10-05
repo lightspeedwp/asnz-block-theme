@@ -17,18 +17,6 @@
  * Notes: Unified pattern metadata schema.
  */
 ?>
-<?php
-/**
- * Title: Page Full Width No Title
- * Slug: asnz/template-page-full
- * Template Types: page
- * Description: This full page layout with no title, perfect for building pages with patterns.
- * Categories: asnz/pages
- * Keywords: page, full-width
- * Viewport Width: 1500
- * Inserter: false
- */
-?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"className":"site-content"} -->

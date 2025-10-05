@@ -17,17 +17,6 @@
  * Notes: Unified pattern metadata schema.
  */
 ?>
-<?php
-/**
- * Title: Search Results Page
- * Slug: asnz/template-page-search
- * Description: The page that shows search results.
- * Categories: asnz/pages
- * Keywords: page, full-width
- * Viewport Width: 1500
- * Inserter: false
- */
-?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->

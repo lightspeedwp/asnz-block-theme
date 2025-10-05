@@ -17,18 +17,6 @@
  * Notes: Unified pattern metadata schema.
  */
 ?>
-<?php
-/**
- * Title: Page Wide
- * Slug: asnz/template-page-wide
- * Template Types: page
- * Description: This wide page layout where the content sits in a wide container that stretches the page area.
- * Categories: asnz/pages
- * Keywords: page, centered
- * Viewport Width: 1500
- * Inserter: false
- */
-?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"tagName":"main","align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|xx-large","bottom":"var:preset|spacing|xx-large"}}},"layout":{"type":"constrained"}} -->

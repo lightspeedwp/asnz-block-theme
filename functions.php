@@ -142,6 +142,109 @@ function template_part_areas( array $areas ) {
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
 
 
+/**
+ * Late override of Tour Operator plugin patterns using the theme's inline pattern files.
+ *
+ * Strategy (Option A):
+ * 1. Allow core + plugin to register their patterns normally (priority 10).
+ * 2. At very late priority (999) unregister plugin versions for selected slugs.
+ * 3. Re-register using the theme's pattern file markup (inline docblock + HTML) without executing the file (avoids accidental output).
+ *
+ * This preserves the clean inline editing authoring style while ensuring our markup wins.
+ */
+function override_plugin_patterns() {
+	if ( ! function_exists( 'register_block_pattern' ) ) {
+		return; // Older WP guard.
+	}
+
+	// Ensure the category exists even if the plugin is disabled.
+	if ( function_exists( 'register_block_pattern_category' ) ) {
+		register_block_pattern_category( 'lsx-tour-operator', array( 'label' => __( 'Tour Operator', 'tour-operator' ) ) );
+	}
+
+	$slugs = array(
+		'tour-card',
+		'accommodation-card',
+		'destination-card',
+		'room-card',
+		'itinerary-list',
+		'travel-information',
+	);
+
+	$registry = \WP_Block_Patterns_Registry::get_instance();
+
+	foreach ( $slugs as $short ) {
+		$full_slug = 'lsx-tour-operator/' . $short;
+		$file      = get_template_directory() . '/patterns/' . $short . '.php';
+		if ( ! file_exists( $file ) ) {
+			continue; // Theme does not supply an override file.
+		}
+
+		// If a pattern with this slug is already registered (plugin or core), unregister it so ours replaces it.
+		if ( method_exists( $registry, 'is_registered' ) && $registry->is_registered( $full_slug ) && function_exists( 'unregister_block_pattern' ) ) {
+			unregister_block_pattern( $full_slug );
+		}
+
+		$raw = file_get_contents( $file );
+		if ( false === $raw ) {
+			continue; // Read failure safeguard.
+		}
+
+		// Extract first docblock for meta (optional / best-effort).
+		$title       = null;
+		$description = null;
+		$viewport    = null;
+
+		if ( preg_match( '/\/\*\*(.*?)\*\//s', $raw, $m ) ) {
+			$header = $m[1];
+			if ( preg_match( '/^\s*\*\s*Title:\s*(.+)$/mi', $header, $mm ) ) {
+				$title = trim( $mm[1] );
+			}
+			if ( preg_match( '/^\s*\*\s*Description:\s*(.+)$/mi', $header, $mm ) ) {
+				$description = trim( $mm[1] );
+			}
+			if ( preg_match( '/^\s*\*\s*Viewport Width:\s*(.+)$/mi', $header, $mm ) ) {
+				$viewport = (int) preg_replace( '/[^0-9]/', '', $mm[1] );
+			}
+		}
+
+		// Remove PHP opening/closing and docblock to isolate pure block markup.
+		$content = $raw;
+		// Strip leading php open tag + docblock + closing tag pattern.
+		$content = preg_replace( '/^<\?php\s*\/\*\*.*?\*\/\s*\?>/s', '', $content, 1 );
+		$content = trim( $content );
+
+		// Safety: If still contains a starting PHP tag (e.g., duplicate headers), remove them iteratively.
+		while ( preg_match( '/^<\?php/', $content ) && preg_match( '/^<\?php\s*\/\*\*.*?\*\/\s*\?>/s', $content ) ) {
+			$content = preg_replace( '/^<\?php\s*\/\*\*.*?\*\/\s*\?>/s', '', $content, 1 );
+			$content = trim( $content );
+		}
+
+		// Fallback title / description if not parsed.
+		if ( ! $title ) {
+			$title = ucwords( str_replace( '-', ' ', $short ) );
+		}
+		if ( ! $description ) {
+			$description = $title;
+		}
+
+		$args = array(
+			'title'       => esc_html__( $title, 'tour-operator' ),
+			'description' => esc_html__( $description, 'tour-operator' ),
+			'categories'  => array( 'lsx-tour-operator' ),
+			'content'     => $content,
+			'inserter'    => true,
+		);
+		if ( $viewport ) {
+			$args['viewportWidth'] = $viewport;
+		}
+
+		register_block_pattern( $full_slug, $args );
+	}
+}
+add_action( 'init', __NAMESPACE__ . '\override_plugin_patterns', 999 );
+
+
 
 
 

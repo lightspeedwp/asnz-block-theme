@@ -17,18 +17,6 @@
  * Notes: Unified pattern metadata schema.
  */
 ?>
-<?php
-/**
- * Title: Post Wide
- * Slug: asnz/template-post-wide
- * Template Types: single
- * Description: This wide post layout where the content sits in a wide container that stretches the page area.
- * Categories: asnz/posts
- * Keywords: post, wide
- * Viewport Width: 1500
- * Inserter: false
- */
-?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content Area"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|xx-large","bottom":"var:preset|spacing|xx-large"},"blockGap":"var:preset|spacing|medium"}},"layout":{"type":"constrained"}} -->

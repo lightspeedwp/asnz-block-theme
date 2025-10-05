@@ -17,18 +17,6 @@
  * Notes: Unified pattern metadata schema.
  */
 ?>
-<?php
-/**
- * Title: Post Centered
- * Slug: asnz/template-post-centered
- * Template Types: single
- * Description: A centered post layout where the content sits in a container in the middle of the page.
- * Categories: asnz/posts
- * Keywords: post, centered
- * Viewport Width: 1500
- * Inserter: false
- */
-?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Content Area"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|xx-large","bottom":"var:preset|spacing|xx-large"},"blockGap":"var:preset|spacing|medium"}},"layout":{"type":"default"}} -->
