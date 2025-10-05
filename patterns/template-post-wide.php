@@ -1,10 +1,29 @@
 <?php
 /**
  * Title: Post Wide
- * Slug: ollie/template-post-wide
+ * Slug: asnz/template-post-wide
+ * Description: Single post layout with wide content area.
+ * Categories: asnz/posts
+ * Template Types: single
+ * Keywords: post, single, wide, layout
+ * Viewport Width: 1500
+ * Inserter: false
+ * Sync: true
+ * Provides: layout, post-template
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Post Wide
+ * Slug: asnz/template-post-wide
  * Template Types: single
  * Description: This wide post layout where the content sits in a wide container that stretches the page area.
- * Categories: ollie/posts
+ * Categories: asnz/posts
  * Keywords: post, wide
  * Viewport Width: 1500
  * Inserter: false
@@ -22,7 +41,7 @@
 <div class="wp-block-group alignwide has-secondary-color has-text-color has-link-color has-small-font-size" style="font-style:normal;font-weight:500"><!-- wp:post-author {"showBio":false} /-->
 
 <!-- wp:paragraph {"textColor":"secondary"} -->
-<p class="has-secondary-color has-text-color"><?php esc_html_e( '·', 'ollie' ); ?></p>
+<p class="has-secondary-color has-text-color"><?php esc_html_e( '·', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-date /--></div>
@@ -45,7 +64,7 @@
 <div class="wp-block-comments alignfull wp-block-comments-query-loop has-tertiary-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-large);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:group {"metadata":{"name":"Comments Inside"},"style":{"spacing":{"blockGap":"var:preset|spacing|medium","padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Comments Title"},"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading -->
-<h2 class="wp-block-heading"><?php esc_html_e( 'Comments', 'ollie' ); ?></h2>
+<h2 class="wp-block-heading"><?php esc_html_e( 'Comments', 'asnz-block-theme' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:comments-title {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"base"} /--></div>

@@ -1,10 +1,29 @@
 <?php
 /**
+ * Title: Page Full Width
+ * Slug: asnz/template-page-full
+ * Description: Full-width page layout without sidebars.
+ * Categories: asnz/pages
+ * Template Types: page
+ * Keywords: page, full width, layout
+ * Viewport Width: 1500
+ * Inserter: false
+ * Sync: true
+ * Provides: layout, page-template
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
  * Title: Page Full Width No Title
- * Slug: ollie/template-page-full
+ * Slug: asnz/template-page-full
  * Template Types: page
  * Description: This full page layout with no title, perfect for building pages with patterns.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, full-width
  * Viewport Width: 1500
  * Inserter: false

@@ -1,10 +1,29 @@
 <?php
 /**
  * Title: Page Wide
- * Slug: ollie/template-page-wide
+ * Slug: asnz/template-page-wide
+ * Description: Wide content page layout with constrained readability.
+ * Categories: asnz/pages
+ * Template Types: page
+ * Keywords: page, wide, layout
+ * Viewport Width: 1500
+ * Inserter: false
+ * Sync: true
+ * Provides: layout, page-template
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Page Wide
+ * Slug: asnz/template-page-wide
  * Template Types: page
  * Description: This wide page layout where the content sits in a wide container that stretches the page area.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, centered
  * Viewport Width: 1500
  * Inserter: false

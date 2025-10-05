@@ -2,6 +2,25 @@
 /**
  * Title: Menu Card 4
  * Slug: asnz/menu-card-4
+ * Description: Card style mega menu variant with icon + text feature rows.
+ * Categories: asnz/menu
+ * Keywords: menu, dropdown, navigation, card, mega menu
+ * Viewport Width: 800
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Menu Card 4
+ * Slug: asnz/menu-card-4
  * Description: 
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card
@@ -24,8 +43,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:buttons {"className":"ollie-no-shrink"} -->
-<div class="wp-block-buttons ollie-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
+<!-- wp:buttons {"className":"asnz-no-shrink"} -->
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
 <div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
@@ -46,8 +65,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:buttons {"className":"ollie-no-shrink"} -->
-<div class="wp-block-buttons ollie-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
+<!-- wp:buttons {"className":"asnz-no-shrink"} -->
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
 <div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
@@ -68,8 +87,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:buttons {"className":"ollie-no-shrink"} -->
-<div class="wp-block-buttons ollie-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
+<!-- wp:buttons {"className":"asnz-no-shrink"} -->
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
 <div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>

@@ -2,6 +2,25 @@
 /**
  * Title: Mobile Menu 5
  * Slug: asnz/mobile-menu-5
+ * Description: Mobile menu variant with dual section grouping.
+ * Categories: asnz/menu
+ * Keywords: mobile, menu, navigation, dropdown, links
+ * Viewport Width: 600
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mobile-navigation
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Mobile Menu 5
+ * Slug: asnz/mobile-menu-5
  * Description: 
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card

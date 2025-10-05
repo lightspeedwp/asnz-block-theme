@@ -2,12 +2,19 @@
 /**
  * Title: Menu Panel 1
  * Slug: asnz/menu-panel-1
- * Description: Menu with columns with icons and text and case study
+ * Description: Multi-column mega menu panel with feature icon rows and a case study callout.
  * Categories: asnz/menu
- * Keywords: menu, drop down, mobile, mega menu
+ * Keywords: menu, dropdown, mega menu, navigation, panel
  * Viewport Width: 1260
  * Block Types: core/template-part/menu
  * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Feature"},"align":"wide","className":"is-style-background-blur","style":{"border":{"radius":"10px","width":"1px","color":"var:preset|color|neutral-400"},"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|elevation-1"},"backgroundColor":"base","layout":{"type":"constrained","justifyContent":"center"}} -->
@@ -170,8 +177,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"ollie-no-shrink"} -->
-<div class="wp-block-button ollie-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Start Free Trial', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"asnz-no-shrink"} -->
+<div class="wp-block-button asnz-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Start Free Trial', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

@@ -2,13 +2,19 @@
 /**
  * Title: Menu Card 1
  * Slug: asnz/menu-card-1
- * Description: 
+ * Description: Card style mega menu section with icon rows and short feature descriptions.
  * Categories: asnz/menu
- * Keywords: menu, drop down, mobile, card
+ * Keywords: menu, dropdown, navigation, card, mega menu
  * Viewport Width: 800
- * Block Types: core/template-part/menu 
- * Post Types: 
+ * Block Types: core/template-part/menu
  * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Menu"},"className":"is-style-default","style":{"border":{"radius":"10px","width":"1px","color":"var:preset|color|neutral-400"},"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"}},"backgroundColor":"base","layout":{"type":"constrained","justifyContent":"left"}} -->
@@ -72,8 +78,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"ollie-no-shrink"} -->
-<div class="wp-block-button ollie-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get Started', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"asnz-no-shrink"} -->
+<div class="wp-block-button asnz-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get Started', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

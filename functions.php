@@ -141,56 +141,6 @@ function template_part_areas( array $areas ) {
 }
 add_filter( 'default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas' );
 
-/**
- * Override / re-register Tour Operator plugin Tour Card pattern with extended meta.
- * The plugin registers its patterns on init priority 10; we run late so our version wins.
- */
-function override_tour_card_pattern() {
-	// Ensure pattern registration functions exist (WP 6.0+).
-	if ( ! function_exists( 'register_block_pattern' ) ) {
-		return;
-	}
-
-	$slug = 'lsx-tour-operator/tour-card';
-
-	// If already registered (by plugin), remove it so we can replace.
-	if ( function_exists( 'unregister_block_pattern' ) && \WP_Block_Patterns_Registry::get_instance()->is_registered( $slug ) ) {
-		unregister_block_pattern( $slug );
-	}
-
-	$pattern_file = get_template_directory() . '/patterns/tour-card.php';
-	$content = '';
-	$title = 'Tour Card';
-	$description = 'Tour Card';
-
-	if ( file_exists( $pattern_file ) ) {
-		$pattern_array = require $pattern_file;
-
-		if ( is_array( $pattern_array ) ) {
-			if ( isset( $pattern_array['content'] ) ) {
-				$content = $pattern_array['content'];
-			}
-			if ( isset( $pattern_array['title'] ) ) {
-				$title = $pattern_array['title'];
-			}
-			if ( isset( $pattern_array['description'] ) ) {
-				$description = $pattern_array['description'];
-			}
-		}
-	}
-
-	register_block_pattern(
-		$slug,
-		array(
-			'title'       => $title,
-			'description' => $description,
-			'categories'  => array( 'lsx-tour-operator' ),
-			'content'     => $content,
-			'inserter'    => true,
-		)
-	);
-}
-add_action( 'init', __NAMESPACE__ . '\override_tour_card_pattern', 99 );
 
 
 

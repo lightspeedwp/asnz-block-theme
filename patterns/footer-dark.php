@@ -1,14 +1,21 @@
 <?php
 /**
- * Title: Footer
+ * Title: Footer Dark
  * Slug: asnz/footer-dark
- * Description: 
+ * Description: Dark footer with columns for branding, navigation, social links and legal text.
  * Categories: footer
- * Keywords: 
+ * Keywords: footer, dark, social, navigation, links
  * Viewport Width: 1500
  * Block Types: core/template-part/footer
  * Post Types: wp_template
  * Inserter: true
+ * Sync: true
+ * Provides: site-footer
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-60","bottom":"var:preset|spacing|spacing-60","right":"var:preset|spacing|spacing-30","left":"var:preset|spacing|spacing-30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|spacing-50"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"contrast","textColor":"base","layout":{"inherit":true,"type":"constrained"}} -->
@@ -17,7 +24,7 @@
 <div class="wp-block-column"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} /-->
 
 <!-- wp:paragraph {"textColor":"neutral-600","fontSize":"font-size-300"} -->
-<p class="has-neutral-600-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required. Download for free today!', 'asnz-block-theme' ); ?></p>
+<p class="has-neutral-600-color has-text-color has-font-size-font-size-300"><?php esc_html_e( 'Create beautiful, fully-customizable websites with the WordPress Site Editor and this ASNZ theme. No coding skills required.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast","iconBackgroundColor":"base","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
@@ -115,7 +122,7 @@
 <!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide"} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"},"elements":{"link":{"color":{"text":"var:preset|color|neutral-600"}}}},"textColor":"neutral-600","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group has-neutral-600-color has-text-color has-link-color"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025 · Powered by WordPress and', 'asnz-block-theme' ); ?> <a href="/"><?php esc_html_e( 'ASNZ Theme', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -124,7 +131,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Ollie', 'asnz-block-theme' ); ?></p>
+<p><?php esc_html_e( 'Explore More', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

@@ -2,6 +2,25 @@
 /**
  * Title: Mobile Menu 6
  * Slug: asnz/mobile-menu-6
+ * Description: Mobile menu layout emphasizing call-to-action and links.
+ * Categories: asnz/menu
+ * Keywords: mobile, menu, navigation, dropdown, links, cta
+ * Viewport Width: 600
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mobile-navigation
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Mobile Menu 6
+ * Slug: asnz/mobile-menu-6
  * Description: 
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card

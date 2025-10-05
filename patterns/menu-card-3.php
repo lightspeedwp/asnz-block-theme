@@ -2,6 +2,25 @@
 /**
  * Title: Menu Card 3
  * Slug: asnz/menu-card-3
+ * Description: Card style mega menu layout with structured feature rows.
+ * Categories: asnz/menu
+ * Keywords: menu, dropdown, navigation, card, mega menu
+ * Viewport Width: 800
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Menu Card 3
+ * Slug: asnz/menu-card-3
  * Description: 
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card

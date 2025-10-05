@@ -2,13 +2,20 @@
 /**
  * Title: Footer Light
  * Slug: asnz/footer-light
- * Description: 
+ * Description: Light footer with branding, navigation lists, social links and copyright.
  * Categories: footer
- * Keywords: 
+ * Keywords: footer, light, social, navigation, links
  * Viewport Width: 1500
  * Block Types: core/template-part/footer
  * Post Types: wp_template
  * Inserter: true
+ * Sync: true
+ * Provides: site-footer
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-60","bottom":"var:preset|spacing|spacing-60","right":"var:preset|spacing|spacing-30","left":"var:preset|spacing|spacing-30"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|spacing-40"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"border":{"top":{"color":"var:preset|color|neutral-300","width":"1px"},"right":[],"bottom":[],"left":[]}},"backgroundColor":"base","textColor":"contrast","layout":{"inherit":true,"type":"constrained"}} -->
@@ -17,7 +24,7 @@
 <div class="wp-block-column"><!-- wp:site-title {"level":0,"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} /-->
 
 <!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( 'Easily create beautiful, fully-customizable websites with the new WordPress Site Editor and the Ollie block theme. No coding skills required. Download for free today!', 'asnz-block-theme' ); ?></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( 'Create beautiful, fully-customizable websites with the WordPress Site Editor and the ASNZ theme. No coding skills required.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"base","iconColorValue":"#fff","iconBackgroundColor":"contrast","className":"is-style-default","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
@@ -111,7 +118,7 @@
 <!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-40"}},"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500"} -->
 <div class="wp-block-group alignwide has-primary-500-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--spacing-40)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"font-size-300"} -->
-<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025', 'asnz-block-theme' ); ?><strong><?php esc_html_e( '·', 'asnz-block-theme' ); ?></strong><?php esc_html_e( '&nbsp;Powered by WordPress and', 'asnz-block-theme' ); ?><a href="https://olliewp.com"><?php esc_html_e( 'Ollie', 'asnz-block-theme' ); ?></a></p>
+<p class="has-font-size-font-size-300"><?php esc_html_e( '© 2025', 'asnz-block-theme' ); ?><strong><?php esc_html_e( '·', 'asnz-block-theme' ); ?></strong><?php esc_html_e( ' Powered by WordPress and', 'asnz-block-theme' ); ?> <a href="/"><?php esc_html_e( 'ASNZ Theme', 'asnz-block-theme' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"fontSize":"font-size-300","layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -120,7 +127,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Visit Ollie', 'asnz-block-theme' ); ?></p>
+<p><?php esc_html_e( 'Explore More', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->

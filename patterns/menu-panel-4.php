@@ -2,12 +2,19 @@
 /**
  * Title: Menu Panel 4
  * Slug: asnz/menu-panel-4
- * Description: Menu with columns with icons and text and case study
+ * Description: Mega menu panel with feature cards and CTA column.
  * Categories: asnz/menu
- * Keywords: menu, drop down, mobile, mega menu
+ * Keywords: menu, dropdown, mega menu, navigation, panel
  * Viewport Width: 1260
  * Block Types: core/template-part/menu
  * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Menu"},"align":"wide","className":"is-style-default","style":{"border":{"radius":"10px","width":"1px","color":"var:preset|color|neutral-400"},"position":{"type":""},"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|elevation-1"},"backgroundColor":"base","layout":{"type":"constrained","justifyContent":"center"}} -->

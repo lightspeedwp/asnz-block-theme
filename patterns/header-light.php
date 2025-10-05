@@ -2,13 +2,20 @@
 /**
  * Title: Header Light
  * Slug: asnz/header-light
- * Description: Header with nav and social icons
+ * Description: Header with primary navigation and optional social links on a light background.
  * Categories: header
- * Keywords: header, nav, links, button
+ * Keywords: header, navigation, nav, links, button, menu
  * Viewport Width: 1500
  * Block Types: core/template-part/header
  * Post Types: wp_template
  * Inserter: true
+ * Sync: true
+ * Provides: site-header, navigation
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Header"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"border":{"bottom":{"color":"var:preset|color|neutral-300","width":"1px"},"top":[],"right":[],"left":[]}},"backgroundColor":"base","layout":{"inherit":true,"type":"constrained"}} -->

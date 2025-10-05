@@ -2,6 +2,25 @@
 /**
  * Title: Menu Panel 3
  * Slug: asnz/menu-panel-3
+ * Description: Multi-column menu panel variation with feature list and callout.
+ * Categories: asnz/menu
+ * Keywords: menu, dropdown, mega menu, navigation, panel
+ * Viewport Width: 1260
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mega-menu, navigation-panel
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Menu Panel 3
+ * Slug: asnz/menu-panel-3
  * Description: Menu with columns with icons and text and case study
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, mega menu
@@ -112,8 +131,8 @@
 <!-- /wp:image -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"ollie-no-shrink is-style-button-light"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 ollie-no-shrink is-style-button-light"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Start Free Trial', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"asnz-no-shrink is-style-button-light"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 asnz-no-shrink is-style-button-light"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Start Free Trial', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>

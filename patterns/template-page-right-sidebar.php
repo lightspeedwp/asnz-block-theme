@@ -1,13 +1,20 @@
 <?php
 /**
  * Title: Page Right Sidebar
- * Slug: ollie/template-page-right-sidebar
+ * Slug: asnz/template-page-right-sidebar
+ * Description: Page layout with main content left and a right sidebar for widgets or navigation.
+ * Categories: asnz/pages
  * Template Types: page
- * Description: A page layout with a right sidebar and left content area.
- * Categories: ollie/pages
- * Keywords: page, sidebar
+ * Keywords: page, sidebar, layout, content
  * Viewport Width: 1500
  * Inserter: false
+ * Sync: true
+ * Provides: layout, page-template
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema; slug retained for compatibility.
  */
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
@@ -25,7 +32,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
-<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:template-part {"slug":"sidebar","theme":"ollie"} /--></div>
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:template-part {"slug":"sidebar","theme":"asnz-block-theme"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>
 <!-- /wp:group -->

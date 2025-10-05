@@ -2,6 +2,25 @@
 /**
  * Title: Mobile Menu 2
  * Slug: asnz/mobile-menu-2
+ * Description: Mobile stacked menu variation with categorized sections.
+ * Categories: asnz/menu
+ * Keywords: mobile, menu, navigation, dropdown, links
+ * Viewport Width: 600
+ * Block Types: core/template-part/menu
+ * Inserter: true
+ * Sync: true
+ * Provides: mobile-navigation
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
+ * Title: Mobile Menu 2
+ * Slug: asnz/mobile-menu-2
  * Description: 
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card
@@ -54,8 +73,8 @@
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"ollie-no-shrink"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 ollie-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get started today!', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"asnz-no-shrink"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 asnz-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get started today!', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 

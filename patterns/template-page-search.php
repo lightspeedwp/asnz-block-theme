@@ -1,9 +1,28 @@
 <?php
 /**
+ * Title: Page Search
+ * Slug: asnz/template-page-search
+ * Description: Search results page layout with query title and list of results.
+ * Categories: asnz/pages
+ * Template Types: page
+ * Keywords: page, search, results
+ * Viewport Width: 1500
+ * Inserter: false
+ * Sync: true
+ * Provides: layout, page-template, search
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: asnz-block-theme
+ * Notes: Unified pattern metadata schema.
+ */
+?>
+<?php
+/**
  * Title: Search Results Page
- * Slug: ollie/template-page-search
+ * Slug: asnz/template-page-search
  * Description: The page that shows search results.
- * Categories: ollie/pages
+ * Categories: asnz/pages
  * Keywords: page, full-width
  * Viewport Width: 1500
  * Inserter: false
@@ -15,7 +34,7 @@
 <div class="wp-block-group alignfull has-tertiary-background-color has-background" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--x-large)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|medium"}}} -->
 <div class="wp-block-group"><!-- wp:query-title {"type":"search","fontSize":"medium"} /-->
 
-<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( 'Search site...', 'ollie' ); ?>","buttonText":"<?php esc_attr_e( 'Search', 'ollie' ); ?>"} /--></div>
+<!-- wp:search {"label":"","placeholder":"<?php esc_attr_e( 'Search site...', 'asnz-block-theme' ); ?>","buttonText":"<?php esc_attr_e( 'Search', 'asnz-block-theme' ); ?>"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
@@ -38,8 +57,8 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:query-no-results -->
-<!-- wp:paragraph {"placeholder":"<?php esc_attr_e( 'Add text or blocks that will display when a query returns no results.', 'ollie' ); ?>","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"}}}} -->
-<p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0"><?php esc_html_e( 'Sorry, nothing was found for that search term.', 'ollie' ); ?></p>
+<!-- wp:paragraph {"placeholder":"<?php esc_attr_e( 'Add text or blocks that will display when a query returns no results.', 'asnz-block-theme' ); ?>","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"}}}} -->
+<p style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0"><?php esc_html_e( 'Sorry, nothing was found for that search term.', 'asnz-block-theme' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query --></main>

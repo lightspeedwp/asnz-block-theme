@@ -1,12 +1,25 @@
 <?php
-// phpcs:ignoreFile PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
-return array(
-	'title'         => __( 'Travel Information', 'tour-operator' ),
-	'description'   => __( 'Display the travel information like banking and cusine.', 'tour-operator' ),
-	'categories'    => array( $this->category ),
-	'content'       => '<!-- wp:group {"tagName":"section","metadata":{"name":"Travel Information","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/travel-information"},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-section-6","layout":{"type":"constrained"}} -->
+/**
+ * Title: Travel Information
+ * Slug: lsx-tour-operator/travel-information
+ * Description: Travel information panels (general, banking, climate, cuisine, electricity, dress, health, safety, transport, visa) with read more links.
+ * Categories: lsx-tour-operator
+ * Keywords: travel, information, destination, banking, climate, cuisine, visa, safety, health
+ * Viewport Width: 1200
+ * Block Types: core/post-template, core/query
+ * Inserter: true
+ * Sync: true
+ * Provides: travel-info, destination-info, panels
+ * Version: 1.1.0
+ * Author: Lightspeed
+ * License: GPL-2.0-or-later
+ * Text Domain: tour-operator
+ * Notes: Override of plugin pattern. Keep slug EXACT for precedence.
+ */
+?>
+<!-- wp:group {"tagName":"section","metadata":{"name":"Travel Information","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/travel-information"},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-section-6","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignwide lsx-travel-information-wrapper lsx-to-slider is-style-section-6"><!-- wp:heading {"textAlign":"left","align":"wide"} -->
-<h2 class="wp-block-heading alignwide has-text-align-left">Travel Information</h2>
+<h2 class="wp-block-heading alignwide has-text-align-left"><?php esc_html_e( 'Travel Information', 'tour-operator' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"align":"wide"} -->
@@ -406,5 +419,4 @@ return array(
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></section>
-<!-- /wp:group -->'
-);
+<!-- /wp:group -->
