@@ -79,12 +79,7 @@ select {
 	font: inherit;
 }
 
-/* Utility: center content vertically within a flex container */
-.center-vertically {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
+
 
 
 
@@ -101,6 +96,13 @@ select {
 .is-style-card-title a:hover,
 .is-style-card-title a:focus {
 	color: var(--wp--preset--color--cta-600);
+}
+
+/* Utility: center content vertically within a flex container */
+.center-vertically {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 input[type="button"],
@@ -273,3 +275,133 @@ header:has(>.is-position-sticky) {
 		position: static;
 	}
 }
+
+
+/*
+ * Navigation Block: nav-hover style
+ */
+nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover {
+	background: var(--wp--preset--color--primary-800) !important;
+	color: var(--wp--preset--color--base) !important;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover a {
+	color: var(--wp--preset--color--base) !important;
+}
+
+/* Apply same hover/focus styles to search icon in header. */
+.is-style-header-search .wp-block-search__button {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	transition: background 300ms, color 300ms;
+	padding: 0 10px;
+	border-radius: 0;
+}
+
+.is-style-header-search .wp-block-search__button:hover,
+.is-style-header-search .wp-block-search__button:focus {
+	color: var(--wp--preset--color--base);
+	background: var(--wp--preset--color--primary-800);
+	text-decoration: none;
+	transition: all 300ms ease;
+	border-radius: 0;
+}
+
+
+.is-style-header-search .wp-block-search__button:hover .search-icon,
+.is-style-header-search .wp-block-search__button:focus .search-icon {
+	color: var(--wp--preset--color--base) !important;
+	transition: color 300ms, fill 300ms;
+}
+
+
+.wp-block-navigation .is-style-nav-hover li.current-menu-item {
+	color: var(--wp--preset--color--base) !important;
+	background: var(--wp--preset--color--primary-800) !important;
+}
+
+.wp-block-navigation .is-style-nav-hover li.current-menu-item a {
+	color: var(--wp--preset--color--base) !important;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container,
+nav.wp-block-navigation.is-style-nav-hover ul {
+	height: 100%;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-dialog,
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-close {
+	height: 100%;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+	height: 100%;
+}
+
+/* Eliminate spacing between menu items for nav-hover style */
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
+	display: flex;
+	gap: 0 !important;
+}
+
+/* Top-level items fill the nav height */
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item {
+	display: flex;
+	align-items: stretch;
+	height: 100%;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > .wp-block-navigation-item__content,
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+
+.wp-block-navigation.is-style-nav-hover li {
+	align-items: center;
+	padding: 0 12px; /* horizontal padding updated */
+	transition: all 300ms ease;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+/* Ensure anchor inherits intended colors */
+.wp-block-navigation.is-style-nav-hover li > a { text-decoration: none; }
+
+/* Hover / focus state */
+.wp-block-navigation.is-style-nav-hover li:hover,
+.wp-block-navigation.is-style-nav-hover li:focus-within {
+	background: var(--wp--preset--color--primary-800);
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation.is-style-nav-hover li:hover > a,
+.wp-block-navigation.is-style-nav-hover li:focus-within > a {
+	color: var(--wp--preset--color--base);
+}
+
+/* Active/current item already handled above; ensure link text color */
+.wp-block-navigation.is-style-nav-hover li.current-menu-item > a {
+	color: var(--wp--preset--color--base) !important;
+}
+
+
+
+.is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:hover,
+.is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:focus-visible {
+	text-decoration: none;
+}
+
+
+
+

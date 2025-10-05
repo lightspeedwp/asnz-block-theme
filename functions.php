@@ -35,22 +35,6 @@ function enqueue_style_sheet() {
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet' );
 
-/**
- * Register custom button styles: CTA (large primary) and Card (compact full-width)
- */
-function register_button_styles() {
-	if ( function_exists( 'register_block_style' ) ) {
-		register_block_style( 'core/button', array(
-			'name'  => 'cta',
-			'label' => __( 'CTA', 'asnz-block-theme' ),
-		) );
-		register_block_style( 'core/button', array(
-			'name'  => 'card',
-			'label' => __( 'Card', 'asnz-block-theme' ),
-		) );
-	}
-}
-add_action( 'init', __NAMESPACE__ . '\register_button_styles' );
 
 
 /**
