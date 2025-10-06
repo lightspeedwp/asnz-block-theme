@@ -140,20 +140,12 @@ label {
 /* Helper styles
 ---------------------------------------------------------------------------- */
 
-/* Button Style Variations */
-.wp-block-button.is-style-cta .wp-block-button__link {
-	background: var(--wp--preset--color--primary-500);
-	color: var(--wp--preset--color--base);
-	font-size: var(--wp--preset--font-size--font-size-300);
-	font-weight: 600;
-	padding: 0.85em 1.5em;
-	border-radius: 8px;
-	line-height: 1.2;
-	box-shadow: 0 2px 4px rgba(0,0,0,.08);
-}
-.wp-block-button.is-style-cta .wp-block-button__link:hover {
-	background: var(--wp--preset--color--primary-700);
+/* Generic CTA button hover utility */
+.wp-block-button.cta-button-hover .wp-block-button__link:hover,
+.wp-block-button.cta-button-hover .wp-block-button__link:focus-visible {
+	background: var(--wp--preset--color--cta-700);
 	text-decoration: none;
+	transition: background .25s ease; /* transition kept for smoother change */
 }
 
 /* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
@@ -168,16 +160,6 @@ label {
 }
 
 
-.wp-block-button.is-style-card .wp-block-button__link {
-	background: var(--wp--preset--color--primary-500);
-	color: var(--wp--preset--color--base);
-	font-size: var(--wp--preset--font-size--font-size-300);
-	font-weight: 600;
-	width: 100%;
-	padding: 0.65em 1em;
-	border-radius: 0 0 8px 8px;
-	line-height: 1.2;
-}
 .wp-block-button.is-style-card .wp-block-button__link:hover {
 	background: var(--wp--preset--color--primary-700);
 	text-decoration: none;
@@ -276,32 +258,85 @@ nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__subm
 	color: var(--wp--preset--color--base) !important;
 }
 
-/* Apply same hover/focus styles to search icon in header. */
-.is-style-header-search .wp-block-search__button {
+/* Header Search (expanding overlay input) */
+.is-style-header-search {
+	position: relative;
 	height: 100%;
 	display: flex;
+	align-items: center; /* vertically center icon/button */
+}
+.is-style-header-search .wp-block-search__inside-wrapper {
+	display: flex;
+	align-items: center; /* center internal elements */
+	gap: 0;
+	position: relative;
+	min-width: 40px; /* icon button width */
+	height: 100%;
+}
+.is-style-header-search .wp-block-search__button {
+	padding: 0 14px !important;
+	height: 100%;
 	align-items: center;
-	justify-content: center;
+	display: flex;
+	border-radius: 0 !important;
 	box-sizing: border-box;
-	transition: background 300ms, color 300ms;
-	padding: 0 10px;
-	border-radius: 0;
+	background: transparent;
+	color: currentColor;
+	transition: none;
+	border: none;
 }
-
+/* Remove any default hover background */
 .is-style-header-search .wp-block-search__button:hover,
-.is-style-header-search .wp-block-search__button:focus {
-	color: var(--wp--preset--color--base);
-	background: var(--wp--preset--color--primary-800);
-	text-decoration: none;
-	transition: all 300ms ease;
-	border-radius: 0;
+.is-style-header-search .wp-block-search__button:focus-visible {
+	background: transparent;
+	color: currentColor;
+	outline: none;
 }
-
-
-.is-style-header-search .wp-block-search__button:hover .search-icon,
-.is-style-header-search .wp-block-search__button:focus .search-icon {
-	color: var(--wp--preset--color--base) !important;
-	transition: color 300ms, fill 300ms;
+.is-style-header-search .search-icon {
+	width: 32px;
+	height: 32px;
+	display: block;
+}
+.is-style-header-search .wp-block-search__input {
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	min-width: 0;
+	opacity: 0;
+	pointer-events: none;
+	border: 1px solid var(--wp--preset--color--primary-500);
+	border-radius: 4px;
+	transition: width 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.2s, padding 0.2s;
+	background: var(--wp--preset--color--base, #fff);
+	padding: 8px;
+	z-index: 25;
+	box-shadow: var(--wp--preset--shadow--elevation-2);
+}
+.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+	width: 600px; /* expanded width */
+	min-width: 240px;
+	opacity: 1;
+	pointer-events: auto;
+	padding: 8px 14px;
+}
+.is-style-header-search .wp-block-search__searchfield-hidden {
+	width: 0 !important;
+	min-width: 0 !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	padding: 8px 0 !important;
+}
+@media (max-width: 960px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 360px;
+	}
+}
+@media (max-width: 600px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 260px;
+	}
 }
 
 

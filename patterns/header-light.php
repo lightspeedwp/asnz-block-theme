@@ -72,8 +72,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons {"style":{"layout":{"selfStretch":"fixed","flexSize":""}},"layout":{"type":"flex","orientation":"horizontal"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-top-header"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-top-header"><a class="wp-block-button__link wp-element-button">Enquire Now</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-top-header cta-button-hover"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-top-header cta-button-hover"><a class="wp-block-button__link wp-element-button">Enquire Now</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -86,6 +86,8 @@
 
 <!-- wp:navigation {"ref":4,"openSubmenusOnClick":true,"metadata":{"name":"Primary Navigation"},"className":"is-style-nav-hover","style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","justifyContent":"center"}} /-->
 
-<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","widthUnit":"px","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"className":"is-style-header-search"} /--></div>
+<!-- wp:group {"metadata":{"name":"Search"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","widthUnit":"px","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"className":"is-style-header-search"} /--></div>
+<!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
