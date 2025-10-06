@@ -3,7 +3,7 @@
  * Title: Destination Card
  * Slug: lsx-tour-operator/destination-card
  * Description: A grid display card for destinations including featured image, title, excerpt and CTA button.
- * Categories: lsx-tour-operator
+ * Categories: lsx-tour-operator, Cards
  * Keywords: destination, travel, location, card, listing
  * Viewport Width: 600
  * Block Types: core/post-template, core/query
@@ -42,8 +42,8 @@
 
 <!-- wp:group {"metadata":{"name":"Card Footer"}} -->
 <div class="wp-block-group"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-card-button"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button"><a class="wp-block-button__link wp-element-button">View Destination</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-card-button lsx-to-link permalink","metadata":{"name":"Permalink"},"url":"#permalink"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink"><a class="wp-block-button__link wp-element-button" href="#permalink">View Destination</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

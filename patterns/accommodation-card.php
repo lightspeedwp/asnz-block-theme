@@ -80,3 +80,11 @@
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Card Footer"}} -->
+<div class="wp-block-group"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-card-button lsx-to-link permalink","metadata":{"name":"Permalink"},"url":"#permalink"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink"><a class="wp-block-button__link wp-element-button" href="#permalink"><?php esc_html_e( 'View Accommodation', 'tour-operator' ); ?></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->

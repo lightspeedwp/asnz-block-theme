@@ -6,7 +6,7 @@
   "blockTypes": ["core/button"],
   "styles": {
     "border": {
-      "radius": "0"
+      "radius": "4px"
     },
     "spacing": {
         "padding": {
@@ -20,8 +20,8 @@
     },
     "typography": {
       "fontFamily": "var:preset|font-family|primary",
-      "fontSize": "var:preset|font-size|font-size-300",
-      "fontWeight": "500"
+      "fontSize": "var:preset|font-size|font-size-400",
+      "fontWeight": "400"
     }
 }
 }

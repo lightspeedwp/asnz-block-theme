@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-website-cta",
+  "title": "Website CTA Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "var:preset|spacing|spacing-20",
+        "right": "var:preset|spacing|spacing-20",
+        "bottom": "var:preset|spacing|spacing-20",
+        "left": "var:preset|spacing|spacing-20"
+      }
+    },
+    "border": {
+      "radius": "8px"
+    },
+    "color": {
+      "text": "var:preset|color|base",
+      "background": "var:preset|color|primary-800"
+    },
+    "shadow": "var:preset|shadow|elevation-2",
+    "blocks": {
+      "core/separator": {
+        "color": {
+          "background": "var:preset|color|primary-100"
+        }
+      }
+    }
+  }
+}

@@ -144,6 +144,7 @@ label {
 .wp-block-button.cta-button-hover .wp-block-button__link:hover,
 .wp-block-button.cta-button-hover .wp-block-button__link:focus-visible {
 	background: var(--wp--preset--color--cta-700);
+	color: var(--wp--preset--color--base);
 	text-decoration: none;
 	transition: background .25s ease; /* transition kept for smoother change */
 }

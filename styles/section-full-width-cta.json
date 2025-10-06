@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-full-width-cta",
+  "title": "Full Width CTA Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "var:preset|spacing|spacing-20",
+        "right": "var:preset|spacing|spacing-20",
+        "bottom": "var:preset|spacing|spacing-20",
+        "left": "var:preset|spacing|spacing-20"
+      }
+    },
+    "border": {
+      "radius": "8px"
+    },
+    "color": {
+      "background": "#08080895",
+      "text": "var:preset|color|base"
+    }
+  }
+}
