@@ -13,7 +13,8 @@
       "padding": {
         "right": "var:preset|spacing|spacing-0",
         "left": "var:preset|spacing|spacing-0"
-      }
+      },
+      "blockGap": "var:preset|spacing|spacing-20"
     },
     "elements": {
       "link": {

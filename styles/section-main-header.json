@@ -5,6 +5,9 @@
   "title": "Main Header",
   "blockTypes": ["core/group"],
   "styles": {
+    "spacing": {
+      "blockGap": "var:preset|spacing|spacing-20"
+    },
     "blocks": {
       "core/navigation": {
         "typography": {

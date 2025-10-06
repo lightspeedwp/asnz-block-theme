@@ -17,7 +17,7 @@
  * Text Domain: asnz-block-theme
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Footer Wrapper"},"align":"full","className":"is-style-section-footer","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Footer Wrapper"},"align":"full","className":"is-style-section-footer","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-section-footer"><!-- wp:columns {"metadata":{"name":"Main Footer"},"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%","className":"footer-col-brand","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-30"}}}} -->
 <div class="wp-block-column footer-col-brand" style="padding-right:var(--wp--preset--spacing--spacing-30);flex-basis:30%"><!-- wp:site-logo {"width":200,"shouldSyncIcon":false} /-->

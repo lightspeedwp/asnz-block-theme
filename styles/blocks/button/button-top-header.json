@@ -11,7 +11,7 @@
     "spacing": {
         "padding": {
           "top": "6px",
-          "bottom": "6px"
+          "bottom": "8px"
         }
     },
     "color": {

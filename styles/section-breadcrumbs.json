@@ -13,7 +13,8 @@
       "padding": {
         "top": "var:preset|spacing|spacing-10",
         "bottom": "var:preset|spacing|spacing-10"
-      }
+      },
+      "blockGap": "var:preset|spacing|spacing-20"
     },
     "typography": {
       "fontWeight": "500"
