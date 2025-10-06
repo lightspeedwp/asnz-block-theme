@@ -41,7 +41,7 @@
 <div class="wp-block-column"><!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|spacing-30"}}}} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"45%","className":"footer-col-nav"} -->
 <div class="wp-block-column footer-col-nav" style="flex-basis:45%"><!-- wp:heading {"level":3,"className":"footer-heading"} -->
-<h3 class="wp-block-heading footer-heading">Explore</h3>
+<h2 class="wp-block-heading footer-heading">Explore</h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"ref":1763,"overlayMenu":"never","className":"footer-nav","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-10"}},"layout":{"type":"flex","orientation":"vertical"}} /-->
@@ -53,7 +53,7 @@
 
 <!-- wp:column {"width":"55%","className":"footer-col-nav"} -->
 <div class="wp-block-column footer-col-nav" style="flex-basis:55%"><!-- wp:heading {"level":3,"className":"footer-heading"} -->
-<h3 class="wp-block-heading footer-heading">Plan</h3>
+<h2 class="wp-block-heading footer-heading">Plan</h2>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"ref":1766,"overlayMenu":"never","className":"footer-nav","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-10"}},"layout":{"type":"flex","orientation":"vertical"}} /-->
@@ -67,7 +67,7 @@
 
 <!-- wp:column {"width":"30%","className":"footer-col-contact","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-20","padding":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-column footer-col-contact" style="padding-top:0;padding-bottom:0;flex-basis:30%"><!-- wp:heading {"level":3,"className":"footer-heading"} -->
-<h3 class="wp-block-heading footer-heading">Contact info</h3>
+<h2 class="wp-block-heading footer-heading">Contact info</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
