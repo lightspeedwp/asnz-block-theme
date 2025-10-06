@@ -60,8 +60,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-button-dark","fontSize":"x-small"} -->
-<div class="wp-block-button is-style-button-dark"><a class="wp-block-button__link has-x-small-font-size has-custom-font-size wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-card-button","fontSize":"x-small"} -->
+<div class="wp-block-button is-style-card-button"><a class="wp-block-button__link has-x-small-font-size has-custom-font-size wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
@@ -84,8 +84,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-button-dark","fontSize":"x-small"} -->
-<div class="wp-block-button is-style-button-dark"><a class="wp-block-button__link has-x-small-font-size has-custom-font-size wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-card-button","fontSize":"x-small"} -->
+<div class="wp-block-button is-style-card-button"><a class="wp-block-button__link has-x-small-font-size has-custom-font-size wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>

@@ -148,6 +148,16 @@ label {
 	transition: background .25s ease; /* transition kept for smoother change */
 }
 
+/* Card Button style variation hover */
+.wp-block-button.is-style-card-button .wp-block-button__link {
+	transition: background .25s ease;
+}
+.wp-block-button.is-style-card-button .wp-block-button__link:hover,
+.wp-block-button.is-style-card-button .wp-block-button__link:focus-visible {
+	background: var(--wp--preset--color--primary-700);
+	text-decoration: none;
+}
+
 /* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
 .tour-card-title {
 	/* H3 uses font-size-500 (2rem). Two lines => 4rem height */

@@ -98,8 +98,8 @@
 
 <!-- wp:group {"metadata":{"name":"Card Footer"},"className":"tour-card-footer"} -->
 <div class="wp-block-group tour-card-footer"><!-- wp:buttons {"className":"tour-card-button"} -->
-<div class="wp-block-buttons tour-card-button"><!-- wp:button {"width":100,"className":"is-style-card"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card"><a class="wp-block-button__link wp-element-button">View Tour</a></div>
+<div class="wp-block-buttons tour-card-button"><!-- wp:button {"width":100,"className":"is-style-card-button"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button"><a class="wp-block-button__link wp-element-button">View Tour</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

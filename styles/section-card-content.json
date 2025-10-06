@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-card-content",
+  "title": "Card Content Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "left": "var:preset|spacing|spacing-10",
+        "right": "var:preset|spacing|spacing-10"
+      }
+    }
+  }
+}

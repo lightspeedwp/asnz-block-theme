@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "CTA",
+  "slug": "button-cta",
+  "blockTypes": ["core/button"],
+  "styles": {
+    "border": {
+      "radius": "0"
+    },
+    "spacing": {
+        "padding": {
+          "top": "6px",
+          "bottom": "6px"
+        }
+    },
+    "color": {
+      "background": "var:preset|color|cta-500",
+      "text": "var:preset|color|contrast"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|primary",
+      "fontSize": "var:preset|font-size|font-size-300",
+      "fontWeight": "500"
+    }
+}
+}

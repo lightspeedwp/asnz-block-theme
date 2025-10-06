@@ -78,8 +78,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"asnz-no-shrink"} -->
-<div class="wp-block-button asnz-no-shrink"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get Started', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"asnz-no-shrink is-style-card-button"} -->
+<div class="wp-block-button asnz-no-shrink is-style-card-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Get Started', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

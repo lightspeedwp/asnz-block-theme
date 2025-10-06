@@ -44,8 +44,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons {"className":"asnz-no-shrink"} -->
-<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
-<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-card-button"} -->
+<div class="wp-block-button is-style-card-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -66,8 +66,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons {"className":"asnz-no-shrink"} -->
-<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
-<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-card-button"} -->
+<div class="wp-block-button is-style-card-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -88,8 +88,8 @@
 <!-- /wp:group -->
 
 <!-- wp:buttons {"className":"asnz-no-shrink"} -->
-<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-secondary-button"} -->
-<div class="wp-block-button is-style-secondary-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
+<div class="wp-block-buttons asnz-no-shrink"><!-- wp:button {"className":"is-style-card-button"} -->
+<div class="wp-block-button is-style-card-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read More', 'asnz-block-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-hero",
+  "title": "Hero Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-800"
+        },
+        "color": {
+          "text": "var:preset|color|base"
+        }
+      }
+    }
+  }
+}
