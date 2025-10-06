@@ -40,6 +40,17 @@ strong {
 /* Footer navigation hover */
 .is-style-section-footer nav.footer-nav a:hover,
 .is-style-section-footer nav.footer-nav a:focus-visible {
+/* Utility: Hide wrapper row if no terms output (categories/tags) */
+.wp-block-group.lsx-hide-if-empty:has(.wp-block-post-terms:empty),
+.wp-block-group.lsx-hide-if-empty:not(:has(.wp-block-post-terms)) {
+	display: none !important;
+}
+
+/* (Optional) If author/date wrappers are ever given this class and only contain a label, hide them too */
+.wp-block-group.lsx-hide-if-empty:has(> .label:only-child) {
+	display: none !important;
+}
+
 	color: var(--wp--preset--color--primary-800);
 }
 
@@ -72,24 +83,10 @@ select {
 
 /* Pattern/Card Title Style
 -------------------------------------------------- */
-.is-style-card-title,
-.is-style-card-title :where(p, h1, h2, h3, h4, h5, h6, a) {
-	color: var(--wp--preset--color--contrast);
-}
-.is-style-card-title a {
-	text-decoration: none;
-	transition: color .18s ease-in-out;
-}
+
 .is-style-card-title a:hover,
 .is-style-card-title a:focus {
 	color: var(--wp--preset--color--cta-600);
-}
-
-/* Utility: center content vertically within a flex container */
-.center-vertically {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 input[type="button"],
@@ -159,9 +156,8 @@ label {
 	text-decoration: none;
 }
 
-/* Tour Card Title: maintain consistent two-line height (2 x H3 size) */
-.tour-card-title {
-	/* H3 uses font-size-500 (2rem). Two lines => 4rem height */
+/* Card Title: maintain consistent two-line height */
+.card-title {
 	min-height: 3rem;
 	display: flex;
 	align-items: center; /* vertical centering */

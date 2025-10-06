@@ -15,13 +15,6 @@
     "spacing": {
   "blockGap": "var:preset|spacing|spacing-10"
     },
-  "shadow": "var:preset|shadow|elevation-1",
-    "elements": {
-      "heading": {
-        "typography": {
-          "fontWeight": "600"
-        }
-      }
-    }
+  "shadow": "var:preset|shadow|elevation-1"
   }
 }

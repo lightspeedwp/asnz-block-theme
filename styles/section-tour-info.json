@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-tour-info",
+  "title": "Tour Info Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "left": "var:preset|spacing|spacing-10",
+        "right": "var:preset|spacing|spacing-10"
+      },
+      "blockGap": "var:preset|spacing|spacing-10"
+    },
+    "blocks": {
+      "core/post-terms": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var:preset|color|primary-600"
+            },
+            "typography": {
+              "fontWeight": "500",
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "text": "var:preset|color|cta-500"
+              },
+              "typography": {
+                "textDecoration": "underline"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

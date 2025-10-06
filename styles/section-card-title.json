@@ -5,6 +5,12 @@
   "title": "Card Title Section",
   "blockTypes": ["core/group"],
   "styles": {
+    "spacing": {
+      "padding": {
+        "left": "var:preset|spacing|spacing-10",
+        "right": "var:preset|spacing|spacing-10"
+      }
+    },
     "elements": {
       "heading": {
         "color": {
