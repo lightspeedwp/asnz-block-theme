@@ -13,8 +13,7 @@
  * Version: 1.1.0
  * Author: Lightspeed
  * License: GPL-2.0-or-later
- * Text Domain: tour-operator
- * Notes: Override of plugin pattern. Keep slug EXACT for precedence.
+ * Text Domain: asnz-block-theme
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Room Card"},"align":"wide","style":{"border":{"radius":"8px"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->

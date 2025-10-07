@@ -13,8 +13,8 @@
  * Version: 1.1.1
  * Author: Lightspeed
  * License: GPL-2.0-or-later
- * Text Domain: tour-operator
- * Notes: Mirrors plugin pattern slug for override precedence. Keep slug EXACT.
+ * Text Domain: asnz-block-theme
+
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Tour Card","categories":["asnz"],"patternName":"asnz/tour-card"},"className":"is-style-section-card","backgroundColor":"base","layout":{"type":"constrained"}} -->
