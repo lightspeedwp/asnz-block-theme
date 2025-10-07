@@ -156,7 +156,7 @@ label {
 	text-decoration: none;
 }
 
-/* Card Title: maintain consistent two-line height */
+/* Card Title */
 .card-title {
 	min-height: 3rem;
 	display: flex;

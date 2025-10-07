@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-archive-pagination",
+  "title": "Archive Pagination Bar",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "margin": {
+        "top": "var:preset|spacing|spacing-10",
+        "bottom": "var:preset|spacing|spacing-10"
+      },
+      "padding": {
+        "top": "var:preset|spacing|spacing-10",
+        "bottom": "var:preset|spacing|spacing-10"
+      }
+    }
+  }
+}

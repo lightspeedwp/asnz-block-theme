@@ -17,7 +17,8 @@
           "text": "var:preset|color|contrast"
         },
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-400"
+          "fontSize": "var:preset|font-size|font-size-400",
+          "textAlign": "center"
         }
       },
       "link": {

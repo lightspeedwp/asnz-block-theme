@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-gallery-band",
+  "title": "Gallery Band",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "var:preset|spacing|spacing-30",
+        "bottom": "var:preset|spacing|spacing-30"
+      },
+      "blockGap": "var:preset|spacing|spacing-20"
+    }
+  }
+}

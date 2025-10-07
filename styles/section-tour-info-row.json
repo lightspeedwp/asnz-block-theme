@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-tour-info-row",
+  "title": "Tour Info Row",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "margin": { "top": "0", "bottom": "0" }
+    }
+  }
+}
