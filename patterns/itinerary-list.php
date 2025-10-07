@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Itinerary (list)
- * Slug: lsx-tour-operator/itinerary-list
+ * Slug: asnz/itinerary-list
  * Description: A list layout for tour itineraries showing day image, title, description, and key info.
- * Categories: lsx-tour-operator
+ * Categories: asnz
  * Keywords: itinerary, day by day, tour, schedule, plan
  * Viewport Width: 1000
  * Block Types: core/post-template, core/query
@@ -17,7 +17,7 @@
  * Notes: Override of plugin pattern. Keep slug EXACT for precedence.
  */
 ?>
-<!-- wp:columns {"metadata":{"categories":[null],"patternName":"lsx-tour-operator/itinerary-list","name":"Itinerary (list)"},"align":"wide"} -->
+<!-- wp:columns {"metadata":{"categories":[null],"patternName":"asnz/itinerary-list","name":"Itinerary (list)"},"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"100%"} -->
 <div class="wp-block-column" style="flex-basis:100%"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:columns {"align":"wide"} -->

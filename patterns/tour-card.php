@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Tour Card
- * Slug: lsx-tour-operator/tour-card
+ * Slug: asnz/tour-card
  * Description: Figma-aligned tour card: Featured image, title, condensed info rows (From, Duration, Experiences, Destinations), excerpt and button. Uses Section style "Card".
- * Categories: lsx-tour-operator
+ * Categories: asnz
  * Keywords: tour, trip, itinerary, travel, card, duration, price
  * Viewport Width: 600
  * Block Types: core/post-template, core/query
@@ -17,14 +17,14 @@
  * Notes: Mirrors plugin pattern slug for override precedence. Keep slug EXACT.
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Tour Card","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/tour-card"},"className":"lsx-tour-card is-style-section-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group lsx-tour-card is-style-section-card"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /--></div>
+<!-- wp:group {"metadata":{"name":"Tour Card","categories":["asnz"],"patternName":"asnz/tour-card"},"className":"is-style-section-card","backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-section-card has-base-background-color has-background"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content"} -->
 <div class="wp-block-group is-style-section-card-content"><!-- wp:group {"metadata":{"name":"Tour Card Title"},"className":"card-title is-style-section-card-title"} -->
-<div class="wp-block-group card-title is-style-section-card-title"><!-- wp:post-title {"level":3,"isLink":true} /--></div>
+<div class="wp-block-group card-title is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
@@ -32,9 +32,9 @@
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Tour Info"},"className":"is-style-section-tour-info","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-tour-info"><!-- wp:group {"className":"lsx-price-wrapper info-row is-style-section-tour-info-row","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-price-wrapper info-row is-style-section-tour-info-row"><!-- wp:paragraph -->
-<p>From:</p>
+<div class="wp-block-group is-style-section-tour-info"><!-- wp:group {"className":"lsx-price-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-price-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:paragraph {"className":"label"} -->
+<p class="label"><strong>From:</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"price"}}}},"className":"amount value"} -->
@@ -42,14 +42,14 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-duration-wrapper info-row is-style-section-tour-info-row","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-duration-wrapper info-row is-style-section-tour-info-row"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p>Duration:</p>
+<!-- wp:group {"className":"lsx-duration-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-duration-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label"><strong>Duration:</strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"duration"}}}},"className":"value"} -->
 <p class="value"></p>
 <!-- /wp:paragraph -->
@@ -60,26 +60,26 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-travel-style-wrapper info-row is-style-section-tour-info-row","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-travel-style-wrapper info-row is-style-section-tour-info-row"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p>Experiences:</p>
+<!-- wp:group {"className":"lsx-travel-style-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-travel-style-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label"><strong>Experiences:</strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:post-terms {"term":"travel-style","className":"value has-primary-500-color has-text-color"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-destination-to-tour-wrapper info-row is-style-section-tour-info-row","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-destination-to-tour-wrapper info-row is-style-section-tour-info-row"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph -->
-<p>Destinations:</p>
+<!-- wp:group {"className":"lsx-destination-to-tour-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-destination-to-tour-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label"><strong>Destinations:</strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_tour"}}}},"className":"value has-primary-500-color has-text-color"} -->
 <p class="value has-primary-500-color has-text-color"></p>
 <!-- /wp:paragraph --></div>

@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Accommodation Card
- * Slug: lsx-tour-operator/accommodation-card
+ * Slug: asnz/accommodation-card
  * Description: A grid display for accommodation items including price, type, rooms, and excerpt.
- * Categories: lsx-tour-operator
+ * Categories: asnz
  * Keywords: accommodation, lodging, stay, room, price, type
  * Viewport Width: 600
  * Block Types: core/post-template, core/query

@@ -10,7 +10,7 @@
         "left": "var:preset|spacing|spacing-10",
         "right": "var:preset|spacing|spacing-10"
       },
-      "blockGap": "var:preset|spacing|spacing-20"
+      "blockGap": "var:preset|spacing|spacing-10"
     }
   }
 }

@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Travel Information
- * Slug: lsx-tour-operator/travel-information
+ * Slug: asnz/travel-information
  * Description: Travel information panels (general, banking, climate, cuisine, electricity, dress, health, safety, transport, visa) with read more links.
- * Categories: lsx-tour-operator
+ * Categories: asnz
  * Keywords: travel, information, destination, banking, climate, cuisine, visa, safety, health
  * Viewport Width: 1200
  * Block Types: core/post-template, core/query
@@ -17,7 +17,7 @@
  * Notes: Override of plugin pattern. Keep slug EXACT for precedence.
  */
 ?>
-<!-- wp:group {"tagName":"section","metadata":{"name":"Travel Information","categories":["lsx-tour-operator"],"patternName":"lsx-tour-operator/travel-information"},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-section-6","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Travel Information","categories":["asnz"],"patternName":"asnz/travel-information"},"align":"wide","className":"lsx-travel-information-wrapper lsx-to-slider is-style-section-6","layout":{"type":"constrained"}} -->
 <section class="wp-block-group alignwide lsx-travel-information-wrapper lsx-to-slider is-style-section-6"><!-- wp:heading {"textAlign":"left","align":"wide"} -->
 <h2 class="wp-block-heading alignwide has-text-align-left"><?php esc_html_e( 'Travel Information', 'tour-operator' ); ?></h2>
 <!-- /wp:heading -->

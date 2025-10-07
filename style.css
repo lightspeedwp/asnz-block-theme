@@ -158,12 +158,35 @@ label {
 
 /* Card Title */
 .card-title {
-	min-height: 3rem;
 	display: flex;
-	align-items: center; /* vertical centering */
-	justify-content: center; /* horizontal centering for nested title */
+	align-items: flex-start; /* multi-line titles expand downward */
+	justify-content: center;
 	text-align: center;
-	overflow: ellipsis; /* ensure excess beyond two lines is clipped */
+	min-height: 3rem; /* uniform baseline height so single vs two-line titles don't destabilize card layout */
+}
+
+/* Prevent label text (e.g., Experiences:, Destinations:, Duration:, From:) from wrapping while allowing value terms to wrap */
+.is-style-section-tour-info .info-row .label,
+.is-style-section-tour-info-row .label,
+.info-row .label {
+	white-space: nowrap;
+}
+
+/* Ensure the value container can wrap naturally */
+.info-row .value,
+.info-row .wp-block-post-terms.value,
+.info-row .wp-block-post-terms.value a {
+	white-space: normal;
+}
+
+/* Tighten vertical alignment to avoid pushing overall card height unnecessarily */
+.is-style-section-tour-info .info-row {
+	align-items: flex-start;
+}
+
+/* If long labels ever risk overflow on very small viewports, allow horizontal scroll safeguard */
+@media (max-width:480px) {
+	.info-row .label { overflow: hidden; text-overflow: ellipsis; }
 }
 
 
@@ -429,6 +452,11 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
 .is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:focus-visible {
 	text-decoration: none;
 }
+
+
+
+
+
 
 
 

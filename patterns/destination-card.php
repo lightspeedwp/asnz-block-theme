@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Destination Card
- * Slug: lsx-tour-operator/destination-card
+ * Slug: asnz/destination-card
  * Description: A grid display card for destinations including featured image, title, excerpt and CTA button.
- * Categories: lsx-tour-operator, Cards
+ * Categories: asnz, Cards
  * Keywords: destination, travel, location, card, listing
  * Viewport Width: 600
  * Block Types: core/post-template, core/query

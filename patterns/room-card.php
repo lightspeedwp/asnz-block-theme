@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Room Card
- * Slug: lsx-tour-operator/room-card
+ * Slug: asnz/room-card
  * Description: A list display card for accommodation units including image, details and pricing fields.
- * Categories: lsx-tour-operator
+ * Categories: asnz
  * Keywords: room, unit, accommodation, price, type
  * Viewport Width: 800
  * Block Types: core/post-template, core/query
