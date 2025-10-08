@@ -56,9 +56,9 @@
 		"shadow": {
 			"defaultPresets": false,
 			"presets": [
-				{ "name": "Elevation 1", "slug": "elevation-1", "shadow": "0 1px 3px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.14)" },
-				{ "name": "Elevation 2", "slug": "elevation-2", "shadow": "0 3px 6px rgba(0,0,0,0.10), 0 5px 10px rgba(0,0,0,0.16)" },
-				{ "name": "Elevation 3", "slug": "elevation-3", "shadow": "0 6px 12px rgba(0,0,0,0.12), 0 10px 20px rgba(0,0,0,0.18)" }
+				{ "name": "Elevation 1", "slug": "elevation-1", "shadow": "0 2px 5px rgba(0,0,0,0.14), 0 6px 12px rgba(0,0,0,0.12)" },
+				{ "name": "Elevation 2", "slug": "elevation-2", "shadow": "0 4px 8px rgba(0,0,0,0.16), 0 8px 16px rgba(0,0,0,0.18)" },
+				{ "name": "Elevation 3", "slug": "elevation-3", "shadow": "0 8px 16px rgba(0,0,0,0.18), 0 14px 28px rgba(0,0,0,0.22)" }
 			]
 		},
 		"spacing": {
@@ -131,6 +131,17 @@
 				{ "slug": "font-size-900", "size": "5rem", "name": "Colossal", "fluid": { "min": "3.5rem", "max": "5rem" } }
 			],
 			"lineHeight": true
+		},
+		"blocks": {
+			"core/group": {
+				"border": {
+					"color": true,
+					"radius": true,
+					"style": true,
+					"width": true
+				},
+				"shadow": {}
+			}
 		},
 		"useRootPaddingAwareAlignments": true
 	},

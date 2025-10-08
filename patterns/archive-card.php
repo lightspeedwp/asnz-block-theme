@@ -17,14 +17,14 @@
 
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Archive Card","categories":["Cards"],"patternName":"asnz/archive-card"},"className":"is-style-section-card","style":{"spacing":{"padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group tour-card-image is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
+<!-- wp:group {"metadata":{"name":"Archive Card","categories":["Cards"],"patternName":"asnz/archive-card"},"className":"is-style-section-card","style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}}} -->
-<div class="wp-block-group is-style-section-card-content" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"metadata":{"name":"Card Title"},"className":"is-style-section-card-title"} -->
-<div class="wp-block-group is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /--></div>
+<div class="wp-block-group is-style-section-card-content" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"metadata":{"name":"Card Title"},"className":"card-title is-style-section-card-title"} -->
+<div class="wp-block-group card-title is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->

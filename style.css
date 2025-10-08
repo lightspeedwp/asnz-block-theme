@@ -40,16 +40,6 @@ strong {
 /* Footer navigation hover */
 .is-style-section-footer nav.footer-nav a:hover,
 .is-style-section-footer nav.footer-nav a:focus-visible {
-/* Utility: Hide wrapper row if no terms output (categories/tags) */
-.wp-block-group.lsx-hide-if-empty:has(.wp-block-post-terms:empty),
-.wp-block-group.lsx-hide-if-empty:not(:has(.wp-block-post-terms)) {
-	display: none !important;
-}
-
-/* (Optional) If author/date wrappers are ever given this class and only contain a label, hide them too */
-.wp-block-group.lsx-hide-if-empty:has(> .label:only-child) {
-	display: none !important;
-}
 
 	color: var(--wp--preset--color--primary-800);
 }
@@ -158,7 +148,7 @@ label {
 	align-items: center; /* vertically center single-line titles within the baseline height */
 	justify-content: center;
 	text-align: center;
-	min-height: 3rem; /* uniform baseline height so single vs two-line titles don't destabilize card layout */
+	min-height: 4rem; /* uniform baseline height so single vs two-line titles don't destabilize card layout */
 }
 
 
@@ -390,7 +380,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 100%;
 }
 
-/* Single Tour: Sticky nav minor enhancement (only behavior retained; color handled by block style JSON) */
+/* Single Tour: Sticky nav minor enhancement */
 .is-style-section-secondary-sticky-nav { position: sticky; top: calc( var(--wp-admin--admin-bar--height,0px) + 0px ); z-index: 50; }
 .is-style-section-secondary-sticky-nav .wp-block-buttons .wp-block-button { margin: 0; }
 
@@ -401,33 +391,26 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	transition: background .25s ease,color .25s ease;
 }
 .is-style-button-summary-nav .wp-block-button__link:hover,
-.is-style-button-summary-nav .wp-block-button__link:focus-visible,
-.is-style-button-summary-nav:hover .wp-block-button__link,
-.is-style-button-summary-nav:focus-within .wp-block-button__link {
+.is-style-button-summary-nav .wp-block-button__link:focus-visible {
 	background: var(--wp--preset--color--primary-500);
 	color: var(--wp--preset--color--base);
 }
 
-/* Read More links inside tour summary and itinerary cards */
-.is-style-section-tour-summary a.more-link,
-.is-style-section-tour-summary a.wp-block-read-more,
-.is-style-section-tour-info a.more-link,
-.is-style-section-tour-info a.wp-block-read-more {
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-	font-weight: 700;
+/* Active (scrollspy) state */
+.is-style-button-summary-nav .wp-block-button__link.is-active {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
 }
-.is-style-section-tour-summary a.more-link:hover,
-.is-style-section-tour-summary a.more-link:focus-visible,
-.is-style-section-tour-summary a.wp-block-read-more:hover,
-.is-style-section-tour-summary a.wp-block-read-more:focus-visible,
-.is-style-section-tour-info a.more-link:hover,
-.is-style-section-tour-info a.more-link:focus-visible,
-.is-style-section-tour-info a.wp-block-read-more:hover,
-.is-style-section-tour-info a.wp-block-read-more:focus-visible {
-	color: var(--wp--preset--color--primary-500);
-	text-decoration: underline;
+
+/* Fast Facts section style now provided via styles/section-fast-facts.json variation */
+
+/* Card max width constraint */
+.is-style-section-card {
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 
 /* Eliminate spacing between menu items for nav-hover style */
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
@@ -483,10 +466,28 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
 	color: var(--wp--preset--color--base) !important;
 }
 
+/* Read More utility class (replaces inline block styles) */
+.asnz-read-more-link {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	font-weight: 700;
+}
+.asnz-read-more-link:hover,
+.asnz-read-more-link:focus-visible {
+	color: var(--wp--preset--color--primary-500);
+	text-decoration: underline;
+}
+
 
 .is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:hover,
 .is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:focus-visible {
 	text-decoration: none;
+}
+
+/* Utility: Center text content inside designated container */
+.content-center, .content-center > * {
+	text-align: center;
+	font-weight: 500;
 }
 
 

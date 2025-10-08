@@ -35,6 +35,20 @@ function enqueue_style_sheet() {
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet' );
 
+/**
+ * Enqueue small enhancement scripts (scrollspy for secondary sticky nav)
+ */
+function enqueue_scripts() {
+	wp_enqueue_script(
+		'asnz-scrollspy',
+		get_template_directory_uri() . '/assets/js/scrollspy.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts' );
+
 
 
 /**
