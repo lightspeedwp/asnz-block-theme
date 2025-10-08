@@ -390,6 +390,45 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 100%;
 }
 
+/* Single Tour: Sticky nav minor enhancement (only behavior retained; color handled by block style JSON) */
+.is-style-section-secondary-sticky-nav { position: sticky; top: calc( var(--wp-admin--admin-bar--height,0px) + 0px ); z-index: 50; }
+.is-style-section-secondary-sticky-nav .wp-block-buttons .wp-block-button { margin: 0; }
+
+.is-style-button-summary-nav .wp-block-button__link {
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	transition: background .25s ease,color .25s ease;
+}
+.is-style-button-summary-nav .wp-block-button__link:hover,
+.is-style-button-summary-nav .wp-block-button__link:focus-visible,
+.is-style-button-summary-nav:hover .wp-block-button__link,
+.is-style-button-summary-nav:focus-within .wp-block-button__link {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+}
+
+/* Read More links inside tour summary and itinerary cards */
+.is-style-section-tour-summary a.more-link,
+.is-style-section-tour-summary a.wp-block-read-more,
+.is-style-section-tour-info a.more-link,
+.is-style-section-tour-info a.wp-block-read-more {
+	color: var(--wp--preset--color--contrast);
+	text-decoration: none;
+	font-weight: 700;
+}
+.is-style-section-tour-summary a.more-link:hover,
+.is-style-section-tour-summary a.more-link:focus-visible,
+.is-style-section-tour-summary a.wp-block-read-more:hover,
+.is-style-section-tour-summary a.wp-block-read-more:focus-visible,
+.is-style-section-tour-info a.more-link:hover,
+.is-style-section-tour-info a.more-link:focus-visible,
+.is-style-section-tour-info a.wp-block-read-more:hover,
+.is-style-section-tour-info a.wp-block-read-more:focus-visible {
+	color: var(--wp--preset--color--primary-500);
+	text-decoration: underline;
+}
+
 /* Eliminate spacing between menu items for nav-hover style */
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
 	display: flex;
