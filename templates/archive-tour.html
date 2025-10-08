@@ -8,14 +8,18 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"useFeaturedImage":true,"dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":300,"minHeightUnit":"px","isDark":false,"sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0;min-height:300px"><span
-        aria-hidden="true"
+<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/tour-archive-banner-image.png","dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":300,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover alignfull" style="margin-top:0;margin-bottom:0;min-height:300px"><img
+    class="wp-block-cover__image-background size-large" alt=""
+    src="/wp-content/themes/asnz-block-theme/assets/img/tour-archive-banner-image.png"
+        data-object-fit="cover" /><span aria-hidden="true"
         class="wp-block-cover__background has-contrast-background-color has-background-dim-20 has-background-dim"></span>
     <div class="wp-block-cover__inner-container">
         <!-- wp:group {"align":"full","className":"is-style-section-hero","layout":{"type":"constrained","contentSize":"900px"}} -->
-        <div class="wp-block-group alignfull is-style-section-hero">
-            <!-- wp:query-title {"type":"archive","textAlign":"center","showPrefix":false} /--></div>
+        <div class="wp-block-group alignfull is-style-section-hero"><!-- wp:heading {"textAlign":"center","level":1} -->
+            <h1 class="wp-block-heading has-text-align-center">Safaris &amp; Tours</h1>
+            <!-- /wp:heading -->
+        </div>
         <!-- /wp:group -->
     </div>
 </div>
@@ -23,10 +27,11 @@
 
 <!-- wp:group {"metadata":{"name":"Page Content"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0">
-    <!-- wp:group {"metadata":{"name":"Description"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-40","bottom":"var:preset|spacing|spacing-40"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
-    <div class="wp-block-group alignwide"
-        style="padding-top:var(--wp--preset--spacing--spacing-40);padding-bottom:var(--wp--preset--spacing--spacing-40)">
-        <!-- wp:term-description {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"font-size-400"} /-->
+    <!-- wp:group {"metadata":{"name":"Description"},"align":"wide","className":"is-style-section-tour-description","layout":{"type":"constrained","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide is-style-section-tour-description">
+        <!-- wp:paragraph {"align":"center","fontSize":"font-size-300"} -->
+        <p class="has-text-align-center has-font-size-300-font-size">All our safaris and tours can be adapted to your personal needs and desires for the best safari. We have simply pulled together these options for price reference and to envision your dream escape. Let us plan your once-in-a-lifetime African safari.</p>
+        <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
@@ -37,8 +42,8 @@
         style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--spacing-40);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--spacing-40);padding-left:var(--wp--preset--spacing--x-small)">
         <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|spacing-30"}}}} -->
         <div class="wp-block-columns alignwide">
-            <!-- wp:column {"width":"30%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
-            <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:30%">
+            <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
+            <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
                 <!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search"} /-->
 
                 <!-- wp:facetwp/facet {"facetName":"price","facetLabel":"Price","facetType":"slider"} /-->
@@ -51,8 +56,8 @@
             </div>
             <!-- /wp:column -->
 
-            <!-- wp:column {"width":"70%"} -->
-            <div class="wp-block-column" style="flex-basis:70%">
+            <!-- wp:column {"width":"75%"} -->
+            <div class="wp-block-column" style="flex-basis:75%">
                 <!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":"0","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
                 <div class="wp-block-query alignwide">
                     <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
@@ -93,6 +98,8 @@
         <!-- /wp:columns -->
     </div>
     <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"asnz/full-width-cta-lion"} /-->
 </div>
 <!-- /wp:group -->
 
