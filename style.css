@@ -155,11 +155,12 @@ label {
 /* Card Title */
 .card-title {
 	display: flex;
-	align-items: flex-start; /* multi-line titles expand downward */
+	align-items: center; /* vertically center single-line titles within the baseline height */
 	justify-content: center;
 	text-align: center;
 	min-height: 3rem; /* uniform baseline height so single vs two-line titles don't destabilize card layout */
 }
+
 
 /* Prevent label text (e.g., Experiences:, Destinations:, Duration:, From:) from wrapping while allowing value terms to wrap */
 .is-style-section-tour-info .info-row .label,

@@ -590,6 +590,36 @@
 			"name": "sidebar",
 			"title": "Sidebar",
 			"area": "sidebar"
+		},
+		{
+			"name": "accommodation-card",
+			"title": "Accommodation Card",
+			"area": "uncategorized"
+		},
+		{
+			"name": "archive-card",
+			"title": "Archive Card",
+			"area": "uncategorized"
+		},
+		{
+			"name": "blog-card",
+			"title": "Blog Card",
+			"area": "uncategorized"
+		},
+		{
+			"name": "destination-card",
+			"title": "Destination Card",
+			"area": "uncategorized"
+		},
+		{
+			"name": "room-card",
+			"title": "Room Card",
+			"area": "uncategorized"
+		},
+		{
+			"name": "tour-card",
+			"title": "Tour Card",
+			"area": "uncategorized"
 		}
 	]
 }

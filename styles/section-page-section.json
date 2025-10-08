@@ -4,13 +4,18 @@
   "slug": "section-page-section",
   "title": "Page Section",
   "blockTypes": ["core/group"],
+  "settings": {
+    "spacing": {  
+      "blockGap": true
+    }
+  },
   "styles": {
     "spacing": {
       "padding": {
         "top": "var:preset|spacing|spacing-60",
         "bottom": "var:preset|spacing|spacing-60"
       },
-      "blockGap": "var:preset|spacing|spacing-40"
+      "blockGap": "var:preset|spacing|spacing-80"
     }
   }
 }

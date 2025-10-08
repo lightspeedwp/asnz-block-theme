@@ -17,7 +17,7 @@
  * Notes: Override of plugin pattern. Keep slug EXACT for precedence.
  */
 ?>
-<!-- wp:group {"metadata":{"name":"Destination Card"},"className":"is-style-section-card","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Destination Card"},"className":"is-style-section-card","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-card"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
 <div class="wp-block-group tour-card-image is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
@@ -42,7 +42,7 @@
 
 <!-- wp:group {"metadata":{"name":"Card Footer"}} -->
 <div class="wp-block-group"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-card-button lsx-to-link permalink","metadata":{"name":"Permalink"},"url":"#permalink"} -->
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"is-style-card-button lsx-to-link permalink"} -->
 <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink"><a class="wp-block-button__link wp-element-button" href="#permalink">View Destination</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>

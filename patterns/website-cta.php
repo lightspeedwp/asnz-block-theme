@@ -10,7 +10,7 @@
  * Inserter: true
  * Sync: true
  * Provides: website-cta, call-to-action
- * Version: 1.0.0
+ * Version: 1.2.1
  * Author: Lightspeed
  * License: GPL-2.0-or-later
  * Text Domain: asnz-block-theme
@@ -24,8 +24,8 @@
 <hr class="wp-block-separator has-text-color has-primary-100-color has-alpha-channel-opacity has-primary-100-background-color has-background"/>
 <!-- /wp:separator -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Ready to plan your next safari?</h2>
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Ready to plan your next safari?</h2>
 <!-- /wp:heading -->
 
 <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary-100"} -->

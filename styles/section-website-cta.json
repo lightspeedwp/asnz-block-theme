@@ -27,6 +27,11 @@
         "color": {
           "background": "var:preset|color|primary-100"
         }
+        },
+        "core/paragraph": {
+          "typography": {
+            "fontWeight": "600"
+          }
       }
     }
   }
