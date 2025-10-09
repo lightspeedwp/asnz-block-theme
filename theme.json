@@ -145,7 +145,7 @@
 		},
 		"useRootPaddingAwareAlignments": true
 	},
-	"styles": {
+		"styles": {
 		"blocks": {
 			"core/code": {
 				"border": {
@@ -538,9 +538,13 @@
 				"color": {
 					"text": "var:preset|color|primary-600"
 				},
+				"typography": {
+					"textDecoration": "none",
+					"fontWeight": "500"
+				},
 				":hover": {
 					"color": {
-						"text": "var:preset|color|primary-800"
+						"text": "var:preset|color|cta-500"
 					},
 					"typography": {
 						"textDecoration": "underline"

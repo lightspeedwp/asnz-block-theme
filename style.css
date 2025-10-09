@@ -128,9 +128,6 @@ label {
 @media (max-width:480px){ .info-row .label { overflow:hidden; text-overflow:ellipsis; } }
 
 
-/* (Deprecated) .is-style-card button hover removed – covered by button styles */
-
-
 a.more-link {
 	display: block;
 }
@@ -308,7 +305,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	color: var(--wp--preset--color--base);
 }
 
-/* Fast Facts section style now provided via styles/section-fast-facts.json variation */
 
 /* Card max width constraint */
 .is-style-section-card {
@@ -320,6 +316,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Navigation: nav-hover layout & interactive states */
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container { display:flex; gap:0 !important; }
+
 /* Navigation: nav-hover layout & interactive states */
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
     display: flex;
@@ -360,16 +357,18 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
 .wp-block-navigation.is-style-nav-hover li.current-menu-item > a {
     color: var(--wp--preset--color--base) !important;
 }
-.asnz-read-more-link:hover,
-.asnz-read-more-link:focus-visible { color:var(--wp--preset--color--primary-500); text-decoration:underline; }
 
-
-/* Main header link hover underline suppression handled in JSON */
 
 /* Center content utility */
 .content-center, .content-center > * { text-align:center; font-weight:500; }
 
-
+/* Read More Block Hover Fix */
+.wp-block-read-more.is-style-read-more-description:hover,
+.wp-block-read-more.is-style-read-more-description:focus-visible,
+.wp-block-read-more.is-style-read-more-itinerary:hover,
+.wp-block-read-more.is-style-read-more-itinerary:focus-visible {
+	color: var(--wp--preset--color--primary-600);
+}
 
 
 
