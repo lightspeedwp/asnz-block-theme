@@ -111,7 +111,13 @@ label {
 }
 
 /* Card Button variation: keep transition only (colors in button-card-button.json) */
-.wp-block-button.is-style-card-button .wp-block-button__link { transition: background .25s ease; }
+.wp-block-button.is-style-card-button .wp-block-button__link:hover,
+.wp-block-button.is-style-card-button .wp-block-button__link:focus-visible { 
+	background: var(--wp--preset--color--primary-700);
+	color: var(--wp--preset--color--base);
+	text-decoration: none;
+	transition: background .25s ease; 
+}
 
 /* Card Title container (layout only; typography handled in section JSON) */
 .card-title { display:flex; align-items:center; justify-content:center; text-align:center; min-height:4rem; }
