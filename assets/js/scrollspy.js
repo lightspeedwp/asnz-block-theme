@@ -55,8 +55,10 @@
 	if('IntersectionObserver' in window) {
 		let current = null;
 		const observer = new IntersectionObserver(entries => {
+			let anyIntersecting = false;
 			entries.forEach(entry => {
 				if(entry.isIntersecting) {
+					anyIntersecting = true;
 					const match = targets.find(t => t.el === entry.target);
 					if(match && current !== match.link) {
 						current = match.link;
@@ -64,6 +66,14 @@
 					}
 				}
 			});
+			// Clear active state if no sections are in view
+			if(!anyIntersecting && current !== null) {
+				current = null;
+				links.forEach(l => {
+					l.classList.remove('is-active');
+					l.removeAttribute('aria-current');
+				});
+			}
 		},{ rootMargin: '0px 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] });
 		targets.forEach(t => observer.observe(t.el));
 	} else {
@@ -85,9 +95,10 @@
 
 	links.forEach(link => link.addEventListener('click', e => {
 		const hash = link.getAttribute('href');
-		if(!hash || hash.charAt(0) !== '#') return;
-		const target = document.getElementById(hash.substring(1));
-		if(target){
+		if (!hash || hash.charAt(0) !== '#') return;
+		const id = decodeURIComponent(hash.substring(1));
+		const target = document.getElementById(id);
+		if (target) {
 			e.preventDefault();
 			// Smooth scroll then shift focus
 			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
