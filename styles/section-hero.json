@@ -18,5 +18,14 @@
         }
       }
     }
+    ,
+    "blocks": {
+      "core/paragraph": {
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-400",
+          "fontWeight": "600"
+        }
+      }
+    }
   }
 }
