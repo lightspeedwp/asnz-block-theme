@@ -24,6 +24,54 @@
         "typography": {
           "fontSize": "var:preset|font-size|font-size-400",
           "fontWeight": "600"
+        },
+        "color": {
+          "text": "var:preset|color|base"
+        },
+        "elements": {
+          "link": {
+            "color": {"text": "var:preset|color|base"},
+            ":hover": {
+              "color": {"text": "var:preset|color|primary-500"},
+              "typography": {"textDecoration": "underline"}
+            }
+          }
+        }
+      },
+      "core/post-date": {
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-400",
+          "fontWeight": "600"
+        },
+        "color": {
+          "text": "var:preset|color|base"
+        },
+        "elements": {
+          "link": {
+            "color": {"text": "var:preset|color|base"},
+            ":hover": {
+              "color": {"text": "var:preset|color|primary-500"},
+              "typography": {"textDecoration": "underline"}
+            }
+          }
+        }
+      },
+      "core/post-terms": {
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-400",
+          "fontWeight": "600"
+        },
+        "color": {
+          "text": "var:preset|color|base"
+        },
+        "elements": {
+            "link": {
+              "color": {"text": "var:preset|color|base"},
+              ":hover": {
+                "color": {"text": "var:preset|color|primary-500"},
+                "typography": {"textDecoration": "underline"}
+              }
+            }
         }
       }
     }
