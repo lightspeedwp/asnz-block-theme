@@ -2,12 +2,11 @@
  * Theme Name: ASNZ Block Theme
  * Theme URI: https://lightspeedwp.agency
  * Author: Lightspeed WP
- * Description: Lean stylesheet holding ONLY rules not representable in theme.json
- *              or style variation JSON (advanced selectors, sticky, complex
- *              transitions). Migrate styles to JSON when possible.
+ * Description: Modern WordPress block theme for African Safaris New Zealand. Forked from the Ollie (OllieWP) theme and extensively refactored by LightSpeed WP with brand-specific design tokens (fluid spacing & typography), curated section & block style variations, accessibility/performance enhancements, and a JSON‑first configuration approach.
  * Version: 0.1.0
  * Text Domain: asnz-block-theme
  */
+/* Style Sheet Purpose: contains ONLY rules not yet feasible in theme.json / style variations (advanced selectors like :has(), sticky positioning, complex transitions). Migrate styles to JSON when core supports them. */
 
 /* ========================================================================== */
 /* 1. Base / Reset                                                            */
@@ -53,8 +52,6 @@ textarea,
 select {
 	font: inherit;
 }
-
-/* Card Title hover color handled by section-card-title.json (redundant removed) */
 
 input[type="button"],
 input[type="email"],
@@ -323,19 +320,46 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Navigation: nav-hover layout & interactive states */
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container { display:flex; gap:0 !important; }
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item { display:flex; align-items:stretch; height:100%; }
+/* Navigation: nav-hover layout & interactive states */
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
+    display: flex;
+    gap: 0 !important;
+}
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > .wp-block-navigation-item__content,
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content { display:flex; align-items:center; height:100%; }
-.wp-block-navigation.is-style-nav-hover li { align-items:center; padding:0 12px; transition:all 300ms ease; display:flex; height:100%; flex-flow:row nowrap; justify-content:flex-start; }
-.wp-block-navigation.is-style-nav-hover li > a { text-decoration:none; }
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.wp-block-navigation.is-style-nav-hover li {
+    align-items: center;
+    padding: 0 12px;
+    transition: all 300ms ease;
+    display: flex;
+    height: 100%;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+.wp-block-navigation.is-style-nav-hover li > a {
+    text-decoration: none;
+}
 .wp-block-navigation.is-style-nav-hover li:hover,
-.wp-block-navigation.is-style-nav-hover li:focus-within { background:var(--wp--preset--color--primary-800); color:var(--wp--preset--color--base); }
+.wp-block-navigation.is-style-nav-hover li:focus-within {
+    background: var(--wp--preset--color--primary-800);
+    color: var(--wp--preset--color--base);
+}
 .wp-block-navigation.is-style-nav-hover li:hover > a,
-.wp-block-navigation.is-style-nav-hover li:focus-within > a { color:var(--wp--preset--color--base); }
-.wp-block-navigation.is-style-nav-hover li.current-menu-item > a { color:var(--wp--preset--color--base) !important; }
-
-/* Read More utility */
-.asnz-read-more-link { color:var(--wp--preset--color--contrast); text-decoration:none; font-weight:700; }
+.wp-block-navigation.is-style-nav-hover li:focus-within > a {
+    color: var(--wp--preset--color--base);
+}
+.wp-block-navigation.is-style-nav-hover li.current-menu-item > a {
+    color: var(--wp--preset--color--base) !important;
+}
 .asnz-read-more-link:hover,
 .asnz-read-more-link:focus-visible { color:var(--wp--preset--color--primary-500); text-decoration:underline; }
 
