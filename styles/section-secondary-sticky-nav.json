@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-secondary-sticky-nav",
+  "title": "Secondary Sticky Navigation",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "margin": { "top": "0", "bottom": "0" },
+      "blockGap": "var:preset|spacing|spacing-10"
+    },
+    "color": {
+      "background": "var:preset|color|base"
+    }
+  },
+  "description": "Structural style for secondary in-page sticky navigation bar. Sticky positioning handled via CSS (not yet expressible in style JSON)."
+}

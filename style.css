@@ -1,23 +1,17 @@
 /*
-Theme Name: ASNZ Block Theme
-Theme URI: https://lightspeedwp.agency
-Author: Lightspeed WP
-Author URI: https://lightspeedwp.agency
-Description: Custom block theme for African Safaris New Zealand built on a modern fluid design token system (typography & spacing). Forked and refactored from the original Ollie theme; all branding and pattern/category slugs have been updated for ASNZ.
-Tags: blog, portfolio, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, full-width-template, style-variations, template-editing, translation-ready, block-patterns, block-styles, wide-blocks
-Tested up to: 6.7.1
-Requires PHP: 7.4
-Version: 0.1.0
-License: GNU General Public License v3 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: asnz-block-theme
-Domain Path: /languages
+ * Theme Name: ASNZ Block Theme
+ * Theme URI: https://lightspeedwp.agency
+ * Author: Lightspeed WP
+ * Description: Lean stylesheet holding ONLY rules not representable in theme.json
+ *              or style variation JSON (advanced selectors, sticky, complex
+ *              transitions). Migrate styles to JSON when possible.
+ * Version: 0.1.0
+ * Text Domain: asnz-block-theme
+ */
 
-Copyright (C) 2025 Lightspeed WP. Distributed under the terms of the GNU GPL.
-*/
-
-/* CSS Reset
----------------------------------------------------------------------------- */
+/* ========================================================================== */
+/* 1. Base / Reset                                                            */
+/* ========================================================================== */
 
 *,
 *::before,
@@ -31,18 +25,10 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
-b,
-strong {
-	font-weight: var(--wp--custom--font-weight--semi-bold);
-}
-
-
-/* Footer navigation hover */
+b, strong { font-weight: var(--wp--custom--font-weight--semi-bold); }
+/* Footer navigation hover (specific markup not covered in section-footer.json) */
 .is-style-section-footer nav.footer-nav a:hover,
-.is-style-section-footer nav.footer-nav a:focus-visible {
-
-	color: var(--wp--preset--color--primary-800);
-}
+.is-style-section-footer nav.footer-nav a:focus-visible { color: var(--wp--preset--color--primary-800); }
 
 img,
 figure {
@@ -57,8 +43,9 @@ figure {
 	}
 }
 
-/* Standardize form styling
---------------------------------------------- */
+/* ========================================================================== */
+/* 2. Forms                                                                   */
+/* ========================================================================== */
 
 input,
 button,
@@ -67,13 +54,7 @@ select {
 	font: inherit;
 }
 
-/* Pattern/Card Title Style
--------------------------------------------------- */
-
-.is-style-card-title a:hover,
-.is-style-card-title a:focus {
-	color: var(--wp--preset--color--cta-600);
-}
+/* Card Title hover color handled by section-card-title.json (redundant removed) */
 
 input[type="button"],
 input[type="email"],
@@ -121,9 +102,9 @@ label {
 }
 
 /* Helper styles
----------------------------------------------------------------------------- */
-
-/* Generic CTA button hover utility */
+/* ========================================================================== */
+/* 3. Utilities & Generic Helpers                                             */
+/* ========================================================================== */
 .wp-block-button.cta-button-hover .wp-block-button__link:hover,
 .wp-block-button.cta-button-hover .wp-block-button__link:focus-visible {
 	background: var(--wp--preset--color--cta-700);
@@ -132,84 +113,44 @@ label {
 	transition: background .25s ease; /* transition kept for smoother change */
 }
 
-/* Card Button style variation hover */
-.wp-block-button.is-style-card-button .wp-block-button__link {
-	transition: background .25s ease;
-}
-.wp-block-button.is-style-card-button .wp-block-button__link:hover,
-.wp-block-button.is-style-card-button .wp-block-button__link:focus-visible {
-	background: var(--wp--preset--color--primary-700);
-	text-decoration: none;
-}
+/* Card Button variation: keep transition only (colors in button-card-button.json) */
+.wp-block-button.is-style-card-button .wp-block-button__link { transition: background .25s ease; }
 
-/* Card Title */
-.card-title {
-	display: flex;
-	align-items: center; /* vertically center single-line titles within the baseline height */
-	justify-content: center;
-	text-align: center;
-	min-height: 4rem; /* uniform baseline height so single vs two-line titles don't destabilize card layout */
-}
+/* Card Title container (layout only; typography handled in section JSON) */
+.card-title { display:flex; align-items:center; justify-content:center; text-align:center; min-height:4rem; }
 
 
-/* Prevent label text (e.g., Experiences:, Destinations:, Duration:, From:) from wrapping while allowing value terms to wrap */
+/* Tour Info layout enhancements */
 .is-style-section-tour-info .info-row .label,
 .is-style-section-tour-info-row .label,
-.info-row .label {
-	white-space: nowrap;
-}
-
-/* Ensure the value container can wrap naturally */
+.info-row .label { white-space:nowrap; }
 .info-row .value,
 .info-row .wp-block-post-terms.value,
-.info-row .wp-block-post-terms.value a {
-	white-space: normal;
-}
-
-/* Tighten vertical alignment to avoid pushing overall card height unnecessarily */
-.is-style-section-tour-info .info-row {
-	align-items: flex-start;
-}
-
-/* If long labels ever risk overflow on very small viewports, allow horizontal scroll safeguard */
-@media (max-width:480px) {
-	.info-row .label { overflow: hidden; text-overflow: ellipsis; }
-}
+.info-row .wp-block-post-terms.value a { white-space:normal; }
+.is-style-section-tour-info .info-row { align-items:flex-start; }
+@media (max-width:480px){ .info-row .label { overflow:hidden; text-overflow:ellipsis; } }
 
 
-.wp-block-button.is-style-card .wp-block-button__link:hover {
-	background: var(--wp--preset--color--primary-700);
-	text-decoration: none;
-}
+/* (Deprecated) .is-style-card button hover removed – covered by button styles */
 
 
 a.more-link {
 	display: block;
 }
 
-/* Inline code */
-
-*:not(.wp-block-code) > code {
-	background-color: var(--wp--preset--color--tertiary);
-	padding: 3px 5px;
-	position: relative;
-	border-radius: 3px;
-}
+/* Inline code (outside core/code block) */
+*:not(.wp-block-code) > code { background:var(--wp--preset--color--tertiary); padding:3px 5px; position:relative; border-radius:3px; }
 
 .wp-block-categories {
 	position: relative;
 }
 
-/* Adjust terms at bottom of posts */
+/* Taxonomy terms spacing at bottom of posts */
 .single .wp-block-group .wp-block-post-terms,
-.blog .wp-block-group .wp-block-post-terms {
-	margin-bottom: -8px !important;
-}
+.blog .wp-block-group .wp-block-post-terms { margin-bottom:-8px !important; }
 
-/* Remove margin on term description on archive pages */
-.wp-block-term-description p:last-child {
-	margin-bottom: 0;
-}
+/* Archive term description trailing space removal */
+.wp-block-term-description p:last-child { margin-bottom:0; }
 
 /* Remove last separator on post list */
 .remove-border-and-padding .wp-block-post-template li:last-child .wp-block-separator {
@@ -229,37 +170,15 @@ a.more-link {
 	flex-shrink: 1 !important;
 }
 
-/* Sticky header */
-
-header:has(>.is-position-sticky) {
-	position: sticky;
-	top: calc( 0px + var( --wp-admin--admin-bar--height, 0px ) );
-	z-index: 100;
-}
-
-/* Account for admin bar on mobile */
-
-@media (max-width: 600px) {
-	header:has(>.is-position-sticky) {
-		top: 0;
-	}
-}
-
-/* Mobile helper classes */
-
-@media (max-width: 781px) {
-	.ollie-hide-on-mobile, .asnz-hide-on-mobile {
-		display: none;
-	}
-
-	.ollie-unstick-mobile, .asnz-unstick-mobile {
-		position: static;
-	}
-
-	header:has(>.ollie-unstick-mobile),
-	header:has(>.asnz-unstick-mobile) {
-		position: static;
-	}
+/* ========================================================================== */
+/* 4. Header / Sticky & Mobile Utilities                                      */
+/* ========================================================================== */
+header:has(>.is-position-sticky){ position:sticky; top:calc(0px + var(--wp-admin--admin-bar--height,0px)); z-index:100; }
+@media (max-width:600px){ header:has(>.is-position-sticky){ top:0; } }
+@media (max-width:781px){
+  .ollie-hide-on-mobile, .asnz-hide-on-mobile { display:none; }
+  .ollie-unstick-mobile, .asnz-unstick-mobile { position:static; }
+  header:has(>.ollie-unstick-mobile), header:has(>.asnz-unstick-mobile){ position:static; }
 }
 
 
@@ -275,7 +194,10 @@ nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__subm
 	color: var(--wp--preset--color--base) !important;
 }
 
-/* Header Search (expanding overlay input) */
+/* ========================================================================== */
+/* 5. Expanding Header Search                                                 */
+/* ========================================================================== */
+/* Expanding overlay input pattern */
 .is-style-header-search {
 	position: relative;
 	height: 100%;
@@ -331,13 +253,8 @@ nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__subm
 	z-index: 25;
 	box-shadow: var(--wp--preset--shadow--elevation-2);
 }
-.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
-	width: 600px; /* expanded width */
-	min-width: 240px;
-	opacity: 1;
-	pointer-events: auto;
-	padding: 8px 14px;
-}
+/* Expanded state */
+.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) { width:600px; min-width:240px; opacity:1; pointer-events:auto; padding:8px 14px; }
 .is-style-header-search .wp-block-search__searchfield-hidden {
 	width: 0 !important;
 	min-width: 0 !important;
@@ -345,16 +262,8 @@ nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__subm
 	pointer-events: none !important;
 	padding: 8px 0 !important;
 }
-@media (max-width: 960px) {
-	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
-		width: 360px;
-	}
-}
-@media (max-width: 600px) {
-	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
-		width: 260px;
-	}
-}
+@media (max-width:960px){ .is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden){ width:360px; } }
+@media (max-width:600px){ .is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden){ width:260px; } }
 
 
 .wp-block-navigation .is-style-nav-hover li.current-menu-item {
@@ -380,9 +289,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 100%;
 }
 
-/* Single Tour: Sticky nav minor enhancement */
-.is-style-section-secondary-sticky-nav { position: sticky; top: calc( var(--wp-admin--admin-bar--height,0px) + 0px ); z-index: 50; }
-.is-style-section-secondary-sticky-nav .wp-block-buttons .wp-block-button { margin: 0; }
+/* Secondary Sticky Navigation (structural) */
+.is-style-section-secondary-sticky-nav { position:sticky; top:calc(var(--wp-admin--admin-bar--height,0px) + 0px); z-index:50; }
+.is-style-section-secondary-sticky-nav .wp-block-buttons .wp-block-button { margin:0; }
 
 .is-style-button-summary-nav .wp-block-button__link {
 	background: var(--wp--preset--color--base);
@@ -412,83 +321,29 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 
-/* Eliminate spacing between menu items for nav-hover style */
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
-	display: flex;
-	gap: 0 !important;
-}
-
-/* Top-level items fill the nav height */
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item {
-	display: flex;
-	align-items: stretch;
-	height: 100%;
-}
-
+/* Navigation: nav-hover layout & interactive states */
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container { display:flex; gap:0 !important; }
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item { display:flex; align-items:stretch; height:100%; }
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > .wp-block-navigation-item__content,
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content {
-	display: flex;
-	align-items: center;
-	height: 100%;
-}
-
-
-.wp-block-navigation.is-style-nav-hover li {
-	align-items: center;
-	padding: 0 12px; /* horizontal padding updated */
-	transition: all 300ms ease;
-	display: -ms-flexbox;
-	display: flex;
-	height: 100%;
-	-ms-flex-flow: row nowrap;
-	flex-flow: row nowrap;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-}
-
-/* Ensure anchor inherits intended colors */
-.wp-block-navigation.is-style-nav-hover li > a { text-decoration: none; }
-
-/* Hover / focus state */
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content { display:flex; align-items:center; height:100%; }
+.wp-block-navigation.is-style-nav-hover li { align-items:center; padding:0 12px; transition:all 300ms ease; display:flex; height:100%; flex-flow:row nowrap; justify-content:flex-start; }
+.wp-block-navigation.is-style-nav-hover li > a { text-decoration:none; }
 .wp-block-navigation.is-style-nav-hover li:hover,
-.wp-block-navigation.is-style-nav-hover li:focus-within {
-	background: var(--wp--preset--color--primary-800);
-	color: var(--wp--preset--color--base);
-}
-
+.wp-block-navigation.is-style-nav-hover li:focus-within { background:var(--wp--preset--color--primary-800); color:var(--wp--preset--color--base); }
 .wp-block-navigation.is-style-nav-hover li:hover > a,
-.wp-block-navigation.is-style-nav-hover li:focus-within > a {
-	color: var(--wp--preset--color--base);
-}
+.wp-block-navigation.is-style-nav-hover li:focus-within > a { color:var(--wp--preset--color--base); }
+.wp-block-navigation.is-style-nav-hover li.current-menu-item > a { color:var(--wp--preset--color--base) !important; }
 
-/* Active/current item already handled above; ensure link text color */
-.wp-block-navigation.is-style-nav-hover li.current-menu-item > a {
-	color: var(--wp--preset--color--base) !important;
-}
-
-/* Read More utility class (replaces inline block styles) */
-.asnz-read-more-link {
-	color: var(--wp--preset--color--contrast);
-	text-decoration: none;
-	font-weight: 700;
-}
+/* Read More utility */
+.asnz-read-more-link { color:var(--wp--preset--color--contrast); text-decoration:none; font-weight:700; }
 .asnz-read-more-link:hover,
-.asnz-read-more-link:focus-visible {
-	color: var(--wp--preset--color--primary-500);
-	text-decoration: underline;
-}
+.asnz-read-more-link:focus-visible { color:var(--wp--preset--color--primary-500); text-decoration:underline; }
 
 
-.is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:hover,
-.is-style-section-main-header nav.wp-block-navigation.is-style-nav-hover a:focus-visible {
-	text-decoration: none;
-}
+/* Main header link hover underline suppression handled in JSON */
 
-/* Utility: Center text content inside designated container */
-.content-center, .content-center > * {
-	text-align: center;
-	font-weight: 500;
-}
+/* Center content utility */
+.content-center, .content-center > * { text-align:center; font-weight:500; }
 
 
 
