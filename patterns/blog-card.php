@@ -33,8 +33,9 @@
 <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-blog-card-meta"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group has-contrast-700-color has-text-color"><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>By</strong></p>
-<!-- /wp:paragraph -->
+<p class="label has-font-size-200-font-size">
+    <?php echo esc_html__( 'By', 'asnz-block-theme' ); ?>
+</p>
 
 <!-- wp:post-author-name {"isLink":true,"fontSize":"font-size-200"} /-->
 
@@ -45,17 +46,21 @@
 <!-- wp:post-date {"fontSize":"font-size-200"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-categories-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-categories-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color"><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>Posted in:</strong></p>
+<!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
+<p class="label has-font-size-200-font-size">
+    <?php echo esc_html__( 'Posted in:', 'asnz-block-theme' ); ?>
+</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"category","className":"value"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-tags-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-tags-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color"><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>Tags:</strong></p>
+<!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
+<p class="label has-font-size-200-font-size">
+    <?php echo esc_html__( 'Tags:', 'asnz-block-theme' ); ?>
+</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"post_tag","className":"value"} /--></div>
