@@ -37,7 +37,7 @@
     <?php echo esc_html__( 'By', 'asnz-block-theme' ); ?>
 </p>
 
-<!-- wp:post-author-name {"isLink":true,"fontSize":"font-size-200"} /-->
+<!-- wp:post-author-name {"isLink":false,"fontSize":"font-size-200"} /-->
 
 <!-- wp:paragraph {"fontSize":"font-size-200"} -->
 <p class="has-font-size-200-font-size">on</p>
