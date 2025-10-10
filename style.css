@@ -376,6 +376,22 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
 	color: var(--wp--preset--color--primary-600);
 }
 
+/* ASNZ: Vertical style for core/separator
+   Makes the separator a 1px vertical divider that stretches in flex layouts. */
+/* Make the line visible and stretch it */
+.wp-block-separator.is-style-vertical {
+	border: 0;
+	display: block;
+	width: 2px;
+	/* thickness */
+	height: auto;
+	min-height: 2rem;
+	/* fallback */
+	align-self: stretch !important;
+	/* stretch to parent’s height */
+
+}
+
 
 
 

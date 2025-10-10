@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Vertical",
+	"slug": "vertical",
+	"blockTypes": ["core/separator"],
+	"styles": {
+		"spacing": {
+			"margin": {
+				"top": "var:preset|spacing|10",
+				"bottom": "var:preset|spacing|10",
+				"left": "var:preset|spacing|20",
+				"right": "var:preset|spacing|20"
+			}
+		},
+		"dimensions": {
+			"minHeight": "2rem"
+		}
+	}
+}
