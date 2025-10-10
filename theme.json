@@ -132,6 +132,20 @@
 			],
 			"lineHeight": true
 		},
+		"dimensions": {
+			"aspectRatios": [
+				{
+					"name": "Extra Wide - 2:1",
+					"slug": "2-1",
+					"ratio": "2/1"
+				},
+				{
+					"name": "Card Image - 21:9",
+					"slug": "21-9",
+					"ratio": "21/9"
+				}
+			]
+		},
 		"blocks": {
 			"core/group": {
 				"border": {

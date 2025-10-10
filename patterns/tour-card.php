@@ -19,7 +19,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Tour Card","categories":["asnz"],"patternName":"asnz/tour-card"},"className":"is-style-section-card","style":{"spacing":{"blockGap":"0"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-card has-base-background-color has-background"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
+<div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content"} -->
