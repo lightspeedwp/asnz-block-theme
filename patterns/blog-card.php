@@ -18,7 +18,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Blog Card","categories":["Cards"],"patternName":"asnz/blog-card"},"className":"is-style-section-card","style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
-<div class="wp-block-group tour-card-image is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
+<div class="wp-block-group tour-card-image is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content"} -->
@@ -31,31 +31,31 @@
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-blog-card-meta"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group has-contrast-700-color has-text-color"><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>By</strong></p>
+<div class="wp-block-group is-style-section-blog-card-meta"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}}, "layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label">By</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:post-author-name {"isLink":true,"fontSize":"font-size-200"} /-->
+<!-- wp:post-author-name /-->
 
-<!-- wp:paragraph {"fontSize":"font-size-200"} -->
-<p class="has-font-size-200-font-size">on</p>
+<!-- wp:paragraph -->
+<p >on</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:post-date {"fontSize":"font-size-200"} /--></div>
+<!-- wp:post-date /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>Posted in:</strong></p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label">Posted in:</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"category","className":"value"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size"><strong>Tags:</strong></p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+<p class="label">Tags:</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"post_tag","className":"value"} /--></div>
