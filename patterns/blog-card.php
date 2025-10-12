@@ -33,7 +33,7 @@
 <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-blog-card-meta"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group has-contrast-700-color has-text-color"><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size">By</p>
+<p class="label has-font-size-200-font-size"><strong>By</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-author-name {"isLink":true,"fontSize":"font-size-200"} /-->
@@ -47,7 +47,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size">Posted in:</p>
+<p class="label has-font-size-200-font-size"><strong>Posted in:</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"category","className":"value"} /--></div>
@@ -55,7 +55,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div><!-- wp:paragraph {"className":"label","fontSize":"font-size-200"} -->
-<p class="label has-font-size-200-font-size">Tags:</p>
+<p class="label has-font-size-200-font-size"><strong>Tags:</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"post_tag","className":"value"} /--></div>

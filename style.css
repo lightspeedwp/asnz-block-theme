@@ -25,6 +25,8 @@ html {
 }
 
 b, strong { font-weight: var(--wp--custom--font-weight--semi-bold); }
+
+
 /* Footer navigation hover (specific markup not covered in section-footer.json) */
 .is-style-section-footer nav.footer-nav a:hover,
 .is-style-section-footer nav.footer-nav a:focus-visible { color: var(--wp--preset--color--primary-800); }
@@ -392,8 +394,22 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
 
 }
 
+/* ASNZ: Search block "CTA" style
+   Default: button bg cta-500 + contrast text
+   Hover/Focus: button bg cta-700 + base text */
 
+.wp-block-search.is-style-cta .wp-block-search__button,
+.wp-block-search.is-style-cta .wp-block-search__button.wp-element-button {
+	background: var(--wp--preset--color--cta-500);
+	color: var(--wp--preset--color--contrast);
+}
 
+.wp-block-search.is-style-cta .wp-block-search__button:hover,
+.wp-block-search.is-style-cta .wp-block-search__button:focus,
+.wp-block-search.is-style-cta .wp-block-search__button:active {
+	background: var(--wp--preset--color--cta-700);
+	color: var(--wp--preset--color--base);
+}
 
 
 
