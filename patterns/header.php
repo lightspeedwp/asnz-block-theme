@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Header Light
- * Slug: asnz/header-light
+ * Title: Header
+ * Slug: asnz/header
  * Description: Header with primary navigation and optional social links on a light background.
  * Categories: header
  * Keywords: header, navigation, nav, links, button, menu

@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Footer Light
- * Slug: asnz/footer-light
+ * Title: Footer
+ * Slug: asnz/footer
  * Description: A footer for African Safaris New Zealand
  * Categories: footer
  * Keywords: footer, navigation, links, social, contact
