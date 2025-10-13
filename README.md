@@ -19,7 +19,10 @@ asnz-block-theme/
 │   ├── fonts/                # Custom font families
 │   │   └── source-sans-pro/
 │   │       └── static/
-│   └── styles/
+│   ├── styles/
+│   ├── js/                   # JavaScript for theme interactivity
+│   │   └── scrollspy.js      # Scrollspy for navigation highlighting
+│   └── README.md             # [Assets Reference](assets/README.md)
 ├── patterns/                 # Block patterns (see below)
 │   ├── tour-card.php
 │   ├── blog-card.php
