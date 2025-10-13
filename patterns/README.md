@@ -66,6 +66,20 @@ This directory contains reusable card and call-to-action (CTA) patterns for the 
 - **Features:** Centered heading, dividers, supporting text, and primary CTA button.
 - **Context:** Used for site-wide CTAs, contact prompts, or enquiry banners.
 
+## Header & Footer Patterns
+
+### 11. Header (`header.php`)
+
+    - **Usage:** Site-wide header, included in all templates via template part.
+    - **Features:** Full-width wrapper, top utility bar (book appointment, travel agents), primary navigation, optional social links, light background, border accent.
+    - **Context:** Provides unified site navigation and branding, supports accessibility and responsive layouts.
+
+### 12. Footer (`footer.php`)
+
+    - **Usage:** Site-wide footer, included in all templates via template part.
+    - **Features:** Full-width wrapper, brand/logo column, partner images, pricing notes, multi-column navigation, social/contact links, styled for accessibility and clarity.
+    - **Context:** Provides site-wide navigation, legal, and contact info, supports accessibility and responsive layouts.
+
 ---
 
 ## Standards
