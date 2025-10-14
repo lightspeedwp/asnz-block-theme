@@ -541,8 +541,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Trim unexpected top space inside the mobile panel */
 .wp-block-navigation__responsive-container .wp-block-navigation__responsive-dialog,
 .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
-	padding: 0 !important;
-	margin-top: 20px !important;
+	padding: var(--wp--preset--spacing--spacing-20) !important;
+	margin-top: var(--wp--preset--spacing--spacing-20) !important;
 	/* safety: in case theme adds padding */
 }
 
