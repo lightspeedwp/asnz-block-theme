@@ -362,6 +362,28 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.
     color: var(--wp--preset--color--base);
 }
 
+/* Submenu rows: remove inherited 12px padding */
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li {
+  padding: 0;
+  height: auto; /* avoid stretching submenu rows */
+  display: block; /* submenus usually stack */
+}
+
+/* If the padding lives on the link/button content (common in Navigation block), zero it */
+.wp-block-navigation.is-style-nav-hover
+  .wp-block-navigation__submenu-container
+  .wp-block-navigation-item__content {
+  padding: 0; 
+}
+
+/* Neutralise hover in submenus */
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:hover,
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:focus-within {
+  background: transparent;
+  color: inherit;
+}
+
+
 
 
 /* Center content utility */
