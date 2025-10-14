@@ -41,7 +41,7 @@
     },
     "blocks": {
       "core/navigation": {
-        "typography": { "fontSize": "var:preset|font-size|font-size-300" },
+        "typography": { "fontSize": "var:preset|font-size|font-size-300", "fontWeight": "500" },
         "spacing": { "blockGap": "var:preset|spacing|spacing-20" }
       }
     }
