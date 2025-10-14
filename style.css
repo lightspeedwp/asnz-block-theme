@@ -523,12 +523,11 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	right: 8px;
 	inline-size: 44px;
 	block-size: 44px;
-	border: 3px solid var(--wp--preset--color--base);
+	color: var(--wp--preset--color--base);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: transparent;
-	gap: 8px;
 }
 
 .wp-block-navigation__responsive-container-close svg,
