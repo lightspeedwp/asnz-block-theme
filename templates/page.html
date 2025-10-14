@@ -1,1 +1,17 @@
-<!-- wp:pattern {"slug":"asnz/template-page-wide"} /-->
+<!-- wp:template-part {"slug":"header","theme":"asnz-block-theme","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-section-breadcrumbs","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|tertiary"}}}},"border":{"bottom":{"width":"0px","style":"none"},"top":{},"right":{},"left":{}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-breadcrumbs"
+    style="border-bottom-style:none;border-bottom-width:0px">
+    <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignwide"><!-- wp:yoast-seo/breadcrumbs /--></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","align":"wide","className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignwide is-style-default" style="margin-top:0;margin-bottom:0">
+    <!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"asnz-block-theme","tagName":"footer","className":"site-footer"} /-->
