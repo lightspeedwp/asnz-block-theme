@@ -504,3 +504,112 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-details.is-style-mobile-menu-details[open] summary::after {
 	transform: rotate(180deg);
 }
+
+
+
+
+/* Mobile Menu Styling */
+
+/* ================================
+   Mobile menu (Navigation block)
+   Scope: .wp-block-navigation__responsive-container
+   ================================ */
+
+/* 1) Overlay + slide-in panel */
+.wp-block-navigation__responsive-close {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, .45);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 200ms ease;
+	z-index: 1000;
+}
+
+.wp-block-navigation__responsive-dialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100dvh;
+	width: 88vw;
+	max-width: 420px;
+	background: var(--wp--preset--color--primary-100, #f6f8f6);
+	box-shadow: var(--wp--preset--shadow--elevation-2, 0 10px 30px rgba(0, 0, 0, .15));
+	transform: translateX(100%);
+	transition: transform 260ms ease;
+	z-index: 1001;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Open state (added by core) */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-close {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
+	transform: translateX(0);
+}
+
+/* 2) Close buttons (X) */
+.wp-block-navigation__responsive-container-close,
+.menu-container__close-button {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	inline-size: 44px;
+	block-size: 44px;
+	border: 0;
+	background: transparent;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+}
+
+.wp-block-navigation__responsive-container-close svg,
+.menu-container__close-button svg {
+	width: 24px;
+	height: 24px;
+}
+
+/* 3) Scrollable content */
+.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-block: var(--wp--preset--spacing--spacing-20, 16px);
+}
+
+
+.wp-block-navigation__responsive-container a:focus-visible,
+.wp-block-navigation__responsive-container .wp-block-navigation-item__content:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary-800);
+	outline-offset: 2px;
+	text-decoration: underline;
+}
+
+/* 8) Search block tidy */
+.wp-block-navigation__responsive-container .wp-block-search .wp-block-search__inside-wrapper {
+	width: 100%;
+}
+
+.wp-block-navigation__responsive-container .wp-block-search__input,
+.wp-block-navigation__responsive-container .wp-block-search__button {
+	line-height: 1.2;
+}
+
+/* 10) Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+	.wp-block-navigation__responsive-close,
+	.wp-block-navigation__responsive-dialog {
+		transition: none;
+	}
+}
+
+/* 11) Optional: scroll guard when open */
+@supports (overflow: clip) {
+	.wp-block-navigation__responsive-container.is-menu-open {
+		overscroll-behavior: contain;
+	}
+}
