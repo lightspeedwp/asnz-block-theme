@@ -521,19 +521,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	position: absolute;
 	top: 8px;
 	right: 8px;
-	inline-size: 44px;
-	block-size: 44px;
+	inline-size: 40px;
+	block-size: 40px;
 	color: var(--wp--preset--color--base);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: transparent;
 }
 
 .wp-block-navigation__responsive-container-close svg,
 .menu-container__close-button svg {
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 	display: inline-block;
 }
 
