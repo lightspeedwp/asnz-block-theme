@@ -474,16 +474,24 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 
-/* Only target Details blocks in .is-style-mobile-menu-details sections */
-.is-style-mobile-menu-details .wp-block-details summary {
+
+
+
+/* Scope only to Details blocks using your section style */
+.is-style-mobile-menu-details.wp-block-details summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	font-weight: 500 !important;
-	/* Ensure font-weight applies regardless of inline/editor styles */
 }
 
-.is-style-mobile-menu-details .wp-block-details summary .wp-block-details__icon {
+/* Target WP's rich text editable div inside summary for font weight */
+.is-style-mobile-menu-details.wp-block-details summary .rich-text,
+.is-style-mobile-menu-details.wp-block-details summary .block-editor-rich-text__editable {
+	font-weight: 500 !important;
+}
+
+/* If you have a custom icon inside summary (e.g. <span class="wp-block-details__icon">), push it right */
+.is-style-mobile-menu-details.wp-block-details summary .wp-block-details__icon {
 	margin-left: auto;
 }
 
