@@ -524,7 +524,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	inline-size: 44px;
 	block-size: 44px;
 	color: var(--wp--preset--color--base);
-	font-weight: 700;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -541,7 +540,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Responsive menu container top padding */
 .wp-block-navigation__responsive-container {
-	padding-top: var(--wp--preset--spacing--spacing-20) !important;
+	padding-top: 20px !important;
 }
 
 
