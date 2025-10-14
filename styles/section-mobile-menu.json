@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-mobile-menu",
+  "title": "Section Mobile Menu",
+  "blockTypes": ["core/group", "core/columns"],
+  "styles": {
+    "elements": {
+      "link": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      }
+    },
+    "blocks": {
+      "core/details": {
+        "typography": {
+          "fontWeight": "500"
+        }
+      }
+    },
+    "css": "& .wp-block-details{width:100%;display:flex;align-items:center;justify-content:space-between;} & .wp-block-details__icon{margin-left:auto;}"
+  }
+}
