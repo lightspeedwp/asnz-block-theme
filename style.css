@@ -523,11 +523,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	right: 8px;
 	inline-size: 44px;
 	block-size: 44px;
-	border: 0;
-	background: transparent;
 	display: grid;
-	place-items: center;
-	cursor: pointer;
 }
 
 .wp-block-navigation__responsive-container-close svg,
@@ -536,19 +532,3 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 24px;
 }
 
-.wp-block-navigation__responsive-container a:focus-visible,
-.wp-block-navigation__responsive-container .wp-block-navigation-item__content:focus-visible {
-	outline: 2px solid var(--wp--preset--color--primary-800);
-	outline-offset: 2px;
-	text-decoration: underline;
-}
-
-/* 8) Search block tidy */
-.wp-block-navigation__responsive-container .wp-block-search .wp-block-search__inside-wrapper {
-	width: 100%;
-}
-
-.wp-block-navigation__responsive-container .wp-block-search__input,
-.wp-block-navigation__responsive-container .wp-block-search__button {
-	line-height: 1.2;
-}
