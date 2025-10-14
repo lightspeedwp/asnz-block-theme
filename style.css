@@ -27,7 +27,7 @@ html {
 b, strong { font-weight: var(--wp--custom--font-weight--semi-bold); }
 
 
-/* Footer navigation hover (specific markup not covered in section-footer.json) */
+/* Footer navigation hover  */
 .is-style-section-footer nav.footer-nav a:hover,
 .is-style-section-footer nav.footer-nav a:focus-visible { color: var(--wp--preset--color--primary-800); }
 
@@ -147,10 +147,6 @@ a.more-link {
 	position: relative;
 }
 
-/* Taxonomy terms spacing at bottom of posts */
-.single .wp-block-group .wp-block-post-terms,
-.blog .wp-block-group .wp-block-post-terms { margin-bottom:-8px !important; }
-
 /* Archive term description trailing space removal */
 .wp-block-term-description p:last-child { margin-bottom:0; }
 
@@ -184,17 +180,6 @@ header:has(>.is-position-sticky){ position:sticky; top:calc(0px + var(--wp-admin
 }
 
 
-/*
- * Navigation Block: nav-hover style
- */
-nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover {
-	background: var(--wp--preset--color--primary-800) !important;
-	color: var(--wp--preset--color--base) !important;
-}
-
-nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover a {
-	color: var(--wp--preset--color--base) !important;
-}
 
 /* ========================================================================== */
 /* 5. Expanding Header Search                                                 */
@@ -274,28 +259,7 @@ nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__subm
 @media (max-width:600px){ .is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden){ width:260px; } }
 
 
-.wp-block-navigation .is-style-nav-hover li.current-menu-item {
-	color: var(--wp--preset--color--base) !important;
-	background: var(--wp--preset--color--primary-800) !important;
-}
 
-.wp-block-navigation .is-style-nav-hover li.current-menu-item a {
-	color: var(--wp--preset--color--base) !important;
-}
-
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container,
-nav.wp-block-navigation.is-style-nav-hover ul {
-	height: 100%;
-}
-
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-dialog,
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-close {
-	height: 100%;
-}
-
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
-	height: 100%;
-}
 
 /* Secondary Sticky Navigation (structural) */
 .is-style-section-secondary-sticky-nav { position:sticky; top:calc(var(--wp-admin--admin-bar--height,0px) + 0px); z-index:50; }
@@ -330,59 +294,99 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 /* Navigation: nav-hover layout & interactive states */
+
+/*
+ * Navigation Block: nav-hover style
+ */
+nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover {
+	background: var(--wp--preset--color--primary-800);
+	color: var(--wp--preset--color--base);
+}
+
+nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover a {
+	color: var(--wp--preset--color--base);
+}
+
 nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container {
-    display: flex;
+	display: flex;
 }
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item {
-    display: flex;
-    align-items: stretch;
-    height: 100%;
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container>li.wp-block-navigation-item {
+	display: flex;
+	align-items: stretch;
+	height: 100%;
 }
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > .wp-block-navigation-item__content,
-nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container > li.wp-block-navigation-item > button.wp-block-navigation-item__content {
-    display: flex;
-    align-items: center;
-    height: 100%;
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container>li.wp-block-navigation-item>.wp-block-navigation-item__content,
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__container>li.wp-block-navigation-item>button.wp-block-navigation-item__content {
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
+
 .wp-block-navigation.is-style-nav-hover li {
-    align-items: center;
-    padding: 0 12px;
-    transition: all 250ms ease;
-    display: flex;
-    height: 100%;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+	align-items: center;
+	padding: 0 12px;
+	transition: all 250ms ease;
+	display: flex;
+	height: 100%;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
 }
-.wp-block-navigation.is-style-nav-hover li > a {
-    text-decoration: none;
+
+.wp-block-navigation.is-style-nav-hover li>a {
+	text-decoration: none;
 }
+
 .wp-block-navigation.is-style-nav-hover li:hover,
 .wp-block-navigation.is-style-nav-hover li:focus-within {
-    background: var(--wp--preset--color--primary-800);
-    color: var(--wp--preset--color--base);
+	background: var(--wp--preset--color--primary-800);
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation .is-style-nav-hover li.current-menu-item {
+	color: var(--wp--preset--color--base);
+	background: var(--wp--preset--color--primary-800);
+}
+
+.wp-block-navigation .is-style-nav-hover li.current-menu-item a {
+	color: var(--wp--preset--color--base);
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container,
+nav.wp-block-navigation.is-style-nav-hover ul {
+	height: 100%;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-dialog,
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-close {
+	height: 100%;
+}
+
+nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+	height: 100%;
 }
 
 /* Submenu rows: remove inherited 12px padding */
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li {
-  padding: 0;
-  height: auto; /* avoid stretching submenu rows */
-  display: block; /* submenus usually stack */
+	padding: 0;
+	height: auto;
+	/* avoid stretching submenu rows */
+	display: block;
+	/* submenus usually stack */
 }
 
 /* If the padding lives on the link/button content (common in Navigation block), zero it */
-.wp-block-navigation.is-style-nav-hover
-  .wp-block-navigation__submenu-container
-  .wp-block-navigation-item__content {
-  padding: 0; 
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 0;
 }
 
 /* Neutralise hover in submenus */
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:hover,
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:focus-within {
-  background: transparent;
-  color: inherit;
+	background: transparent;
+	color: inherit;
 }
-
 
 
 
