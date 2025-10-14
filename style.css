@@ -477,7 +477,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/* Scope only to Details blocks using your section style */
+/* Mobile Menu Details block styling */
 /* Ensure the summary is styled as flex for layout */
 .wp-block-details.is-style-mobile-menu-details summary {
 	display: flex;
@@ -497,7 +497,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	margin-left: 0.5em;
 	background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
 	background-size: 24px 24px;
-	transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+	transition: transform 0.1s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 /* Flip the SVG icon when details is open */

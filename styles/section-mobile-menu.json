@@ -17,6 +17,14 @@
         "typography": {
           "fontWeight": "500 !important"
         }
+      },
+      "core/separator": {
+        "color": {
+          "background": "var:preset|color|tertiary-500"
+        },
+        "border": {
+          "width": "1px"
+        }
       }
     }
   }
