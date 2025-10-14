@@ -122,7 +122,7 @@
 			"fontSizes": [
 				{ "slug": "font-size-100", "size": "0.75rem", "name": "Tiny", "fluid": { "min": "0.7rem", "max": "0.75rem" } },
 				{ "slug": "font-size-200", "size": "1rem", "name": "Base", "fluid": { "min": "0.85rem", "max": "1rem" } },
-				{ "slug": "font-size-300", "size": "1.25rem", "name": "Small", "fluid": { "min": "0.9rem", "max": "1.25rem" } },
+				{ "slug": "font-size-300", "size": "1.25rem", "name": "Small", "fluid": { "min": "1.1rem", "max": "1.25rem" } },
 				{ "slug": "font-size-400", "size": "1.5rem", "name": "Medium", "fluid": { "min": "1.25rem", "max": "1.5rem" } },
 				{ "slug": "font-size-500", "size": "2rem", "name": "Large", "fluid": { "min": "1.6rem", "max": "2rem" } },
 				{ "slug": "font-size-600", "size": "2.5rem", "name": "X-Large", "fluid": { "min": "2.1rem", "max": "2.5rem" } },
