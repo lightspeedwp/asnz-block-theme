@@ -29,7 +29,9 @@ b, strong { font-weight: var(--wp--custom--font-weight--semi-bold); }
 
 /* Footer navigation hover  */
 .is-style-section-footer nav.footer-nav a:hover,
-.is-style-section-footer nav.footer-nav a:focus-visible { color: var(--wp--preset--color--primary-800); }
+.is-style-section-footer nav.footer-nav a:focus-visible { 
+	color: var(--wp--preset--color--primary-800); 
+}
 
 img,
 figure {
@@ -295,9 +297,7 @@ header:has(>.is-position-sticky){ position:sticky; top:calc(0px + var(--wp-admin
 
 /* Navigation: nav-hover layout & interactive states */
 
-/*
- * Navigation Block: nav-hover style
- */
+
 nav.wp-block-navigation.is-style-nav-hover .has-child .wp-block-navigation__submenu-container li:hover {
 	background: var(--wp--preset--color--primary-800);
 	color: var(--wp--preset--color--base);
@@ -367,26 +367,72 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 100%;
 }
 
-/* Submenu rows: remove inherited 12px padding */
-.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li {
-	padding: 0;
-	height: auto;
-	/* avoid stretching submenu rows */
+/* MEGA MENU NAV — text-only hover, no row backgrounds, no inherited padding */
+
+/* Base reset for inner mega menu navs */
+.wp-block-navigation.mega-menu-nav {
+	/* Kill theme block gap if present */
+	--wp--style--block-gap: 0;
+}
+
+/* Treat inner nav like a simple stacked list */
+.wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
 	display: block;
-	/* submenus usually stack */
 }
 
-/* If the padding lives on the link/button content (common in Navigation block), zero it */
-.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+/* Rows: no padding/height/background */
+.wp-block-navigation.mega-menu-nav li {
+	display: block;
+	height: auto;
 	padding: 0;
-}
-
-/* Neutralise hover in submenus */
-.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:hover,
-.wp-block-navigation.is-style-nav-hover .wp-block-navigation__submenu-container li:focus-within {
 	background: transparent;
 	color: inherit;
 }
+
+/* Links/buttons: minimal defaults */
+.wp-block-navigation.mega-menu-nav .wp-block-navigation-item__content {
+	display: inline-block;
+	padding: 0;
+	/* set to 6px 8px if you want a bigger click target */
+	background: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Text-only hover */
+.wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:hover,
+.wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus {
+	background: transparent;
+	color: var(--wp--preset--color--primary-800);
+}
+
+/* Belt & braces: neutralise any row hover that might bleed from parent nav */
+.wp-block-navigation.mega-menu-nav li:hover,
+.wp-block-navigation.mega-menu-nav li:focus-within {
+	background: transparent;
+	color: inherit;
+}
+
+/* If the parent nav uses is-style-nav-hover with broad li:hover rules, out-specific it */
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:hover,
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:focus-within {
+	background: transparent;
+	color: inherit;
+}
+
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:hover,
+.wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus {
+	background: transparent;
+	color: var(--wp--preset--color--primary-800);
+}
+
+/* Current item inside mega menu: text-only highlight (optional) */
+.wp-block-navigation.mega-menu-nav li.current-menu-item>a.wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary-800);
+	background: transparent;
+}
+
+
 
 
 
