@@ -495,7 +495,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	width: 24px;
 	height: 24px;
 	margin-left: 0.5em;
-	background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+	background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
 	background-size: 24px 24px;
 	transition: transform 0.1s cubic-bezier(0.7, 0, 0.3, 1);
 }
