@@ -519,6 +519,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-navigation__responsive-container-close,
 .menu-container__close-button {
 	position: absolute;
+	top: 8px;
+	right: 8px;
+
 	color: var(--wp--preset--color--base);
 	display: flex;
 	align-items: center;
