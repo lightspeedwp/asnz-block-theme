@@ -474,7 +474,18 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 
+/* Only target Details blocks in .is-style-mobile-menu-details sections */
+.is-style-mobile-menu-details .wp-block-details summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 500 !important;
+	/* Ensure font-weight applies regardless of inline/editor styles */
+}
 
+.is-style-mobile-menu-details .wp-block-details summary .wp-block-details__icon {
+	margin-left: auto;
+}
 
 
 
