@@ -478,24 +478,29 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 /* Scope only to Details blocks using your section style */
-.is-style-mobile-menu-details.wp-block-details summary {
+/* Ensure the summary is styled as flex for layout */
+.wp-block-details.is-style-mobile-menu-details summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-
-/* Target WP's rich text editable div inside summary for font weight */
-.is-style-mobile-menu-details.wp-block-details summary .rich-text,
-.is-style-mobile-menu-details.wp-block-details summary .block-editor-rich-text__editable {
 	font-weight: 500 !important;
+	position: relative;
+	cursor: pointer;
 }
 
-/* If you have a custom icon inside summary (e.g. <span class="wp-block-details__icon">), push it right */
-.is-style-mobile-menu-details.wp-block-details summary .wp-block-details__icon {
-	margin-left: auto;
+/* Inject SVG chevron icon via ::after pseudo-element */
+.wp-block-details.is-style-mobile-menu-details summary::after {
+	content: "";
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-left: 0.5em;
+	background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+	background-size: 24px 24px;
+	transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-
-
-
-
+/* Flip the SVG icon when details is open */
+.wp-block-details.is-style-mobile-menu-details[open] summary::after {
+	transform: rotate(180deg);
+}
