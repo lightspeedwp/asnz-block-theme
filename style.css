@@ -547,7 +547,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/*=== FacetWP — Search facets (all search types) ===*/
+/* FacetWP — Search facets (all search types) */
 
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
@@ -558,22 +558,23 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	margin-bottom: 0;
 	width: 100%;
 	min-width: 0;
-	flex-direction: row-reverse;
+	/* Remove flex-direction: row-reverse; */
 }
 
-/* Input: border only, stretches up to button */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
+/* Input: fill available space, stops before button */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
+	flex: 1 1 0;
+	min-width: 0;
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
-	display: inline-flex;
-	flex: 1 1 auto;
+	height: 50px;
+	box-sizing: border-box;
 }
 
-/* Icon/button: horizontal padding ONLY, no vertical */
+/* Icon/button: fixed height, horizontal padding ONLY */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
-	order: 2;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -583,9 +584,10 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 	opacity: 1;
 	filter: none;
-	flex: 0 0 auto;
 	padding-left: var(--wp--preset--spacing--spacing-10);
 	padding-right: var(--wp--preset--spacing--spacing-10);
+	height: 50px;
+	min-width: 50px;
 }
 
 /* Hover + keyboard focus */
@@ -595,7 +597,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	color: var(--wp--preset--color--base) !important;
 	outline: none;
 }
-
 
 /* FacetWP Sort Facet: Custom Styles */
 /* Target the sort facet container and select dropdown */
