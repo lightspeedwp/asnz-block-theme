@@ -557,7 +557,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	font-size: var(--wp--preset--font-size--font-size-300);
 	display: flex;
 	flex: 1 1 auto;
-	max-width: calc(100% - var(--wp--preset--spacing--spacing-50)); /* assumes button/icon is ~40px wide + padding */
 }
 
 /* Icon/button: horizontal padding ONLY, no vertical */
