@@ -550,7 +550,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* FacetWP — Search facets (all search types) */
 
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
-	margin-bottom: 0 !important;
+	margin-bottom: var(--wp--preset--spacing--spacing-20);;
+	gap: var(--wp--preset--spacing--spacing-10);
 	/* Remove excess bottom margin */
 }
 
