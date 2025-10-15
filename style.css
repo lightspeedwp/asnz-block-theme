@@ -516,12 +516,12 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Close button: base color + 2px primary-100 border, 20px higher */
 .wp-block-navigation__responsive-container.is-menu-open>.wp-block-navigation__responsive-close>.wp-block-navigation__responsive-dialog>.wp-block-navigation__responsive-container-close {
-	top: calc(-1 * var(--wp--preset--spacing--spacing-30));
+	top: calc(-1 * var(--wp--preset--spacing--spacing-40));
 	right: var(--wp--preset--spacing--spacing-20);
 	inline-size: 40px;
 	block-size: 40px;
 	display: flex;
-	align-items: top;
+	align-items: center;
 	justify-content: center;
 	background: transparent;
 	color: var(--wp--preset--color--base);
