@@ -521,7 +521,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	inline-size: 40px;
 	block-size: 40px;
 	display: flex;
-	align-items: center;
+	align-items: top;
 	justify-content: center;
 	background: transparent;
 	color: var(--wp--preset--color--base);
