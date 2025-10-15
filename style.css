@@ -547,47 +547,55 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/* FacetWP Search Facet: Fix input not stretching under icon/button */
+/*=== FacetWP — Search facets (all search types) ===*/
+
+/* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	background: var(--wp--preset--color--base);
 	gap: var(--wp--preset--spacing--spacing-10);
-	margin-bottom: 0 !important;
+	margin-bottom: 0;
 	width: 100%;
+	min-width: 0;
+	flex-direction: row-reverse;
 }
 
-/* Ensure the icon is sized and doesn't allow the input to stretch underneath */
+/* Input: border only, stretches up to button */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
+	border: 1px solid var(--wp--preset--color--tertiary-500);
+	border-radius: 4px;
+	font: inherit;
+	font-size: var(--wp--preset--font-size--font-size-300);
+	display: inline-flex;
+	flex: 1 1 auto;
+}
+
+/* Icon/button: horizontal padding ONLY, no vertical */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
-	width: 40px;
-	/* or your preferred size */
-	min-width: 40px;
-	height: 40px;
-	display: flex;
+	order: 2;
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 4px;
 	background: var(--wp--preset--color--cta-500);
 	color: var(--wp--preset--color--contrast);
-	margin-right: 0;
-	/* Since icon is first */
+	transition: background .2s ease, color .2s ease, transform .05s ease;
+	opacity: 1;
+	filter: none;
+	flex: 0 0 auto;
+	padding-left: var(--wp--preset--spacing--spacing-10);
+	padding-right: var(--wp--preset--spacing--spacing-10);
 }
 
-/* Input should fill the rest of the space, not overflow */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
-	flex: 1 1 0;
-	min-width: 0;
-	border: 1px solid var(--wp--preset--color--tertiary-500);
-	border-radius: 4px;
-	font: inherit;
-	font-size: var(--wp--preset--font-size--font-size-300);
-	height: 40px;
-	box-sizing: border-box;
+/* Hover + keyboard focus */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:focus-visible {
+	background: var(--wp--preset--color--cta-700);
+	color: var(--wp--preset--color--base) !important;
+	outline: none;
 }
 
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
-	margin-bottom: 0 !important;
-}
 
 /* FacetWP Sort Facet: Custom Styles */
 /* Target the sort facet container and select dropdown */
