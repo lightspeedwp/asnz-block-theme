@@ -527,6 +527,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	background: transparent;
 	color: var(--wp--preset--color--base);
 	border: 2px solid var(--wp--preset--color--primary-100);
+	border-radius: 2px;
 	box-sizing: border-box;
 	z-index: 10;
 }
@@ -542,4 +543,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close svg * {
 	fill: currentColor;
 	stroke: currentColor;
+}
+
+/* Keep the interior content from adding extra top space */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	padding-top: 0 !important;
 }
