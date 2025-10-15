@@ -514,17 +514,10 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
    Mobile menu (open)
    ================================ */
 
-/* Anchor for absolute positioning */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
-	position: relative;
-	/* enforce spacing-20 at the very top of the panel */
-	padding-top: var(--wp--preset--spacing--spacing-20) !important;
-}
-
-/* Place the close button at top-right with spacing-20 */
+/* Close button: base color + 2px primary-100 border, 20px higher */
 .wp-block-navigation__responsive-container.is-menu-open>.wp-block-navigation__responsive-close>.wp-block-navigation__responsive-dialog>.wp-block-navigation__responsive-container-close {
 	position: absolute;
-	top: var(--wp--preset--spacing--spacing-20);
+	top: calc(var(--wp--preset--spacing--spacing-20) - 20px);
 	right: var(--wp--preset--spacing--spacing-20);
 	inline-size: 44px;
 	block-size: 44px;
@@ -532,34 +525,21 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	justify-content: center;
 	background: transparent;
-	border: 0;
+	color: var(--wp--preset--color--base);
+	border: 2px solid var(--wp--preset--color--primary-100);
+	box-sizing: border-box;
 	z-index: 10;
-	/* above content */
 }
 
-/* Icon size (optional) */
+/* Ensure the SVG inherits the base color */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close svg {
 	width: 24px;
 	height: 24px;
+	display: inline-block;
 }
 
-/* Keep the interior content from adding extra top space */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
-	padding-top: 0 !important;
-}
-
-/* Nuke unexpected first-child margin/padding that can create extra gap */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content>*:first-child {
-	margin-top: 0 !important;
-	padding-top: 0 !important;
-}
-
-/* If any padded Group sneaks in first, flatten just its top */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content>.wp-block-group.has-global-padding:first-child {
-	padding-top: 0 !important;
-}
-
-/* Hide duplicate close buttons from desktop mega menus inside the panel */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-ollie-mega-menu__menu-container .menu-container__close-button {
-	display: none !important;
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close svg path,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close svg * {
+	fill: currentColor;
+	stroke: currentColor;
 }
