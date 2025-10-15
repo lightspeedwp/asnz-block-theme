@@ -367,8 +367,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	height: 100%;
 }
 
-/* MEGA MENU NAV — text-only hover, no row backgrounds, no inherited padding */
-
+/* Mega Menu Navigation Styling  */
 
 /* Treat inner nav like a simple stacked list */
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
@@ -413,15 +412,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* If the parent nav uses is-style-nav-hover with broad li:hover rules, out-specific it */
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:hover,
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:focus-within {
-	background: transparent;
-	color: inherit;
+	background: transparent !important;
+		color: inherit !important;
 }
 
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:hover,
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus {
-	background: transparent;
-	color: var(--wp--preset--color--primary-800);
-	text-decoration: underline;
+	background: transparent !important;
+	color: var(--wp--preset--color--primary-800) !important;
+	text-decoration: underline !important;
 }
 
 
