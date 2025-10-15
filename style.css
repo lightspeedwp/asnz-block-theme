@@ -537,10 +537,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/* =========================================
-   FacetWP — Search facets (all search types)
-   Scope: inside .wp-block-facetwp-facet, type=search only
-   ========================================= */
+/* FacetWP — Search facets (all search types) */
 
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
@@ -550,10 +547,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	padding: 8px 12px;
 	background: var(--wp--preset--color--base);
 	border-radius: 4px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+	/* CHANGES */
+	box-shadow: none;
+	/* remove shadow */
+	border: 1px solid var(--wp--preset--color--primary-100);
+	/* 1px pill border */
 }
 
-/* Text input fills remaining space */
+/* Text input fills the space */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
 	order: 1;
 	flex: 1;
@@ -566,7 +568,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 }
 
-/* Icon acts as CTA button */
+/* Icon as CTA button */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
@@ -579,6 +581,10 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	color: var(--wp--preset--color--contrast);
 	cursor: pointer;
 	transition: background .2s ease, color .2s ease, transform .05s ease;
+
+	/* CHANGES: prevent “faded” look from FacetWP defaults */
+	opacity: 1;
+	filter: none;
 }
 
 /* Hover + keyboard focus */
@@ -589,12 +595,12 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 }
 
-/* Tiny press feedback */
+/* Press feedback */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:active {
 	transform: translateY(1px);
 }
 
-/* Optional: remove default spacing that some themes add to facets */
+/* Optional: kill theme margins on this facet type */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
 	margin: 0;
 }
