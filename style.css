@@ -530,16 +530,10 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .menu-container__close-button svg {
 	width: 32px;
 	height: 32px;
+	inset: 2px;
+	border: 1px solid var(--wp--preset--color--base);
+	border-radius: 2px;
 	display: inline-block;
 }
-
-
-/* Trim unexpected top space inside the mobile panel */
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
-	padding-top: 0;
-	margin-top: 0;
-}
-
 
 
