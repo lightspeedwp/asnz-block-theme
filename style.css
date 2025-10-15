@@ -550,7 +550,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* FacetWP — Search facets (all search types) */
 
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
-	margin-bottom: var(--wp--preset--spacing--spacing-20);;
+	margin-bottom: var(--wp--preset--spacing--spacing-20);
 	gap: var(--wp--preset--spacing--spacing-10);
 	/* Remove excess bottom margin */
 }
@@ -563,7 +563,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	gap: var(--wp--preset--spacing--spacing-10);
 	width: 100%;
 	min-width: 0;
-	/* Remove flex-direction: row-reverse; */
+
 }
 
 /* Input: fill available space, stops before button */
