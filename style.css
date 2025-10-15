@@ -578,6 +578,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	flex: 0 0 auto;
 	padding-left: var(--wp--preset--spacing--spacing-10);
 	padding-right: var(--wp--preset--spacing--spacing-10);
+	width: var(--wp--preset--spacing--spacing-50);
 	min-height: 36px;
 	/* Ensures padding is visible */
 	line-height: 1;
