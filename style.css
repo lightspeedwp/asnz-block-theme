@@ -545,19 +545,40 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	gap: var(--wp--preset--spacing--10);
 	background: var(--wp--preset--color--base);
+
+	/* ensure no wrapper border/extra spacing */
+	border: 0;
+	padding: 0;
+	box-shadow: none;
 }
 
-/* Text input fills the space */
+/* Text input fills the space (border only on the input) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
 	order: 1;
 	flex: 1;
 	width: 100%;
-	border-radius: 4px;
+
+	/* the visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
+	border-radius: 4px;
+
+	/* remove the “tiny gap” and align with the button */
+	height: 40px;
+	/* match button block-size */
+	padding: 0 12px;
+	/* no vertical padding to avoid extra height */
+	line-height: 40px;
+	/* keeps text vertically centered */
+	margin: 0;
+	/* kill any default margins */
+	box-sizing: border-box;
+
 	background: transparent;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
 /* Icon as CTA button */
@@ -574,7 +595,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	cursor: pointer;
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 
-	/* CHANGES: prevent “faded” look from FacetWP defaults */
+	/* prevent any muted defaults */
 	opacity: 1;
 	filter: none;
 }
@@ -586,7 +607,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	color: var(--wp--preset--color--base);
 	outline: none;
 }
-
 
 /* Optional: kill theme margins on this facet type */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
