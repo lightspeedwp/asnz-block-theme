@@ -557,7 +557,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	display: inline-flexbox;
-	flex: 1 1 0%;
+	flex: 1 1 auto;
 }
 
 /* Icon/button: horizontal padding ONLY, no vertical */
