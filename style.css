@@ -563,14 +563,14 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Input: fill available space, stops before button */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
-	width: calc(100% - 50px - var(--wp--preset--spacing--spacing-10));
+	flex: 1 1 0;
+	min-width: 0;
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	height: 50px;
 	box-sizing: border-box;
-	align-items: center;
 }
 
 /* Icon/button: fixed height, horizontal padding ONLY */
