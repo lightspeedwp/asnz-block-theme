@@ -423,7 +423,18 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	text-decoration: underline !important;
 }
 
+.wp-block-navigation.mega-menu-nav li:focus,
+.wp-block-navigation.mega-menu-nav li:focus-visible {
+	background: transparent !important;
+	color: inherit !important;
+}
 
+.wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus,
+.wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus-visible {
+	background: transparent !important;
+	color: var(--wp--preset--color--primary-800) !important;
+	text-decoration: underline !important;
+}
 
 
 /* Center content utility */
