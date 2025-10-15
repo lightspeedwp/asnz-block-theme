@@ -556,7 +556,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
-	display: inline-flexbox;
+	display: inline-flex;
 	flex: 1 1 auto;
 }
 
