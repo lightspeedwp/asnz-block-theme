@@ -543,9 +543,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: flex;
 	align-items: center;
-	gap: var(--wp--preset--spacing--10);
+	gap: var(--wp--preset--spacing--spacing-10);
 	background: var(--wp--preset--color--base);
-	margin-bottom: var(--wp--preset--spacing--20);
+	margin-bottom: var(--wp--preset--spacing--spacing-20);
 }
 
 /* Text input fills the space (border only on the input) */
@@ -569,7 +569,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
-	width: 4rem;
+	padding-left: var(--wp--preset--spacing--spacing-10);
+	padding-right: var(--wp--preset--spacing--spacing-10);
 	align-items: center;
 	justify-content: center;
 	border-radius: 4px;
