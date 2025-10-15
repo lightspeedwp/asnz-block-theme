@@ -19,7 +19,7 @@
  */
 ?>
 <!-- wp:group {"metadata":{"name":"Header Wrapper"},"align":"full","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"0"},"border":{"bottom":{"color":"var:preset|color|tertiary-500","width":"1px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--tertiary-500);border-bottom-width:1px;padding-top:0;padding-bottom:0"><!-- wp:group {"metadata":{"name":"Top Utility Bar"},"align":"full","className":"has-base-color has-text-color has-link-color is-style-section-top-header","layout":{"type":"constrained","justifyContent":"right"}} -->
+<div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--tertiary-500);border-bottom-width:1px;padding-top:0;padding-bottom:0"><!-- wp:group {"metadata":{"name":"Top Utility Bar"},"align":"full","className":"has-base-color has-text-color has-link-color is-style-section-top-header","layout":{"type":"constrained","justifyContent":"right"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"browserDevice":{"ruleSets":[{"enable":true,"rules":[{"field":"deviceType","operator":"any","value":["mobile"]}]}],"hideOnRuleSets":true}}}]}} -->
 <div class="wp-block-group alignfull has-base-color has-text-color has-link-color is-style-section-top-header"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-30"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|spacing-10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:outermost/icon-block {"iconName":"","label":"Book an Appointment","width":24} -->
@@ -27,7 +27,7 @@
 <!-- /wp:outermost/icon-block -->
 
 <!-- wp:paragraph -->
-<p><a href="#">Book an Appointment</a></p>
+<p><a href="/book-an-appointment/">Book an Appointment</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -37,7 +37,7 @@
 <!-- /wp:outermost/icon-block -->
 
 <!-- wp:paragraph -->
-<p><a href="#">Travel Agents</a></p>
+<p><a href="/travel-agent-enquiries/" data-type="page" data-id="30730">Travel Agents</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -47,7 +47,7 @@
 <!-- /wp:outermost/icon-block -->
 
 <!-- wp:paragraph -->
-<p><a href="#">Newsletter</a></p>
+<p><a href="/newsletter-sign-up/" data-type="page" data-id="18918">Newsletter</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -71,9 +71,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:buttons {"style":{"layout":{"selfStretch":"fixed","flexSize":""}},"layout":{"type":"flex","orientation":"horizontal"}} -->
+<!-- wp:buttons {"style":{"layout":{"selfStretch":"fixed","flexSize":""}},"layout":{"type":"flex","orientation":"horizontal","justifyContent":"left"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-top-header cta-button-hover"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-top-header cta-button-hover"><a class="wp-block-button__link wp-element-button">Enquire Now</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-top-header cta-button-hover"><a class="wp-block-button__link wp-element-button" href="/contact/">Enquire Now</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -84,10 +84,12 @@
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--spacing-30);padding-bottom:var(--wp--preset--spacing--spacing-30)"><!-- wp:site-logo {"width":180,"shouldSyncIcon":false} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"ref":4,"openSubmenusOnClick":true,"metadata":{"name":"Primary Navigation"},"className":"is-style-nav-hover","style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","justifyContent":"center"}} /-->
+<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center","justifyContent":"left"}} -->
+<div class="wp-block-group"><!-- wp:navigation {"ref":32427,"openSubmenusOnClick":true,"icon":"menu","metadata":{"name":"Primary Navigation"},"className":"is-style-nav-hover","style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"0"}},"layout":{"type":"flex","justifyContent":"center"},"mobileMenuSlug":"mobile-menu-2","mobileMenuBackgroundColor":"primary-800"} /--></div>
+<!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Search"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","widthUnit":"px","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"className":"is-style-header-search"} /--></div>
+<!-- wp:group {"metadata":{"name":"Search"},"layout":{"type":"flex","flexWrap":"nowrap"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"browserDevice":{"ruleSets":[{"enable":true,"rules":[{"field":"deviceType","operator":"any","value":["mobile"]}]}],"hideOnRuleSets":true}}}]}} -->
+<div class="wp-block-group"><!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","widthUnit":"px","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"className":"is-style-header-search","blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":[]}]}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
