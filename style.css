@@ -545,16 +545,13 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
 	background: var(--wp--preset--color--base);
-	margin-bottom: var(--wp--preset--spacing--spacing-20);
+	margin-bottom: var(--wp--preset--spacing--spacing-10);
 }
 
 /* Text input fills the space (border only on the input) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
-	margin: 0;
-	/* kill any default margins */
-	box-sizing: border-box;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
@@ -580,6 +577,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:hover,
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:focus-visible {
 	background: var(--wp--preset--color--cta-700);
-	color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--base) !important;
 	outline: none;
 }
