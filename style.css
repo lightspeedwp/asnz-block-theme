@@ -569,7 +569,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Input: fill available space, stops before button */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	flex-grow: 1;
-	max-width: calc(100% - 50px - var(--wp--preset--spacing--spacing-10));
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
