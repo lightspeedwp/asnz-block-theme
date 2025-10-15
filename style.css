@@ -548,7 +548,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 /* Text input fills the space (border only on the input) */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [inputtype="text"] {
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
 	order: 1;
 	flex: 1;
 	width: 100%;
@@ -556,6 +556,14 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* the visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
+
+	/* match button block-size */
+	padding: 0 12px;
+	/* no vertical padding to avoid extra height */
+	line-height: 40px;
+	/* keeps text vertically centered */
+	margin: 0;
+	/* kill any default margins */
 	box-sizing: border-box;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
