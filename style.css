@@ -537,29 +537,40 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/* FacetWP — Search facets (all search types) */
+/*=== FacetWP — Search facets (all search types) ===*/
 
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: flex;
 	align-items: center;
-	gap: var(--wp--preset--spacing--10);
+	gap: var(--wp--preset--spacing--spacing-10) !important;
+	/* enforce spacing-10 */
 	background: var(--wp--preset--color--base);
+	padding: 0;
+	/* remove internal padding that adds extra space */
+	border: 0;
+	/* ensure no wrapper border */
+	box-shadow: none;
 }
 
 /* Text input fills the space (border only on the input) */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
 	order: 1;
 	flex: 1;
 	width: 100%;
 
-	/* the visible border belongs to the input only */
+	/* visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
-	/* keeps text vertically centered */
+
+	/* make height match the button; no vertical gaps */
+	height: 40px;
+	line-height: 40px;
+	padding: 0 12px;
 	margin: 0;
-	/* kill any default margins */
 	box-sizing: border-box;
+
+	background: transparent;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
@@ -567,18 +578,27 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	-webkit-appearance: none;
 }
 
-/* Icon as CTA button */
+/* Icon as CTA button (square) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+
+	inline-size: 40px;
+	/* square button */
+	block-size: 40px;
+	/* square button */
+	margin: 0;
+	/* prevent extra gap from margins */
+
 	border-radius: 4px;
 	background: var(--wp--preset--color--cta-500);
 	color: var(--wp--preset--color--contrast);
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 	opacity: 1;
 	filter: none;
+	cursor: pointer;
 }
 
 /* Hover + keyboard focus */
@@ -587,4 +607,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	background: var(--wp--preset--color--cta-700);
 	color: var(--wp--preset--color--base);
 	outline: none;
+}
+
+/* Optional: kill theme margins on this facet type */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
+	margin: 0;
 }
