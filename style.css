@@ -550,11 +550,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Text input fills the space (border only on the input) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
+	flex: 1 1 auto;
+	width: 100%;
+	min-width: 0;
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
+
 }
 
 /* Icon as CTA button */
