@@ -602,16 +602,12 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* 2) Target the actual input element so it truly stretches */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
-	flex: 1 1 auto;
-	width: calc(100% - var(--wp--preset--spacing--spacing-50));
+	width: auto !important;
+	/* don’t force 100% inside flex */
+	flex: 1 1 0%;
+	/* take remaining space, stop before button */
 	min-width: 0;
-	/* overrides any global input max-width */
-	display: block;
-
-	/* mirror your border settings onto the real input, without changing your rule above */
-	border: 1px solid var(--wp--preset--color--tertiary-500);
-	border-radius: 4px;
-	font: inherit;
-	font-size: var(--wp--preset--font-size--font-size-300);
-	outline: none;
+	/* allow shrinking in tight layouts */
+	box-sizing: border-box;
+	/* include the 1px border in its width */
 }
