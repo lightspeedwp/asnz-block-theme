@@ -544,15 +544,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	display: flex;
 	align-items: center;
 	gap: var(--wp--preset--spacing--10);
-	padding: 8px 12px;
 	background: var(--wp--preset--color--base);
-	border-radius: 4px;
-
-	/* CHANGES */
-	box-shadow: none;
-	/* remove shadow */
-	border: 1px solid var(--wp--preset--color--primary-100);
-	/* 1px pill border */
 }
 
 /* Text input fills the space */
@@ -560,11 +552,11 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	order: 1;
 	flex: 1;
 	width: 100%;
-	border: 0;
+	border-radius: 4px;
+	border: 1px solid var(--wp--preset--color--tertiary-500);
 	background: transparent;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
-	padding: 8px 0;
 	outline: none;
 }
 
@@ -595,10 +587,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 }
 
-/* Press feedback */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:active {
-	transform: translateY(1px);
-}
 
 /* Optional: kill theme margins on this facet type */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
