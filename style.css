@@ -542,10 +542,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: inline-flex;
-	/* For span containers */
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
-	/* Always spacing-10 between input & button */
 	background: var(--wp--preset--color--base);
 	margin-bottom: 0;
 	width: 100%;
@@ -561,7 +559,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 	display: block;
 	flex: 1 1 0%;
-	/* Stretch input, but stop at button */
 	min-width: 0;
 	width: auto !important;
 	box-sizing: border-box;
@@ -582,7 +579,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	flex: 0 0 auto;
 	padding-left: var(--wp--preset--spacing--spacing-10);
 	padding-right: var(--wp--preset--spacing--spacing-10);
-	/* No vertical padding */
+	min-height: 36px;
+	/* Ensures padding is visible */
+	line-height: 1;
 }
 
 /* Hover + keyboard focus */
