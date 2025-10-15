@@ -543,7 +543,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: inline-flex;
 	align-items: center;
-	gap: var(--wp--preset--spacing--spacing-10);
+	gap: var(--wp--preset--spacing--spacing-50);
 	background: var(--wp--preset--color--base);
 	margin-bottom: 0;
 	width: 100%;
