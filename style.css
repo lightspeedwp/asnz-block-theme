@@ -560,7 +560,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	display: inline-flex;
 	align-items: center;
 	background: var(--wp--preset--color--base);
-	gap: var(--wp--preset--spacing--spacing-10);
 }
 
 /* Input: fill available space, stops before button */
