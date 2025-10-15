@@ -547,7 +547,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	gap: var(--wp--preset--spacing--spacing-10);
 	/* Always spacing-10 between input & button */
 	background: var(--wp--preset--color--base);
-	margin-bottom: var(--wp--preset--spacing--spacing-10);
+	margin-bottom: 0;
 	width: 100%;
 	min-width: 0;
 }
