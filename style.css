@@ -545,15 +545,14 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* For span containers */
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
-	/* Space between input & icon */
+	/* Always spacing-10 between input & button */
 	background: var(--wp--preset--color--base);
 	margin-bottom: var(--wp--preset--spacing--spacing-10);
 	width: 100%;
 	min-width: 0;
-	/* Allow children to shrink/grow */
 }
 
-/* Text input fills the space (border only on the input) */
+/* Input: border only, stretches up to button */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
@@ -562,12 +561,13 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 	display: block;
 	flex: 1 1 0%;
+	/* Stretch input, but stop at button */
 	min-width: 0;
 	width: auto !important;
 	box-sizing: border-box;
 }
 
-/* Icon as CTA button */
+/* Icon/button: horizontal padding ONLY, no vertical */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
@@ -580,14 +580,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	opacity: 1;
 	filter: none;
 	flex: 0 0 auto;
-	min-width: 36px;
-	/* ADDED: sensible minimum width */
-	height: 36px;
-	/* ADDED: sensible height for button */
-	padding: 0 12px;
-	/* ADDED: horizontal padding for button */
-	font-size: 1.2em;
-	/* Optional: size up icon if needed */
+	padding-left: var(--wp--preset--spacing--spacing-10);
+	padding-right: var(--wp--preset--spacing--spacing-10);
+	/* No vertical padding */
 }
 
 /* Hover + keyboard focus */
@@ -598,10 +593,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	outline: none;
 }
 
-/* ------------------------- */
-/* MINIMAL ADDITIONS ONLY    */
-/* ------------------------- */
-
+/* Theme compatibility: allow flex children to shrink/grow */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	min-width: 0;
 }
