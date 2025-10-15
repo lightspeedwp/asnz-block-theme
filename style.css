@@ -562,7 +562,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 /* Input: fill available space, stops before button */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	flex: 1 1 0;
 	min-width: 0;
 	border: 1px solid var(--wp--preset--color--tertiary-500);
@@ -594,9 +594,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:hover,
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:focus-visible {
 	background: var(--wp--preset--color--cta-700);
-	color: var(--wp--preset--color--base) !important;
 	outline: none;
 }
+
 
 /* FacetWP Sort Facet: Custom Styles */
 /* Target the sort facet container and select dropdown */
