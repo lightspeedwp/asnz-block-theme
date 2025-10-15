@@ -535,3 +535,57 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	padding-top: var(--wp--preset--spacing--spacing-20);
 }
 
+
+
+/*=== FacetWP Search Bar — Styled from Figma Frame ===*/
+.facet-wrap.wp-block-facetwp-facet {
+	display: flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--30);
+	padding: 8px 16px;
+	background: var(--wp--preset--color--base);
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.facetwp-input-wrap {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	background: var(--wp--preset--color--base);
+	border-radius: 4px;
+	padding: 0 var(--wp--preset--spacing--10);
+}
+
+.facetwp-search {
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	font-size: var(--wp--preset--font-size--font-size-300);
+	padding: 8px 0;
+	outline: none;
+	width: 100%;
+}
+
+.facetwp-icon {
+	color: var(--wp--preset--color--base);
+	font-size: var(--wp--preset--font-size--font-size-300);
+}
+
+/* CTA Button Styling */
+.facetwp-facet .facetwp-search+button,
+.facetwp-facet .facetwp-search[type="submit"] {
+	background: var(--wp--preset--color--cta-500);
+	color: var(--wp--preset--color--contrast);
+	border: none;
+	border-radius: 4px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+
+.facetwp-facet .facetwp-search+button:hover,
+.facetwp-facet .facetwp-search[type="submit"]:hover {
+	background: var(--wp--preset--color--cta-700);
+	color: var(--wp--preset--color--base);
+}
