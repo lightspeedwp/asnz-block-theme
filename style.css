@@ -545,21 +545,26 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
 	background: var(--wp--preset--color--base);
-	margin-bottom: var(--wp--preset--spacing--spacing-10) !important;
+	margin-bottom: var(--wp--preset--spacing--spacing-10);
+
+	/* NEW: let the wrap span the full row so the input can grow */
+	width: 100%;
 }
 
 /* Text input fills the space (border only on the input) */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
-	flex: 1 1 auto;
-	padding: var(--wp--preset--spacing--spacing-10) !important;
-	width: 100%;
-	min-width: 0;
-	border: 1px solid var(--wp--preset--color--tertiary-500) !important;
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap .facetwp-search {
+	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
 
+	/* NEW: ensure it stretches, even if themes set fixed widths */
+	flex: 1 1 auto;
+	width: 100%;
+	min-width: 0;
+	max-width: none;
+	display: block;
 }
 
 /* Icon as CTA button */
@@ -576,6 +581,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 	opacity: 1;
 	filter: none;
+
+	/* (Optional but safe) prevent icon from growing/shrinking */
+	flex: 0 0 auto;
 }
 
 /* Hover + keyboard focus */
