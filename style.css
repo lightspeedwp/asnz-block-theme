@@ -541,31 +541,30 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
-	display: flex;
+	display: inline-flex;
+	/* FIX: support span as flex container */
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
 	background: var(--wp--preset--color--base);
 	margin-bottom: var(--wp--preset--spacing--spacing-10);
 	width: 100%;
+	min-width: 0;
+	/* ensure flex children can shrink/grow */
 }
 
 /* Text input fills the space (border only on the input) */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap .facetwp-search [input] {
+/* FIX: Remove incorrect selector, use direct child selector */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
-	/* NEW: ensure it stretches, even if themes set fixed widths */
 	display: block;
 	width: auto !important;
-	/* don’t force 100% inside flex */
 	flex: 1 1 0%;
-	/* take remaining space, stop before button */
 	min-width: 0;
-	/* allow shrinking in tight layouts */
 	box-sizing: border-box;
-	/* include the 1px border in its width */
 }
 
 /* Icon as CTA button */
@@ -599,19 +598,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* MINIMAL ADDITIONS ONLY    */
 /* ------------------------- */
 
-/* 1) Allow children to shrink/grow properly in some themes */
+/* Redundant with above but explicit for theme compatibility */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	min-width: 0;
-}
-
-/* 2) Target the actual input element so it truly stretches */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
-	width: auto !important;
-	/* don’t force 100% inside flex */
-	flex: 1 1 0%;
-	/* take remaining space, stop before button */
-	min-width: 0;
-	/* allow shrinking in tight layouts */
-	box-sizing: border-box;
-	/* include the 1px border in its width */
 }
