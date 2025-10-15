@@ -549,14 +549,17 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* FacetWP — Search facets (all search types) */
 
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
+	margin-bottom: 0 !important;
+	/* Remove excess bottom margin */
+}
+
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: inline-flex;
 	align-items: center;
 	background: var(--wp--preset--color--base);
 	gap: var(--wp--preset--spacing--spacing-10);
-	margin-bottom: 0 !important;
-	padding-bottom: var(--wp--preset--spacing--spacing-20);
 	width: 100%;
 	min-width: 0;
 	/* Remove flex-direction: row-reverse; */
