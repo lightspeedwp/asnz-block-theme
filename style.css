@@ -547,38 +547,31 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 
 
-/* FacetWP Search Facet: Fix input + icon layout and spacing */
+/*=== FacetWP — Search facets (all search types) ===*/
 
-/* 1. Ensure input and icon are side-by-side, icon rightmost */
+/* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: inline-flex;
 	align-items: center;
 	background: var(--wp--preset--color--base);
 	gap: var(--wp--preset--spacing--spacing-10);
-	margin-bottom: 0 !important;
-	width: auto;
-	/* Prevents stretching across full width */
+	margin-bottom: 0;
+	width: 100%;
 	min-width: 0;
-	flex-wrap: nowrap;
 	flex-direction: row-reverse;
-	/* Put icon to the right */
 }
 
-/* 2. Input: fill available space, but don't overflow */
+/* Input: border only, stretches up to button */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
-	flex: 1 1 180px;
-	/* reasonable min width */
-	min-width: 120px;
-	max-width: 300px;
-	/* adjust as needed */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	display: inline-flex;
+	flex: 1 1 auto;
 }
 
-/* 3. Icon/button: keep right, prevent wrapping */
+/* Icon/button: horizontal padding ONLY, no vertical */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
@@ -593,13 +586,14 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	flex: 0 0 auto;
 	padding-left: var(--wp--preset--spacing--spacing-10);
 	padding-right: var(--wp--preset--spacing--spacing-10);
-	margin-left: 0.5em;
-	/* Space between input and icon */
 }
 
-/* 4. Remove any extra margin below the search facet */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
-	margin-bottom: 0 !important;
+/* Hover + keyboard focus */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon:focus-visible {
+	background: var(--wp--preset--color--cta-700);
+	color: var(--wp--preset--color--base) !important;
+	outline: none;
 }
 
 
