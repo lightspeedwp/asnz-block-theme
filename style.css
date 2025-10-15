@@ -548,7 +548,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 /* Text input fills the space (border only on the input) */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search {
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [inputtype="text"] {
 	order: 1;
 	flex: 1;
 	width: 100%;
