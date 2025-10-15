@@ -541,6 +541,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
+	display: flex;
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
 	background: var(--wp--preset--color--base);
@@ -549,6 +550,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Text input fills the space (border only on the input) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
+	flex: 1 1 auto;
 	padding: var(--wp--preset--spacing--spacing-10) !important;
 	width: 100%;
 	min-width: 0;
