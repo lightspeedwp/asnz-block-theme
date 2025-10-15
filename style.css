@@ -546,7 +546,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	background: var(--wp--preset--color--base);
 	gap: var(--wp--preset--spacing--spacing-10);
 	margin-bottom: 0;
-	width: 100%;
 	min-width: 0;
 }
 
@@ -556,8 +555,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
-	display: inline-flex;
 	flex: 1 1 auto;
+	min-width: 0;
 }
 
 /* Icon/button: horizontal padding ONLY, no vertical */
