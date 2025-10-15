@@ -556,11 +556,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* the visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
-
-	/* match button block-size */
-	padding: 0 12px;
-	/* no vertical padding to avoid extra height */
-	line-height: 40px;
 	/* keeps text vertically centered */
 	margin: 0;
 	/* kill any default margins */
@@ -578,14 +573,10 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	inline-size: 40px;
-	block-size: 40px;
 	border-radius: 4px;
 	background: var(--wp--preset--color--cta-500);
 	color: var(--wp--preset--color--contrast);
 	transition: background .2s ease, color .2s ease, transform .05s ease;
-
-	/* prevent any muted defaults */
 	opacity: 1;
 	filter: none;
 }
@@ -596,9 +587,4 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	background: var(--wp--preset--color--cta-700);
 	color: var(--wp--preset--color--base);
 	outline: none;
-}
-
-/* Optional: kill theme margins on this facet type */
-.wp-block-facetwp-facet .facetwp-facet.facetwp-type-search {
-	margin: 0;
 }
