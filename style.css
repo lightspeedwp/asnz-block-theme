@@ -542,18 +542,18 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Input wrap: pill/container */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap {
 	display: inline-flex;
-	/* FIX: support span as flex container */
+	/* For span containers */
 	align-items: center;
 	gap: var(--wp--preset--spacing--spacing-10);
+	/* Space between input & icon */
 	background: var(--wp--preset--color--base);
 	margin-bottom: var(--wp--preset--spacing--spacing-10);
 	width: 100%;
 	min-width: 0;
-	/* ensure flex children can shrink/grow */
+	/* Allow children to shrink/grow */
 }
 
 /* Text input fills the space (border only on the input) */
-/* FIX: Remove incorrect selector, use direct child selector */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
@@ -571,8 +571,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-icon {
 	order: 2;
 	display: inline-flex;
-	padding-left: var(--wp--preset--spacing--spacing-10);
-	padding-right: var(--wp--preset--spacing--spacing-10);
+	/* Remove extra left/right padding, gap handles spacing */
+	padding: 0;
 	align-items: center;
 	justify-content: center;
 	border-radius: 4px;
@@ -581,8 +581,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 	opacity: 1;
 	filter: none;
-
-	/* (Optional but safe) prevent icon from growing/shrinking */
 	flex: 0 0 auto;
 }
 
