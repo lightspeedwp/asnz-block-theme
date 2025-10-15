@@ -545,11 +545,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	gap: var(--wp--preset--spacing--10);
 	background: var(--wp--preset--color--base);
-
-	/* ensure no wrapper border/extra spacing */
-	border: 0;
-	padding: 0;
-	box-shadow: none;
 }
 
 /* Text input fills the space (border only on the input) */
@@ -561,19 +556,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* the visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
-
-	/* remove the “tiny gap” and align with the button */
-	height: 40px;
-	/* match button block-size */
-	padding: 0 12px;
-	/* no vertical padding to avoid extra height */
-	line-height: 40px;
-	/* keeps text vertically centered */
-	margin: 0;
-	/* kill any default margins */
 	box-sizing: border-box;
-
-	background: transparent;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
 	outline: none;
@@ -592,7 +575,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	border-radius: 4px;
 	background: var(--wp--preset--color--cta-500);
 	color: var(--wp--preset--color--contrast);
-	cursor: pointer;
 	transition: background .2s ease, color .2s ease, transform .05s ease;
 
 	/* prevent any muted defaults */
