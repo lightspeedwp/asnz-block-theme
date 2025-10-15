@@ -550,11 +550,6 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 /* Text input fills the space (border only on the input) */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-search [input] {
-	order: 1;
-	flex: 1;
-	width: 100%;
-
-	/* the visible border belongs to the input only */
 	border: 1px solid var(--wp--preset--color--tertiary-500);
 	border-radius: 4px;
 	margin: 0;
