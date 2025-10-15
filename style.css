@@ -604,9 +604,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* 2) Target the actual input element so it truly stretches */
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-search .facetwp-input-wrap>input.facetwp-search {
 	flex: 1 1 auto;
-	width: 100%;
+	width: calc(100% - var(--wp--preset--spacing--spacing-50));
 	min-width: 0;
-	max-width: none !important;
 	/* overrides any global input max-width */
 	display: block;
 
