@@ -397,16 +397,16 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Text-only hover */
 .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:hover,
 .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:focus {
-	background: transparent;
-	color: var(--wp--preset--color--primary-800);
-	text-decoration: underline;
+	background: transparent !important;
+	color: var(--wp--preset--color--primary-800) !important;
+	text-decoration: underline !important;
 }
 
 /* Belt & braces: neutralise any row hover that might bleed from parent nav */
 .wp-block-navigation.mega-menu-nav li:hover,
 .wp-block-navigation.mega-menu-nav li:focus-within {
 	background: transparent !important;
-		color: inherit !important;
+	color: inherit !important;
 }
 
 /* If the parent nav uses is-style-nav-hover with broad li:hover rules, out-specific it */
