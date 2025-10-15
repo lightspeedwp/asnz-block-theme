@@ -555,8 +555,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	border-radius: 4px;
 	font: inherit;
 	font-size: var(--wp--preset--font-size--font-size-300);
-	outline: none;
-	box-sizing: border-box;
+	display: stretch;
 }
 
 /* Icon/button: horizontal padding ONLY, no vertical */
