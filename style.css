@@ -405,15 +405,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 /* Belt & braces: neutralise any row hover that might bleed from parent nav */
 .wp-block-navigation.mega-menu-nav li:hover,
 .wp-block-navigation.mega-menu-nav li:focus-within {
-	background: transparent;
-	color: inherit;
+	background: transparent !important;
+		color: inherit !important;
 }
 
 /* If the parent nav uses is-style-nav-hover with broad li:hover rules, out-specific it */
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:hover,
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav li:focus-within {
 	background: transparent !important;
-		color: inherit !important;
+	color: inherit !important;
 }
 
 .wp-block-navigation.is-style-nav-hover .wp-block-navigation.mega-menu-nav a.wp-block-navigation-item__content:hover,
