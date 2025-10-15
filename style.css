@@ -555,7 +555,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	align-items: center;
 	background: var(--wp--preset--color--base);
 	gap: var(--wp--preset--spacing--spacing-10);
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
+	padding-bottom: var(--wp--preset--spacing--spacing-20);
 	width: 100%;
 	min-width: 0;
 	/* Remove flex-direction: row-reverse; */
