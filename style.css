@@ -652,3 +652,15 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 		background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 	}
 }
+
+
+/* Facet Slider styling */
+.wp-block-facetwp-facet .facetwp-slider .noUi-base {
+	background: var(--wp--preset--color--neutral-100);
+}
+
+.wp-block-facetwp-facet .facetwp-slider .noUi-connect {
+	background: var(--wp--preset--color--primary-500) !important;
+	opacity: 1 !important;
+	filter: none !important;
+}
