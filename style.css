@@ -618,7 +618,7 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* Remove border */
 	background-color: var(--wp--preset--color--base);
 	/* Optional: keep background white */
-	padding-right: 4rem;
+	padding-right: 3.5rem;
 	/* Space for the chevron icon */
 	appearance: none;
 	/* Remove default arrow */
@@ -631,8 +631,8 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 .wp-block-facetwp-facet .facetwp-facet.facetwp-type-sort select {
 	background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="%23090909" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 	background-repeat: no-repeat;
-	background-position: right 0.8em center;
-	background-size: 1.2em 1.2em;
+	background-position: right 0.8rem center;
+	background-size: 1.5rem 1.5rem;
 }
 
 /* For better vertical alignment, optionally set line-height */
@@ -661,4 +661,109 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 
 .wp-block-facetwp-facet .facetwp-slider .noUi-connect {
 	background: var(--wp--preset--color--primary-500);
+}
+
+/* FacetWP Pagination (block theme design system) */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-pager {
+	display: flex;
+	justify-content: space-between;
+	/* Center pagination row */
+	align-items: center;
+	gap: 4px;
+	/* 4px gap between squares */
+	margin-bottom: 0;
+	flex-wrap: wrap;
+}
+
+/* Page numbers: square, spacing-40, 2px radius, centered text */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 500;
+	text-align: center;
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--primary-500);
+	border: none;
+	transition: background .15s, color .15s;
+	box-sizing: border-box;
+	padding: var(--wp--preset--spacing--spacing-10) var(--wp--preset--spacing--spacing-20);
+	margin: 0;
+	text-decoration: none;
+}
+
+/* Dots (ellipsis) */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.dots {
+	background: transparent !important;
+	color: var(--wp--preset--color--primary-500) !important;
+	pointer-events: none;
+	cursor: default;
+}
+
+/* Active, Focus, Hover: filled box */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page:focus-visible,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.active,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.active.first,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.active.last,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.first:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.first:focus-visible,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.last:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.last:focus-visible {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+	outline: none;
+}
+
+/* Previous/Next buttons: match number styling, add chevron icon, never wrap/squash */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.next,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.first,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.last,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.prev {
+	width: auto;
+	padding: var(--wp--preset--spacing--spacing-10) var(--wp--preset--spacing--spacing-20);
+	border-radius: 4px;
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--primary-500);
+	font-weight: 500;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: background .15s, color .15s;
+	white-space: nowrap;
+}
+
+
+/* Previous/Next hover/active state: filled box, white text, green chevron */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.prev:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.prev:focus-visible,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.next:hover,
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.next:focus-visible {
+	background: var(--wp--preset--color--primary-500);
+	color: var(--wp--preset--color--base);
+
+}
+
+/* Center page numbers with gap, keep prev/next on ends */
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.prev {
+	margin-right: auto;
+}
+
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page.next {
+	margin-left: auto;
+}
+
+.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page:not(.prev):not(.next):not(.dots):not(.first):not(.last) {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+/* Hide non-active page numbers, except prev/next, on mobile */
+@media (max-width: 600px) {
+	.wp-block-facetwp-facet .facetwp-facet.facetwp-type-pager .facetwp-page:not(.active):not(.prev):not(.next) {
+		display: none !important;
+	}
 }
