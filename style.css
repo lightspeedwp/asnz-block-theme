@@ -616,9 +616,9 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 	/* Inherit body font family */
 	border: none !important;
 	/* Remove border */
-	background-color: #fff;
+	background-color: var(--wp--preset--color--base);
 	/* Optional: keep background white */
-	padding-right: 2.5em;
+	padding-right: 4rem;
 	/* Space for the chevron icon */
 	appearance: none;
 	/* Remove default arrow */
