@@ -660,7 +660,5 @@ nav.wp-block-navigation.is-style-nav-hover .wp-block-navigation__responsive-cont
 }
 
 .wp-block-facetwp-facet .facetwp-slider .noUi-connect {
-	background: var(--wp--preset--color--primary-500) !important;
-	opacity: 1 !important;
-	filter: none !important;
+	background: var(--wp--preset--color--primary-500);
 }
