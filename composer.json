@@ -1,12 +1,12 @@
 {
-	"name": "olliewp/ollie",
-	"description": "A WordPress block theme by Mike McAlister",
+	"name": "lightspeedwp/asnz-block-theme",
+	"description": "A WordPress block theme by LightSpeed WP",
 	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
-			"name": "Mike McAlister",
-			"email": "m@mikemcalister.com"
+			"name": "LightSpeedWP",
+			"email": "support@lightspeedwp.agency"
 		}
 	],
 	"require": {
