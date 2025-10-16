@@ -6,7 +6,6 @@
  * Version: 0.1.0
  * Text Domain: asnz-block-theme
  */
-/* Style Sheet Purpose: contains ONLY rules not yet feasible in theme.json / style variations (advanced selectors like :has(), sticky positioning, complex transitions). Migrate styles to JSON when core supports them. */
 
 /* ========================================================================== */
 /* 1. Base / Reset                                                            */
