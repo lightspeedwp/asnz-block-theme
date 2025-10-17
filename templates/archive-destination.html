@@ -8,8 +8,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/destinations-landing-cover-image.png","id":1793,"dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":300,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover alignfull" style="margin-top:0;margin-bottom:0;min-height:300px"><img
+<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/destinations-landing-cover-image.png","id":1793,"dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":400,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover alignfull" style="margin-top:0;margin-bottom:0;min-height:400px"><img
         class="wp-block-cover__image-background wp-image-1793 size-large" alt=""
         src="/wp-content/themes/asnz-block-theme/assets/img/destinations-landing-cover-image.png"
         data-object-fit="cover" /><span aria-hidden="true"
@@ -59,17 +59,121 @@
         </div>
         <!-- /wp:group -->
 
-    <!-- wp:query {"queryId":1,"query":{"perPage":9,"postType":"destination","order":"desc","orderBy":"date","inherit":false},"align":"wide","className":"parents-only"} -->
+        <!-- wp:query {"queryId":1,"query":{"perPage":9,"postType":"destination","order":"desc","orderBy":"date","inherit":false,"taxQuery":{"continent":[1596]}},"align":"wide","className":"parents-only"} -->
         <div class="wp-block-query alignwide parents-only">
             <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-40"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"20rem"}} -->
-            <!-- wp:pattern {"slug":"asnz/destination-card"} /-->
+            <!-- wp:group {"metadata":{"name":"Destination Card","categories":["asnz","Cards"],"patternName":"asnz/destination-card"},"className":"is-style-section-card","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group is-style-section-card">
+                <!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group tour-card-image is-style-section-card-image">
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content"} -->
+                <div class="wp-block-group is-style-section-card-content">
+                    <!-- wp:group {"metadata":{"name":"Destination Card Title"},"className":"is-style-section-card-title"} -->
+                    <div class="wp-block-group is-style-section-card-title">
+                        <!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /-->
+
+                        <!-- wp:paragraph {"align":"center","metadata":{"name":"Tagline","bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"lsx-tagline-wrapper","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"font-size-300"} -->
+                        <p class="has-text-align-center lsx-tagline-wrapper has-font-size-300-font-size"
+                            style="font-style:normal;font-weight:500"></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group tour-card-excerpt">
+                        <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Card Footer"}} -->
+                <div class="wp-block-group"><!-- wp:buttons -->
+                    <div class="wp-block-buttons">
+                        <!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"is-style-card-button lsx-to-link permalink"} -->
+                        <div
+                            class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink">
+                            <a class="wp-block-button__link wp-element-button" href="#permalink">View Destination</a>
+                        </div>
+                        <!-- /wp:button -->
+                    </div>
+                    <!-- /wp:buttons -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
             <!-- /wp:post-template -->
         </div>
         <!-- /wp:query -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:pattern {"slug":"asnz/website-cta"} /-->
+    <!-- wp:group {"metadata":{"name":"Website CTA"},"align":"full","className":"is-style-default","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull is-style-default">
+        <!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","className":"is-style-section-website-cta","layout":{"type":"default"}} -->
+        <div class="wp-block-group alignwide is-style-section-website-cta">
+            <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
+            <div class="wp-block-group alignwide">
+                <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary-100"} -->
+                <hr
+                    class="wp-block-separator has-text-color has-primary-100-color has-alpha-channel-opacity has-primary-100-background-color has-background" />
+                <!-- /wp:separator -->
+
+                <!-- wp:heading {"textAlign":"center"} -->
+                <h2 class="wp-block-heading has-text-align-center">Ready to plan your next safari?</h2>
+                <!-- /wp:heading -->
+
+                <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary-100"} -->
+                <hr
+                    class="wp-block-separator has-text-color has-primary-100-color has-alpha-channel-opacity has-primary-100-background-color has-background" />
+                <!-- /wp:separator -->
+            </div>
+            <!-- /wp:group -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Our website shows only a small, handpicked selection of itineraries. With
+                30+ years’ experience and trusted African connections, our Africa experts can connect you to a full
+                range of tours and safaris not listed on the website, including small-group and tailor-made options.
+                Speak to an expert to explore more.</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:columns -->
+            <div class="wp-block-columns"><!-- wp:column -->
+                <div class="wp-block-column"></div>
+                <!-- /wp:column -->
+
+                <!-- wp:column -->
+                <div class="wp-block-column"><!-- wp:buttons -->
+                    <div class="wp-block-buttons">
+                        <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"font-size-400"} -->
+                        <div
+                            class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
+                            <a
+                                class="wp-block-button__link has-font-size-400-font-size has-custom-font-size wp-element-button">Talk
+                                to an expert</a></div>
+                        <!-- /wp:button -->
+                    </div>
+                    <!-- /wp:buttons -->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column -->
+                <div class="wp-block-column"></div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
 
     <!-- wp:group {"metadata":{"name":"Eastern Africa Section"},"align":"wide","className":"is-style-section-page-section","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-40"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide is-style-section-page-section">
@@ -103,17 +207,110 @@
         </div>
         <!-- /wp:group -->
 
-    <!-- wp:query {"queryId":1,"query":{"perPage":9,"postType":"destination","order":"desc","orderBy":"date","inherit":false},"align":"wide","className":"parents-only"} -->
+        <!-- wp:query {"queryId":1,"query":{"perPage":9,"postType":"destination","order":"desc","orderBy":"date","inherit":false,"taxQuery":{"continent":[1597]}},"align":"wide","className":"parents-only"} -->
         <div class="wp-block-query alignwide parents-only">
             <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|spacing-40"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"20rem"}} -->
-            <!-- wp:pattern {"slug":"asnz/destination-card"} /-->
+            <!-- wp:group {"metadata":{"name":"Destination Card","categories":["asnz","Cards"],"patternName":"asnz/destination-card"},"className":"is-style-section-card","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group is-style-section-card">
+                <!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group tour-card-image is-style-section-card-image">
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content"} -->
+                <div class="wp-block-group is-style-section-card-content">
+                    <!-- wp:group {"metadata":{"name":"Destination Card Title"},"className":"is-style-section-card-title"} -->
+                    <div class="wp-block-group is-style-section-card-title">
+                        <!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /-->
+
+                        <!-- wp:paragraph {"align":"center","metadata":{"name":"Tagline","bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"lsx-tagline-wrapper","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"font-size-300"} -->
+                        <p class="has-text-align-center lsx-tagline-wrapper has-font-size-300-font-size"
+                            style="font-style:normal;font-weight:500"></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group tour-card-excerpt">
+                        <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Card Footer"}} -->
+                <div class="wp-block-group"><!-- wp:buttons -->
+                    <div class="wp-block-buttons">
+                        <!-- wp:button {"width":100,"metadata":{"name":"Permalink"},"className":"is-style-card-button lsx-to-link permalink"} -->
+                        <div
+                            class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink">
+                            <a class="wp-block-button__link wp-element-button" href="#permalink">View Destination</a>
+                        </div>
+                        <!-- /wp:button -->
+                    </div>
+                    <!-- /wp:buttons -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
             <!-- /wp:post-template -->
         </div>
         <!-- /wp:query -->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:pattern {"slug":"asnz/full-width-cta-mountains"} /-->
+    <!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-mountains.png","dimRatio":0,"customOverlayColor":"#b98001","isUserOverlayColor":false,"isDark":false,"sizeSlug":"large","metadata":{"name":"Full Width CTA (Mountains)"},"align":"full","layout":{"type":"constrained"}} -->
+    <div class="wp-block-cover alignfull is-light"><img class="wp-block-cover__image-background size-large" alt=""
+            src="/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-mountains.png"
+            data-object-fit="cover" /><span aria-hidden="true"
+            class="wp-block-cover__background has-background-dim-0 has-background-dim"
+            style="background-color:#b98001"></span>
+        <div class="wp-block-cover__inner-container">
+            <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"right"}} -->
+            <div class="wp-block-group alignwide">
+                <!-- wp:group {"className":"is-style-section-full-width-cta","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group is-style-section-full-width-cta"><!-- wp:heading {"textAlign":"left"} -->
+                    <h2 class="wp-block-heading has-text-align-left">Ready to plan your next adventure?</h2>
+                    <!-- /wp:heading -->
+
+                    <!-- wp:paragraph {"align":"left"} -->
+                    <p class="has-text-align-left">Our website shows only a small, handpicked selection of itineraries.
+                        With 30+ years experience and trusted African connections, our Africa experts can connect you to
+                        a full range of tours and safaris not listed on the website, including small-group and
+                        tailor-made options. Speak to an expert to explore more.</p>
+                    <!-- /wp:paragraph -->
+
+                    <!-- wp:columns {"className":"is-not-stacked-on-mobile"} -->
+                    <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
+                        <div class="wp-block-column"><!-- wp:buttons -->
+                            <div class="wp-block-buttons">
+                                <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover"} -->
+                                <div
+                                    class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
+                                    <a class="wp-block-button__link wp-element-button">Talk to an expert</a></div>
+                                <!-- /wp:button -->
+                            </div>
+                            <!-- /wp:buttons -->
+                        </div>
+                        <!-- /wp:column -->
+
+                        <!-- wp:column -->
+                        <div class="wp-block-column"></div>
+                        <!-- /wp:column -->
+                    </div>
+                    <!-- /wp:columns -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+    </div>
+    <!-- /wp:cover -->
 </div>
 <!-- /wp:group -->
 
