@@ -32,18 +32,27 @@
       "link": {
         "color": { "text": "var:preset|color|primary-700" },
         "typography": { "fontWeight": "500", "textDecoration": "none" },
-        ":hover": { "color": { "text": "var:preset|color|cta-500" }, "typography": { "textDecoration": "underline" } }
+        ":hover": {
+          "color": { "text": "var:preset|color|cta-500" },
+          "typography": { "textDecoration": "underline" }
+        }
       },
       "heading": {
         "color": { "text": "var:preset|color|primary-700" },
-        "typography": { "fontSize": "var:preset|font-size|font-size-500", "fontWeight": "600" }
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-500",
+          "fontWeight": "600"
+        }
       }
     },
     "blocks": {
       "core/navigation": {
-        "typography": { "fontSize": "var:preset|font-size|font-size-300", "fontWeight": "500" },
+        "typography": {
+          "fontSize": "var:preset|font-size|font-size-300",
+          "fontWeight": "500"
+        },
         "spacing": { "blockGap": "var:preset|spacing|spacing-20" }
       }
     }
-}
+  }
 }

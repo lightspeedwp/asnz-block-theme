@@ -17,8 +17,7 @@
           "text": "var:preset|color|base"
         }
       }
-    }
-    ,
+    },
     "blocks": {
       "core/paragraph": {
         "typography": {
@@ -30,10 +29,10 @@
         },
         "elements": {
           "link": {
-            "color": {"text": "var:preset|color|base"},
+            "color": { "text": "var:preset|color|base" },
             ":hover": {
-              "color": {"text": "var:preset|color|cta-500"},
-              "typography": {"textDecoration": "underline"}
+              "color": { "text": "var:preset|color|cta-500" },
+              "typography": { "textDecoration": "underline" }
             }
           }
         }
@@ -48,10 +47,10 @@
         },
         "elements": {
           "link": {
-            "color": {"text": "var:preset|color|base"},
+            "color": { "text": "var:preset|color|base" },
             ":hover": {
-              "color": {"text": "var:preset|color|cta-500"},
-              "typography": {"textDecoration": "underline"}
+              "color": { "text": "var:preset|color|cta-500" },
+              "typography": { "textDecoration": "underline" }
             }
           }
         }
@@ -65,13 +64,13 @@
           "text": "var:preset|color|base"
         },
         "elements": {
-            "link": {
-              "color": {"text": "var:preset|color|base"},
-              ":hover": {
-                "color": {"text": "var:preset|color|cta-500"},
-                "typography": {"textDecoration": "underline"}
-              }
+          "link": {
+            "color": { "text": "var:preset|color|base" },
+            ":hover": {
+              "color": { "text": "var:preset|color|cta-500" },
+              "typography": { "textDecoration": "underline" }
             }
+          }
         }
       }
     }

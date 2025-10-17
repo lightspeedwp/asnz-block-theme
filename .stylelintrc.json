@@ -1,0 +1,20 @@
+{
+  "extends": ["@wordpress/stylelint-config"],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z0-9\\-]+(__[a-z0-9\\-]+)?(--[a-z0-9\\-]+)?$|^wp-block-[a-z0-9\\-]+(__[a-z0-9\\-]+)?$|^is-style-[a-z0-9\\-]+$|^has-[a-z0-9\\-]+$|^noUi-base$|^noUi-connect$",
+      {
+        "message": "Selector should use lowercase and hyphens, or match WordPress block theme conventions, or be an allowed third-party exception (.noUi-base, .noUi-connect)"
+      }
+    ],
+    "indentation": null,
+    "string-quotes": "single",
+    "rule-empty-line-before": null,
+    "max-line-length": null,
+    "function-url-quotes": null,
+    "value-list-comma-newline-after": null,
+    "declaration-colon-newline-after": null,
+    "declaration-block-semicolon-newline-after": null,
+    "selector-combinator-space-before": null
+  }
+}

@@ -13,8 +13,8 @@
       "radius": "8px"
     },
     "spacing": {
-  "blockGap": "0px"
+      "blockGap": "0px"
     },
-  "shadow": "var:preset|shadow|elevation-1"
+    "shadow": "var:preset|shadow|elevation-1"
   }
 }

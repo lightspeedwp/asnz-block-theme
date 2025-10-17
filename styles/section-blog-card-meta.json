@@ -6,10 +6,10 @@
   "blockTypes": ["core/group"],
   "styles": {
     "spacing": {
-        "padding": {
-            "left": "var:preset|spacing|spacing-10",
-            "right": "var:preset|spacing|spacing-10"
-        },
+      "padding": {
+        "left": "var:preset|spacing|spacing-10",
+        "right": "var:preset|spacing|spacing-10"
+      },
       "blockGap": "5px"
     },
     "typography": {

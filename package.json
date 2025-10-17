@@ -1,6 +1,6 @@
 {
 	"name": "asnz",
-	"version": "1.0",
+	"version": "0.1.0",
 	"description": "Block theme for African Safaris New Zealand",
 	"scripts": {
 		"build": "wp-scripts build",

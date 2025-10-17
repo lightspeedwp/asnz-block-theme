@@ -9,10 +9,10 @@
       "radius": "4px"
     },
     "spacing": {
-        "padding": {
-          "top": "6px",
-          "bottom": "6px"
-        }
+      "padding": {
+        "top": "6px",
+        "bottom": "6px"
+      }
     },
     "color": {
       "background": "var:preset|color|cta-500",
@@ -23,5 +23,5 @@
       "fontSize": "var:preset|font-size|font-size-400",
       "fontWeight": "400"
     }
-}
+  }
 }
