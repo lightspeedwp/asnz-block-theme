@@ -663,7 +663,7 @@ nav.wp-block-navigation.is-style-nav-hover
   width: 24px;
   height: 24px;
   margin-left: 0.5em;
-  background: url('/wp-content/themes/asnz-block-theme/assets/sorting-chevron.svg')
+  background: url('/wp-content/themes/asnz-block-theme/assets/icons/sorting-chevron.svg')
     no-repeat center center;
   background-size: 24px 24px;
   transition: transform 0.1s cubic-bezier(0.7, 0, 0.3, 1);
@@ -783,7 +783,7 @@ nav.wp-block-navigation.is-style-nav-hover
   position: relative;
   line-height: 1.3;
   height: 2.5em;
-  background-image: url('/wp-content/themes/asnz-block-theme/assets/sorting-chevron.svg');
+  background-image: url('/wp-content/themes/asnz-block-theme/assets/icons/sorting-chevron.svg');
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
   background-size: 1.5rem 1.5rem;

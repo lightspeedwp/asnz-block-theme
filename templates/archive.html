@@ -8,8 +8,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/tour-archive-banner-image.png","dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":300,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover alignfull" style="margin-top:0;margin-bottom:0;min-height:300px"><img
+<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/tour-archive-banner-image.png","dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":400,"minHeightUnit":"px","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover alignfull" style="margin-top:0;margin-bottom:0;min-height:400px"><img
         class="wp-block-cover__image-background size-large" alt=""
         src="/wp-content/themes/asnz-block-theme/assets/img/tour-archive-banner-image.png"
         data-object-fit="cover" /><span aria-hidden="true"
@@ -91,21 +91,92 @@
         <div class="wp-block-columns alignwide">
             <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
             <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
-                <!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search"} /-->
+                <!-- wp:facetwp/facet {"facetName":"search_archive","facetLabel":"Search Archive","facetType":"search"} /-->
 
-                <!-- wp:facetwp/facet {"facetName":"price","facetLabel":"Price","facetType":"slider"} /-->
+                <!-- wp:group {"metadata":{"name":"Refine by"},"className":"is-style-section-fast-facts","style":{"spacing":{"padding":{"top":"var:preset|spacing|spacing-20","bottom":"var:preset|spacing|spacing-20","left":"var:preset|spacing|spacing-20","right":"var:preset|spacing|spacing-20"},"margin":{"top":"0","bottom":"0"}},"border":{"radius":"8px","width":"1px"}},"borderColor":"tertiary-500","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group is-style-section-fast-facts has-border-color has-tertiary-500-border-color"
+                    style="border-width:1px;border-radius:8px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--spacing-20);padding-right:var(--wp--preset--spacing--spacing-20);padding-bottom:var(--wp--preset--spacing--spacing-20);padding-left:var(--wp--preset--spacing--spacing-20)">
+                    <!-- wp:heading {"fontSize":"font-size-500"} -->
+                    <h2 class="wp-block-heading has-font-size-500-font-size">Refine by:</h2>
+                    <!-- /wp:heading -->
 
-                <!-- wp:facetwp/facet {"facetName":"duration","facetLabel":"Duration","facetType":"slider"} /-->
+                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                    <!-- /wp:separator -->
 
-                <!-- wp:facetwp/facet {"facetName":"destinations","facetLabel":"Destinations","facetType":"checkboxes"} /-->
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"font-size-400"} -->
+                        <h3 class="wp-block-heading has-font-size-400-font-size">Content Type</h3>
+                        <!-- /wp:heading -->
 
-                <!-- wp:facetwp/facet {"facetName":"experiences","facetLabel":"Experiences","facetType":"checkboxes"} /-->
+                        <!-- wp:facetwp/facet {"facetName":"content_type","facetLabel":"Content Type","facetType":"checkboxes"} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"font-size-400"} -->
+                        <h3 class="wp-block-heading has-font-size-400-font-size">Destinations</h3>
+                        <!-- /wp:heading -->
+
+                        <!-- wp:facetwp/facet {"facetName":"destinations","facetLabel":"Destinations","facetType":"checkboxes"} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"font-size-400"} -->
+                        <h3 class="wp-block-heading has-font-size-400-font-size">Experiences</h3>
+                        <!-- /wp:heading -->
+
+                        <!-- wp:facetwp/facet {"facetName":"experiences","facetLabel":"Experiences","facetType":"checkboxes"} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"font-size-400"} -->
+                        <h3 class="wp-block-heading has-font-size-400-font-size">Categories</h3>
+                        <!-- /wp:heading -->
+
+                        <!-- wp:facetwp/facet {"facetName":"categories","facetLabel":"Categories","facetType":"checkboxes"} /-->
+                    </div>
+                    <!-- /wp:group -->
+
+                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <hr
+                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                    <!-- /wp:separator -->
+
+                    <!-- wp:group {"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"font-size-400"} -->
+                        <h3 class="wp-block-heading has-font-size-400-font-size">Tags</h3>
+                        <!-- /wp:heading -->
+
+                        <!-- wp:facetwp/facet {"facetName":"tags","facetLabel":"Tags","facetType":"checkboxes"} /-->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
             </div>
             <!-- /wp:column -->
 
             <!-- wp:column {"width":"75%"} -->
             <div class="wp-block-column" style="flex-basis:75%">
-                <!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":"0","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
+                <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":"0","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
                 <div class="wp-block-query alignwide">
                     <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
                     <div class="wp-block-group alignwide"><!-- wp:query-total /-->
@@ -163,21 +234,15 @@
 
                     <!-- wp:query-no-results -->
                     <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when the query returns no results."} -->
-                    <p class="has-text-align-center">Unfortunately, there are no tours listed at the moment. Please
+                    <p class="has-text-align-center">Unfortunately, there is nothing here listed at the moment. Please
                         check back soon as we regularly update our offerings.</p>
                     <!-- /wp:paragraph -->
                     <!-- /wp:query-no-results -->
 
-                    <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small"},"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained"}} -->
+                    <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|medium"},"padding":{"top":"var:preset|spacing|spacing-20","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
                     <div class="wp-block-group alignwide"
-                        style="margin-top:var(--wp--preset--spacing--x-small);margin-bottom:var(--wp--preset--spacing--x-small);padding-top:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small)">
-                        <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-                        <!-- wp:query-pagination-previous /-->
-
-                        <!-- wp:query-pagination-numbers /-->
-
-                        <!-- wp:query-pagination-next /-->
-                        <!-- /wp:query-pagination -->
+                        style="margin-top:var(--wp--preset--spacing--medium);padding-top:var(--wp--preset--spacing--spacing-20);padding-bottom:0">
+                        <!-- wp:facetwp/facet {"facetName":"pager_","facetLabel":"Pager","facetType":"pager","style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
                     </div>
                     <!-- /wp:group -->
                 </div>

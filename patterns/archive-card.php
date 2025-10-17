@@ -16,8 +16,8 @@
  * Text Domain: tour-operator
  *
  * @category   Cards
- *    @package   Asnzblocktheme
- *  @author    Lightspeed
+ * @package   Asnzblocktheme
+ * @author    Lightspeed
  * @license   GPL-2.0-or-later
  * @link      https://github.com/lightspeeddevelopment/asnz-block-theme
  * @since     1.1.0
