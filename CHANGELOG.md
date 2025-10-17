@@ -6,6 +6,45 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2025-10-17
+
+### Added
+
+- Mega Menu template parts for Destinations, Tours, Planning Your Safari, Blog, and About, each with block-based navigation, background images, and tokenized spacing.
+- New section styles: blog card meta, breadcrumbs, card content/image/title, fast facts, footer, full-width CTA, hero, main/top header, page/tertiary section, post pagination/tags, secondary sticky nav, tour description/info/row, website CTA. All styles leverage theme.json tokens for scalable, accessible design.
+- Expanded block styles for buttons (card-button, cta, dark, light, summary-nav, top-header) and read-more (description, itinerary), documented in styles/blocks/README.md.
+- Additional card patterns (accommodation, room) and CTA patterns (full-width themed variants) for broader template coverage.
+- Template parts for accommodation-card, room-card, and expanded sidebar.
+- Documentation updates: all READMEs (root, patterns, styles, blocks, templates, parts) now reflect current structure and usage.
+
+### Changed
+
+- Refactored and organized style.css: clear sections for base config, forms, header/mobile utilities, block helpers, button/card/hero/search/nav/mega menu/mobile menu/facetwp styles. All selectors use theme tokens and modern CSS features for performance and maintainability.
+- Standardized all templates (archive, single, page, taxonomy, search, front-page, 404) to use modular template parts, section styles, and block patterns. Improved vertical rhythm, tokenized spacing, and unified structure for maintainability and editor compatibility.
+- Unified pattern metadata schemas for overrides and plugin compatibility.
+- All patterns and template parts now use block-based markup, section styles, and theme tokens for spacing, color, and typography.
+
+### Improvements
+
+- Accessibility: semantic markup, color contrast, keyboard navigation, ARIA roles across all templates and patterns.
+- Performance: minimized inline styles, reusable parts/patterns, conditional assets.
+- Security: escaped output, sanitized input, no unsafe PHP.
+- Internationalization: all user-facing strings wrapped for translation.
+- Contributor onboarding: documentation and cross-linking between patterns, styles, templates, and parts.
+
+### Fixed
+
+- Addressed any legacy ad-hoc CSS, replaced with theme.json tokens and block supports.
+- Ensured all template parts and patterns are referenced correctly in templates and documentation.
+
+### Notes
+
+- Continue quarterly audits for unused patterns/styles.
+- Add Figma references/screenshots for visual documentation.
+- Monitor for new core block/theme APIs and update accordingly.
+
+---
+
 ## 2025-10-13
 
 ### Added
@@ -70,7 +109,6 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Section style variations for archive pages and detail bands:
-
   - `section-archive-heading`
   - `section-archive-description`
   - `section-archive-content`
