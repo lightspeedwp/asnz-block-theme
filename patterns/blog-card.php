@@ -8,7 +8,6 @@
  * Viewport Width: 600
  * Block Types: core/post-template, core/query
  * Inserter: true
- * Sync: true
  * Provides: blog, post, card
  * Version: 1.0.0
  * Author: Lightspeed

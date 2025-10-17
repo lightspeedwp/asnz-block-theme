@@ -2,7 +2,7 @@
 /**
  * Title: Archive Card
  * Slug: asnz/archive-card
- * Description: A grid display card for archives including featured image, title, excerpt and CTA button.
+ * Description: A general grid display card for archives.
  * Categories: Cards
  * Keywords: archive, travel, location, card, listing
  * Viewport Width: 600
@@ -14,8 +14,16 @@
  * Author: Lightspeed
  * License: GPL-2.0-or-later
  * Text Domain: tour-operator
-
+ *
+ * @category   Cards
+ *    @package   Asnzblocktheme
+ *  @author    Lightspeed
+ * @license   GPL-2.0-or-later
+ * @link      https://github.com/lightspeeddevelopment/asnz-block-theme
+ * @since     1.1.0
+ * @phpversion 7.4
  */
+
 ?>
 <!-- wp:group {"metadata":{"name":"Archive Card","categories":["Cards"],"patternName":"asnz/archive-card"},"className":"is-style-section-card","style":{"spacing":{"padding":{"right":"0","left":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
