@@ -22,18 +22,18 @@
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"10px","bottom":"0px","left":"10px","right":"10px"}},"dimensions":{"minHeight":"97px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="min-height:97px;margin-top:0;margin-bottom:0;padding-top:10px;padding-right:10px;padding-bottom:0px;padding-left:10px"><!-- wp:group {"metadata":{"name":"Accommodation Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"3rem"},"spacing":{"padding":{"top":"5px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group center-vertically" style="min-height:3rem;padding-top:5px"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|primary-700"}}}}},"textColor":"contrast","fontSize":"small"} /--></div>
+<div class="wp-block-group center-vertically" style="min-height:3rem;padding-top:5px"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|brand-dark"}}}}},"textColor":"contrast","fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Accommodation Information"},"style":{"spacing":{"padding":{"top":"10px","bottom":"5px","left":"10px","right":"10px"},"blockGap":"0px"},"border":{"top":{"color":"var:preset|color|primary","width":"2px"},"bottom":{"color":"var:preset|color|primary","width":"2px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="border-top-color:var(--wp--preset--color--primary);border-top-width:2px;border-bottom-color:var(--wp--preset--color--primary);border-bottom-width:2px;padding-top:10px;padding-right:10px;padding-bottom:5px;padding-left:10px"><!-- wp:group {"className":"lsx-price-wrapper","style":{"spacing":{"blockGap":"10px","padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group lsx-price-wrapper" style="padding-top:0;padding-bottom:0"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"},"layout":{"selfStretch":"fixed","flexSize":"100px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":60622,"width":"20px","height":"auto","scale":"cover","sizeSlug":"full","linkDestination":"none","metadata":{"bindings":{"__default":{"source":"core/pattern-overrides"}},"name":"From Price Icon"}} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( LSX_TO_URL . 'assets/img/blocks/unit-price.png' ); ?>" alt="" class="wp-image-60622" style="object-fit:cover;width:20px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url(LSX_TO_URL . 'assets/img/blocks/unit-price.png'); ?>" alt="" class="wp-image-60622" style="object-fit:cover;width:20px;height:auto"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"padding":{"top":"2px","bottom":"2px"}}}} -->
-<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e( 'From:', 'tour-operator' ); ?></strong></p>
+<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e('From:', 'tour-operator'); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -45,27 +45,27 @@
 <!-- wp:group {"className":"lsx-accommodation-type-wrapper","style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group lsx-accommodation-type-wrapper"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"},"layout":{"selfStretch":"fixed","flexSize":"100px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":60627,"width":"20px","height":"auto","scale":"cover","sizeSlug":"full","linkDestination":"none","metadata":{"bindings":{"__default":{"source":"core/pattern-overrides"}},"name":"Accommodation Type Icon"}} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( LSX_TO_URL . 'assets/img/blocks/unit-type.png' ); ?>" alt="" class="wp-image-60627" style="object-fit:cover;width:20px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url(LSX_TO_URL . 'assets/img/blocks/unit-type.png'); ?>" alt="" class="wp-image-60627" style="object-fit:cover;width:20px;height:auto"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"padding":{"top":"2px","bottom":"2px"}}}} -->
-<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e( 'Type:', 'tour-operator' ); ?></strong></p>
+<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e('Type:', 'tour-operator'); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"5px"},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"accommodation-type","style":{"spacing":{"padding":{"top":"2px","bottom":"2px"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|primary-700"}}}}},"textColor":"contrast","fontSize":"x-small","fontFamily":"secondary"} /--></div>
+<div class="wp-block-group"><!-- wp:post-terms {"term":"accommodation-type","style":{"spacing":{"padding":{"top":"2px","bottom":"2px"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|brand-dark"}}}}},"textColor":"contrast","fontSize":"x-small","fontFamily":"secondary"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"lsx-rooms-wrapper","style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group lsx-rooms-wrapper"><!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"100px"},"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":61041,"width":"20px","height":"auto","sizeSlug":"full","linkDestination":"none","metadata":{"bindings":{"__default":{"source":"core/pattern-overrides"}},"name":"Number of Rooms Icon"}} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( LSX_TO_URL . 'assets/img/blocks/rooms.png' ); ?>" alt="" class="wp-image-61041" style="width:20px;height:auto"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url(LSX_TO_URL . 'assets/img/blocks/rooms.png'); ?>" alt="" class="wp-image-61041" style="width:20px;height:auto"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"padding":{"top":"2px","bottom":"2px"}}}} -->
-<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e( 'Rooms:', 'tour-operator' ); ?></strong></p>
+<p style="padding-top:2px;padding-bottom:2px"><strong><?php esc_html_e('Rooms:', 'tour-operator'); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -84,7 +84,7 @@
 <!-- wp:group {"metadata":{"name":"Card Footer"}} -->
 <div class="wp-block-group"><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-card-button lsx-to-link permalink","metadata":{"name":"Permalink"},"url":"#permalink"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink"><a class="wp-block-button__link wp-element-button" href="#permalink"><?php esc_html_e( 'View Accommodation', 'tour-operator' ); ?></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-card-button lsx-to-link permalink"><a class="wp-block-button__link wp-element-button" href="#permalink"><?php esc_html_e('View Accommodation', 'tour-operator'); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

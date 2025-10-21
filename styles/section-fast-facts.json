@@ -8,7 +8,7 @@
     "border": {
       "radius": "8px",
       "width": "1px",
-      "color": "var:preset|color|tertiary-500",
+      "color": "var:preset|color|primary",
       "style": "solid"
     },
     "color": {
@@ -16,10 +16,10 @@
     },
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-20",
-        "right": "var:preset|spacing|spacing-20",
-        "bottom": "var:preset|spacing|spacing-20",
-        "left": "var:preset|spacing|spacing-20"
+        "top": "var:preset|spacing|20",
+        "right": "var:preset|spacing|20",
+        "bottom": "var:preset|spacing|20",
+        "left": "var:preset|spacing|20"
       }
     },
     "shadow": "var:preset|shadow|elevation-1"

@@ -27,13 +27,13 @@
 <div class="wp-block-group card-title is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top"/>
+<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke top"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Tour Info"},"className":"is-style-section-tour-info","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-tour-info"><!-- wp:group {"className":"lsx-price-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-price-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:paragraph {"className":"label"} -->
+<div class="wp-block-group is-style-section-tour-info"><!-- wp:group {"className":"lsx-price-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"},"blockGap":"var:preset|spacing|10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-price-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)"><!-- wp:paragraph {"className":"label"} -->
 <p class="label"><strong>From:</strong></p>
 <!-- /wp:paragraph -->
 
@@ -42,8 +42,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-duration-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-duration-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"className":"lsx-duration-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"},"blockGap":"var:preset|spacing|10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-duration-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
 <p class="label"><strong>Duration:</strong></p>
 <!-- /wp:paragraph --></div>
@@ -60,35 +60,35 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-travel-style-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-travel-style-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"className":"lsx-travel-style-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"},"blockGap":"var:preset|spacing|10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-travel-style-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
 <p class="label"><strong>Experiences:</strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"travel-style","className":"value has-primary-500-color has-text-color"} /--></div>
+<div class="wp-block-group"><!-- wp:post-terms {"term":"travel-style","className":"value has-brand-color has-text-color"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"lsx-destination-to-tour-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|spacing-10","bottom":"var:preset|spacing|spacing-10"},"blockGap":"var:preset|spacing|spacing-10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-destination-to-tour-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--spacing-10);margin-bottom:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+<!-- wp:group {"className":"lsx-destination-to-tour-wrapper info-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"},"blockGap":"var:preset|spacing|10"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group lsx-destination-to-tour-wrapper info-row has-contrast-700-color has-text-color" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
 <p class="label"><strong>Destinations:</strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_tour"}}}},"className":"value has-primary-500-color has-text-color"} -->
-<p class="value has-primary-500-color has-text-color"></p>
+<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_tour"}}}},"className":"value has-brand-color has-text-color"} -->
+<p class="value has-brand-color has-text-color"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke bottom","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke bottom"/>
+<!-- wp:separator {"className":"tour-card-stroke bottom","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke bottom"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt is-style-section-tour-info","layout":{"type":"constrained"}} -->

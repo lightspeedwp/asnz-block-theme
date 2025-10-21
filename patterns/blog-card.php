@@ -25,8 +25,8 @@
 <div class="wp-block-group card-title is-style-section-card-title" style="padding-right:0;padding-left:0"><!-- wp:post-title {"textAlign":"left","level":3,"isLink":true} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top"/>
+<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke top"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
@@ -61,12 +61,12 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top"/>
+<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke top"/>
 <!-- /wp:separator -->
 
-<!-- wp:group {"metadata":{"name":"Excerpt"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
+<!-- wp:group {"metadata":{"name":"Excerpt"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|10","left":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

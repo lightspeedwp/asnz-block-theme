@@ -7,18 +7,18 @@
   "styles": {
     "spacing": {
       "padding": {
-        "left": "var:preset|spacing|spacing-10",
-        "right": "var:preset|spacing|spacing-10"
+        "left": "var:preset|spacing|10",
+        "right": "var:preset|spacing|10"
       },
       "blockGap": "5px"
     },
     "typography": {
-      "fontSize": "var:preset|font-size|font-size-200"
+      "fontSize": "var:preset|font-size|200"
     },
     "blocks": {
       "core/post-terms": {
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-200"
+          "fontSize": "var:preset|font-size|200"
         },
         "elements": {
           "link": {
@@ -31,7 +31,7 @@
             },
             ":hover": {
               "color": {
-                "text": "var:preset|color|cta-500"
+                "text": "var:preset|color|cta"
               },
               "typography": {
                 "textDecoration": "underline"
@@ -52,7 +52,7 @@
         },
         ":hover": {
           "color": {
-            "text": "var:preset|color|cta-500"
+            "text": "var:preset|color|cta"
           },
           "typography": {
             "textDecoration": "underline"

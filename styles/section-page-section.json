@@ -12,11 +12,11 @@
   "styles": {
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-60",
-        "bottom": "var:preset|spacing|spacing-60"
+        "top": "var:preset|spacing|60",
+        "bottom": "var:preset|spacing|60"
       },
       "margin": { "top": "0", "bottom": "0" },
-      "blockGap": "var:preset|spacing|spacing-50"
+      "blockGap": "var:preset|spacing|50"
     }
   }
 }

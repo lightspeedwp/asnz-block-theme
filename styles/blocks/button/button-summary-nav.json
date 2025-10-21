@@ -14,16 +14,16 @@
     },
     "typography": {
       "fontFamily": "var:preset|font-family|primary",
-      "fontSize": "var:preset|font-size|font-size-300",
+      "fontSize": "var:preset|font-size|300",
       "fontWeight": "500",
       "textDecoration": "uppercase"
     },
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-10",
-        "bottom": "var:preset|spacing|spacing-10",
-        "left": "var:preset|spacing|spacing-30",
-        "right": "var:preset|spacing|spacing-30"
+        "top": "var:preset|spacing|10",
+        "bottom": "var:preset|spacing|10",
+        "left": "var:preset|spacing|30",
+        "right": "var:preset|spacing|30"
       }
     }
   }

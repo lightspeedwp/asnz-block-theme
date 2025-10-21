@@ -7,7 +7,7 @@
   "styles": {
     "spacing": {
       "margin": { "top": "0", "bottom": "0" },
-      "blockGap": "var:preset|spacing|spacing-10"
+      "blockGap": "var:preset|spacing|10"
     },
     "color": {
       "background": "var:preset|color|base"

@@ -7,25 +7,25 @@
   "styles": {
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-20",
-        "right": "var:preset|spacing|spacing-20",
-        "bottom": "var:preset|spacing|spacing-20",
-        "left": "var:preset|spacing|spacing-20"
+        "top": "var:preset|spacing|20",
+        "right": "var:preset|spacing|20",
+        "bottom": "var:preset|spacing|20",
+        "left": "var:preset|spacing|20"
       },
-      "blockGap": "var:preset|spacing|spacing-20"
+      "blockGap": "var:preset|spacing|20"
     },
     "border": {
       "radius": "8px"
     },
     "color": {
       "text": "var:preset|color|base",
-      "background": "var:preset|color|primary-800"
+      "background": "var:preset|color|brand-dark"
     },
     "shadow": "var:preset|shadow|elevation-2",
     "blocks": {
       "core/separator": {
         "color": {
-          "background": "var:preset|color|primary-100"
+          "background": "var:preset|color|brand-light"
         }
       },
       "core/paragraph": {

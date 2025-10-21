@@ -26,13 +26,13 @@
 <div class="wp-block-group is-style-section-card-content"><!-- wp:group {"metadata":{"name":"Destination Card Title"},"className":"is-style-section-card-title"} -->
 <div class="wp-block-group is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /-->
 
-<!-- wp:paragraph {"align":"center","metadata":{"name":"Tagline","bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"lsx-tagline-wrapper","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"font-size-300"} -->
-<p class="has-text-align-center lsx-tagline-wrapper has-font-size-300-font-size" style="font-style:normal;font-weight:500"></p>
+<!-- wp:paragraph {"align":"center","metadata":{"name":"Tagline","bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"lsx-tagline-wrapper","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"300"} -->
+<p class="has-text-align-center lsx-tagline-wrapper has-300-font-size" style="font-style:normal;font-weight:500"></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top"/>
+<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke top"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","layout":{"type":"constrained"}} -->

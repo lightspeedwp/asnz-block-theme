@@ -6,14 +6,14 @@
   "blockTypes": ["core/group"],
   "styles": {
     "spacing": {
-      "blockGap": "var:preset|spacing|spacing-20"
+      "blockGap": "var:preset|spacing|20"
     },
     "blocks": {
       "core/navigation": {
         "typography": {
           "fontFamily": "var:preset|font-family|primary",
           "fontWeight": "500",
-          "fontSize": "var:preset|font-size|font-size-300"
+          "fontSize": "var:preset|font-size|300"
         },
         "elements": {
           "link": {

@@ -15,12 +15,12 @@
       }
     },
     "color": {
-      "background": "var:preset|color|primary-500",
+      "background": "var:preset|color|brand",
       "text": "var:preset|color|base"
     },
     "typography": {
       "fontFamily": "var:preset|font-family|primary",
-      "fontSize": "var:preset|font-size|font-size-300",
+      "fontSize": "var:preset|font-size|300",
       "fontWeight": "500"
     }
   }

@@ -14,14 +14,7 @@
  * Author: Lightspeed
  * License: GPL-2.0-or-later
  * Text Domain: tour-operator
- *
- * @category   Cards
- * @package   Asnzblocktheme
- * @author    Lightspeed
- * @license   GPL-2.0-or-later
- * @link      https://github.com/lightspeeddevelopment/asnz-block-theme
- * @since     1.1.0
- * @phpversion 7.4
+
  */
 
 ?>
@@ -30,17 +23,17 @@
 <div class="wp-block-group is-style-section-card-image"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}}} -->
-<div class="wp-block-group is-style-section-card-content" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:group {"metadata":{"name":"Card Title"},"className":"card-title is-style-section-card-title"} -->
+<!-- wp:group {"metadata":{"name":"Content"},"className":"is-style-section-card-content","style":{"spacing":{"padding":{"right":"var:preset|spacing|10","left":"var:preset|spacing|10"}}}} -->
+<div class="wp-block-group is-style-section-card-content" style="padding-right:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)"><!-- wp:group {"metadata":{"name":"Card Title"},"className":"card-title is-style-section-card-title"} -->
 <div class="wp-block-group card-title is-style-section-card-title"><!-- wp:post-title {"textAlign":"center","level":4,"isLink":true} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"tertiary-500"} -->
-<hr class="wp-block-separator has-text-color has-tertiary-500-color has-alpha-channel-opacity has-tertiary-500-background-color has-background tour-card-stroke top"/>
+<!-- wp:separator {"className":"tour-card-stroke top","backgroundColor":"primary"} -->
+<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background tour-card-stroke top"/>
 <!-- /wp:separator -->
 
-<!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","style":{"spacing":{"padding":{"right":"var:preset|spacing|spacing-10","left":"var:preset|spacing|spacing-10"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group tour-card-excerpt" style="padding-right:var(--wp--preset--spacing--spacing-10);padding-left:var(--wp--preset--spacing--spacing-10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
+<!-- wp:group {"metadata":{"name":"Excerpt"},"className":"tour-card-excerpt","style":{"spacing":{"padding":{"right":"var:preset|spacing|10","left":"var:preset|spacing|10"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group tour-card-excerpt" style="padding-right:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)"><!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":35} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

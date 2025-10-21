@@ -21,12 +21,12 @@
 /**
  * Title: Mobile Menu 3
  * Slug: asnz/mobile-menu-3
- * Description: 
+ * Description:
  * Categories: asnz/menu
  * Keywords: menu, drop down, mobile, card
  * Viewport Width: 600
- * Block Types: core/template-part/menu 
- * Post Types: 
+ * Block Types: core/template-part/menu
+ * Post Types:
  * Inserter: true
  */
 ?>
@@ -34,16 +34,16 @@
 <div class="wp-block-group is-style-default has-base-background-color has-background" style="border-radius:10px;padding-right:0;padding-left:0"><!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:group {"metadata":{"name":"Host"},"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:image {"id":244,"width":"60px","aspectRatio":"1","scale":"cover","sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"100px"}}} -->
-<figure class="wp-block-image size-large is-resized has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/patterns/images/avatar-3.webp" alt="" class="wp-image-244" style="border-radius:100px;aspect-ratio:1;object-fit:cover;width:60px"/></figure>
+<figure class="wp-block-image size-large is-resized has-custom-border"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/patterns/images/avatar-3.webp" alt="" class="wp-image-244" style="border-radius:100px;aspect-ratio:1;object-fit:cover;width:60px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><strong><?php esc_html_e( 'Margo Middleton', 'asnz-block-theme' ); ?></strong></p>
+<p class="has-medium-font-size"><strong><?php esc_html_e('Margo Middleton', 'asnz-block-theme'); ?></strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500"} -->
-<p class="has-primary-500-color has-text-color has-link-color"><?php esc_html_e( 'Director of AI', 'asnz-block-theme' ); ?></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|brand"}}}},"textColor":"brand"} -->
+<p class="has-brand-color has-text-color has-link-color"><?php esc_html_e('Director of AI', 'asnz-block-theme'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -55,7 +55,7 @@
 
 <!-- wp:group {"metadata":{"name":"Section"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|medium","left":"var:preset|spacing|medium","top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"},"blockGap":"var:preset|spacing|small"}},"fontSize":"medium","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-medium-font-size" style="padding-top:var(--wp--preset--spacing--medium);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:paragraph -->
-<p><a href="#"><?php esc_html_e( 'Pre-designed Patterns', 'asnz-block-theme' ); ?></a></p>
+<p><a href="#"><?php esc_html_e('Pre-designed Patterns', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
@@ -63,7 +63,7 @@
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p><a href="#"></a><a href="#"><?php esc_html_e( 'Built for the Future', 'asnz-block-theme' ); ?></a></p>
+<p><a href="#"></a><a href="#"><?php esc_html_e('Built for the Future', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
@@ -71,7 +71,7 @@
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p><a href="#"></a><a href="#"><?php esc_html_e( 'Easy to Extend', 'asnz-block-theme' ); ?></a></p>
+<p><a href="#"></a><a href="#"><?php esc_html_e('Easy to Extend', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
@@ -79,7 +79,7 @@
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p><a href="#"></a><a href="#"><?php esc_html_e( 'Developer Friendly', 'asnz-block-theme' ); ?></a></p>
+<p><a href="#"></a><a href="#"><?php esc_html_e('Developer Friendly', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:separator {"className":"is-style-separator-thin","backgroundColor":"neutral-300"} -->
@@ -87,7 +87,7 @@
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p><a href="#"></a><a href="#"><?php esc_html_e( 'Publish Faster', 'asnz-block-theme' ); ?></a></p>
+<p><a href="#"></a><a href="#"><?php esc_html_e('Publish Faster', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -106,8 +106,8 @@
 <!-- wp:social-link {"url":"#","service":"mail"} /--></ul>
 <!-- /wp:social-links -->
 
-<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-500"}}}},"textColor":"primary-500","fontSize":"x-small"} -->
-<p class="has-primary-500-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e( 'Check out my new podcast, VectorAI.', 'asnz-block-theme' ); ?><a href="#"><?php esc_html_e( 'Learn more', 'asnz-block-theme' ); ?></a></p>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|brand"}}}},"textColor":"brand","fontSize":"x-small"} -->
+<p class="has-brand-color has-text-color has-link-color has-x-small-font-size"><?php esc_html_e('Check out my new podcast, VectorAI.', 'asnz-block-theme'); ?><a href="#"><?php esc_html_e('Learn more', 'asnz-block-theme'); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

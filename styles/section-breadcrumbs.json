@@ -6,19 +6,19 @@
   "blockTypes": ["core/group"],
   "styles": {
     "color": {
-      "text": "var:preset|color|primary-700",
-      "background": "var:preset|color|tertiary-100"
+      "text": "var:preset|color|brand-dark",
+      "background": "var:preset|color|primary-light"
     },
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-10",
-        "bottom": "var:preset|spacing|spacing-10"
+        "top": "var:preset|spacing|10",
+        "bottom": "var:preset|spacing|10"
       },
       "margin": {
         "top": "0px",
         "bottom": "0px"
       },
-      "blockGap": "var:preset|spacing|spacing-20"
+      "blockGap": "var:preset|spacing|20"
     },
     "typography": {
       "fontWeight": "500"
@@ -26,11 +26,11 @@
     "elements": {
       "link": {
         "color": {
-          "text": "var:preset|color|primary-700"
+          "text": "var:preset|color|brand-dark"
         },
         ":hover": {
           "color": {
-            "text": "var:preset|color|primary-800"
+            "text": "var:preset|color|brand-dark"
           }
         }
       }

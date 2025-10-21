@@ -7,8 +7,8 @@
   "styles": {
     "spacing": {
       "padding": {
-        "left": "var:preset|spacing|spacing-10",
-        "right": "var:preset|spacing|spacing-10"
+        "left": "var:preset|spacing|10",
+        "right": "var:preset|spacing|10"
       }
     },
     "elements": {
@@ -17,7 +17,7 @@
           "text": "var:preset|color|contrast"
         },
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-400",
+          "fontSize": "var:preset|font-size|400",
           "textAlign": "center"
         }
       },
@@ -27,7 +27,7 @@
         },
         ":hover": {
           "color": {
-            "text": "var:preset|color|cta-500"
+            "text": "var:preset|color|cta"
           }
         }
       }

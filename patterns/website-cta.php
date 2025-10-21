@@ -20,16 +20,16 @@
 <!-- wp:group {"metadata":{"name":"Website CTA"},"align":"full","className":"is-style-default","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-default"><!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","className":"is-style-section-website-cta","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide is-style-section-website-cta"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group alignwide"><!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary-100"} -->
-<hr class="wp-block-separator has-text-color has-primary-100-color has-alpha-channel-opacity has-primary-100-background-color has-background"/>
+<div class="wp-block-group alignwide"><!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"brand-light"} -->
+<hr class="wp-block-separator has-text-color has-brand-light-color has-alpha-channel-opacity has-brand-light-background-color has-background"/>
 <!-- /wp:separator -->
 
 <!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Ready to plan your next safari?</h2>
 <!-- /wp:heading -->
 
-<!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary-100"} -->
-<hr class="wp-block-separator has-text-color has-primary-100-color has-alpha-channel-opacity has-primary-100-background-color has-background"/>
+<!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"brand-light"} -->
+<hr class="wp-block-separator has-text-color has-brand-light-color has-alpha-channel-opacity has-brand-light-background-color has-background"/>
 <!-- /wp:separator --></div>
 <!-- /wp:group -->
 
@@ -44,8 +44,8 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"font-size-400"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover"><a class="wp-block-button__link has-font-size-400-font-size has-custom-font-size wp-element-button">Talk to an expert</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"400"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover"><a class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk to an expert</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->

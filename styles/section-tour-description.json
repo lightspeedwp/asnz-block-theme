@@ -7,8 +7,8 @@
   "styles": {
     "spacing": {
       "padding": {
-        "top": "var:preset|spacing|spacing-40",
-        "bottom": "var:preset|spacing|spacing-40"
+        "top": "var:preset|spacing|40",
+        "bottom": "var:preset|spacing|40"
       }
     },
     "typography": {

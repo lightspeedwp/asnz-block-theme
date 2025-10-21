@@ -6,12 +6,12 @@
   "blockTypes": ["core/group"],
   "styles": {
     "spacing": {
-      "blockGap": "var:preset|spacing|spacing-20"
+      "blockGap": "var:preset|spacing|20"
     },
     "elements": {
       "heading": {
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-800"
+          "fontSize": "var:preset|font-size|800"
         },
         "color": {
           "text": "var:preset|color|base"
@@ -21,7 +21,7 @@
     "blocks": {
       "core/paragraph": {
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-400",
+          "fontSize": "var:preset|font-size|400",
           "fontWeight": "600"
         },
         "color": {
@@ -31,7 +31,7 @@
           "link": {
             "color": { "text": "var:preset|color|base" },
             ":hover": {
-              "color": { "text": "var:preset|color|cta-500" },
+              "color": { "text": "var:preset|color|cta" },
               "typography": { "textDecoration": "underline" }
             }
           }
@@ -39,7 +39,7 @@
       },
       "core/post-date": {
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-400",
+          "fontSize": "var:preset|font-size|400",
           "fontWeight": "600"
         },
         "color": {
@@ -49,7 +49,7 @@
           "link": {
             "color": { "text": "var:preset|color|base" },
             ":hover": {
-              "color": { "text": "var:preset|color|cta-500" },
+              "color": { "text": "var:preset|color|cta" },
               "typography": { "textDecoration": "underline" }
             }
           }
@@ -57,7 +57,7 @@
       },
       "core/post-terms": {
         "typography": {
-          "fontSize": "var:preset|font-size|font-size-400",
+          "fontSize": "var:preset|font-size|400",
           "fontWeight": "600"
         },
         "color": {
@@ -67,7 +67,7 @@
           "link": {
             "color": { "text": "var:preset|color|base" },
             ":hover": {
-              "color": { "text": "var:preset|color|cta-500" },
+              "color": { "text": "var:preset|color|cta" },
               "typography": { "textDecoration": "underline" }
             }
           }

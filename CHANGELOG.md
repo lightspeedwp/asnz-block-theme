@@ -72,7 +72,7 @@ All notable changes to this project will be documented in this file.
 
 ### Improvements
 
-- Pass through sweep for consistent section spacing on archive/landing templates (vertical rhythm with `spacing-10/20/30`).
+- Pass through sweep for consistent section spacing on archive/landing templates (vertical rhythm with `10/20/30`).
 
 ---
 
@@ -125,9 +125,9 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- `templates/archive-travel-style.html`: replaced inline destination card markup with reusable `archive-card` pattern inside `post-template`; unified gaps to `spacing-40`.
+- `templates/archive-travel-style.html`: replaced inline destination card markup with reusable `archive-card` pattern inside `post-template`; unified gaps to `40`.
 - `templates/index.html`: replaced previous single pattern with full Query Loop using `blog-card` + pagination.
-- `templates/single-destination.html`: introduced banded layout (Fast Facts, Related Tours, Related Accommodation, Gallery, Reviews) using section styles; normalised padding/gaps to `spacing-10/20/30`.
+- `templates/single-destination.html`: introduced banded layout (Fast Facts, Related Tours, Related Accommodation, Gallery, Reviews) using section styles; normalised padding/gaps to `10/20/30`.
 
 ### Improvements
 
@@ -160,14 +160,14 @@ All notable changes to this project will be documented in this file.
 
 - `styles/blocks/button/button-cta.json`:
   - Border radius set to `4px` (from `0`)
-  - Font size to `font-size-400` (from `300`)
+  - Font size to `400` (from `300`)
   - Font weight `400` (from `500`)
   - Uses primary font family; hover handled by `cta-button-hover`.
-- `styles/section-website-cta.json`: corrected padding tokens (`spacing-20`), added `8px` radius, background `primary-800`, shadow token.
+- `styles/section-website-cta.json`: corrected padding tokens (`20`), added `8px` radius, background `brand-dark`, shadow token.
 - Global shadow presets in `theme.json` (elevation-1/2/3) intensified for clearer depth.
 - `section-website-cta`: enhanced with `shadow: elevation-2`.
 - `section-full-width-cta.json`: introduced with contrast-600 background (interpreting “60% contrast”) and padding.
-- `section-breadcrumbs.json`: added vertical padding via `spacing-10`, link colours/hover, base `fontWeight` (500); later removed unnecessary horizontal padding.
+- `section-breadcrumbs.json`: added vertical padding via `10`, link colours/hover, base `fontWeight` (500); later removed unnecessary horizontal padding.
 - `templates/archive-destination.html`: updated image paths to theme assets then normalised to root-relative URLs.
 
 ### Fixed
