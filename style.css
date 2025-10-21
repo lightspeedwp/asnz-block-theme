@@ -627,7 +627,7 @@ nav.wp-block-navigation.is-style-nav-hover
 .is-style-section-secondary-sticky-nav {
   position: sticky;
   top: calc(var(--wp-admin--admin-bar--height, 0px) + 0px);
-  z-index: 10;
+  z-index: 5;
 }
 
 /* On small screens, ensure sticky nav stays at top */
