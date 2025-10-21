@@ -1,0 +1,92 @@
+<!-- wp:template-part {"slug":"header","theme":"asnz-block-theme","area":"header"} /-->
+
+<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-section-breadcrumbs","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|tertiary"}}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull is-style-section-breadcrumbs" style="margin-top:0;margin-bottom:0">
+    <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignwide"><!-- wp:yoast-seo/breadcrumbs /--></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:cover {"useFeaturedImage":true,"dimRatio":20,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":300,"minHeightUnit":"px","isDark":false,"sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"blockGap":"0","margin":{"top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0;min-height:300px"><span
+        aria-hidden="true"
+        class="wp-block-cover__background has-contrast-background-color has-background-dim-20 has-background-dim"></span>
+    <div class="wp-block-cover__inner-container">
+        <!-- wp:group {"align":"full","className":"is-style-section-hero","layout":{"type":"constrained","contentSize":"900px"}} -->
+        <div class="wp-block-group alignfull is-style-section-hero">
+            <!-- wp:query-title {"type":"archive","textAlign":"center","showPrefix":false} /--></div>
+        <!-- /wp:group -->
+    </div>
+</div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"metadata":{"name":"Page Content"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0">
+    <!-- wp:group {"metadata":{"name":"Description"},"align":"wide","className":"is-style-section-tour-description","layout":{"type":"constrained","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide is-style-section-tour-description">
+        <!-- wp:term-description {"textAlign":"center","fontSize":"400"} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:pattern {"slug":"asnz/website-cta"} /-->
+
+    <!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignwide"
+        style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--x-small)">
+        <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+        <div class="wp-block-columns alignwide">
+            <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
+            <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
+                <!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search"} /-->
+
+                <!-- wp:facetwp/facet {"facetName":"price","facetLabel":"Price","facetType":"slider"} /-->
+
+                <!-- wp:facetwp/facet {"facetName":"duration","facetLabel":"Duration","facetType":"slider"} /-->
+
+                <!-- wp:facetwp/facet {"facetName":"destinations","facetLabel":"Destinations","facetType":"checkboxes"} /-->
+
+                <!-- wp:facetwp/facet {"facetName":"experiences","facetLabel":"Experiences","facetType":"checkboxes"} /-->
+            </div>
+            <!-- /wp:column -->
+
+            <!-- wp:column {"width":"75%"} -->
+            <div class="wp-block-column" style="flex-basis:75%">
+                <!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":"0","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
+                <div class="wp-block-query alignwide">
+                    <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"20rem"}} -->
+                    <!-- wp:pattern {"slug":"asnz/tour-card"} /-->
+                    <!-- /wp:post-template -->
+
+                    <!-- wp:query-no-results -->
+                    <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when the query returns no results."} -->
+                    <p class="has-text-align-center">Unfortunately, there are no tours listed at the moment. Please
+                        check back soon as we regularly update our offerings.</p>
+                    <!-- /wp:paragraph -->
+                    <!-- /wp:query-no-results -->
+
+                    <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small"},"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained"}} -->
+                    <div class="wp-block-group alignwide"
+                        style="margin-top:var(--wp--preset--spacing--x-small);margin-bottom:var(--wp--preset--spacing--x-small);padding-top:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small)">
+                        <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+                        <!-- wp:query-pagination-previous /-->
+
+                        <!-- wp:query-pagination-numbers /-->
+
+                        <!-- wp:query-pagination-next /-->
+                        <!-- /wp:query-pagination -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:query -->
+            </div>
+            <!-- /wp:column -->
+        </div>
+        <!-- /wp:columns -->
+    </div>
+    <!-- /wp:group -->
+    <!-- wp:pattern {"slug":"asnz/full-width-cta-sunset"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"asnz-block-theme","area":"footer"} /-->

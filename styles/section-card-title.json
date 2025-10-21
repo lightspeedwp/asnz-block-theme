@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-card-title",
+  "title": "Card Title Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "spacing": {
+      "padding": {
+        "left": "var:preset|spacing|10",
+        "right": "var:preset|spacing|10"
+      }
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var:preset|color|contrast"
+        },
+        "typography": {
+          "fontSize": "var:preset|font-size|400",
+          "textAlign": "center"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var:preset|color|contrast"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|cta"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Vertical",
+  "slug": "vertical",
+  "blockTypes": ["core/separator"],
+  "styles": {
+    "dimensions": {
+      "minHeight": "2rem",
+      "width": "2px",
+      "height": "auto"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Summary Nav",
+  "slug": "button-summary-nav",
+  "blockTypes": ["core/button"],
+  "styles": {
+    "border": {
+      "radius": "0"
+    },
+    "color": {
+      "background": "var:preset|color|base",
+      "text": "var:preset|color|contrast"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|primary",
+      "fontSize": "var:preset|font-size|300",
+      "fontWeight": "500",
+      "textDecoration": "uppercase"
+    },
+    "spacing": {
+      "padding": {
+        "top": "var:preset|spacing|10",
+        "bottom": "var:preset|spacing|10",
+        "left": "var:preset|spacing|30",
+        "right": "var:preset|spacing|30"
+      }
+    }
+  }
+}

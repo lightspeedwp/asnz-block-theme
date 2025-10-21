@@ -1,0 +1,42 @@
+{
+  "name": "lightspeedwp/asnz-block-theme",
+  "description": "A block theme for African Safaris New Zealand.",
+  "type": "wordpress-theme",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "LightSpeedWP"
+    }
+  ],
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "10up/phpcs-composer": "^3.0.0",
+    "phpstan/phpstan": "^2.0",
+    "phpstan/extension-installer": "^1.2",
+    "swissspidy/phpstan-no-private": "^1.0",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0",
+    "johnbillion/wp-compat": "^1.0",
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.88"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "scripts": {
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf",
+    "lint": "phpcs --standard=phpcs.xml .",
+    "lint:fix": "phpcbf --standard=phpcs.xml .",
+    "phpstan": "phpstan analyse",
+    "test": [
+      "@lint",
+      "@phpstan"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-card-image",
+  "title": "Card Image Section",
+  "blockTypes": ["core/group"],
+  "styles": {
+    "border": {
+      "radius": "8px 8px 0 0"
+    }
+  }
+}

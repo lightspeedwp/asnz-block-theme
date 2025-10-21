@@ -1,0 +1,45 @@
+{
+	"name": "asnz",
+	"version": "0.1.0",
+	"description": "Block theme for African Safaris New Zealand",
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"test": "wp-scripts test-js",
+		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"prepare": "husky",
+		"translate:patterns": "node theme-utils.mjs escape-patterns --text-domain=asnz",
+		"dev": "node theme-utils.mjs watch --text-domain=asnz"
+	},
+	"keywords": [
+		"wordpress",
+		"theme",
+		"block-theme",
+		"translation"
+	],
+	"author": "LightSpeedWP",
+	"license": "GPL-2.0-or-later",
+	"dependencies": {
+		"chokidar": "^3.5.3",
+		"fast-glob": "^3.3.2",
+		"parse5-html-rewriting-stream": "^7.0.0"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^10.32.0",
+		"@wordpress/scripts": "^19.2.4",
+		"husky": "^9.0.0",
+		"lint-staged": "^15.0.0"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"wp-scripts lint-js --fix"
+		],
+		"*.{css,scss,pcss}": [
+			"wp-scripts lint-style --fix"
+		]
+	},
+	"type": "module"
+}

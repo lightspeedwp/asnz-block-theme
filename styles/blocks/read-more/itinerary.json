@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Read More Itinerary",
+  "slug": "read-more-itinerary",
+  "blockTypes": ["core/read-more"],
+  "styles": {
+    "color": {
+      "text": "var:preset|color|contrast"
+    },
+    "typography": {
+      "fontWeight": "600",
+      "fontSize": "var:preset|font-size|300"
+    },
+    "elements": {
+      "link": {
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|brand-text"
+          }
+        }
+      }
+    }
+  }
+}

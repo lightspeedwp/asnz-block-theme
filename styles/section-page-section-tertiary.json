@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "slug": "section-page-section-tertiary",
+  "title": "Page Section Tertiary",
+  "blockTypes": ["core/group"],
+  "settings": {
+    "spacing": {
+      "blockGap": true
+    }
+  },
+  "styles": {
+    "spacing": {
+      "padding": {
+        "top": "var:preset|spacing|60",
+        "bottom": "var:preset|spacing|60"
+      },
+      "margin": {
+        "top": "0",
+        "bottom": "0"
+      },
+      "blockGap": "var:preset|spacing|50"
+    },
+    "color": {
+      "background": "var:preset|color|primary-light"
+    }
+  }
+}
