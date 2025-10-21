@@ -39,7 +39,7 @@ function enqueue_style_sheet()
 {
     wp_enqueue_style(sanitize_title(__NAMESPACE__), get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet');
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet', 100);
 
 /**
  * Enqueue small enhancement scripts (scrollspy for secondary sticky nav)

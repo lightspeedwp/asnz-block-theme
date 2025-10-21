@@ -23,8 +23,9 @@
  *    - Submenu & Responsive Nav
  * 9. Secondary Sticky Navigation
  * 10. Homepage Hero Search Block
- * 11. Mobile Menu styling
- * 12. FacetWP
+ * 11. Slider Buttons & Bars
+ * 12. Mobile Menu styling
+ * 13. FacetWP
  *    - Search Facet
  *    - Sort Facet
  *    - Slider Facet
@@ -333,6 +334,120 @@ header:has(> .is-position-sticky) {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+/* ========================================================================== */
+
+/* Slider Buttons & Bars                                                      */
+
+/* ========================================================================== */
+
+/* Slider Buttons */
+
+/* Position arrows vertically centered */
+.lsx-to-slider .slick-arrow {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2;
+}
+
+/* Left & right anchors */
+.lsx-to-slider .slick-prev {
+  left: -4rem !important;
+}
+.lsx-to-slider .slick-next {
+  right: -4rem !important;
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Remove default arrows */
+.lsx-to-slider .slick-arrow::before {
+  content: none !important;
+}
+
+/* Keep icon + sizing overrides */
+.lsx-to-slider .slick-prev,
+.lsx-to-slider .slick-next {
+  width: 54px !important;
+  height: 54px !important;
+  background: url('./assets/icons/slider-button-default.svg') no-repeat
+    center/contain !important;
+  border: none !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover + focus states */
+.lsx-to-slider .slick-prev:hover,
+.lsx-to-slider .slick-prev:focus-visible,
+.lsx-to-slider .slick-next:hover,
+.lsx-to-slider .slick-next:focus-visible {
+  background-image: url('./assets/icons/slider-button-hover.svg') !important;
+}
+
+/* Slider Bars */
+
+/* Center the whole dots group relative to the slider */
+.lsx-to-slider .slick-dots {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  width: max-content !important;
+  margin: var(--wp--preset--spacing--30) auto 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: var(--wp--preset--spacing--20) !important;
+  list-style: none;
+}
+
+/* Remove default li styles */
+.lsx-to-slider .slick-dots li {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove default bar styles */
+.lsx-to-slider .slick-dots li button::before {
+  content: none !important;
+}
+
+/* Base styles for bars */
+.lsx-to-slider .slick-dots li button {
+  width: 46px !important;
+  height: 6px !important;
+  display: block;
+  background: url('./assets/icons/slider-bar-default.svg') no-repeat
+    center/contain !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* Active, hover + focus states */
+.lsx-to-slider .slick-dots li.slick-active button,
+.lsx-to-slider .slick-dots li button:hover,
+.lsx-to-slider .slick-dots li button:focus-visible {
+  background-image: url('./assets/icons/slider-bar-active.svg') !important;
+}
+
+/* Focus ring */
+.lsx-to-slider .slick-dots li button:focus-visible {
+  outline: 2px solid var(--wp--preset--color--primary, #090909);
+  outline-offset: 2px;
 }
 
 /* ========================================================================== */
