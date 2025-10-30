@@ -213,6 +213,11 @@ header:has(> .is-position-sticky) {
     header:has(> .asnz-unstick-mobile) {
         position: static;
     }
+
+    /* Hide .filters class on mobile */
+    .filters {
+        display: none !important;
+    }
 }
 
 /* ========================================================================== */
