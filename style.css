@@ -1098,7 +1098,6 @@ nav.wp-block-navigation.is-style-nav-hover
 .facetwp-flyout-close h3 {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
-    padding: var(--wp--preset--spacing--20) 0;
     font-size: var(--wp--preset--font-size--500);
     font-family: var(--wp--preset--font-family--primary);
     font-weight: 600;
@@ -1130,8 +1129,9 @@ nav.wp-block-navigation.is-style-nav-hover
     display: flex;
     justify-content: space-between;
     gap: var(--wp--preset--spacing--10);
-    padding: 0 var(--wp--preset--spacing--20) !important;
+    padding: var(--wp--preset--spacing--20) !important;
     margin-bottom: 0;
+    align-items: center;
 }
 
 .facetwp-flyout-content {
