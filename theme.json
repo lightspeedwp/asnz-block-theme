@@ -11,6 +11,11 @@
       "line-height": {
         "snug": "1.25",
         "none": "1"
+      },
+      "radius": {
+        "small": "4px",
+        "default": "8px",
+        "large": "16px"
       }
     },
     "color": {
