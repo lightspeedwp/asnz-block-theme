@@ -1123,6 +1123,7 @@ nav.wp-block-navigation.is-style-nav-hover
 
 .facetwp-flyout-wrap {
     padding: 0 var(--wp--preset--spacing--20);
+    margin-top: var(--wp--preset--spacing--20);
 }
 
 .facetwp-flyout-close {
@@ -1137,7 +1138,6 @@ nav.wp-block-navigation.is-style-nav-hover
 
 .facetwp-flyout-content {
     padding: 0 !important;
-    margin-top: var(--wp--preset--spacing--20);
 }
 
 /* stylelint-disable selector-class-pattern */
