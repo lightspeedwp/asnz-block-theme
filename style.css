@@ -1115,3 +1115,9 @@ body .facetwp-flyout {
     border-radius: 0 8px 0 0;
     border: 1px solid var(--wp--preset--color--primary);
 }
+
+/* Hide FacetWP search and sort facets in mobile flyout */
+.facetwp-flyout .facetwp-facet.facetwp-type-search,
+.facetwp-flyout .facetwp-facet.facetwp-type-sort {
+    display: none !important;
+}
