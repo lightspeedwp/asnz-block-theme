@@ -1129,13 +1129,15 @@ nav.wp-block-navigation.is-style-nav-hover
     display: flex;
     justify-content: space-between;
     gap: var(--wp--preset--spacing--10);
-    padding: var(--wp--preset--spacing--20) !important;
-    margin-bottom: 0;
+    padding: var(--wp--preset--spacing--20) 0 !important;
+    margin: 0 var(--wp--preset--spacing--20);
     align-items: center;
+    border-bottom: 1px solid var(--wp--preset--color--primary);
 }
 
 .facetwp-flyout-content {
     padding: 0 !important;
+    margin-top: var(--wp--preset--spacing--20);
 }
 
 /* stylelint-disable selector-class-pattern */
