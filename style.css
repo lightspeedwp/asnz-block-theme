@@ -1092,6 +1092,7 @@ nav.wp-block-navigation.is-style-nav-hover
     padding-bottom: var(--wp--preset--spacing--10);
     border-bottom: 1px solid var(--wp--preset--color--primary);
     align-items: center;
+    justify-content: space-between;
 }
 
 .flyout-row {
