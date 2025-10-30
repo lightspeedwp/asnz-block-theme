@@ -1089,17 +1089,29 @@ nav.wp-block-navigation.is-style-nav-hover
 }
 
 .flyout-row h3::after {
-    content: '[+]';
-    font-weight: 500;
-    font-size: 0.8em;
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
     float: right;
+    background: url('/wp-content/themes/asnz-block-theme/assets/icons/plus-icon.svg')
+        no-repeat center center;
+    background-size: 24px 24px;
 }
 
 .flyout-row.expanded h3::after {
-    content: '[-]';
+    content: '';
+    background: url('/wp-content/themes/asnz-block-theme/assets/icons/minus-icon.svg')
+        no-repeat center center;
+    background-size: 24px 24px;
 }
 
 body .facetwp-flyout {
-    right: 0;
-    transform: translateX(100%);
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.facetwp-flyout.active {
+    border-radius: 0 8px 0 0;
+    border: 1px solid var(--wp--preset--color--primary);
 }
