@@ -1095,6 +1095,13 @@ nav.wp-block-navigation.is-style-nav-hover
     justify-content: space-between;
 }
 
+.facetwp-flyout-close h3 {
+    margin-top: var(--wp--preset--spacing--20);
+    font-size: var(--wp--preset--font-size--500);
+    font-family: var(--wp--preset--font-family--primary);
+    font-weight: 600;
+}
+
 .flyout-row.expanded h3 {
     border-bottom: none;
 }
@@ -1110,7 +1117,7 @@ nav.wp-block-navigation.is-style-nav-hover
     display: flex;
     justify-content: space-between;
     gap: var(--wp--preset--spacing--10);
-    padding: 0 var(--wp--preset--spacing--20);
+    padding: 0 var(--wp--preset--spacing--20) !important;
     margin-bottom: 0;
 }
 
