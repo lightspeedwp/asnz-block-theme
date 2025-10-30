@@ -1088,7 +1088,6 @@ nav.wp-block-navigation.is-style-nav-hover
     display: flex;
     cursor: pointer;
     font-size: var(--wp--preset--font-size--400);
-    margin-bottom: var(--wp--preset--spacing--10);
     padding-bottom: var(--wp--preset--spacing--20);
     border-bottom: 1px solid var(--wp--preset--color--primary);
     align-items: center;
