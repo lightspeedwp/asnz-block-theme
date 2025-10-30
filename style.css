@@ -1119,6 +1119,7 @@ nav.wp-block-navigation.is-style-nav-hover
 }
 .flyout-row.expanded {
     border-bottom: 1px solid var(--wp--preset--color--primary);
+    margin-bottom: var(--wp--preset--spacing--20);
 }
 
 .facetwp-flyout-wrap {
