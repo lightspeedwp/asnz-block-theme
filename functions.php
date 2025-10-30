@@ -174,7 +174,7 @@ add_action('wp_head', function () {
           FWP.hooks.addFilter('facetwp/flyout/flyout_html', function(flyout_html) {
                         return flyout_html.replace(
                             ' <div class="facetwp-flyout-close">x</div>',
-                            ' <div class="facetwp-flyout-close" style="display:flex;align-items:top;justify-content:space-between;gap:1em;padding:0;">'
+                            ' <div class="facetwp-flyout-close" style="display:flex;align-items:top;justify-content:space-between;gap:1em;padding:0 var(--wp--preset--spacing--20);">'
                                 + '<h3 style="margin-top:var(--wp--preset--spacing--20);font-size:var(--wp--preset--font-size--500); font-family:var(--wp--preset--font-family--primary); font-weight:600;">Filters</h3>'
                                 + '<button type="button" aria-label="Close filters" style="background:none;border:none;padding:0;margin-top:-14px;cursor:pointer;display:flex;align-items:center;">'
                                 + '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6L18 18" stroke="#090909" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
