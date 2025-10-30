@@ -1088,6 +1088,12 @@ nav.wp-block-navigation.is-style-nav-hover
     cursor: pointer;
 }
 
+/* Hide search and sort flyout rows in FacetWP mobile flyout */
+.facetwp-flyout .flyout-row--name-search-tour,
+.facetwp-flyout .flyout-row--name-sort-by {
+    display: none !important;
+}
+
 .flyout-row h3::after {
     content: '';
     display: inline-block;
