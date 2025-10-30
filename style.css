@@ -1124,7 +1124,7 @@ nav.wp-block-navigation.is-style-nav-hover
 
 .facetwp-flyout-wrap {
     padding: 0 var(--wp--preset--spacing--20);
-    margin-top: var(--wp--preset--spacing--20);
+    margin-top: var(--wp--preset--spacing--40);
 }
 
 .facetwp-flyout-close {
@@ -1134,7 +1134,7 @@ nav.wp-block-navigation.is-style-nav-hover
     padding: var(--wp--preset--spacing--20) 0 !important;
     margin: 0 var(--wp--preset--spacing--20);
     align-items: center;
-    border-bottom: 1px solid var(--wp--preset--color--primary);
+    border-bottom: 2px solid var(--wp--preset--color--primary);
 }
 
 .facetwp-flyout-content {
