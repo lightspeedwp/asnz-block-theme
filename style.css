@@ -1115,7 +1115,7 @@ nav.wp-block-navigation.is-style-nav-hover
 }
 
 .facetwp-flyout-content {
-    padding: 0;
+    padding: 0 !important;
 }
 
 /* stylelint-disable selector-class-pattern */
