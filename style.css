@@ -1141,6 +1141,13 @@ nav.wp-block-navigation.is-style-nav-hover
     padding: 0 !important;
 }
 
+.facetwp-flyout .facetwp-slider .noUi-base {
+    background: var(--wp--preset--color--neutral-100);
+}
+.facetwp-flyout .facetwp-slider .noUi-connect {
+    background: var(--wp--preset--color--brand);
+}
+
 /* stylelint-disable selector-class-pattern */
 
 /* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
