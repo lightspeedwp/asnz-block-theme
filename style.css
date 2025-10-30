@@ -1089,14 +1089,10 @@ nav.wp-block-navigation.is-style-nav-hover
     cursor: pointer;
     font-size: var(--wp--preset--font-size--400);
     margin-bottom: var(--wp--preset--spacing--10);
-    padding-bottom: var(--wp--preset--spacing--10);
+    padding-bottom: var(--wp--preset--spacing--20);
     border-bottom: 1px solid var(--wp--preset--color--primary);
     align-items: center;
     justify-content: space-between;
-}
-
-.flyout-row {
-    margin-bottom: var(--wp--preset--spacing--30);
 }
 
 .flyout-row.expanded h3 {
@@ -1104,6 +1100,10 @@ nav.wp-block-navigation.is-style-nav-hover
 }
 .flyout-row.expanded {
     border-bottom: 1px solid var(--wp--preset--color--primary);
+}
+
+.facetwp-flyout-wrap {
+    padding: 0 var(--wp--preset--spacing--20);
 }
 
 /* stylelint-disable selector-class-pattern */
