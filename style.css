@@ -1096,7 +1096,6 @@ nav.wp-block-navigation.is-style-nav-hover
 }
 
 .facetwp-flyout-close h3 {
-    margin-top: var(--wp--preset--spacing--20);
     margin-bottom: 0 !important;
     font-size: var(--wp--preset--font-size--500);
     font-family: var(--wp--preset--font-family--primary);
