@@ -24,8 +24,7 @@
 <!-- /wp:cover -->
 
 <!-- wp:group {"metadata":{"name":"Page Content"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0","padding":{"top":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50)">
+<div class="wp-block-group alignwide" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50)">
     <!-- wp:group {"metadata":{"name":"Website CTA"},"align":"full","className":"is-style-default","layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignfull is-style-default">
         <!-- wp:group {"metadata":{"name":"CTA"},"align":"wide","className":"is-style-section-website-cta","layout":{"type":"default"}} -->
@@ -66,8 +65,7 @@
                         <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"400"} -->
                         <div
                             class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
-                            <a
-                                class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
+                            <a class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
                                 to an expert</a></div>
                         <!-- /wp:button -->
                     </div>
@@ -94,80 +92,99 @@
             <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
                 <!-- wp:facetwp/facet {"facetName":"search_archive","facetLabel":"Search Archive","facetType":"search"} /-->
 
-                <!-- wp:group {"metadata":{"name":"Refine by"},"className":"is-style-section-fast-facts","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"border":{"radius":"8px","width":"1px"}},"borderColor":"primary","layout":{"type":"constrained"}} -->
-                <div class="wp-block-group is-style-section-fast-facts has-border-color has-primary-border-color"
+                <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"0"}}},"layout":{"type":"flex","verticalAlignment":"center","justifyContent":"left"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"browserDevice":{"ruleSets":[{"enable":true,"rules":[{"field":"deviceType","operator":"any","value":["mobile"]}]}]}}}]}} -->
+                <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:0">
+                    <!-- wp:button {"width":100,"className":"facetwp-flyout-open is-style-button-light","style":{"typography":{"lineHeight":"1.5"},"border":{"width":"1px","radius":"4px"}},"fontSize":"300"} -->
+                    <div
+                        class="wp-block-button has-custom-width wp-block-button__width-100 facetwp-flyout-open is-style-button-light">
+                        <a class="wp-block-button__link has-300-font-size has-custom-font-size wp-element-button"
+                            style="border-width:1px;border-radius:4px;line-height:1.5"><img class="wp-image-32652"
+                                style="width: 22px;"
+                                src="https://asnz.lightspeedwp.dev/wp-content/uploads/filter-icon-top-padding-1.svg"
+                                alt=""> Filters</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
+
+                <!-- wp:group {"metadata":{"name":"Refine by"},"className":"is-style-section-fast-facts filters","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"border":{"radius":"8px","width":"1px"}},"borderColor":"primary","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group is-style-section-fast-facts filters has-border-color has-primary-border-color"
                     style="border-width:1px;border-radius:8px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
                     <!-- wp:heading {"fontSize":"500"} -->
                     <h2 class="wp-block-heading has-500-font-size">Refine by:</h2>
                     <!-- /wp:heading -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
+                    <div class="wp-block-group">
+                        <!-- wp:facetwp/facet {"facetName":"content_type","facetLabel":"Content Type","facetType":"checkboxes","hasHeader":true,"hideOnEmpty":true} -->
+                        <!-- wp:heading {"level":3,"fontSize":"400"} -->
                         <h3 class="wp-block-heading has-400-font-size">Content Type</h3>
                         <!-- /wp:heading -->
-
-                        <!-- wp:facetwp/facet {"facetName":"content_type","facetLabel":"Content Type","facetType":"checkboxes"} /-->
+                        <!-- /wp:facetwp/facet -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
+                    <div class="wp-block-group">
+                        <!-- wp:facetwp/facet {"facetName":"destinations","facetLabel":"Destinations","facetType":"checkboxes","hasHeader":true,"hideOnEmpty":true} -->
+                        <!-- wp:heading {"level":3,"fontSize":"400"} -->
                         <h3 class="wp-block-heading has-400-font-size">Destinations</h3>
                         <!-- /wp:heading -->
-
-                        <!-- wp:facetwp/facet {"facetName":"destinations","facetLabel":"Destinations","facetType":"checkboxes"} /-->
+                        <!-- /wp:facetwp/facet -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
+                    <div class="wp-block-group">
+                        <!-- wp:facetwp/facet {"facetName":"travel_styles","facetLabel":"Experiences","facetType":"checkboxes","hasHeader":true,"hideOnEmpty":true} -->
+                        <!-- wp:heading {"level":3,"fontSize":"400"} -->
                         <h3 class="wp-block-heading has-400-font-size">Experiences</h3>
                         <!-- /wp:heading -->
-
-                        <!-- wp:facetwp/facet {"facetName":"experiences","facetLabel":"Experiences","facetType":"checkboxes"} /-->
+                        <!-- /wp:facetwp/facet -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
+                    <div class="wp-block-group">
+                        <!-- wp:facetwp/facet {"facetName":"categories","facetLabel":"Categories","facetType":"checkboxes","hasHeader":true,"hideOnEmpty":true} -->
+                        <!-- wp:heading {"level":3,"fontSize":"400"} -->
                         <h3 class="wp-block-heading has-400-font-size">Categories</h3>
                         <!-- /wp:heading -->
-
-                        <!-- wp:facetwp/facet {"facetName":"categories","facetLabel":"Categories","facetType":"checkboxes"} /-->
+                        <!-- /wp:facetwp/facet -->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
-                    <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
+                    <div class="wp-block-group">
+                        <!-- wp:facetwp/facet {"facetName":"tags","facetLabel":"Tags","facetType":"checkboxes","hasHeader":true,"hideOnEmpty":true} -->
+                        <!-- wp:heading {"level":3,"fontSize":"400"} -->
                         <h3 class="wp-block-heading has-400-font-size">Tags</h3>
                         <!-- /wp:heading -->
-
-                        <!-- wp:facetwp/facet {"facetName":"tags","facetLabel":"Tags","facetType":"checkboxes"} /-->
+                        <!-- /wp:facetwp/facet -->
                     </div>
                     <!-- /wp:group -->
                 </div>
@@ -179,10 +196,11 @@
             <div class="wp-block-column" style="flex-basis:75%">
                 <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":"0","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
                 <div class="wp-block-query alignwide">
-                    <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-                    <div class="wp-block-group alignwide"><!-- wp:query-total /-->
+                    <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+                    <div class="wp-block-group alignwide"
+                        style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:query-total /-->
 
-                        <!-- wp:facetwp/facet {"facetName":"sort_","facetLabel":"Sort","facetType":"sort"} /-->
+                        <!-- wp:facetwp/facet {"facetName":"sort_by","facetLabel":"Sort By","facetType":"sort"} /-->
                     </div>
                     <!-- /wp:group -->
 
@@ -191,7 +209,7 @@
                     <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0">
                         <!-- wp:group {"metadata":{"name":"Card Image"},"className":"is-style-section-card-image","layout":{"type":"constrained"}} -->
                         <div class="wp-block-group is-style-section-card-image">
-                            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
                         </div>
                         <!-- /wp:group -->
 
@@ -255,12 +273,12 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-lion.png","dimRatio":0,"customOverlayColor":"#ba9d66","isUserOverlayColor":false,"isDark":false,"sizeSlug":"large","metadata":{"name":"Full Width CTA Lion"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+    <!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-lion.png","dimRatio":0,"customOverlayColor":"#ba9d66","isUserOverlayColor":false,"focalPoint":{"x":0.2,"y":0.51},"isDark":false,"sizeSlug":"large","metadata":{"name":"Full Width CTA Lion"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0"><img
             class="wp-block-cover__image-background size-large" alt=""
             src="/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-lion.png"
-            data-object-fit="cover" /><span aria-hidden="true"
-            class="wp-block-cover__background has-background-dim-0 has-background-dim"
+            style="object-position:20% 51%" data-object-fit="cover" data-object-position="20% 51%" /><span
+            aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"
             style="background-color:#ba9d66"></span>
         <div class="wp-block-cover__inner-container">
             <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"right"}} -->
