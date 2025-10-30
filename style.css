@@ -1087,9 +1087,13 @@ nav.wp-block-navigation.is-style-nav-hover
 .flyout-row h3 {
     cursor: pointer;
     font-size: var(--wp--preset--font-size--400);
-    border-bottom: 1px solid var(--wp--preset--color--primary);
     margin-bottom: var(--wp--preset--spacing--10);
     padding-bottom: var(--wp--preset--spacing--10);
+}
+
+.flyout-row {
+    margin-bottom: var(--wp--preset--spacing--30);
+    border-bottom: 1px solid var(--wp--preset--color--primary);
 }
 
 /* stylelint-disable selector-class-pattern */
