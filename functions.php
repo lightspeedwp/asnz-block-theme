@@ -149,3 +149,15 @@ function template_part_areas(array $areas)
     return $areas;
 }
 add_filter('default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas');
+
+// Facet Mobile expanding menus
+add_action('wp_head', function () {
+    ?>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fUtil().on('click', '.flyout-row h3', function() {
+          fUtil(this).closest('.flyout-row').toggleClass('expanded');
+        });
+      });
+    </script>
+<?php });
