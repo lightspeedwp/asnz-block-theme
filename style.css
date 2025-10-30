@@ -1092,15 +1092,6 @@ nav.wp-block-navigation.is-style-nav-hover
     padding-bottom: var(--wp--preset--spacing--10);
 }
 
-/* Vertically center all flyout rows */
-.flyout-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: var(--wp--preset--spacing--20);
-}
-
 /* stylelint-disable selector-class-pattern */
 
 /* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
