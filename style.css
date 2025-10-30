@@ -1158,7 +1158,7 @@ nav.wp-block-navigation.is-style-nav-hover
 /* Hide search and sort flyout rows in FacetWP mobile flyout (third-party markup uses underscores) */
 .facetwp-flyout .flyout-row.name-search_tour,
 .facetwp-flyout .flyout-row.name-sort_by,
-.facetwp-flyout .facet-row.name-search_archive {
+.facetwp-flyout .flyout-row.name-search_archive {
     display: none !important;
 }
 /* stylelint-enable selector-class-pattern */
