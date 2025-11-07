@@ -648,6 +648,17 @@ header:has(> .is-position-sticky) {
     text-decoration: underline !important;
 }
 
+/* === Mega Menu: Active State Override === */
+.wp-block-navigation.mega-menu-nav .wp-block-navigation-item__content.is-active,
+.wp-block-navigation.mega-menu-nav
+    .wp-block-navigation-item__content[aria-current='page'],
+.wp-block-navigation.mega-menu-nav
+    .wp-block-navigation-item__content[aria-current='true'] {
+    color: var(--wp--preset--color--brand-dark) !important;
+    text-decoration: underline !important;
+    background: none !important;
+}
+
 /* === Main Navigation: Hover/Focus/Active === */
 .wp-block-navigation.is-style-nav-hover li:hover,
 .wp-block-navigation.is-style-nav-hover li:focus-within {
