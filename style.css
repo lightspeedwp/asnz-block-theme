@@ -846,7 +846,7 @@ nav.wp-block-navigation.is-style-nav-hover
     > .wp-block-navigation__responsive-close
     > .wp-block-navigation__responsive-dialog
     > .wp-block-navigation__responsive-container-close {
-    top: var(--wp--preset--spacing--50);
+    top: var(--wp--preset--spacing--40);
     right: var(--wp--preset--spacing--20);
     inline-size: 40px;
     block-size: 40px;
