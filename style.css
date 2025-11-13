@@ -776,7 +776,9 @@ nav.wp-block-navigation.is-style-nav-hover
 .is-style-section-secondary-sticky-nav {
     position: sticky;
     top: calc(var(--wp-admin--admin-bar--height, 0px) + 0px);
-    z-index: 5;
+
+    /* Lower z-index so mega menu overlays (header drop-downs) sit above this secondary nav */
+    z-index: 1;
 }
 
 /* On small screens, ensure sticky nav stays at top */
