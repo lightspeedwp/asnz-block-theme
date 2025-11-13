@@ -846,7 +846,7 @@ nav.wp-block-navigation.is-style-nav-hover
     > .wp-block-navigation__responsive-close
     > .wp-block-navigation__responsive-dialog
     > .wp-block-navigation__responsive-container-close {
-    top: var(--wp--preset--spacing--40);
+    top: var(--wp--preset--spacing--50);
     right: var(--wp--preset--spacing--20);
     inline-size: 40px;
     block-size: 40px;
@@ -858,6 +858,13 @@ nav.wp-block-navigation.is-style-nav-hover
     border: 2px solid var(--wp--preset--color--primary-light);
     border-radius: 4px;
     z-index: 10;
+}
+
+/* Fix top padding */
+/* stylelint-disable-next-line no-descending-specificity */
+.wp-block-navigation__responsive-container.is-menu-open
+    .wp-block-navigation__responsive-container-content {
+    padding-top: var(--wp--preset--spacing--20);
 }
 
 /* ========================================================================== */
