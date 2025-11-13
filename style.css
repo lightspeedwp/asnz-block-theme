@@ -279,6 +279,15 @@ header:has(> .is-position-sticky) {
     transition: background 0.25s ease;
 }
 
+/* Button hover effects for Brand button variation */
+.wp-block-button.is-style-button-brand .wp-block-button__link:hover,
+.wp-block-button.is-style-button-brand .wp-block-button__link:focus-visible {
+    background: var(--wp--preset--color--brand-dark);
+    color: var(--wp--preset--color--base);
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
 /* ========================================================================== */
 
 /* Card Helpers                                                               */
