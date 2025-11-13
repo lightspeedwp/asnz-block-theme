@@ -669,6 +669,14 @@ header:has(> .is-position-sticky) {
     box-shadow: none !important;
 }
 
+/* === Mega Menu: Current Menu Item Override (No Background) === */
+.wp-block-navigation.mega-menu-nav li.current-menu-item,
+.wp-block-navigation.mega-menu-nav li.current-menu-item a {
+    background: transparent !important;
+    color: var(--wp--preset--color--brand-dark) !important;
+    text-decoration: underline !important;
+}
+
 /* === Main Navigation: Hover/Focus/Active === */
 .wp-block-navigation.is-style-nav-hover li:hover,
 .wp-block-navigation.is-style-nav-hover li:focus-within {
