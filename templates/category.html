@@ -38,7 +38,8 @@
                 <!-- /wp:separator -->
 
                 <!-- wp:heading {"textAlign":"center"} -->
-                <h2 class="wp-block-heading has-text-align-center">Ready to plan your next safari?</h2>
+                <h2 class="wp-block-heading has-text-align-center" id="h-ready-to-plan-your-next-safari">Ready to plan
+                    your next safari?</h2>
                 <!-- /wp:heading -->
 
                 <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"brand-light"} -->
@@ -66,8 +67,7 @@
                         <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"400"} -->
                         <div
                             class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
-                            <a
-                                class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
+                            <a class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
                                 to an expert</a></div>
                         <!-- /wp:button -->
                     </div>
@@ -85,19 +85,21 @@
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+    <!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|40","left":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide"
-        style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--x-small)">
+        style="margin-top:0;margin-bottom:0;padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--x-small)">
         <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
         <div class="wp-block-columns alignwide">
-            <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|30"}}} -->
+            <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
             <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
                 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
-                <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--30)">
-                    <!-- wp:paragraph {"fontSize":"400"} -->
-                    <p class="has-400-font-size"><a href="https://asnz.lightspeedwp.dev/blog/"
-                            data-type="page" data-id="34">Back to blog</a></p>
-                    <!-- /wp:paragraph -->
+                <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:buttons -->
+                    <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-button-brand"} -->
+                        <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-brand">
+                            <a class="wp-block-button__link wp-element-button" href="/blog/">Back to blog</a></div>
+                        <!-- /wp:button -->
+                    </div>
+                    <!-- /wp:buttons -->
                 </div>
                 <!-- /wp:group -->
 
@@ -105,31 +107,31 @@
                 <div class="wp-block-group is-style-section-fast-facts has-border-color has-primary-border-color"
                     style="border-width:1px;border-radius:8px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
                     <!-- wp:heading {"fontSize":"500"} -->
-                    <h2 class="wp-block-heading has-500-font-size">Refine by:</h2>
+                    <h2 class="wp-block-heading has-500-font-size" id="h-refine-by">Refine by:</h2>
                     <!-- /wp:heading -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
                     <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
-                        <h3 class="wp-block-heading has-400-font-size">Categories</h3>
+                        <h3 class="wp-block-heading has-400-font-size" id="h-categories">Categories</h3>
                         <!-- /wp:heading -->
 
                         <!-- wp:facetwp/facet {"facetName":"categories","facetLabel":"Categories","facetType":"checkboxes"} /-->
                     </div>
                     <!-- /wp:group -->
 
-                    <!-- wp:separator {"backgroundColor":"tertiary-300"} -->
+                    <!-- wp:separator {"backgroundColor":"primary"} -->
                     <hr
-                        class="wp-block-separator has-text-color has-tertiary-300-color has-alpha-channel-opacity has-tertiary-300-background-color has-background" />
+                        class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" />
                     <!-- /wp:separator -->
 
                     <!-- wp:group {"layout":{"type":"constrained"}} -->
                     <div class="wp-block-group"><!-- wp:heading {"level":3,"fontSize":"400"} -->
-                        <h3 class="wp-block-heading has-400-font-size">Tags</h3>
+                        <h3 class="wp-block-heading has-400-font-size" id="h-tags">Tags</h3>
                         <!-- /wp:heading -->
 
                         <!-- wp:facetwp/facet {"facetName":"tags","facetLabel":"Tags","facetType":"checkboxes"} /-->
@@ -142,6 +144,14 @@
 
             <!-- wp:column {"width":"75%"} -->
             <div class="wp-block-column" style="flex-basis:75%">
+                <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+                <div class="wp-block-group alignwide"
+                    style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:query-total /-->
+
+                    <!-- wp:facetwp/facet {"facetName":"sort_by","facetLabel":"Sort By","facetType":"sort"} /-->
+                </div>
+                <!-- /wp:group -->
+
                 <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":"0","offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
                 <div class="wp-block-query alignwide">
                     <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
@@ -268,7 +278,7 @@
             <div class="wp-block-group alignwide">
                 <!-- wp:group {"className":"is-style-section-full-width-cta","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group is-style-section-full-width-cta"><!-- wp:heading -->
-                    <h2 class="wp-block-heading">Not seeing your perfect trip?</h2>
+                    <h2 class="wp-block-heading" id="h-not-seeing-your-perfect-trip">Not seeing your perfect trip?</h2>
                     <!-- /wp:heading -->
 
                     <!-- wp:paragraph -->

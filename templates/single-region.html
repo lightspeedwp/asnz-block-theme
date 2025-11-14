@@ -93,7 +93,55 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:pattern {"slug":"asnz/full-width-cta-desert"} /-->
+<!-- wp:cover {"url":"/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-desert.png","dimRatio":0,"customOverlayColor":"#928564","isUserOverlayColor":false,"isDark":false,"sizeSlug":"large","metadata":{"name":"Full Width CTA Desert"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignfull is-light" style="margin-top:0;margin-bottom:0"><img
+        class="wp-block-cover__image-background size-large" alt=""
+        src="/wp-content/themes/asnz-block-theme/assets/img/full-width-cta-image-desert.png"
+        data-object-fit="cover" /><span aria-hidden="true"
+        class="wp-block-cover__background has-background-dim-0 has-background-dim"
+        style="background-color:#928564"></span>
+    <div class="wp-block-cover__inner-container">
+        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"right"}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:group {"className":"is-style-section-full-width-cta","layout":{"type":"constrained"}} -->
+            <div class="wp-block-group is-style-section-full-width-cta"><!-- wp:heading -->
+                <h2 class="wp-block-heading" id="h-not-seeing-your-perfect-trip">Not seeing your perfect trip?</h2>
+                <!-- /wp:heading -->
+
+                <!-- wp:paragraph -->
+                <p>Our website shows only a small, handpicked selection of itineraries. With 30+ years experience and
+                    trusted African connections, our Africa experts can connect you to a full range of tours and safaris
+                    not listed on the website, including small-group and tailor-made options. Speak to an expert to
+                    explore more.</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:columns -->
+                <div class="wp-block-columns"><!-- wp:column -->
+                    <div class="wp-block-column"><!-- wp:buttons -->
+                        <div class="wp-block-buttons">
+                            <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover"} -->
+                            <div
+                                class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
+                                <a class="wp-block-button__link wp-element-button" href="/contact">Talk to an expert</a>
+                            </div>
+                            <!-- /wp:button -->
+                        </div>
+                        <!-- /wp:buttons -->
+                    </div>
+                    <!-- /wp:column -->
+
+                    <!-- wp:column -->
+                    <div class="wp-block-column"></div>
+                    <!-- /wp:column -->
+                </div>
+                <!-- /wp:columns -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+</div>
+<!-- /wp:cover -->
 
 <!-- wp:group {"metadata":{"name":"Related Tour - Destination"},"align":"full","className":"is-style-section-related-destination-band is-style-section-page-section","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-section-related-destination-band is-style-section-page-section"
@@ -108,7 +156,7 @@
             <!-- /wp:separator -->
 
             <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="wp-block-heading has-text-align-center">Featured Tours</h2>
+            <h2 class="wp-block-heading has-text-align-center" id="h-featured-tours">Featured Tours</h2>
             <!-- /wp:heading -->
 
             <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
@@ -266,7 +314,8 @@
             <!-- /wp:separator -->
 
             <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="wp-block-heading has-text-align-center">Best time to visit {Region Title}</h2>
+            <h2 class="wp-block-heading has-text-align-center" id="h-best-time-to-visit-region-title">Best time to visit
+                {Region Title}</h2>
             <!-- /wp:heading -->
 
             <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
@@ -394,7 +443,7 @@
         <!-- /wp:separator -->
 
         <!-- wp:heading {"textAlign":"center"} -->
-        <h2 class="wp-block-heading has-text-align-center">Gallery</h2>
+        <h2 class="wp-block-heading has-text-align-center" id="h-gallery">Gallery</h2>
         <!-- /wp:heading -->
 
         <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
@@ -448,7 +497,7 @@
             <!-- /wp:separator -->
 
             <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="wp-block-heading has-text-align-center">Related Posts</h2>
+            <h2 class="wp-block-heading has-text-align-center" id="h-related-posts">Related Posts</h2>
             <!-- /wp:heading -->
 
             <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
@@ -465,7 +514,7 @@
             <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0">
                 <!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group tour-card-image is-style-section-card-image">
-                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
                 </div>
                 <!-- /wp:group -->
 
@@ -484,38 +533,33 @@
 
                     <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
                     <div class="wp-block-group is-style-section-blog-card-meta">
-                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div class="wp-block-group has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>By</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">By</p>
                             <!-- /wp:paragraph -->
 
-                            <!-- wp:post-author-name {"isLink":true,"fontSize":"200"} /-->
+                            <!-- wp:post-author-name /-->
 
-                            <!-- wp:paragraph {"fontSize":"200"} -->
-                            <p class="has-200-font-size">on</p>
+                            <!-- wp:paragraph -->
+                            <p>on</p>
                             <!-- /wp:paragraph -->
 
-                            <!-- wp:post-date {"fontSize":"200"} /-->
+                            <!-- wp:post-date /-->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"className":"lsx-categories-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div
-                            class="wp-block-group lsx-categories-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>Posted in:</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">Posted in:</p>
                             <!-- /wp:paragraph -->
 
                             <!-- wp:post-terms {"term":"category","className":"value"} /-->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"className":"lsx-tags-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div
-                            class="wp-block-group lsx-tags-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>Tags:</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">Tags:</p>
                             <!-- /wp:paragraph -->
 
                             <!-- wp:post-terms {"term":"post_tag","className":"value"} /-->

@@ -17,7 +17,8 @@
     <div class="wp-block-cover__inner-container">
         <!-- wp:group {"align":"full","className":"is-style-section-hero","layout":{"type":"constrained","contentSize":"900px"}} -->
         <div class="wp-block-group alignfull is-style-section-hero"><!-- wp:heading {"textAlign":"center","level":1} -->
-            <h1 class="wp-block-heading has-text-align-center">Our African Safari Blog</h1>
+            <h1 class="wp-block-heading has-text-align-center" id="h-our-african-safari-blog">Our African Safari Blog
+            </h1>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"align":"center"} -->
@@ -57,7 +58,8 @@
                 <!-- /wp:separator -->
 
                 <!-- wp:heading {"textAlign":"center"} -->
-                <h2 class="wp-block-heading has-text-align-center">Ready to plan your next safari?</h2>
+                <h2 class="wp-block-heading has-text-align-center" id="h-ready-to-plan-your-next-safari">Ready to plan
+                    your next safari?</h2>
                 <!-- /wp:heading -->
 
                 <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"brand-light"} -->
@@ -85,8 +87,7 @@
                         <!-- wp:button {"width":100,"className":"is-style-button-cta cta-button-hover","fontSize":"400"} -->
                         <div
                             class="wp-block-button has-custom-width wp-block-button__width-100 is-style-button-cta cta-button-hover">
-                            <a
-                                class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
+                            <a class="wp-block-button__link has-400-font-size has-custom-font-size wp-element-button">Talk
                                 to an expert</a></div>
                         <!-- /wp:button -->
                     </div>
@@ -112,6 +113,20 @@
             <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|10"}}} -->
             <div class="wp-block-column" style="padding-top:0;padding-bottom:0;flex-basis:25%">
                 <!-- wp:facetwp/facet {"facetName":"blog_search","facetLabel":"Blog Search","facetType":"search"} /-->
+
+                <!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"0"}}},"layout":{"type":"flex","verticalAlignment":"center","justifyContent":"left"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"browserDevice":{"ruleSets":[{"enable":true,"rules":[{"field":"deviceType","operator":"any","value":["mobile"]}]}]}}}]}} -->
+                <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:0">
+                    <!-- wp:button {"width":100,"className":"facetwp-flyout-open is-style-button-light","style":{"typography":{"lineHeight":"1.5"},"border":{"width":"1px","radius":"4px"}},"fontSize":"300"} -->
+                    <div
+                        class="wp-block-button has-custom-width wp-block-button__width-100 facetwp-flyout-open is-style-button-light">
+                        <a class="wp-block-button__link has-300-font-size has-custom-font-size wp-element-button"
+                            style="border-width:1px;border-radius:4px;line-height:1.5"><img class="wp-image-32652"
+                                style="width: 22px;"
+                                src="https://asnz.lightspeedwp.dev/wp-content/uploads/filter-icon-top-padding-1.svg"
+                                alt=""> Filters</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:buttons -->
 
                 <!-- wp:group {"metadata":{"name":"Refine by"},"className":"is-style-section-fast-facts","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"},"margin":{"top":"0","bottom":"0"}},"border":{"radius":"8px","width":"1px"}},"borderColor":"primary","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group is-style-section-fast-facts has-border-color has-primary-border-color"
@@ -154,6 +169,14 @@
 
             <!-- wp:column {"width":"75%"} -->
             <div class="wp-block-column" style="flex-basis:75%">
+                <!-- wp:group {"metadata":{"name":"Results \u0026 Sort"},"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"0"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+                <div class="wp-block-group alignwide"
+                    style="margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0"><!-- wp:query-total /-->
+
+                    <!-- wp:facetwp/facet {"facetName":"sort_by","facetLabel":"Sort By","facetType":"sort"} /-->
+                </div>
+                <!-- /wp:group -->
+
                 <!-- wp:query {"queryId":1,"query":{"perPage":12,"pages":"0","offset":"0","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""},"enableFacetWP":true} -->
                 <div class="wp-block-query alignwide">
                     <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
@@ -161,7 +184,7 @@
                     <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0">
                         <!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
                         <div class="wp-block-group tour-card-image is-style-section-card-image">
-                            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                            <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"21/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
                         </div>
                         <!-- /wp:group -->
 
@@ -280,7 +303,7 @@
             <div class="wp-block-group alignwide">
                 <!-- wp:group {"className":"is-style-section-full-width-cta","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group is-style-section-full-width-cta"><!-- wp:heading -->
-                    <h2 class="wp-block-heading">Not seeing your perfect trip?</h2>
+                    <h2 class="wp-block-heading" id="h-not-seeing-your-perfect-trip">Not seeing your perfect trip?</h2>
                     <!-- /wp:heading -->
 
                     <!-- wp:paragraph -->

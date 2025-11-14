@@ -10,7 +10,7 @@
 
             <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
             <div class="wp-block-group">
-                <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
                 <div class="wp-block-group"><!-- wp:paragraph {"align":"center"} -->
                     <p class="has-text-align-center">By</p>
                     <!-- /wp:paragraph -->
@@ -87,7 +87,7 @@
             <!-- /wp:separator -->
 
             <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="wp-block-heading has-text-align-center">Recent Posts</h2>
+            <h2 class="wp-block-heading has-text-align-center" id="h-recent-posts">Recent Posts</h2>
             <!-- /wp:heading -->
 
             <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
@@ -104,7 +104,7 @@
             <div class="wp-block-group is-style-section-card" style="padding-right:0;padding-left:0">
                 <!-- wp:group {"metadata":{"name":"Card Image"},"className":"tour-card-image is-style-section-card-image","layout":{"type":"constrained"}} -->
                 <div class="wp-block-group tour-card-image is-style-section-card-image">
-                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":{"topLeft":"8px","topRight":"8px"}}}} /-->
                 </div>
                 <!-- /wp:group -->
 
@@ -123,38 +123,33 @@
 
                     <!-- wp:group {"metadata":{"name":"Meta"},"className":"is-style-section-blog-card-meta","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"constrained"}} -->
                     <div class="wp-block-group is-style-section-blog-card-meta">
-                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div class="wp-block-group has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>By</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">By</p>
                             <!-- /wp:paragraph -->
 
-                            <!-- wp:post-author-name {"isLink":true,"fontSize":"200"} /-->
+                            <!-- wp:post-author-name /-->
 
-                            <!-- wp:paragraph {"fontSize":"200"} -->
-                            <p class="has-200-font-size">on</p>
+                            <!-- wp:paragraph -->
+                            <p>on</p>
                             <!-- /wp:paragraph -->
 
-                            <!-- wp:post-date {"fontSize":"200"} /-->
+                            <!-- wp:post-date /-->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"className":"lsx-categories-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div
-                            class="wp-block-group lsx-categories-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>Posted in:</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">Posted in:</p>
                             <!-- /wp:paragraph -->
 
                             <!-- wp:post-terms {"term":"category","className":"value"} /-->
                         </div>
                         <!-- /wp:group -->
 
-                        <!-- wp:group {"className":"lsx-tags-wrapper lsx-hide-if-empty","style":{"spacing":{"blockGap":"5px"}},"textColor":"contrast-700","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-                        <div
-                            class="wp-block-group lsx-tags-wrapper lsx-hide-if-empty has-contrast-700-color has-text-color">
-                            <!-- wp:paragraph {"className":"label","fontSize":"200"} -->
-                            <p class="label has-200-font-size"><strong>Tags:</strong></p>
+                        <!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                        <div class="wp-block-group"><!-- wp:paragraph {"className":"label"} -->
+                            <p class="label">Tags:</p>
                             <!-- /wp:paragraph -->
 
                             <!-- wp:post-terms {"term":"post_tag","className":"value"} /-->
