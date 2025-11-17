@@ -100,8 +100,7 @@ if ($has_content) {
             ),
         );
 
-        echo '<div class="highlights-text" ' .
-            'style="line-height: 1.6;">' .
+        echo '<div class="highlights-text">' .
             '<style>.highlights-text strong { font-weight: 700; }</style>' .
             wp_kses($cleaned_text, $allowed_tags) .
             '</div>';
