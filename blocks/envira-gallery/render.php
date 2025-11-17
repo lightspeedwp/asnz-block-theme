@@ -44,7 +44,27 @@ if ($gallery_id) {
 }
 
 // No gallery ID assigned
-if (! is_admin()) {
+// Check if we're in the editor context (REST API request)
+$is_editor = defined('REST_REQUEST') && REST_REQUEST;
+
+if ($is_editor) {
+    // Editor: show placeholder message
+    echo '<div class="envira-gallery-placeholder" ' .
+        'style="padding: 1.5rem; background: #f0f0f1; ' .
+        'border: 1px dashed #8c8f94; border-radius: 2px; ' .
+        'text-align: center; color: #50575e;">' .
+        '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
+        esc_html__('Envira Gallery', 'asnz-block-theme') .
+        '</p>' .
+        '<p style="margin: 0; font-size: 0.875rem;">' .
+        esc_html__(
+            'Add an Envira Gallery ID to the post custom field ' .
+            'to display the gallery.',
+            'asnz-block-theme'
+        ) .
+        '</p>' .
+        '</div>';
+} else {
     // Frontend: hide the ancestor .envira-gallery-wrapper
     ?>
     <script>
@@ -69,20 +89,4 @@ if (! is_admin()) {
     </script>
     <div class="envira-gallery-empty-marker"></div>
     <?php
-} else {
-    // Editor: show placeholder message
-    echo '<div class="envira-gallery-placeholder" ' .
-        'style="padding: 1.5rem; background: #f0f0f1; ' .
-        'border: 1px dashed #8c8f94; border-radius: 2px; ' .
-        'text-align: center; color: #50575e;">' .
-        '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
-        esc_html__('Envira Gallery', 'asnz-block-theme') .
-        '</p>' .
-        '<p style="margin: 0; font-size: 0.875rem;">' .
-        esc_html__(
-            'Add an Envira Gallery ID to the post custom field to display the gallery.',
-            'asnz-block-theme'
-        ) .
-        '</p>' .
-        '</div>';
 }
