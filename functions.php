@@ -197,18 +197,21 @@ add_action('wp_head', function () {
 add_action(
     'init',
     function () {
-        $result = register_block_type(
-            get_template_directory() . '/blocks/envira-gallery'
-        );
+        $block_path = get_template_directory() . '/blocks/envira-gallery';
 
-        // Debug: Log if registration fails
+        // Verify files exist
+        if (! file_exists($block_path . '/block.json')) {
+            wp_die('Envira Gallery block.json not found at: ' . $block_path);
+        }
+
+        if (! file_exists($block_path . '/build/index.js')) {
+            wp_die('Envira Gallery build/index.js not found at: ' . $block_path);
+        }
+
+        $result = register_block_type($block_path);
+
         if (! $result) {
-            error_log(
-                'Failed to register envira-gallery block at: ' .
-                get_template_directory() . '/blocks/envira-gallery'
-            );
-        } else {
-            error_log('Successfully registered envira-gallery block');
+            wp_die('Failed to register envira-gallery block');
         }
     }
 );
