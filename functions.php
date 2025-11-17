@@ -200,11 +200,11 @@ add_action(
         $result = register_block_type(
             get_template_directory() . '/blocks/envira-gallery'
         );
-        
+
         // Debug: Log if registration fails
         if (! $result) {
             error_log(
-                'Failed to register envira-gallery block at: ' . 
+                'Failed to register envira-gallery block at: ' .
                 get_template_directory() . '/blocks/envira-gallery'
             );
         } else {
