@@ -1,11 +1,10 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { useSelect } from '@wordpress/data';
 import ServerSideRender from '@wordpress/server-side-render';
 import { __ } from '@wordpress/i18n';
 
 registerBlockType('asnz/envira-gallery', {
     edit: (props) => {
-        const { attributes, setAttributes } = props;
+        const { attributes } = props;
         // Show preview, no editing in block (meta handled in SCF UI)
         return (
             <>

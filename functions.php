@@ -197,6 +197,18 @@ add_action('wp_head', function () {
 add_action(
     'init',
     function () {
-        register_block_type(get_template_directory() . '/blocks/envira-gallery');
+        $result = register_block_type(
+            get_template_directory() . '/blocks/envira-gallery'
+        );
+        
+        // Debug: Log if registration fails
+        if (! $result) {
+            error_log(
+                'Failed to register envira-gallery block at: ' . 
+                get_template_directory() . '/blocks/envira-gallery'
+            );
+        } else {
+            error_log('Successfully registered envira-gallery block');
+        }
     }
 );
