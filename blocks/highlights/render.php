@@ -47,13 +47,6 @@ if ($has_content) {
             '</h3>';
     }
 
-    if (! empty($text)) {
-        // Output WYSIWYG content with basic sanitization
-        echo '<div class="highlights-text">' . wp_kses_post($text) . '</div>';
-    }
-
-    echo '</div>';
-    return;
 }
 
 // No content - show placeholder in editor, nothing on frontend
