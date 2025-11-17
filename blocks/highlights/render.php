@@ -53,7 +53,7 @@ if ($has_content) {
 
         // Remove div tags completely
         $cleaned_text = preg_replace('/<\/?div[^>]*>/i', '', $cleaned_text);
-        
+
         // Replace p tags with nothing (content already has br tags)
         $cleaned_text = preg_replace('/<\/?p[^>]*>/i', '', $cleaned_text);
 
@@ -73,7 +73,7 @@ if ($has_content) {
 
         // Trim extra whitespace and collapse multiple line breaks
         $cleaned_text = trim($cleaned_text);
-        
+
         // Remove excessive line breaks (more than 2 in a row)
         $cleaned_text = preg_replace('/(\r\n|\n|\r){3,}/', "\n\n", $cleaned_text);
 
