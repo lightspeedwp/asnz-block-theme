@@ -37,7 +37,38 @@ if ($override_id) {
 
 if ($gallery_id) {
     // Shortcode execution: Envira handles its own internal escaping.
+    echo '<div class="envira-gallery-content">';
     echo do_shortcode(sprintf('[envira-gallery id="%d"]', $gallery_id));
+    echo '</div>';
+    return;
+}
+
+// When no gallery ID, hide the ancestor .envira-gallery-wrapper on frontend
+// Use JavaScript to traverse up and hide the wrapper
+if (! is_admin()) {
+    ?>
+    <script>
+    (function() {
+        const hideWrapper = function() {
+            const placeholders = document.querySelectorAll(
+                '.envira-gallery-empty-marker'
+            );
+            placeholders.forEach(function(marker) {
+                const wrapper = marker.closest('.envira-gallery-wrapper');
+                if (wrapper) {
+                    wrapper.style.display = 'none';
+                }
+            });
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideWrapper);
+        } else {
+            hideWrapper();
+        }
+    })();
+    </script>
+    <div class="envira-gallery-empty-marker"></div>
+    <?php
     return;
 }
 

@@ -7,18 +7,10 @@ registerBlockType('asnz/envira-gallery', {
         const { attributes } = props;
         // Show preview, no editing in block (meta handled in SCF UI)
         return (
-            <>
-                <ServerSideRender
-                    block="asnz/envira-gallery"
-                    attributes={attributes}
-                />
-                <p className="components-help">
-                    {__(
-                        'The Envira Gallery is determined by the SCF field (envira_gallery) for this post.',
-                        'asnz-block-theme'
-                    )}
-                </p>
-            </>
+            <ServerSideRender
+                block="asnz/envira-gallery"
+                attributes={attributes}
+            />
         );
     },
     save: () => null, // Dynamic block - rendered with PHP.
