@@ -16,6 +16,9 @@ composer.phar
 build/
 *.zip
 
+# Exception: Include block build directories
+!blocks/*/build/
+
 # IDE and editor files
 .idea/
 *.swp
