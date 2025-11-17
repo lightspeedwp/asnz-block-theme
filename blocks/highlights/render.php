@@ -48,8 +48,46 @@ if ($has_content) {
     }
 
     if (! empty($text)) {
-        // Output raw HTML - wp_kses_post allows safe HTML tags
-        echo '<div class="highlights-text">' . wp_kses_post($text) . '</div>';
+        // Clean up text: strip divs, remove font-size styles,
+        // preserve line breaks
+        $cleaned_text = $text;
+        
+        // Remove div tags but keep their content
+        $cleaned_text = preg_replace('/<\/?div[^>]*>/i', '', $cleaned_text);
+        
+        // Remove font-size from style attributes
+        $cleaned_text = preg_replace(
+            '/style\s*=\s*["\']([^"\']*?)font-size:\s*[^;"\'}]+;?([^"\']*)["\']/',
+            'style="$1$2"',
+            $cleaned_text
+        );
+        
+        // Remove empty style attributes
+        $cleaned_text = preg_replace(
+            '/style\s*=\s*["\']\s*["\']/',
+            '',
+            $cleaned_text
+        );
+        
+        // Convert line breaks to <br> tags
+        $cleaned_text = nl2br($cleaned_text);
+        
+        // Allow only safe tags: p, br, strong, em, a
+        $allowed_tags = array(
+            'p'      => array('class' => array()),
+            'br'     => array(),
+            'strong' => array(),
+            'em'     => array(),
+            'a'      => array(
+                'href'   => array(),
+                'target' => array(),
+                'rel'    => array(),
+            ),
+        );
+        
+        echo '<div class="highlights-text">' . 
+            wp_kses($cleaned_text, $allowed_tags) . 
+            '</div>';
     }
 
     echo '</div>';
