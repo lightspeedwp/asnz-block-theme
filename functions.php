@@ -190,20 +190,13 @@ add_action('wp_head', function () {
 }, 100);
 
 
-// Enqueue block editor JS and styles for custom Envira Gallery block
-add_action('init', function () {
-    if (function_exists('register_block_type')) {
+/**
+ * Register custom Envira Gallery block.
+ * Assets are loaded automatically via block.json file references.
+ */
+add_action(
+    'init',
+    function () {
         register_block_type(get_template_directory() . '/blocks/envira-gallery');
     }
-});
-
-// Enqueue block editor assets
-add_action('enqueue_block_editor_assets', function () {
-    wp_register_script(
-        'asnz-envira-gallery-editor-script',
-        get_template_directory_uri() . '/blocks/envira-gallery/index.js',
-        [ 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-server-side-render' ],
-        filemtime(get_template_directory() . '/blocks/envira-gallery/index.js'),
-        true
-    );
-});
+);

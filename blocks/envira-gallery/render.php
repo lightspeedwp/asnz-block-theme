@@ -15,8 +15,12 @@ if (! isset($attributes) || ! is_array($attributes)) {
 }
 
 // Sanitize expected attribute keys.
-$meta_field  = isset($attributes['metaField']) ? sanitize_key($attributes['metaField']) : 'envira_gallery';
-$override_id = isset($attributes['overrideId']) ? absint($attributes['overrideId']) : 0;
+$meta_field = isset($attributes['metaField'])
+    ? sanitize_key($attributes['metaField'])
+    : 'envira_gallery';
+$override_id = isset($attributes['overrideId'])
+    ? absint($attributes['overrideId'])
+    : 0;
 
 $gallery_id = 0;
 
