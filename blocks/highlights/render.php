@@ -48,12 +48,13 @@ if ($has_content) {
     }
 
     if (! empty($text)) {
-        // Clean up text: strip divs, remove font-size styles,
+        // Clean up text: strip divs and p tags, remove font-size styles,
         // preserve line breaks
         $cleaned_text = $text;
         
-        // Remove div tags but keep their content
+        // Remove div and p tags but keep their content
         $cleaned_text = preg_replace('/<\/?div[^>]*>/i', '', $cleaned_text);
+        $cleaned_text = preg_replace('/<\/?p[^>]*>/i', "\n", $cleaned_text);
         
         // Remove font-size from style attributes
         $cleaned_text = preg_replace(
@@ -69,12 +70,14 @@ if ($has_content) {
             $cleaned_text
         );
         
+        // Trim extra whitespace but preserve single line breaks
+        $cleaned_text = trim($cleaned_text);
+        
         // Convert line breaks to <br> tags
         $cleaned_text = nl2br($cleaned_text);
         
-        // Allow only safe tags: p, br, strong, em, a
+        // Allow only safe tags: br, strong, em, a
         $allowed_tags = array(
-            'p'      => array('class' => array()),
             'br'     => array(),
             'strong' => array(),
             'em'     => array(),
@@ -85,7 +88,8 @@ if ($has_content) {
             ),
         );
         
-        echo '<div class="highlights-text">' . 
+        echo '<div class="highlights-text" ' .
+            'style="line-height: 1.6;">' .
             wp_kses($cleaned_text, $allowed_tags) . 
             '</div>';
     }
