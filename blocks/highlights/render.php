@@ -75,11 +75,18 @@ if ($has_content) {
         // Trim extra whitespace
         $cleaned_text = trim($cleaned_text);
 
+        // Convert newlines to br tags
+        $cleaned_text = nl2br($cleaned_text, false);
+
         // Normalize br tags (handle both <br> and <br/>)
         $cleaned_text = preg_replace('/<br\s*\/?>/i', '<br />', $cleaned_text);
 
         // Remove excessive consecutive br tags (more than 2 in a row)
-        $cleaned_text = preg_replace('/(<br \/>[\s]*){3,}/', '<br /><br />', $cleaned_text);
+        $cleaned_text = preg_replace(
+            '/(<br \/>[\s]*){3,}/',
+            '<br /><br />',
+            $cleaned_text
+        );
 
         // Allow only safe tags: br, strong, em, a
         $allowed_tags = array(
