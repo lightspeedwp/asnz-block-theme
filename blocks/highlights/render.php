@@ -47,6 +47,67 @@ if ($has_content) {
             '</h3>';
     }
 
+    if (! empty($text)) {
+        // Clean up text: strip divs and p tags, remove font-size styles
+        $cleaned_text = $text;
+
+        // Remove div tags completely
+        $cleaned_text = preg_replace('/<\/?div[^>]*>/i', '', $cleaned_text);
+
+        // Replace p tags with br tags to preserve structure
+        $cleaned_text = preg_replace('/<\/p>/i', '<br>', $cleaned_text);
+        $cleaned_text = preg_replace('/<p[^>]*>/i', '', $cleaned_text);
+
+        // Remove font-size from style attributes
+        $cleaned_text = preg_replace(
+            '/style\s*=\s*["\']([^"\']*?)font-size:\s*[^;"\'}]+;?([^"\']*)["\']/',
+            'style="$1$2"',
+            $cleaned_text
+        );
+
+        // Remove empty style attributes
+        $cleaned_text = preg_replace(
+            '/style\s*=\s*["\']\s*["\']/',
+            '',
+            $cleaned_text
+        );
+
+        // Trim extra whitespace
+        $cleaned_text = trim($cleaned_text);
+
+        // Convert newlines to br tags
+        $cleaned_text = nl2br($cleaned_text, false);
+
+        // Normalize br tags (handle both <br> and <br/>)
+        $cleaned_text = preg_replace('/<br\s*\/?>/i', '<br />', $cleaned_text);
+
+        // Remove excessive consecutive br tags (more than 2 in a row)
+        $cleaned_text = preg_replace(
+            '/(<br \/>[\s]*){3,}/',
+            '<br /><br />',
+            $cleaned_text
+        );
+
+        // Allow only safe tags: br, strong, em, a
+        $allowed_tags = array(
+            'br'     => array(),
+            'strong' => array(),
+            'em'     => array(),
+            'a'      => array(
+                'href'   => array(),
+                'target' => array(),
+                'rel'    => array(),
+            ),
+        );
+
+        echo '<div class="highlights-text">' .
+            '<style>.highlights-text strong { font-weight: 700; }</style>' .
+            wp_kses($cleaned_text, $allowed_tags) .
+            '</div>';
+    }
+
+    echo '</div>';
+    return;
 }
 
 // No content - show placeholder in editor, nothing on frontend
