@@ -74,10 +74,10 @@ if ($has_content) {
 
         // Trim extra whitespace
         $cleaned_text = trim($cleaned_text);
-        
+
         // Normalize br tags (handle both <br> and <br/>)
         $cleaned_text = preg_replace('/<br\s*\/?>/i', '<br />', $cleaned_text);
-        
+
         // Remove excessive consecutive br tags (more than 2 in a row)
         $cleaned_text = preg_replace('/(<br \/>[\s]*){3,}/', '<br /><br />', $cleaned_text);
 
