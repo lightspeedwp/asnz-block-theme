@@ -2,7 +2,7 @@
     "apiVersion": 3,
     "name": "asnz/envira-gallery",
     "title": "Envira Gallery (Dynamic)",
-    "category": "theme",
+    "category": "widgets",
     "icon": "format-gallery",
     "description": "Displays the Envira gallery assigned to this post via SCF field.",
     "keywords": ["gallery", "envira", "scf"],

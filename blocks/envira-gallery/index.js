@@ -15,8 +15,8 @@ registerBlockType('asnz/envira-gallery', {
                 />
                 <p className="components-help">
                     {__(
-                        'The Envira Gallery is determined by the SCF field (envira_gallery_id) for this post.',
-                        'asnz'
+                        'The Envira Gallery is determined by the SCF field (envira_gallery) for this post.',
+                        'asnz-block-theme'
                     )}
                 </p>
             </>
