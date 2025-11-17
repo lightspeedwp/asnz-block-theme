@@ -1,0 +1,27 @@
+{
+    "apiVersion": 3,
+    "name": "asnz/envira-gallery",
+    "title": "Envira Gallery (Dynamic)",
+    "category": "widgets",
+    "icon": "format-gallery",
+    "description": "Displays the Envira gallery assigned to this post via SCF field.",
+    "keywords": ["gallery", "envira", "scf"],
+    "supports": {
+        "html": false,
+        "customClassName": true
+    },
+    "attributes": {
+        "metaField": {
+            "type": "string",
+            "default": "envira_gallery_id"
+        },
+        "overrideId": {
+            "type": "integer"
+        }
+    },
+    "version": "1.0.0",
+    "textdomain": "asnz",
+    "editorScript": "asnz-envira-gallery-editor-script",
+    "style": "asnz-envira-gallery-style",
+    "render": "file:./render.php"
+}
