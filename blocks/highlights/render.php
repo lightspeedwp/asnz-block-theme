@@ -41,11 +41,14 @@ if ($has_content) {
     echo '<div class="highlights-block">';
 
     if (! empty($heading)) {
-        echo '<h3 class="highlights-heading">' . esc_html($heading) . '</h3>';
+        echo '<h3 class="highlights-heading has-medium-font-size" ' .
+            'style="margin-top: 0; padding-top: 0;">' .
+            esc_html($heading) .
+            '</h3>';
     }
 
     if (! empty($text)) {
-        // Allow HTML but sanitize with wp_kses_post
+        // Output raw HTML - wp_kses_post allows safe HTML tags
         echo '<div class="highlights-text">' . wp_kses_post($text) . '</div>';
     }
 
