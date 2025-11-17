@@ -41,27 +41,18 @@ if ($gallery_id) {
     return;
 }
 
-// Debug info for editor or when no gallery found
-$debug_status = function_exists('get_field')
-    ? 'SCF available'
-    : 'Using post meta';
-
-$raw_field_value = function_exists('get_field')
-    ? get_field($meta_field)
-    : get_post_meta(get_the_ID(), $meta_field, true);
-
-echo '<div class="envira-gallery--debug" ' .
-    'style="padding: 1rem; background: #fff3cd; ' .
-    'border: 2px solid #ffc107; margin: 1rem 0;">' .
-    '<p><strong>⚠️ Envira Gallery Block (No Gallery Found)</strong></p>' .
-    '<p>Field name: <code>' . esc_html($meta_field) . '</code></p>' .
-    '<p>Post ID: ' . esc_html(get_the_ID() ?: 'unknown') . '</p>' .
-    '<p>Raw field value: <code>' .
-    esc_html(is_scalar($raw_field_value) ? $raw_field_value : 'non-scalar') .
-    '</code></p>' .
-    '<p>Gallery ID after absint: <code>' .
-    esc_html($gallery_id ?: 'none') . '</code></p>' .
-    '<p>Status: ' . esc_html($debug_status) . '</p>' .
-    '<p><em>Set the "' . esc_html($meta_field) .
-    '" field on this post to a gallery ID.</em></p>' .
+// Placeholder message for editor when no gallery is assigned
+echo '<div class="envira-gallery-placeholder" ' .
+    'style="padding: 1.5rem; background: #f0f0f1; ' .
+    'border: 1px dashed #8c8f94; border-radius: 2px; ' .
+    'text-align: center; color: #50575e;">' .
+    '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
+    esc_html__('Envira Gallery', 'asnz-block-theme') .
+    '</p>' .
+    '<p style="margin: 0; font-size: 0.875rem;">' .
+    esc_html__(
+        'Add an Envira Gallery ID to the post custom field to display the gallery.',
+        'asnz-block-theme'
+    ) .
+    '</p>' .
     '</div>';
