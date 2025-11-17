@@ -39,16 +39,16 @@ $has_content = ! empty($heading) || ! empty($text);
 
 if ($has_content) {
     echo '<div class="highlights-block">';
-    
+
     if (! empty($heading)) {
         echo '<h3 class="highlights-heading">' . esc_html($heading) . '</h3>';
     }
-    
+
     if (! empty($text)) {
         // Allow HTML but sanitize with wp_kses_post
         echo '<div class="highlights-text">' . wp_kses_post($text) . '</div>';
     }
-    
+
     echo '</div>';
     return;
 }
