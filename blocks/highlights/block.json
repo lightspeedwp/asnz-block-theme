@@ -1,7 +1,7 @@
 {
     "apiVersion": 3,
     "name": "asnz/highlights",
-    "title": "Highlights",
+    "title": "ASNZ Highlights",
     "category": "widgets",
     "icon": "star-filled",
     "description": "Displays highlights heading and text from SCF fields.",
