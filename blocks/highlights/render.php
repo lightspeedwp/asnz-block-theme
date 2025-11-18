@@ -41,9 +41,11 @@ if ($has_content) {
     echo '<div class="highlights-block">';
 
     if (! empty($heading)) {
+        // Strip any HTML tags from heading
+        $clean_heading = wp_strip_all_tags($heading);
         echo '<h3 class="highlights-heading has-medium-font-size" ' .
             'style="margin-top: 0; padding-top: 0;">' .
-            esc_html($heading) .
+            esc_html($clean_heading) .
             '</h3>';
     }
 
@@ -80,6 +82,9 @@ if ($has_content) {
 
         // Normalize br tags (handle both <br> and <br/>)
         $cleaned_text = preg_replace('/<br\s*\/?>/i', '<br />', $cleaned_text);
+
+        // Remove br tags immediately after closing strong tags
+        $cleaned_text = preg_replace('/<\/strong>\s*<br \/>/', '</strong>', $cleaned_text);
 
         // Remove excessive consecutive br tags (more than 2 in a row)
         $cleaned_text = preg_replace(
