@@ -74,43 +74,18 @@ if (! $gallery_id && $is_editor) {
     return;
 }
 
-// If no gallery ID on frontend, hide ancestor groups
+// If no gallery ID on frontend, hide ancestor groups with CSS
 if (! $gallery_id) {
-    // Output hidden marker
-    echo '<div class="envira-gallery-empty-marker" style="display:none;"></div>';
+    // Generate unique ID for this instance
+    $unique_id = 'envira-gallery-empty-' . wp_unique_id();
 
-    // Use wp_print_inline_script_tag to prevent escaping
-    $script = <<<'JS'
-(function() {
-    'use strict';
-    var hideAncestors = function() {
-        var markers = document.querySelectorAll('.envira-gallery-empty-marker');
-        for (var j = 0; j < markers.length; j++) {
-            var marker = markers[j];
-            var element = marker;
-            var count = 0;
-            while (element && count < 3) {
-                element = element.parentElement;
-                if (element && element.classList.contains('wp-block-group')) {
-                    element.style.display = 'none';
-                    count++;
-                }
-            }
-        }
-    };
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', hideAncestors);
-    } else {
-        hideAncestors();
-    }
-})();
-JS;
+    // Output marker with unique ID
+    echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
 
-    if (function_exists('wp_print_inline_script_tag')) {
-        wp_print_inline_script_tag($script);
-    } else {
-        echo '<script type="text/javascript">' . $script . '</script>';
-    }
+    // Output CSS to hide parent groups
+    echo '<style type="text/css">';
+    echo '.wp-block-group:has(.' . esc_attr($unique_id) . ') { display: none !important; }';
+    echo '</style>';
 
     return;
 }
