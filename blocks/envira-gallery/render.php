@@ -38,11 +38,6 @@ if ($override_id) {
     $gallery_id = absint(get_post_meta(get_the_ID(), $meta_field, true));
 }
 
-// If no gallery ID, don't render anything (frontend & editor)
-if (! $gallery_id) {
-    return '';
-}
-
 // Get section title
 $section_title = '';
 if (function_exists('get_field')) {
@@ -57,6 +52,30 @@ $section_title = ! empty($section_title) ? wp_strip_all_tags($section_title) : '
 // Check if we're in the editor context (REST API request)
 $is_editor = defined('REST_REQUEST') && REST_REQUEST;
 
+// If no gallery ID in editor, show placeholder
+if (! $gallery_id && $is_editor) {
+    echo '<div class="envira-gallery-placeholder" ' .
+        'style="padding: 1.5rem; background: #f0f0f1; ' .
+        'border: 1px dashed #8c8f94; border-radius: 2px; ' .
+        'text-align: center; color: #50575e;">' .
+        '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
+        esc_html__('Envira Gallery', 'asnz-block-theme') .
+        '</p>' .
+        '<p style="margin: 0; font-size: 0.875rem;">' .
+        esc_html__(
+            'Add an Envira Gallery ID to display the gallery.',
+            'asnz-block-theme'
+        ) .
+        '</p>' .
+        '</div>';
+    return;
+}
+
+// If no gallery ID on frontend, don't render anything
+if (! $gallery_id) {
+    return '';
+}
+
 // Output the gallery section wrapper
 $section_classes = implode(
     ' ',
@@ -66,16 +85,26 @@ $section_classes = implode(
         'is-style-section-page-section',
     )
 );
+
+$heading_wrapper_style = 'display:flex;' .
+    'flex-wrap:nowrap;' .
+    'align-items:center;' .
+    'gap:var(--wp--preset--spacing--20);' .
+    'margin-bottom:var(--wp--preset--spacing--40)';
+
+$separator_style = 'flex-grow:1;' .
+    'margin-top:0;' .
+    'margin-bottom:0';
 ?>
 
 <section id="gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
     <?php if (! empty($section_title)) : ?>
-    <div class="wp-block-group alignwide">
-        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
-        <h2 class="wp-block-heading has-text-align-center">
+    <div class="wp-block-group alignwide" style="<?php echo esc_attr($heading_wrapper_style); ?>">
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
+        <h2 class="wp-block-heading has-text-align-center" style="margin:0;white-space:nowrap">
             <?php echo esc_html($section_title); ?>
         </h2>
-        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
     </div>
     <?php endif; ?>
 
