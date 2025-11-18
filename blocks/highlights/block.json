@@ -23,5 +23,6 @@
     "version": "1.0.0",
     "textdomain": "asnz-block-theme",
     "editorScript": "file:./build/index.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

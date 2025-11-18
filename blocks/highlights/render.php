@@ -54,10 +54,6 @@ if ($has_content) {
         $formatted_text = wpautop($text);
 
         echo '<div class="highlights-text">' .
-            '<style>' .
-            '.highlights-text strong { font-weight: 700; }' .
-            '.highlights-text p { margin: 0.5em 0; }' .
-            '</style>' .
             wp_kses_post($formatted_text) .
             '</div>';
     }

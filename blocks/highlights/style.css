@@ -1,0 +1,13 @@
+/**
+ * Highlights block frontend styles
+ *
+ * @package asnz-block-theme
+ */
+
+.highlights-text strong {
+    font-weight: 700;
+}
+
+.highlights-text p {
+    margin: 0.5em 0;
+}
