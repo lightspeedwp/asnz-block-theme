@@ -74,9 +74,36 @@ if (! $video_id && $is_editor) {
     return;
 }
 
-// If no video ID on frontend, don't render anything
+// If no video ID on frontend, hide ancestor groups
 if (! $video_id) {
-    return '';
+    ?>
+    <script>
+    (function() {
+        const hideAncestors = function() {
+            const markers = document.querySelectorAll('.envira-video-empty-marker');
+            markers.forEach(function(marker) {
+                // Hide up to 2 ancestor groups
+                let element = marker.parentElement;
+                for (let i = 0; i < 2; i++) {
+                    if (element && element.classList.contains('wp-block-group')) {
+                        element.style.display = 'none';
+                        element = element.parentElement;
+                    } else {
+                        break;
+                    }
+                }
+            });
+        };
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hideAncestors);
+        } else {
+            hideAncestors();
+        }
+    })();
+    </script>
+    <div class="envira-video-empty-marker" style="display:none;"></div>
+    <?php
+    return;
 }
 
 // Output the video gallery section wrapper
