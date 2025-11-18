@@ -17,9 +17,13 @@
         },
         "overrideId": {
             "type": "integer"
+        },
+        "gallerySectionTitleField": {
+            "type": "string",
+            "default": "gallery_section_title"
         }
     },
-    "version": "1.0.1",
+    "version": "1.1.0",
     "textdomain": "asnz-block-theme",
     "editorScript": "file:./build/index.js",
     "render": "file:./render.php"

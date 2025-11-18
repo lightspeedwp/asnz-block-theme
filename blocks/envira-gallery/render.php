@@ -21,6 +21,9 @@ $meta_field = isset($attributes['metaField'])
 $override_id = isset($attributes['overrideId'])
     ? absint($attributes['overrideId'])
     : 0;
+$section_title_field = isset($attributes['gallerySectionTitleField'])
+    ? sanitize_key($attributes['gallerySectionTitleField'])
+    : 'gallery_section_title';
 
 $gallery_id = 0;
 
@@ -35,58 +38,53 @@ if ($override_id) {
     $gallery_id = absint(get_post_meta(get_the_ID(), $meta_field, true));
 }
 
-if ($gallery_id) {
-    // Shortcode execution: Envira handles its own internal escaping.
-    echo '<div class="envira-gallery-content">';
-    echo do_shortcode(sprintf('[envira-gallery id="%d"]', $gallery_id));
-    echo '</div>';
-    return;
+// If no gallery ID, don't render anything (frontend & editor)
+if (! $gallery_id) {
+    return '';
 }
 
-// No gallery ID assigned
+// Get section title
+$section_title = '';
+if (function_exists('get_field')) {
+    $section_title = get_field($section_title_field);
+} else {
+    $section_title = get_post_meta(get_the_ID(), $section_title_field, true);
+}
+
+// Sanitize and escape section title
+$section_title = ! empty($section_title) ? wp_strip_all_tags($section_title) : '';
+
 // Check if we're in the editor context (REST API request)
 $is_editor = defined('REST_REQUEST') && REST_REQUEST;
 
-if ($is_editor) {
-    // Editor: show placeholder message
-    echo '<div class="envira-gallery-placeholder" ' .
-        'style="padding: 1.5rem; background: #f0f0f1; ' .
-        'border: 1px dashed #8c8f94; border-radius: 2px; ' .
-        'text-align: center; color: #50575e;">' .
-        '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
-        esc_html__('Envira Gallery', 'asnz-block-theme') .
-        '</p>' .
-        '<p style="margin: 0; font-size: 0.875rem;">' .
-        esc_html__(
-            'Add an Envira Gallery ID to the post custom field ' .
-            'to display the gallery.',
-            'asnz-block-theme'
-        ) .
-        '</p>' .
-        '</div>';
-} else {
-    // Frontend: hide the ancestor .envira-gallery-wrapper
-    ?>
-    <script>
-    (function() {
-        const hideWrapper = function() {
-            const placeholders = document.querySelectorAll(
-                '.envira-gallery-empty-marker'
-            );
-            placeholders.forEach(function(marker) {
-                const wrapper = marker.closest('.envira-gallery-wrapper');
-                if (wrapper) {
-                    wrapper.style.display = 'none';
-                }
-            });
-        };
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', hideWrapper);
-        } else {
-            hideWrapper();
-        }
-    })();
-    </script>
-    <div class="envira-gallery-empty-marker"></div>
-    <?php
-}
+// Output the gallery section wrapper
+$section_classes = implode(
+    ' ',
+    array(
+        'wp-block-group',
+        'envira-gallery-wrapper',
+        'is-style-section-page-section',
+    )
+);
+?>
+
+<section id="gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
+    <?php if (! empty($section_title)) : ?>
+    <div class="wp-block-group alignwide">
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
+        <h2 class="wp-block-heading has-text-align-center">
+            <?php echo esc_html($section_title); ?>
+        </h2>
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
+    </div>
+    <?php endif; ?>
+
+    <div class="wp-block-group alignwide">
+        <?php
+        // Shortcode execution: Envira handles its own internal escaping.
+        echo do_shortcode(sprintf('[envira-gallery id="%d"]', $gallery_id));
+?>
+    </div>
+</section>
+
+
