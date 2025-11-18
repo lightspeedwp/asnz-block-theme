@@ -34,7 +34,23 @@ if (function_exists('get_field')) {
     $text = get_post_meta(get_the_ID(), $text_field, true);
 }
 
+// Check if we have content
+$has_content = ! empty($heading) || ! empty($text);
 
+if ($has_content) {
+    echo '<div class="highlights-block">';
+
+        echo '<div class="highlights-text">' .
+            '<style>' .
+            '.highlights-text strong { font-weight: 700; }' .
+            '</style>' .
+            wp_kses($cleaned_text, $allowed_tags) .
+            '</div>';
+    }
+
+    echo '</div>';
+    return;
+}
 
 // No content - show placeholder in editor, nothing on frontend
 $is_editor = defined('REST_REQUEST') && REST_REQUEST;
