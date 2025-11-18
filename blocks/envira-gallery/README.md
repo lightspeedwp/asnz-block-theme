@@ -22,7 +22,7 @@ npm run start
 ## Usage
 
 1. Add the block to any post/page in the editor
-2. The gallery is pulled from the `envira_gallery_id` custom field (set via ACF/SCF)
+2. The gallery is pulled from the `envira_gallery` custom field (set via ACF/SCF)
 3. Optional: Override with specific gallery ID via block attribute
 
 ## Files

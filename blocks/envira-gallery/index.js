@@ -1,7 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
 import ServerSideRender from '@wordpress/server-side-render';
-import { __ } from '@wordpress/i18n';
-
 registerBlockType('asnz/envira-gallery', {
     edit: (props) => {
         const { attributes } = props;
