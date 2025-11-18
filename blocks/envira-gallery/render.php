@@ -46,8 +46,11 @@ if (function_exists('get_field')) {
     $section_title = get_post_meta(get_the_ID(), $section_title_field, true);
 }
 
-// Sanitize and escape section title
+// Sanitize and escape section title, fallback to "Gallery" if empty
 $section_title = ! empty($section_title) ? wp_strip_all_tags($section_title) : '';
+if (empty($section_title)) {
+    $section_title = __('Gallery', 'asnz-block-theme');
+}
 
 // Check if we're in the editor context (REST API request)
 $is_editor = defined('REST_REQUEST') && REST_REQUEST;
@@ -63,7 +66,7 @@ if (! $gallery_id && $is_editor) {
         '</p>' .
         '<p style="margin: 0; font-size: 0.875rem;">' .
         esc_html__(
-            'Add an Envira Gallery ID to display the gallery.',
+            'Add an Envira Gallery ID and section title to display the gallery.',
             'asnz-block-theme'
         ) .
         '</p>' .
@@ -98,7 +101,6 @@ $separator_style = 'flex-grow:1;' .
 ?>
 
 <section id="gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
-    <?php if (! empty($section_title)) : ?>
     <div class="wp-block-group alignwide" style="<?php echo esc_attr($heading_wrapper_style); ?>">
         <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
         <h2 class="wp-block-heading has-text-align-center" style="margin:0;white-space:nowrap">
@@ -106,7 +108,6 @@ $separator_style = 'flex-grow:1;' .
         </h2>
         <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
     </div>
-    <?php endif; ?>
 
     <div class="wp-block-group alignwide">
         <?php
