@@ -40,6 +40,15 @@ $has_content = ! empty($heading) || ! empty($text);
 if ($has_content) {
     echo '<div class="highlights-block">';
 
+    if (! empty($heading)) {
+        echo '<h3 class="highlights-heading has-medium-font-size" ' .
+            'style="margin-top: 0; padding-top: 0;">' .
+            esc_html($heading) .
+            '</h3>';
+    }
+
+    if (! empty($text)) {
+
         echo '<div class="highlights-text">' .
             '<style>' .
             '.highlights-text strong { font-weight: 700; }' .
