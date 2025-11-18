@@ -62,7 +62,7 @@ if (! $gallery_id && $is_editor) {
         'border: 1px dashed #8c8f94; border-radius: 2px; ' .
         'text-align: center; color: #50575e;">' .
         '<p style="margin: 0 0 0.5rem; font-weight: 600;">' .
-        esc_html__('Envira Gallery', 'asnz-block-theme') .
+        esc_html__('Envira Image Gallery', 'asnz-block-theme') .
         '</p>' .
         '<p style="margin: 0; font-size: 0.875rem;">' .
         esc_html__(
@@ -103,7 +103,7 @@ $separator_style = 'flex-grow:1;' .
 <section id="gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
     <div class="wp-block-group alignwide" style="<?php echo esc_attr($heading_wrapper_style); ?>">
         <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
-        <h2 class="wp-block-heading has-text-align-center" style="margin:0;white-space:nowrap">
+        <h2 class="wp-block-heading has-text-align-center" style="margin:0">
             <?php echo esc_html($section_title); ?>
         </h2>
         <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
