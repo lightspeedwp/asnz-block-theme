@@ -113,6 +113,6 @@ $separator_style = 'flex-grow:1;' .
         <?php
         // Shortcode execution: Envira handles its own internal escaping.
         echo do_shortcode(sprintf('[envira-gallery id="%d"]', $video_id));
-        ?>
+?>
     </div>
 </div>
