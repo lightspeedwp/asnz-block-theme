@@ -1,11 +1,11 @@
 {
     "apiVersion": 3,
-    "name": "asnz/envira-gallery",
-    "title": "ASNZ Envira Image Gallery",
+    "name": "asnz/envira-video-gallery",
+    "title": "ASNZ Envira Video Gallery",
     "category": "widgets",
-    "icon": "format-gallery",
-    "description": "Displays the Envira gallery assigned to this post via SCF field.",
-    "keywords": ["gallery", "envira", "scf"],
+    "icon": "video-alt3",
+    "description": "Displays the Envira video gallery assigned to this post via SCF field.",
+    "keywords": ["video", "gallery", "envira", "scf"],
     "supports": {
         "html": false,
         "customClassName": true
@@ -13,17 +13,17 @@
     "attributes": {
         "metaField": {
             "type": "string",
-            "default": "envira_gallery"
+            "default": "envira_video"
         },
         "overrideId": {
             "type": "integer"
         },
-        "gallerySectionTitleField": {
+        "videoSectionTitleField": {
             "type": "string",
-            "default": "gallery_section_title"
+            "default": "videos_section_title"
         }
     },
-    "version": "1.1.0",
+    "version": "1.0.0",
     "textdomain": "asnz-block-theme",
     "editorScript": "file:./build/index.js",
     "render": "file:./render.php"

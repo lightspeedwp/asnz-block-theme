@@ -1,0 +1,14 @@
+{
+    "name": "highlights-block",
+    "version": "1.0.0",
+    "description": "Highlights block for ASNZ Block Theme",
+    "scripts": {
+        "build": "wp-scripts build --webpack-copy-php --config=webpack.config.js",
+        "start": "wp-scripts start --webpack-copy-php --config=webpack.config.js"
+    },
+    "keywords": [
+        "wordpress",
+        "block",
+        "highlights"
+    ]
+}

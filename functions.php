@@ -200,3 +200,25 @@ add_action(
         register_block_type(get_template_directory() . '/blocks/envira-gallery');
     }
 );
+
+/**
+ * Register custom Envira Video Gallery block.
+ * Assets are loaded automatically via block.json file references.
+ */
+add_action(
+    'init',
+    function () {
+        register_block_type(get_template_directory() . '/blocks/envira-video-gallery');
+    }
+);
+
+/**
+ * Register custom Highlights block.
+ * Assets are loaded automatically via block.json file references.
+ */
+add_action(
+    'init',
+    function () {
+        register_block_type(get_template_directory() . '/blocks/highlights');
+    }
+);
