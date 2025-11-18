@@ -50,12 +50,15 @@ if ($has_content) {
     }
 
     if (! empty($text)) {
+        // Apply wpautop to convert line breaks to <p> and <br> tags
+        $formatted_text = wpautop($text);
+
         echo '<div class="highlights-text">' .
             '<style>' .
-            '.highlights-text strong { font-weight: 700 !important; }' .
+            '.highlights-text strong { font-weight: 700; }' .
             '.highlights-text p { margin: 0.5em 0; }' .
             '</style>' .
-            wp_kses_post($text) .
+            wp_kses_post($formatted_text) .
             '</div>';
     }
 
