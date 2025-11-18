@@ -13,7 +13,6 @@ vendor/
 composer.phar
 
 # Build artifacts
-build/
 *.zip
 
 # IDE and editor files

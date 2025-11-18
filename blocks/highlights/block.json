@@ -1,0 +1,28 @@
+{
+    "apiVersion": 3,
+    "name": "asnz/highlights",
+    "title": "ASNZ Highlights",
+    "category": "widgets",
+    "icon": "star-filled",
+    "description": "Displays highlights heading and text from SCF fields.",
+    "keywords": ["highlights", "scf", "heading"],
+    "supports": {
+        "html": false,
+        "customClassName": true
+    },
+    "attributes": {
+        "headingField": {
+            "type": "string",
+            "default": "asnz_highlights_heading"
+        },
+        "textField": {
+            "type": "string",
+            "default": "asnz_highlights_text"
+        }
+    },
+    "version": "1.0.0",
+    "textdomain": "asnz-block-theme",
+    "editorScript": "file:./build/index.js",
+    "style": "file:./style.css",
+    "render": "file:./render.php"
+}

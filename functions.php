@@ -188,3 +188,23 @@ add_action('wp_head', function () {
     </script>
   <?php
 }, 100);
+
+
+/**
+ * Register custom blocks.
+ * Assets are loaded automatically via block.json file references.
+ */
+add_action(
+    'init',
+    function () {
+        $blocks = array(
+            'envira-gallery',
+            'envira-video-gallery',
+            'highlights',
+        );
+
+        foreach ($blocks as $block) {
+            register_block_type(get_template_directory() . '/blocks/' . $block);
+        }
+    }
+);

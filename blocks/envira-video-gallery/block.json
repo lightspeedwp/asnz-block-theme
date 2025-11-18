@@ -1,0 +1,30 @@
+{
+    "apiVersion": 3,
+    "name": "asnz/envira-video-gallery",
+    "title": "ASNZ Envira Video Gallery",
+    "category": "widgets",
+    "icon": "video-alt3",
+    "description": "Displays the Envira video gallery assigned to this post via SCF field.",
+    "keywords": ["video", "gallery", "envira", "scf"],
+    "supports": {
+        "html": false,
+        "customClassName": true
+    },
+    "attributes": {
+        "metaField": {
+            "type": "string",
+            "default": "envira_video"
+        },
+        "overrideId": {
+            "type": "integer"
+        },
+        "videoSectionTitleField": {
+            "type": "string",
+            "default": "videos_section_title"
+        }
+    },
+    "version": "1.0.0",
+    "textdomain": "asnz-block-theme",
+    "editorScript": "file:./build/index.js",
+    "render": "file:./render.php"
+}
