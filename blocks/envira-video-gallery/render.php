@@ -76,23 +76,26 @@ if (! $video_id && $is_editor) {
 
 // If no video ID on frontend, hide ancestor groups
 if (! $video_id) {
+    // Output hidden marker and add inline script to hide ancestors
+    echo '<div class="envira-video-empty-marker" style="display:none;"></div>';
     ?>
-    <script>
+    <script type="text/javascript">
     (function() {
-        const hideAncestors = function() {
-            const markers = document.querySelectorAll('.envira-video-empty-marker');
-            markers.forEach(function(marker) {
-                // Hide up to 2 ancestor groups
-                let element = marker.parentElement;
-                for (let i = 0; i < 2; i++) {
+        'use strict';
+        var hideAncestors = function() {
+            var markers = document.querySelectorAll('.envira-video-empty-marker');
+            for (var j = 0; j < markers.length; j++) {
+                var marker = markers[j];
+                var element = marker;
+                var count = 0;
+                while (element && count < 3) {
+                    element = element.parentElement;
                     if (element && element.classList.contains('wp-block-group')) {
                         element.style.display = 'none';
-                        element = element.parentElement;
-                    } else {
-                        break;
+                        count++;
                     }
                 }
-            });
+            }
         };
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', hideAncestors);
@@ -101,7 +104,6 @@ if (! $video_id) {
         }
     })();
     </script>
-    <div class="envira-video-empty-marker" style="display:none;"></div>
     <?php
     return;
 }
