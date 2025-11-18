@@ -76,35 +76,42 @@ if (! $gallery_id && $is_editor) {
 
 // If no gallery ID on frontend, hide ancestor groups
 if (! $gallery_id) {
-    // Output hidden marker and add inline script to hide ancestors
+    // Output hidden marker
     echo '<div class="envira-gallery-empty-marker" style="display:none;"></div>';
-    ?>
-    <script type="text/javascript">
-    (function() {
-        'use strict';
-        var hideAncestors = function() {
-            var markers = document.querySelectorAll('.envira-gallery-empty-marker');
-            for (var j = 0; j < markers.length; j++) {
-                var marker = markers[j];
-                var element = marker;
-                var count = 0;
-                while (element && count < 3) {
-                    element = element.parentElement;
-                    if (element && element.classList.contains('wp-block-group')) {
-                        element.style.display = 'none';
-                        count++;
-                    }
+
+    // Use wp_print_inline_script_tag to prevent escaping
+    $script = <<<'JS'
+(function() {
+    'use strict';
+    var hideAncestors = function() {
+        var markers = document.querySelectorAll('.envira-gallery-empty-marker');
+        for (var j = 0; j < markers.length; j++) {
+            var marker = markers[j];
+            var element = marker;
+            var count = 0;
+            while (element && count < 3) {
+                element = element.parentElement;
+                if (element && element.classList.contains('wp-block-group')) {
+                    element.style.display = 'none';
+                    count++;
                 }
             }
-        };
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', hideAncestors);
-        } else {
-            hideAncestors();
         }
-    })();
-    </script>
-    <?php
+    };
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideAncestors);
+    } else {
+        hideAncestors();
+    }
+})();
+JS;
+
+    if (function_exists('wp_print_inline_script_tag')) {
+        wp_print_inline_script_tag($script);
+    } else {
+        echo '<script type="text/javascript">' . $script . '</script>';
+    }
+
     return;
 }
 
