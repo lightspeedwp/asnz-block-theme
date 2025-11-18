@@ -1,7 +1,7 @@
 {
     "apiVersion": 3,
     "name": "asnz/envira-gallery",
-    "title": "Envira Gallery (Dynamic)",
+    "title": "ASNZ Envira Image Gallery",
     "category": "widgets",
     "icon": "format-gallery",
     "description": "Displays the Envira gallery assigned to this post via SCF field.",

@@ -1,7 +1,7 @@
 {
     "apiVersion": 3,
     "name": "asnz/envira-video-gallery",
-    "title": "Envira Video Gallery (Dynamic)",
+    "title": "ASNZ Envira Video Gallery",
     "category": "widgets",
     "icon": "video-alt3",
     "description": "Displays the Envira video gallery assigned to this post via SCF field.",
