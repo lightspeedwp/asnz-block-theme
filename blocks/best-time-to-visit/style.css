@@ -53,7 +53,7 @@
 }
 
 .best-time-month--mixed {
-    background-color: #bdf2a1;
+    background-color: var(--wp--preset--color--brand-light);
     color: var(--wp--preset--color--contrast);
 }
 
