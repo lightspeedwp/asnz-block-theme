@@ -107,13 +107,15 @@ function asnz_get_month_styles($month_name, $best, $shoulder)
     }
 }
 
-// Check if we have content
-$has_content = ! empty($when_to_go_title) || ! empty($when_to_go_text);
+// Check if we have content - require at least title and one month selection
+$has_content = (! empty($when_to_go_title) || ! empty($when_to_go_text))
+    && (! empty($best_months) || ! empty($shoulder_months));
+
+// Check if we're in the editor context (REST API request)
+$is_editor = defined('REST_REQUEST') && REST_REQUEST;
 
 if (! $has_content) {
-    // No content - show placeholder in editor, nothing on frontend
-    $is_editor = defined('REST_REQUEST') && REST_REQUEST;
-
+    // No content - show placeholder in editor, hide on frontend
     if ($is_editor) {
         echo '<div class="best-time-to-visit-placeholder" ' .
             'style="padding: 1.5rem; background: #f0f0f1; ' .
@@ -129,7 +131,36 @@ if (! $has_content) {
             ) .
             '</p>' .
             '</div>';
+        return;
     }
+
+    // If no content on frontend, hide ancestor groups with CSS
+    // Generate unique ID for this instance
+    $unique_id = 'best-time-to-visit-empty-' . wp_unique_id();
+
+    // Output marker with unique ID
+    echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
+
+    // Output inline script using direct output to avoid escaping
+    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+    echo '<script>';
+    echo '(function(){';
+    echo 'var m=document.querySelector(".' . esc_js($unique_id) . '");';
+    echo 'if(m){';
+    echo 'var e=m.parentElement;';
+    echo 'var c=0;';
+    echo 'while(e&&c<3){';
+    echo 'if(e.classList.contains("wp-block-group")){';
+    echo 'e.style.display="none";';
+    echo 'c++;';
+    echo '}';
+    echo 'e=e.parentElement;';
+    echo '}';
+    echo '}';
+    echo '})();';
+    echo '</script>';
+    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+
     return;
 }
 
@@ -137,50 +168,46 @@ if (! $has_content) {
 ?>
 <!-- wp:group {"metadata":{"name":"Best Time to Visit"},"className":"is-style-section-page-section-tertiary","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->
 <div id="best-time" class="wp-block-group is-style-section-page-section-tertiary">
-    <!-- wp:group {"metadata":{"name":"Title & Description"},"align":"wide","layout":{"type":"constrained"}} -->
+    <!-- wp:group {"metadata":{"name":"Title & Months Row"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
-            <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
-            <!-- /wp:separator -->
+        <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
+        <!-- /wp:separator -->
 
-            <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="wp-block-heading has-text-align-center"><?php echo esc_html($when_to_go_title); ?></h2>
-            <!-- /wp:heading -->
+        <!-- wp:heading {"textAlign":"center","style":{"layout":{"selfStretch":"fit","flexSize":null}}} -->
+        <h2 class="wp-block-heading has-text-align-center"><?php echo esc_html($when_to_go_title); ?></h2>
+        <!-- /wp:heading -->
 
-            <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
-            <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
-            <!-- /wp:separator -->
+        <!-- wp:separator {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"backgroundColor":"primary"} -->
+        <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background"/>
+        <!-- /wp:separator -->
+
+        <!-- wp:group {"metadata":{"name":"Months"},"style":{"border":{"radius":"4px"},"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20"},"blockGap":"var:preset|spacing|10"},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+        <div class="wp-block-group" style="border-radius:4px;padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
+            <?php foreach ($months as $month_full => $month_abbr) : ?>
+                <?php $styles = asnz_get_month_styles($month_full, $best_months, $shoulder_months); ?>
+                <!-- wp:group {"metadata":{"name":"<?php echo esc_attr($month_abbr); ?>"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}},"color":{"background":"<?php echo esc_attr($styles['bg_color']); ?>","text":"<?php echo esc_attr($styles['text_color']); ?>"},"border":{"radius":"4px"},"layout":{"selfStretch":"fit","flexSize":null}},"layout":{"type":"constrained"}} -->
+                <div class="wp-block-group" style="border-radius:4px;background-color:<?php echo esc_attr($styles['bg_color']); ?>;color:<?php echo esc_attr($styles['text_color']); ?>;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20)">
+                    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.875rem"}}} -->
+                    <p class="has-text-align-center" style="font-size:0.875rem"><?php echo esc_html($month_abbr); ?></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            <?php endforeach; ?>
         </div>
         <!-- /wp:group -->
-
-        <?php if (! empty($when_to_go_text)) : ?>
-        <!-- wp:group {"metadata":{"name":"Description"},"align":"wide","layout":{"type":"constrained","contentSize":"900px"}} -->
-        <div class="wp-block-group alignwide">
-            <!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"400"} -->
-            <p class="has-text-align-center has-400-font-size" style="font-style:normal;font-weight:500"><?php echo wp_kses_post(wpautop($when_to_go_text)); ?></p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:group -->
-        <?php endif; ?>
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"metadata":{"name":"Months"},"align":"wide","style":{"border":{"radius":"4px"},"spacing":{"padding":{"right":"var:preset|spacing|20","left":"var:preset|spacing|20"},"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-    <div class="wp-block-group alignwide" style="border-radius:4px;padding-right:var(--wp--preset--spacing--20);padding-left:var(--wp--preset--spacing--20)">
-        <?php foreach ($months as $month_full => $month_abbr) : ?>
-            <?php $styles = asnz_get_month_styles($month_full, $best_months, $shoulder_months); ?>
-            <!-- wp:group {"metadata":{"name":"<?php echo esc_attr($month_abbr); ?>"},"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}},"color":{"background":"<?php echo esc_attr($styles['bg_color']); ?>","text":"<?php echo esc_attr($styles['text_color']); ?>"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-            <div class="wp-block-group" style="border-radius:4px;background-color:<?php echo esc_attr($styles['bg_color']); ?>;color:<?php echo esc_attr($styles['text_color']); ?>;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)">
-                <!-- wp:paragraph {"align":"center"} -->
-                <p class="has-text-align-center"><?php echo esc_html($month_abbr); ?></p>
-                <!-- /wp:paragraph -->
-            </div>
-            <!-- /wp:group -->
-        <?php endforeach; ?>
+    <?php if (! empty($when_to_go_text)) : ?>
+    <!-- wp:group {"metadata":{"name":"Description"},"align":"wide","layout":{"type":"constrained","contentSize":"900px"}} -->
+    <div class="wp-block-group alignwide">
+        <!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"400"} -->
+        <p class="has-text-align-center has-400-font-size" style="font-style:normal;font-weight:500"><?php echo wp_kses_post(wpautop($when_to_go_text)); ?></p>
+        <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
+    <?php endif; ?>
 
     <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|30","left":"var:preset|spacing|60"}}}} -->
     <div class="wp-block-columns">
