@@ -66,9 +66,3 @@
         grid-column: auto;
     }
 }
-
-@media (max-width: 480px) {
-    .best-time-months-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
