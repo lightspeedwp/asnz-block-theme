@@ -30,7 +30,7 @@
     justify-content: center;
 }
 
-/* Force row break at 7th month (July) for medium screens */
+/* Force row break at 7th month (July) for 6-column layout (769-1099px) */
 .best-time-month[data-row-break='true'] {
     grid-column: 1;
 }
