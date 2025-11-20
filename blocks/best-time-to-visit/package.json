@@ -10,5 +10,8 @@
         "wordpress",
         "block",
         "best-time-to-visit"
-    ]
+    ],
+    "devDependencies": {
+        "@wordpress/scripts": "^27.0.0"
+    }
 }
