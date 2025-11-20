@@ -46,20 +46,20 @@ if (is_array($best_months_raw)) {
     $best_months = array_map('trim', array_map('strtolower', explode(',', $best_months_raw)));
 }
 
-// Define months
+// Define months with localized abbreviations
 $months = array(
-    'january' => 'Jan',
-    'february' => 'Feb',
-    'march' => 'Mar',
-    'april' => 'Apr',
-    'may' => 'May',
-    'june' => 'Jun',
-    'july' => 'Jul',
-    'august' => 'Aug',
-    'september' => 'Sep',
-    'october' => 'Oct',
-    'november' => 'Nov',
-    'december' => 'Dec',
+    'january'   => date_i18n('M', strtotime('January')),
+    'february'  => date_i18n('M', strtotime('February')),
+    'march'     => date_i18n('M', strtotime('March')),
+    'april'     => date_i18n('M', strtotime('April')),
+    'may'       => date_i18n('M', strtotime('May')),
+    'june'      => date_i18n('M', strtotime('June')),
+    'july'      => date_i18n('M', strtotime('July')),
+    'august'    => date_i18n('M', strtotime('August')),
+    'september' => date_i18n('M', strtotime('September')),
+    'october'   => date_i18n('M', strtotime('October')),
+    'november'  => date_i18n('M', strtotime('November')),
+    'december'  => date_i18n('M', strtotime('December')),
 );
 
 /**
