@@ -107,13 +107,25 @@ if (! $has_content) {
         return;
     }
 
-    // If no content on frontend, hide ancestor groups with CSS
+    // If no content on frontend, hide ancestor with specific class
     // Generate unique ID for this instance
     $unique_id = 'best-time-to-visit-empty-' . wp_unique_id();
 
     // Output marker with unique ID
     echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
 
+    // Output inline script to hide ancestor with .best-time-wrapper class
+    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+    echo '<script>';
+    echo '(function(){';
+    echo 'var m=document.querySelector(".' . esc_js($unique_id) . '");';
+    echo 'if(m){';
+    echo 'var e=m.closest(".best-time-wrapper");';
+    echo 'if(e){e.style.display="none";}';
+    echo '}';
+    echo '})();';
+    echo '</script>';
+    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 
     return;
 }

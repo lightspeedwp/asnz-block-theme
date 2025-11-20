@@ -1,5 +1,17 @@
 /**
  * Best Time to Visit Block Styles
+ *
+ * USAGE NOTE:
+ * To hide the entire section when there's no data, add the class "best-time-wrapper"
+ * to the grandparent Group block containing this block.
+ *
+ * Recommended structure:
+ * Group (grandparent) - ADD CLASS: "best-time-wrapper"
+ *   └─ Group (parent) - Title & Description content
+ *   └─ Best Time to Visit Block
+ *
+ * When the block detects no month data, it will automatically hide the element
+ * with the "best-time-wrapper" class.
  */
 
 .best-time-months-container {
