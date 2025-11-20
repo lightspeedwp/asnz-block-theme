@@ -131,8 +131,10 @@ if (! $has_content) {
 }
 
 // Output the block markup - just the months row
+<?php
+$align_class = isset($attributes['align']) ? 'align' . $attributes['align'] : '';
 ?>
-<div class="best-time-months-container alignwide">
+<div class="best-time-months-container <?php echo esc_attr($align_class); ?>">
     <?php
     $month_index = 0;
 foreach ($months as $month_full => $month_abbr) :
