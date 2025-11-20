@@ -1,0 +1,14 @@
+{
+    "name": "best-time-to-visit-block",
+    "version": "1.0.0",
+    "description": "Best Time to Visit block for ASNZ Block Theme",
+    "scripts": {
+        "build": "wp-scripts build --webpack-copy-php --config=webpack.config.js",
+        "start": "wp-scripts start --webpack-copy-php --config=webpack.config.js"
+    },
+    "keywords": [
+        "wordpress",
+        "block",
+        "best-time-to-visit"
+    ]
+}
