@@ -198,6 +198,7 @@ add_action(
     'init',
     function () {
         $blocks = array(
+            'best-time-to-visit',
             'envira-gallery',
             'envira-video-gallery',
             'highlights',
