@@ -563,7 +563,7 @@
                             "fontSize": "var:preset|font-size|200"
                         },
                         "color": {
-                            "text": "var:preset|color|secondary-500"
+                            "text": "var:preset|color|contrast"
                         }
                     }
                 },
