@@ -18,14 +18,6 @@
         "bestMonthsField": {
             "type": "string",
             "default": "best_time_to_visit"
-        },
-        "whenToGoTextField": {
-            "type": "string",
-            "default": "when_to_go_text"
-        },
-        "whenToGoTitleField": {
-            "type": "string",
-            "default": "when_to_go_title"
         }
     },
     "version": "1.0.0",
