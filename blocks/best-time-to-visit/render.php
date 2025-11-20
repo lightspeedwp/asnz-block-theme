@@ -139,8 +139,20 @@ foreach ($months as $month_full => $month_abbr) :
     $month_class = asnz_get_month_class($month_full, $best_months, $shoulder_months);
     $month_index++;
     $data_attr = ($month_index === 7) ? ' data-row-break="true"' : '';
+    // Map CSS class to season label for accessibility
+    switch ($month_class) {
+        case 'best-time-month--best':
+            $season_label = __('Best time to visit', 'asnz-block-theme');
+            break;
+        case 'best-time-month--good':
+            $season_label = __('Good time to visit', 'asnz-block-theme');
+            break;
+        default:
+            $season_label = __('Alternative time to visit', 'asnz-block-theme');
+            break;
+    }
     ?>
-        <div class="best-time-month <?php echo esc_attr($month_class); ?>"<?php echo $data_attr; ?>>
+        <div class="best-time-month <?php echo esc_attr($month_class); ?>"<?php echo $data_attr; ?> aria-label="<?php echo esc_attr($month_abbr . ': ' . $season_label); ?>">
             <p class="best-time-month__label"><?php echo esc_html($month_abbr); ?></p>
         </div>
     <?php endforeach; ?>
