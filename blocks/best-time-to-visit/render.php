@@ -62,6 +62,7 @@ $months = array(
     'december'  => date_i18n('M', strtotime('December')),
 );
 
+if (! function_exists('asnz_get_month_class')) {
 /**
  * Get month CSS class based on selection.
  *
@@ -79,6 +80,7 @@ function asnz_get_month_class($month_name, $best, $shoulder)
     } else {
         return 'best-time-month--mixed';
     }
+}
 }
 
 // Check if we have at least one month selection
