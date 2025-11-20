@@ -110,28 +110,26 @@ if (! $has_content) {
     // If no content on frontend, hide ancestor with specific class
     // Generate unique ID for this instance
     $unique_id = 'best-time-to-visit-empty-' . wp_unique_id();
+    $script_handle = 'asnz-best-time-hide-' . $unique_id;
+
+    // Register and enqueue inline script using WordPress script handling
+    wp_register_script($script_handle, false, array(), false, array('in_footer' => true));
+    wp_enqueue_script($script_handle);
+
+    // Add inline script to hide ancestor with .best-time-wrapper class
+    $inline_script = sprintf(
+        '(function(){var m=document.querySelector(".%s");if(m){var e=m.closest(".best-time-wrapper");if(e){e.style.display="none";}}})();',
+        esc_js($unique_id)
+    );
+    wp_add_inline_script($script_handle, $inline_script);
 
     // Output marker with unique ID
     echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
-
-    // Output inline script to hide ancestor with .best-time-wrapper class
-    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-    echo '<script>';
-    echo '(function(){';
-    echo 'var m=document.querySelector(".' . esc_js($unique_id) . '");';
-    echo 'if(m){';
-    echo 'var e=m.closest(".best-time-wrapper");';
-    echo 'if(e){e.style.display="none";}';
-    echo '}';
-    echo '})();';
-    echo '</script>';
-    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 
     return;
 }
 
 // Output the block markup - just the months row
-<?php
 $align_class = isset($attributes['align']) ? 'align' . $attributes['align'] : '';
 ?>
 <div class="best-time-months-container <?php echo esc_attr($align_class); ?>">
