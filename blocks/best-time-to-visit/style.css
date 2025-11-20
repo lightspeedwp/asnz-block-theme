@@ -1,1 +1,63 @@
-/* Intentionally empty - styles managed via theme.json and inline block styles */
+/**
+ * Best Time to Visit Block Styles
+ */
+
+.best-time-months-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.best-time-month {
+    padding: var(--wp--preset--spacing--10) 0;
+    text-align: center;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Force row break at 7th month (July) */
+.best-time-month[data-row-break='true'] {
+    grid-column: 1;
+}
+
+.best-time-month__label {
+    margin: 0;
+    font-size: var(--wp--preset--font-size--300);
+    font-weight: 400;
+}
+
+/* Month color states */
+.best-time-month--best {
+    background-color: var(--wp--preset--color--brand-dark);
+    color: var(--wp--preset--color--base);
+}
+
+.best-time-month--good {
+    background-color: var(--wp--preset--color--brand);
+    color: var(--wp--preset--color--base);
+}
+
+.best-time-month--mixed {
+    background-color: #bdf2a1;
+    color: var(--wp--preset--color--contrast);
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 768px) {
+    .best-time-months-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .best-time-month[data-row-break='true'] {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .best-time-months-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

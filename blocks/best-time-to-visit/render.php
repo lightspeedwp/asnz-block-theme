@@ -63,30 +63,21 @@ $months = array(
 );
 
 /**
- * Get month styling classes and inline styles.
+ * Get month CSS class based on selection.
  *
  * @param string $month_name Full month name in lowercase.
  * @param array  $best       Array of best months.
  * @param array  $shoulder   Array of shoulder months.
- * @return array Array with 'bg_color' and 'text_color' keys.
+ * @return string CSS class name.
  */
-function asnz_get_month_styles($month_name, $best, $shoulder)
+function asnz_get_month_class($month_name, $best, $shoulder)
 {
     if (in_array($month_name, $best, true)) {
-        return array(
-            'bg_color' => 'var(--wp--preset--color--brand-dark)',
-            'text_color' => 'var(--wp--preset--color--base)',
-        );
+        return 'best-time-month--best';
     } elseif (in_array($month_name, $shoulder, true)) {
-        return array(
-            'bg_color' => 'var(--wp--preset--color--brand)',
-            'text_color' => 'var(--wp--preset--color--base)',
-        );
+        return 'best-time-month--good';
     } else {
-        return array(
-            'bg_color' => '#bdf2a1',
-            'text_color' => 'var(--wp--preset--color--contrast)',
-        );
+        return 'best-time-month--mixed';
     }
 }
 
@@ -123,42 +114,22 @@ if (! $has_content) {
     // Output marker with unique ID
     echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
 
-    // Output inline script using direct output to avoid escaping
-    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-    echo '<script>';
-    echo '(function(){';
-    echo 'var m=document.querySelector(".' . esc_js($unique_id) . '");';
-    echo 'if(m){';
-    echo 'var e=m.parentElement;';
-    echo 'var c=0;';
-    echo 'while(e&&c<3){';
-    echo 'if(e.classList.contains("wp-block-group")){';
-    echo 'e.style.display="none";';
-    echo 'c++;';
-    echo '}';
-    echo 'e=e.parentElement;';
-    echo '}';
-    echo '}';
-    echo '})();';
-    echo '</script>';
-    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 
     return;
 }
 
 // Output the block markup - just the months row
 ?>
-<!-- wp:group {"metadata":{"name":"Months"},"align":"wide","style":{"border":{"radius":"4px"},"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide" style="border-radius:4px">
-    <?php foreach ($months as $month_full => $month_abbr) : ?>
-        <?php $styles = asnz_get_month_styles($month_full, $best_months, $shoulder_months); ?>
-        <!-- wp:group {"metadata":{"name":"<?php echo esc_attr($month_abbr); ?>"},"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}},"color":{"background":"<?php echo esc_attr($styles['bg_color']); ?>","text":"<?php echo esc_attr($styles['text_color']); ?>"}},"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group" style="background-color:<?php echo esc_attr($styles['bg_color']); ?>;color:<?php echo esc_attr($styles['text_color']); ?>;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)">
-            <!-- wp:paragraph {"align":"center","fontSize":"300"} -->
-            <p class="has-text-align-center has-300-font-size"><?php echo esc_html($month_abbr); ?></p>
-            <!-- /wp:paragraph -->
+<div class="best-time-months-container alignwide">
+    <?php
+    $month_index = 0;
+foreach ($months as $month_full => $month_abbr) :
+    $month_class = asnz_get_month_class($month_full, $best_months, $shoulder_months);
+    $month_index++;
+    $data_attr = ($month_index === 7) ? ' data-row-break="true"' : '';
+    ?>
+        <div class="best-time-month <?php echo esc_attr($month_class); ?>"<?php echo $data_attr; ?>>
+            <p class="best-time-month__label"><?php echo esc_html($month_abbr); ?></p>
         </div>
-        <!-- /wp:group -->
     <?php endforeach; ?>
 </div>
-<!-- /wp:group -->
