@@ -148,14 +148,14 @@ if (! $has_content) {
 
 // Output the block markup - just the months row
 ?>
-<!-- wp:group {"metadata":{"name":"Months"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group alignwide">
+<!-- wp:group {"metadata":{"name":"Months"},"align":"wide","style":{"border":{"radius":"4px"},"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide" style="border-radius:4px">
     <?php foreach ($months as $month_full => $month_abbr) : ?>
         <?php $styles = asnz_get_month_styles($month_full, $best_months, $shoulder_months); ?>
-        <!-- wp:group {"metadata":{"name":"<?php echo esc_attr($month_abbr); ?>"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}},"color":{"background":"<?php echo esc_attr($styles['bg_color']); ?>","text":"<?php echo esc_attr($styles['text_color']); ?>"},"border":{"radius":"4px"}},"layout":{"type":"constrained"}} -->
-        <div class="wp-block-group" style="border-radius:4px;background-color:<?php echo esc_attr($styles['bg_color']); ?>;color:<?php echo esc_attr($styles['text_color']); ?>;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20);padding-right:var(--wp--preset--spacing--20)">
-            <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.875rem"}}} -->
-            <p class="has-text-align-center" style="font-size:0.875rem"><?php echo esc_html($month_abbr); ?></p>
+        <!-- wp:group {"metadata":{"name":"<?php echo esc_attr($month_abbr); ?>"},"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}},"color":{"background":"<?php echo esc_attr($styles['bg_color']); ?>","text":"<?php echo esc_attr($styles['text_color']); ?>"}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group" style="background-color:<?php echo esc_attr($styles['bg_color']); ?>;color:<?php echo esc_attr($styles['text_color']); ?>;padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)">
+            <!-- wp:paragraph {"align":"center","fontSize":"300"} -->
+            <p class="has-text-align-center has-300-font-size"><?php echo esc_html($month_abbr); ?></p>
             <!-- /wp:paragraph -->
         </div>
         <!-- /wp:group -->
