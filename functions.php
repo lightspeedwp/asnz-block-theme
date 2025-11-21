@@ -236,7 +236,65 @@ add_filter(
             return $return_html;
         }
 
-        // Define icons based on field type
+        // Strip out paragraph tags that WYSIWYG editors often add
+        $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
+
+        // If already contains list markup, keep as-is for now
+        if (preg_match('/<[ou]l[^>]*>/i', $processed_value)) {
+            return $before . $processed_value . $after;
+        }
+
+        // Split by line breaks (handles different line ending types)
+        $lines = preg_split('/\r\n|\r|\n/', $processed_value);
+
+        // Filter out empty lines
+        $lines = array_filter(array_map('trim', $lines));
+
+        if (empty($lines)) {
+            return $return_html;
+        }
+
+        // Build unordered list without icons (icons added via render_block filter)
+        $output = '<ul class="lsx-' . esc_attr($meta_key) . '-list">';
+        foreach ($lines as $line) {
+            $output .= '<li>' . wp_kses_post($line) . '</li>';
+        }
+        $output .= '</ul>';
+
+        return $before . $output . $after;
+    },
+    10,
+    5
+);
+
+/**
+ * Add icons to included/not_included lists via render_block filter.
+ *
+ * This filter runs after block bindings have been processed, allowing us to
+ * inject SVG icons into the final rendered HTML.
+ *
+ * @param string $block_content  The block content.
+ * @param array  $block  The block data.
+ *
+ * @return string Modified block content with icons.
+ */
+add_filter(
+    'render_block',
+    function ($block_content, $block) {
+        // Only process paragraph blocks with LSX post-meta bindings
+        if ('core/paragraph' !== $block['blockName']) {
+            return $block_content;
+        }
+
+        // Check if this has our list classes
+        $has_included = strpos($block_content, 'lsx-included-list') !== false;
+        $has_excluded = strpos($block_content, 'lsx-not_included-list') !== false;
+
+        if (!$has_included && !$has_excluded) {
+            return $block_content;
+        }
+
+        // Define icons
         $check_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
             . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
             . '<path d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21'
@@ -252,42 +310,26 @@ add_filter(
             . 'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
             . '</svg>';
 
-        $icon = ('included' === $meta_key) ? $check_icon : $cross_icon;
-
-        // Strip out paragraph tags that WYSIWYG editors often add
-        $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
-
-        // If already contains list markup, inject icons into existing list items
-        if (preg_match('/<[ou]l[^>]*>/i', $processed_value)) {
-            $processed_value = preg_replace(
-                '/(<li[^>]*>)/',
-                '$1' . $icon,
-                $processed_value
+        // Inject check icon into included list items
+        if ($has_included) {
+            $block_content = preg_replace(
+                '/(<li>)/',
+                '$1' . $check_icon,
+                $block_content
             );
-            // Return with icon inline (trusted) - no wp_kses on icon itself
-            return $before . $processed_value . $after;
         }
 
-        // Split by line breaks (handles different line ending types)
-        $lines = preg_split('/\r\n|\r|\n/', $processed_value);
-
-        // Filter out empty lines
-        $lines = array_filter(array_map('trim', $lines));
-
-        if (empty($lines)) {
-            return $return_html;
+        // Inject cross icon into not_included list items
+        if ($has_excluded) {
+            $block_content = preg_replace(
+                '/(<li>)/',
+                '$1' . $cross_icon,
+                $block_content
+            );
         }
 
-        // Build unordered list with icons
-        $output = '<ul class="lsx-' . esc_attr($meta_key) . '-list">';
-        foreach ($lines as $line) {
-            // Icon is trusted (hardcoded), only sanitize user content
-            $output .= '<li>' . $icon . wp_kses_post($line) . '</li>';
-        }
-        $output .= '</ul>';
-
-        return $before . $output . $after;
+        return $block_content;
     },
     10,
-    5
+    2
 );
