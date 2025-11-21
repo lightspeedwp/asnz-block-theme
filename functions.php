@@ -312,18 +312,36 @@ add_filter(
 
         // Inject check icon into included list items
         if ($has_included) {
-            $block_content = preg_replace(
-                '/(<li>)/',
-                '$1' . $check_icon,
+            $block_content = preg_replace_callback(
+                '/<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
+                function ($matches) use ($check_icon) {
+                    $ul_content = $matches[1];
+                    // Add check icon to each <li> in this ul
+                    $ul_content = preg_replace('/(<li>)/i', '$1' . $check_icon, $ul_content);
+                    // Rebuild the ul
+                    // Find the opening <ul ...> tag
+                    preg_match('/^<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
+                    $ul_tag = $ul_open[0];
+                    return $ul_tag . $ul_content . '</ul>';
+                },
                 $block_content
             );
         }
 
         // Inject cross icon into not_included list items
         if ($has_excluded) {
-            $block_content = preg_replace(
-                '/(<li>)/',
-                '$1' . $cross_icon,
+            $block_content = preg_replace_callback(
+                '/<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
+                function ($matches) use ($cross_icon) {
+                    $ul_content = $matches[1];
+                    // Add cross icon to each <li> in this ul
+                    $ul_content = preg_replace('/(<li>)/i', '$1' . $cross_icon, $ul_content);
+                    // Rebuild the ul
+                    // Find the opening <ul ...> tag
+                    preg_match('/^<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
+                    $ul_tag = $ul_open[0];
+                    return $ul_tag . $ul_content . '</ul>';
+                },
                 $block_content
             );
         }
