@@ -209,3 +209,60 @@ add_action(
         }
     }
 );
+
+/**
+ * Process list meta fields (included/not_included) to ensure consistent list output.
+ *
+ * Converts newline-separated text into HTML lists while preserving existing list
+ * markup.
+ *
+ * @param string $return_html  The formatted HTML output.
+ * @param string $meta_key  The meta key being queried.
+ * @param mixed  $value  The raw meta value.
+ * @param string $before  HTML before content.
+ * @param string $after  HTML after content.
+ *
+ * @return string Processed HTML with list formatting.
+ */
+add_filter(
+    'lsx_to_custom_field_query',
+    function ($return_html, $meta_key, $value, $before, $after) {
+        // Only process included and not_included fields
+        if (!in_array($meta_key, array('included', 'not_included'), true)) {
+            return $return_html;
+        }
+
+        if (empty($value)) {
+            return $return_html;
+        }
+
+        // Strip out paragraph tags that WYSIWYG editors often add
+        $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
+
+        // If already contains list markup, return with sanitization
+        if (preg_match('/<[ou]l[^>]*>/i', $processed_value)) {
+            return $before . wp_kses_post($processed_value) . $after;
+        }
+
+        // Split by line breaks (handles different line ending types)
+        $lines = preg_split('/\r\n|\r|\n/', $processed_value);
+
+        // Filter out empty lines
+        $lines = array_filter(array_map('trim', $lines));
+
+        if (empty($lines)) {
+            return $return_html;
+        }
+
+        // Build unordered list
+        $output = '<ul>';
+        foreach ($lines as $line) {
+            $output .= '<li>' . wp_kses_post($line) . '</li>';
+        }
+        $output .= '</ul>';
+
+        return $before . $output . $after;
+    },
+    10,
+    5
+);
