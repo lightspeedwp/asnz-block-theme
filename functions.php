@@ -254,6 +254,26 @@ add_filter(
 
         $icon = ('included' === $meta_key) ? $check_icon : $cross_icon;
 
+        // Define allowed HTML tags for wp_kses (including SVG)
+        $allowed_html = wp_kses_allowed_html('post');
+        $allowed_html['svg'] = array(
+            'width' => true,
+            'height' => true,
+            'viewbox' => true,
+            'fill' => true,
+            'xmlns' => true,
+            'aria-hidden' => true,
+            'class' => true,
+        );
+        $allowed_html['path'] = array(
+            'd' => true,
+            'stroke' => true,
+            'stroke-width' => true,
+            'stroke-linecap' => true,
+            'stroke-linejoin' => true,
+            'fill' => true,
+        );
+
         // Strip out paragraph tags that WYSIWYG editors often add
         $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
 
@@ -264,7 +284,7 @@ add_filter(
                 '$1' . $icon,
                 $processed_value
             );
-            return $before . wp_kses_post($processed_value) . $after;
+            return $before . wp_kses($processed_value, $allowed_html) . $after;
         }
 
         // Split by line breaks (handles different line ending types)
@@ -280,9 +300,11 @@ add_filter(
         // Build unordered list with icons
         $output = '<ul class="lsx-' . esc_attr($meta_key) . '-list">';
         foreach ($lines as $line) {
-            $output .= '<li>' . $icon . wp_kses_post($line) . '</li>';
+            $output .= '<li>' . $icon . wp_kses($line, $allowed_html) . '</li>';
         }
         $output .= '</ul>';
+
+        return $before . $output . $after;
 
         return $before . $output . $after;
     },
