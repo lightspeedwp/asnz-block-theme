@@ -1255,3 +1255,11 @@ ul.lsx-not_included-list li svg {
     width: 24px;
     height: 24px;
 }
+
+ul.lsx-included-list li svg {
+    color: var(--wp--preset--color--contrast, #080808);
+}
+
+ul.lsx-not_included-list li svg {
+    color: var(--wp--preset--color--contrast, #080808);
+}
