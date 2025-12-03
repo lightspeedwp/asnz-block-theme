@@ -16,6 +16,9 @@
         "small": "4px",
         "default": "8px",
         "large": "16px"
+      },
+      "font-weight": {
+        "semi-bold": "600"
       }
     },
     "color": {
