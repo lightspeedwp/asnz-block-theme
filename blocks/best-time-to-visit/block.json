@@ -1,0 +1,28 @@
+{
+    "apiVersion": 3,
+    "name": "asnz/best-time-to-visit",
+    "title": "ASNZ Best Time to Visit",
+    "category": "widgets",
+    "icon": "calendar-alt",
+    "description": "Displays best time to visit information from SCF fields with monthly calendar.",
+    "keywords": ["best time", "visit", "months", "calendar", "scf"],
+    "supports": {
+        "html": false,
+        "customClassName": true
+    },
+    "attributes": {
+        "shoulderMonthsField": {
+            "type": "string",
+            "default": "shoulder_months_to_visit"
+        },
+        "bestMonthsField": {
+            "type": "string",
+            "default": "best_time_to_visit"
+        }
+    },
+    "version": "1.0.0",
+    "textdomain": "asnz-block-theme",
+    "editorScript": "file:./build/index.js",
+    "style": "file:./style.css",
+    "render": "file:./render.php"
+}
