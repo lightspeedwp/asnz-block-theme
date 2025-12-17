@@ -1263,3 +1263,14 @@ ul.lsx-included-list li svg {
 ul.lsx-not_included-list li svg {
     color: var(--wp--preset--color--contrast, #080808);
 }
+
+/* ========================================================================== */
+/* Tour Itinerary							                                  */
+/* ========================================================================== */
+.single-tour .itin-drinks-wrapper .wp-block-outermost-icon-block,
+.single-tour .itin-location-wrapper .wp-block-outermost-icon-block,
+.single-tour .itin-type-wrapper .wp-block-outermost-icon-block,
+.single-tour .itin-accommodation-wrapper .wp-block-outermost-icon-block,
+.single-tour .itin-room-wrapper .wp-block-outermost-icon-block {
+	padding-top: 5px;
+}
