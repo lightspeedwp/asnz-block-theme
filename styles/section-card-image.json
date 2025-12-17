@@ -7,17 +7,6 @@
   "styles": {
     "border": {
       "radius": "8px 8px 0 0"
-    },
-    "blocks": {
-      "core/post-featured-image": {
-        "border": {
-          "radius": {
-            "topLeft": "8px",
-            "topRight": "8px"
-          }
-        },
-        "css": "width: 100%; object-fit: cover; aspect-ratio: 21 / 9;"
-      }
     }
   }
 }
