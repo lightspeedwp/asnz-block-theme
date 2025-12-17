@@ -310,6 +310,15 @@ header:has(> .is-position-sticky) {
     margin-right: auto;
 }
 
+/* Card Featured Image */
+.card-featured-image img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 21 / 9;
+}
+
 /* Center content utility for Single Region Content area*/
 .content-center,
 .content-center > * {
