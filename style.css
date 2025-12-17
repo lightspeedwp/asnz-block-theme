@@ -311,7 +311,8 @@ header:has(> .is-position-sticky) {
 }
 
 /* Card Featured Image */
-.card-featured-image {
+.is-style-section-card-image img,
+.card-featured-image img {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     width: 100%;
