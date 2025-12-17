@@ -394,6 +394,13 @@ header:has(> .is-position-sticky) {
     justify-content: center;
 }
 
+/* Removes the slider dots from desktop view */
+@media (min-width: 782px) {
+    .lsx-to-slider .slick-dots {
+        display: none !important;
+    }
+}
+
 /* Hover + focus states */
 .lsx-to-slider .slick-prev:hover,
 .lsx-to-slider .slick-prev:focus-visible,
