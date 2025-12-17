@@ -394,13 +394,6 @@ header:has(> .is-position-sticky) {
     justify-content: center;
 }
 
-/* Removes the slider dots from desktop view */
-@media (min-width: 782px) {
-    .lsx-to-slider .slick-dots {
-        display: none !important;
-    }
-}
-
 /* Hover + focus states */
 .lsx-to-slider .slick-prev:hover,
 .lsx-to-slider .slick-prev:focus-visible,
@@ -425,6 +418,13 @@ header:has(> .is-position-sticky) {
     align-items: center !important;
     gap: var(--wp--preset--spacing--20) !important;
     list-style: none;
+}
+
+/* Removes the slider dots from desktop view */
+@media (min-width: 782px) {
+    .lsx-to-slider .slick-dots {
+        display: none !important;
+    }
 }
 
 /* Remove default li styles */
