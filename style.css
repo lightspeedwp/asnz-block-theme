@@ -305,12 +305,6 @@ header:has(> .is-position-sticky) {
 }
 
 /* Card Featured Image */
-.is-style-section-card-image {
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 21 / 9;
-}
-
 .is-style-section-card-image img,
 .card-featured-image img {
     border-top-left-radius: 8px;
