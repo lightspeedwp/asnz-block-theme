@@ -475,8 +475,13 @@ header:has(> .is-position-sticky) {
     outline-offset: 2px;
 }
 
-/* .slick-track {
-    display: flex;
+.slick-track {
+    display: flex !important;
+}
+
+.slick-track::before,
+.slick-track::after {
+    display: none;
 }
 
 .slick-slide {
@@ -484,9 +489,10 @@ header:has(> .is-position-sticky) {
     display: flex;
 }
 
-.slide-content {
+.slick-slide > div {
     flex: 1;
-} */
+    height: 100%;
+}
 
 /* ========================================================================== */
 
