@@ -484,6 +484,11 @@ header:has(> .is-position-sticky) {
     display: flex;
 }
 
+.slick-slide > div {
+    height: auto;
+    display: flex;
+}
+
 .slide-content {
     flex: 1;
 }
