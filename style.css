@@ -475,6 +475,19 @@ header:has(> .is-position-sticky) {
     outline-offset: 2px;
 }
 
+.slick-track {
+    display: flex;
+}
+
+.slick-slide {
+    height: auto;
+    display: flex;
+}
+
+.slide-content {
+    flex: 1;
+}
+
 /* ========================================================================== */
 
 /* Expanding Header Search             										  */
