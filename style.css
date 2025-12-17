@@ -255,12 +255,6 @@ header:has(> .is-position-sticky) {
     color: var(--wp--preset--color--base);
 }
 
-/* Active (scrollspy) state */
-.is-style-button-summary-nav .wp-block-button__link.is-active {
-    background: var(--wp--preset--color--brand);
-    color: var(--wp--preset--color--base);
-}
-
 /* Button hover effects for CTA button variation */
 .wp-block-button.cta-button-hover .wp-block-button__link:hover,
 .wp-block-button.cta-button-hover .wp-block-button__link:focus-visible {
