@@ -475,7 +475,7 @@ header:has(> .is-position-sticky) {
     outline-offset: 2px;
 }
 
-.slick-track {
+/* .slick-track {
     display: flex;
 }
 
@@ -486,7 +486,7 @@ header:has(> .is-position-sticky) {
 
 .slide-content {
     flex: 1;
-}
+} */
 
 /* ========================================================================== */
 
