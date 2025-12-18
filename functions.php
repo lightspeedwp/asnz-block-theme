@@ -413,21 +413,20 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
     // 3. Best Time to Visit Wrapper
     if (strpos($classes, 'best-time-wrapper') !== false) {
         $has_content = false;
+        $best        = '';
+        $shoulder    = '';
 
         if (function_exists('get_field')) {
-            $best = get_field('best_time_to_visit');
+            $best     = get_field('best_time_to_visit');
             $shoulder = get_field('shoulder_months_to_visit');
-            if (! empty($best) || ! empty($shoulder)) {
-                $has_content = true;
-            }
         } else {
-            $best = get_post_meta(get_the_ID(), 'best_time_to_visit', true);
+            $best     = get_post_meta(get_the_ID(), 'best_time_to_visit', true);
             $shoulder = get_post_meta(get_the_ID(), 'shoulder_months_to_visit', true);
-            if (! empty($best) || ! empty($shoulder)) {
-                $has_content = true;
-            }
         }
 
+        if (! empty($best) || ! empty($shoulder)) {
+            $has_content = true;
+        }
         if (! $has_content) {
             return '';
         }
