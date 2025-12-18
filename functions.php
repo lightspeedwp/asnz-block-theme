@@ -351,3 +351,80 @@ add_filter(
     10,
     2
 );
+
+/**
+ * Hide wrapper blocks when they have no content.
+ *
+ * @param string   $block_content The block content.
+ * @param array    $parsed_block  The parsed block.
+ * @param WP_Block $block_obj     The block object.
+ * @return string Modified block content.
+ */
+function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_obj)
+{
+    // Only process core/group blocks
+    if (! isset($parsed_block['blockName']) || 'core/group' !== $parsed_block['blockName']) {
+        return $block_content;
+    }
+
+    // Check for wrapper class
+    if (! isset($parsed_block['attrs']['className']) || empty($parsed_block['attrs']['className'])) {
+        return $block_content;
+    }
+
+    $classes = $parsed_block['attrs']['className'];
+
+    // 1. Envira Gallery Wrapper
+    if (strpos($classes, 'envira-gallery-wrapper') !== false) {
+        $gallery_id = 0;
+        if (function_exists('get_field')) {
+            $gallery_id = absint(get_field('envira_gallery'));
+        } else {
+            $gallery_id = absint(get_post_meta(get_the_ID(), 'envira_gallery', true));
+        }
+
+        if (! $gallery_id) {
+            return '';
+        }
+    }
+
+    // 2. Envira Video Gallery Wrapper
+    if (strpos($classes, 'envira-video-gallery-wrapper') !== false) {
+        $video_id = 0;
+        if (function_exists('get_field')) {
+            $video_id = absint(get_field('envira_video'));
+        } else {
+            $video_id = absint(get_post_meta(get_the_ID(), 'envira_video', true));
+        }
+
+        if (! $video_id) {
+            return '';
+        }
+    }
+
+    // 3. Best Time to Visit Wrapper
+    if (strpos($classes, 'best-time-wrapper') !== false) {
+        $has_content = false;
+
+        if (function_exists('get_field')) {
+            $best = get_field('best_time_to_visit');
+            $shoulder = get_field('shoulder_months_to_visit');
+            if (! empty($best) || ! empty($shoulder)) {
+                $has_content = true;
+            }
+        } else {
+            $best = get_post_meta(get_the_ID(), 'best_time_to_visit', true);
+            $shoulder = get_post_meta(get_the_ID(), 'shoulder_months_to_visit', true);
+            if (! empty($best) || ! empty($shoulder)) {
+                $has_content = true;
+            }
+        }
+
+        if (! $has_content) {
+            return '';
+        }
+    }
+
+    return $block_content;
+}
+add_filter('render_block', __NAMESPACE__ . '\asnz_maybe_hide_empty_wrappers', 10, 3);
