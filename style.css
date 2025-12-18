@@ -255,12 +255,6 @@ header:has(> .is-position-sticky) {
     color: var(--wp--preset--color--base);
 }
 
-/* Active (scrollspy) state */
-.is-style-button-summary-nav .wp-block-button__link.is-active {
-    background: var(--wp--preset--color--brand);
-    color: var(--wp--preset--color--base);
-}
-
 /* Button hover effects for CTA button variation */
 .wp-block-button.cta-button-hover .wp-block-button__link:hover,
 .wp-block-button.cta-button-hover .wp-block-button__link:focus-visible {
@@ -308,6 +302,16 @@ header:has(> .is-position-sticky) {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Card Featured Image */
+.is-style-section-card-image img,
+.card-featured-image img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 21 / 9;
 }
 
 /* Center content utility for Single Region Content area*/
@@ -420,6 +424,13 @@ header:has(> .is-position-sticky) {
     list-style: none;
 }
 
+/* Removes the slider dots from desktop view */
+@media (min-width: 782px) {
+    .lsx-to-slider .slick-dots {
+        display: none !important;
+    }
+}
+
 /* Remove default li styles */
 .lsx-to-slider .slick-dots li {
     margin: 0 !important;
@@ -462,6 +473,43 @@ header:has(> .is-position-sticky) {
 .lsx-to-slider .slick-dots li button:focus-visible {
     outline: 2px solid var(--wp--preset--color--primary, #090909);
     outline-offset: 2px;
+}
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-track::before,
+.slick-track::after {
+    display: none;
+}
+
+.slick-slide {
+    height: auto;
+    display: flex;
+}
+
+.slick-slide > div,
+.wp-block-post-template li > div,
+.wp-block-term-template li > div {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slick-slide .card-footer,
+.wp-block-post-template li .card-footer,
+.wp-block-term-template li .card-footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Query Loop & Term Query Cards */
+.wp-block-post-template li,
+.wp-block-term-template li {
+    display: flex;
+    height: auto;
 }
 
 /* ========================================================================== */

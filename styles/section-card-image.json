@@ -7,6 +7,10 @@
   "styles": {
     "border": {
       "radius": "8px 8px 0 0"
+    },
+    "dimensions": {
+      "width": "100%",
+      "aspectRatio": "21/9"
     }
   }
 }
