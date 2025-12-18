@@ -382,6 +382,15 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
 
     $classes = $parsed_block['attrs']['className'];
 
+    // Early return if none of the target wrapper classes are present
+    if (
+        strpos($classes, 'envira-gallery-wrapper') === false &&
+        strpos($classes, 'envira-video-gallery-wrapper') === false &&
+        strpos($classes, 'best-time-wrapper') === false
+    ) {
+        return $block_content;
+    }
+
     // 1. Envira Gallery Wrapper
     if (strpos($classes, 'envira-gallery-wrapper') !== false) {
         $gallery_id = 0;
