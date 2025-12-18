@@ -76,31 +76,6 @@ if (! $video_id && $is_editor) {
 
 // If no video ID on frontend, hide ancestor groups with CSS
 if (! $video_id) {
-    // Generate unique ID for this instance
-    $unique_id = 'envira-video-empty-' . wp_unique_id();
-
-    // Output marker with unique ID
-    echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
-
-    // Output inline script using direct output to avoid escaping
-    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-    echo '<script>';
-    echo '(function(){';
-    echo 'var m=document.querySelector(".' . esc_js($unique_id) . '");';
-    echo 'if(m){';
-    echo 'var e=m.parentElement;';
-    echo 'var c=0;';
-    echo 'while(e&&c<3){';
-    echo 'if(e.classList.contains("wp-block-group")){';
-    echo 'e.style.display="none";';
-    echo 'c++;';
-    echo '}';
-    echo 'e=e.parentElement;';
-    echo '}';
-    echo '}';
-    echo '})();';
-    echo '</script>';
-    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
 
     return;
 }// Output the video gallery section wrapper

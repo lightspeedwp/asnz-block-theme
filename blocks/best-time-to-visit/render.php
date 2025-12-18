@@ -110,24 +110,6 @@ if (! $has_content) {
     }
 
     // If no content on frontend, hide ancestor with specific class
-    // Generate unique ID for this instance
-    $unique_id = 'best-time-to-visit-empty-' . wp_unique_id();
-    $script_handle = 'asnz-best-time-hide-' . $unique_id;
-
-    // Register and enqueue inline script using WordPress script handling
-    wp_register_script($script_handle, false, array(), false, array('in_footer' => true));
-    wp_enqueue_script($script_handle);
-
-    // Add inline script to hide ancestor with .best-time-wrapper class
-    $inline_script = sprintf(
-        '(function(){var m=document.querySelector(".%s");if(m){var e=m.closest(".best-time-wrapper");if(e){e.style.display="none";}}})();',
-        esc_js($unique_id)
-    );
-    wp_add_inline_script($script_handle, $inline_script);
-
-    // Output marker with unique ID
-    echo '<div class="' . esc_attr($unique_id) . '" style="display:none;"></div>';
-
     return;
 }
 

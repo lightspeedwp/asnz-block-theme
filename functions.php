@@ -335,3 +335,96 @@ add_filter(
     10,
     2
 );
+
+/**
+ * Conditionally hide specific wrapper group blocks based on related field data.
+ *
+ * This targets `core/group` blocks that use one of the following wrapper classes:
+ * - `envira-gallery-wrapper` (hidden when the associated `envira_gallery` ACF field
+ *   or `envira_gallery` post meta is empty).
+ * - `envira-video-gallery-wrapper` (hidden when the associated `envira_video` ACF field
+ *   or `envira_video` post meta is empty).
+ * - `best-time-wrapper` (hidden when both `best_time_to_visit` and
+ *   `shoulder_months_to_visit` ACF fields or post meta are empty).
+ *
+ * @param string   $block_content The block content.
+ * @param array    $parsed_block  The parsed block.
+ * @param WP_Block $block_obj     The block object.
+ * @return string Modified block content, or an empty string when a wrapper is hidden.
+ */
+function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_obj)
+{
+    // Only process core/group blocks
+    if (! isset($parsed_block['blockName']) || 'core/group' !== $parsed_block['blockName']) {
+        return $block_content;
+    }
+
+    // Check for wrapper class
+    if (! isset($parsed_block['attrs']['className']) || empty($parsed_block['attrs']['className'])) {
+        return $block_content;
+    }
+
+    $classes = $parsed_block['attrs']['className'];
+
+    // Early return if none of the target wrapper classes are present
+    if (
+        ! str_contains($classes, 'envira-gallery-wrapper') &&
+        ! str_contains($classes, 'envira-video-gallery-wrapper') &&
+        ! str_contains($classes, 'best-time-wrapper')
+    ) {
+        return $block_content;
+    }
+
+    // 1. Envira Gallery Wrapper
+    if (str_contains($classes, 'envira-gallery-wrapper')) {
+        $gallery_id = 0;
+        if (function_exists('get_field')) {
+            $gallery_id = absint(get_field('envira_gallery'));
+        } else {
+            $gallery_id = absint(get_post_meta(get_the_ID(), 'envira_gallery', true));
+        }
+
+        if (! $gallery_id) {
+            return '';
+        }
+    }
+
+    // 2. Envira Video Gallery Wrapper
+    if (str_contains($classes, 'envira-video-gallery-wrapper')) {
+        $video_id = 0;
+        if (function_exists('get_field')) {
+            $video_id = absint(get_field('envira_video'));
+        } else {
+            $video_id = absint(get_post_meta(get_the_ID(), 'envira_video', true));
+        }
+
+        if (! $video_id) {
+            return '';
+        }
+    }
+
+    // 3. Best Time to Visit Wrapper
+    if (str_contains($classes, 'best-time-wrapper')) {
+        $has_content = false;
+        $best        = '';
+        $shoulder    = '';
+
+        if (function_exists('get_field')) {
+            $best     = get_field('best_time_to_visit');
+            $shoulder = get_field('shoulder_months_to_visit');
+        } else {
+            $best     = get_post_meta(get_the_ID(), 'best_time_to_visit', true);
+            $shoulder = get_post_meta(get_the_ID(), 'shoulder_months_to_visit', true);
+        }
+
+        if (! empty($best) || ! empty($shoulder)) {
+            $has_content = true;
+        }
+        if (! $has_content) {
+            return '';
+        }
+    }
+
+    return $block_content;
+}
+add_filter('render_block', __NAMESPACE__ . '\asnz_maybe_hide_empty_wrappers', 10, 3);
