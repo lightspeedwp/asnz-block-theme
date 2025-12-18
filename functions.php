@@ -382,8 +382,17 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
 
     $classes = $parsed_block['attrs']['className'];
 
+    // Early return if none of the target wrapper classes are present
+    if (
+        ! str_contains($classes, 'envira-gallery-wrapper') &&
+        ! str_contains($classes, 'envira-video-gallery-wrapper') &&
+        ! str_contains($classes, 'best-time-wrapper')
+    ) {
+        return $block_content;
+    }
+
     // 1. Envira Gallery Wrapper
-    if (strpos($classes, 'envira-gallery-wrapper') !== false) {
+    if (str_contains($classes, 'envira-gallery-wrapper')) {
         $gallery_id = 0;
         if (function_exists('get_field')) {
             $gallery_id = absint(get_field('envira_gallery'));
@@ -397,7 +406,7 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
     }
 
     // 2. Envira Video Gallery Wrapper
-    if (strpos($classes, 'envira-video-gallery-wrapper') !== false) {
+    if (str_contains($classes, 'envira-video-gallery-wrapper')) {
         $video_id = 0;
         if (function_exists('get_field')) {
             $video_id = absint(get_field('envira_video'));
@@ -411,7 +420,7 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
     }
 
     // 3. Best Time to Visit Wrapper
-    if (strpos($classes, 'best-time-wrapper') !== false) {
+    if (str_contains($classes, 'best-time-wrapper')) {
         $has_content = false;
         $best        = '';
         $shoulder    = '';
