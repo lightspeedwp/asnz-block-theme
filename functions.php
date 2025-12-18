@@ -428,3 +428,23 @@ function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_ob
     return $block_content;
 }
 add_filter('render_block', __NAMESPACE__ . '\asnz_maybe_hide_empty_wrappers', 10, 3);
+
+
+/**
+ * Register Mega Menu block style.
+ */
+function register_mega_menu_style()
+{
+    $blocks = array('core/group', 'core/navigation', 'core/columns', 'core/cover');
+
+    foreach ($blocks as $block) {
+        register_block_style(
+            $block,
+            array(
+                'name'         => 'mega-menu',
+                'label'        => __('Mega Menu', 'asnz-block-theme'),
+            )
+        );
+    }
+}
+add_action('init', __NAMESPACE__ . '\register_mega_menu_style');

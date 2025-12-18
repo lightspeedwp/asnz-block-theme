@@ -660,7 +660,7 @@ header:has(> .is-position-sticky) {
 
 /* === Mega Menu: Base === */
 
-.mega-menu {
+.is-style-mega-menu {
     z-index: 999; 
     position: relative;
 }
