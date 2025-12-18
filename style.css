@@ -664,8 +664,8 @@ header:has(> .is-position-sticky) {
     z-index: 999;
 }
 
-.is-style-secondary-nav {
-    z-index: 5;
+.wp-block-ollie-mega-menu__menu-container {
+    z-index: 999;
 }
 
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
