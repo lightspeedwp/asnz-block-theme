@@ -22,10 +22,9 @@
  *    - Main Navigation
  *    - Mega Menu
  *    - Submenu & Responsive Nav
- * 10. Secondary Sticky Navigation
- * 11. Homepage Hero Search Block
- * 12. Mobile Menu styling
- * 13. FacetWP
+ * 10. Homepage Hero Search Block
+ * 11. Mobile Menu styling
+ * 12. FacetWP
  *    - Search Facet
  *    - Sort Facet
  *    - Slider Facet
@@ -660,6 +659,11 @@ header:has(> .is-position-sticky) {
 }
 
 /* === Mega Menu: Base === */
+.mega-menu {
+    z-index: 101; 
+    position: relative;
+}
+
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
     display: block;
 }
@@ -812,26 +816,6 @@ nav.wp-block-navigation.is-style-nav-hover
     .wp-block-navigation__responsive-container
     .wp-block-navigation__responsive-container-content {
     height: 100%;
-}
-
-/* ========================================================================== */
-
-/* Secondary Sticky Navigation                                                */
-
-/* ========================================================================== */
-
-/* Sticky nav when .is-style-section-secondary-sticky-nav class is applied */
-.is-style-section-secondary-sticky-nav {
-    position: sticky;
-    top: calc(var(--wp-admin--admin-bar--height, 0px) + 0px);
-
-    /* Lower z-index so mega menu overlays (header drop-downs) sit above this secondary nav */
-    z-index: 1;
-}
-
-/* On small screens, ensure sticky nav stays at top */
-.is-style-section-secondary-sticky-nav .wp-block-buttons .wp-block-button {
-    margin: 0;
 }
 
 /* ========================================================================== */
