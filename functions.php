@@ -353,12 +353,20 @@ add_filter(
 );
 
 /**
- * Hide wrapper blocks when they have no content.
+ * Conditionally hide specific wrapper group blocks based on related field data.
+ *
+ * This targets `core/group` blocks that use one of the following wrapper classes:
+ * - `envira-gallery-wrapper` (hidden when the associated `envira_gallery` ACF field
+ *   or `envira_gallery` post meta is empty).
+ * - `envira-video-gallery-wrapper` (hidden when the associated `envira_video` ACF field
+ *   or `envira_video` post meta is empty).
+ * - `best-time-wrapper` (hidden when both `best_time_to_visit` and
+ *   `shoulder_months_to_visit` ACF fields or post meta are empty).
  *
  * @param string   $block_content The block content.
  * @param array    $parsed_block  The parsed block.
  * @param WP_Block $block_obj     The block object.
- * @return string Modified block content.
+ * @return string Modified block content, or an empty string when a wrapper is hidden.
  */
 function asnz_maybe_hide_empty_wrappers($block_content, $parsed_block, $block_obj)
 {
