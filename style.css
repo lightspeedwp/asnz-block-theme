@@ -1316,3 +1316,14 @@ ul.lsx-not_included-list li svg {
 .single-tour .itin-room-wrapper .wp-block-outermost-icon-block {
 	padding-top: 5px;
 }
+
+.single-tour .lsx-ends-in-wrapper p,
+.single-tour .lsx-departs-from-wrapper p {
+    color: var(--wp--preset--color--brand-text) !important;
+}
+
+.single-tour .lsx-ends-in-wrapper p strong,
+.single-tour .lsx-departs-from-wrapper p strong {
+	color: var(--wp--preset--color--contrast) !important;
+}
+
