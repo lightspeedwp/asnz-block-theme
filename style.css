@@ -1264,6 +1264,11 @@ body .facetwp-flyout {
     display: none !important;
 }
 
+.facetwp-facet.facetwp-facet-result_count {
+	margin:0;
+}
+
+
 /* ========================================================================== */
 
 /* LSX Included/Not Included Lists                                           */
@@ -1303,6 +1308,7 @@ ul.lsx-not_included-list li svg {
 /* ========================================================================== */
 /* Tour Itinerary							                                  */
 /* ========================================================================== */
+
 .single-tour .itin-drinks-wrapper .wp-block-outermost-icon-block,
 .single-tour .itin-location-wrapper .wp-block-outermost-icon-block,
 .single-tour .itin-type-wrapper .wp-block-outermost-icon-block,
