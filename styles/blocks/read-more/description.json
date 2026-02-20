@@ -6,7 +6,7 @@
   "blockTypes": ["core/read-more"],
   "styles": {
     "color": {
-      "text": "var:preset|color|contrast"
+      "text": "var:preset|color|brand-text"
     },
     "typography": {
       "fontWeight": "600",
@@ -16,7 +16,7 @@
       "link": {
         ":hover": {
           "color": {
-            "text": "var:preset|color|brand-text"
+            "text": "var:preset|color|brand-dark"
           }
         }
       }
