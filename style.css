@@ -1338,3 +1338,23 @@ ul.lsx-not_included-list li svg {
 	content: " " !important;
 }
 
+/* ========================================================================== */
+/* FacetWP Checkbox Alignment */
+/* ========================================================================== */
+
+.facetwp-facet .facetwp-checkbox {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.facetwp-facet .facetwp-checkbox::before {
+    top: 0.2em !important;
+    transform: none !important;
+}
+
+.facetwp-facet .facetwp-checkbox .facetwp-display-value {
+    line-height: 1.35;
+}
+
