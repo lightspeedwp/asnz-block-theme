@@ -1343,17 +1343,12 @@ ul.lsx-not_included-list li svg {
 /* ========================================================================== */
 
 .facetwp-facet .facetwp-checkbox {
-    position: relative;
-    padding-top: 0.1em;
-}
-
-.facetwp-facet .facetwp-checkbox::before {
-    top: 0.35em !important;
-    transform: none !important;
+    background-position: 0 0.2em;
+    line-height: 1.35;
 }
 
 .facetwp-facet .facetwp-checkbox .facetwp-display-value,
 .facetwp-facet .facetwp-checkbox .facetwp-counter {
-    line-height: 1.35;
+    line-height: inherit;
 }
 
