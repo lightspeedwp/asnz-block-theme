@@ -1327,3 +1327,14 @@ ul.lsx-not_included-list li svg {
 	color: var(--wp--preset--color--contrast) !important;
 }
 
+/* ========================================================================== */
+/* NZD Price Formatting - Replace $ symbol with space */
+/* ========================================================================== */
+
+/* Display space instead of $ symbol for NZD currency */
+.lsx-price-wrapper .amount .currency-icon.nzd:after,
+.lsx-single-supplement-wrapper .amount .currency-icon.nzd:after,
+.unit-price-wrapper .amount .currency-icon.nzd:after {
+	content: " " !important;
+}
+
