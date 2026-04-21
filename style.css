@@ -1335,3 +1335,83 @@ ul.lsx-not_included-list li svg {
 	cursor: pointer;
 }
 
+/* ========================================================================== */
+/* NZD Price Formatting - Replace $ symbol with space */
+/* ========================================================================== */
+
+/* Display space instead of $ symbol for NZD currency */
+.lsx-price-wrapper .amount .currency-icon.nzd:after,
+.lsx-single-supplement-wrapper .amount .currency-icon.nzd:after,
+.unit-price-wrapper .amount .currency-icon.nzd:after {
+	content: " " !important;
+}
+
+/* ========================================================================== */
+/* FacetWP Checkbox Alignment */
+/* ========================================================================== */
+
+
+.facetwp-facet .facetwp-checkbox {
+    background-position: 0 0.2em;
+    line-height: 1.35;
+}
+
+.facetwp-facet .facetwp-checkbox .facetwp-display-value,
+.facetwp-facet .facetwp-checkbox .facetwp-counter {
+    line-height: inherit;
+}
+
+
+/* ========================================================================== */
+/* LSX Accordion (FAQ Style)                                                  */
+/* ========================================================================== */
+
+.wp-block-lsx-blocks-lsx-accordion details {
+    border-bottom: 1px solid var(--wp--preset--color--primary);
+    margin-bottom: 0;
+}
+
+.wp-block-lsx-blocks-lsx-accordion details:first-of-type {
+    border-top: 1px solid var(--wp--preset--color--primary);
+}
+
+.wp-block-lsx-blocks-lsx-accordion summary.lsx-accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    cursor: pointer;
+    padding: var(--wp--preset--spacing--20) 0;
+    font-weight: 600;
+    gap: var(--wp--preset--spacing--20);
+}
+
+/* Remove native marker in all browsers */
+.wp-block-lsx-blocks-lsx-accordion summary.lsx-accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+.wp-block-lsx-blocks-lsx-accordion summary.lsx-accordion-title::marker {
+    content: none;
+}
+
+/* Plus icon when closed */
+.wp-block-lsx-blocks-lsx-accordion summary.lsx-accordion-title::after {
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: url('/wp-content/themes/asnz-block-theme/assets/icons/plus-icon.svg') no-repeat center center;
+    background-size: 24px 24px;
+    transition: none;
+}
+
+/* Minus icon when open */
+.wp-block-lsx-blocks-lsx-accordion details[open] summary.lsx-accordion-title::after {
+    background-image: url('/wp-content/themes/asnz-block-theme/assets/icons/minus-icon.svg');
+}
+
+.wp-block-lsx-blocks-lsx-accordion .lsx-accordion-text {
+    padding-bottom: var(--wp--preset--spacing--20);
+}
