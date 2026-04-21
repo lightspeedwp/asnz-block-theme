@@ -1327,3 +1327,11 @@ ul.lsx-not_included-list li svg {
 	color: var(--wp--preset--color--contrast) !important;
 }
 
+
+/* ========================================================================== */
+/* Accordions						                                  */
+/* ========================================================================== */
+.lsx-block-accordion .lsx-accordion-title {
+	cursor: pointer;
+}
+
