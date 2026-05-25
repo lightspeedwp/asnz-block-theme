@@ -413,7 +413,6 @@ header:has(> .is-position-sticky) {
     left: auto !important;
     right: auto !important;
     transform: none !important;
-    width: max-content !important;
     margin: var(--wp--preset--spacing--30) auto 0 !important;
     padding: 0 !important;
     display: flex !important;
