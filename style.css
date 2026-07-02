@@ -1326,6 +1326,10 @@ ul.lsx-not_included-list li svg {
 	color: var(--wp--preset--color--contrast) !important;
 }
 
+.lsx-itinerary-wrapper .itinerary-list:last-child .itinerary-facts {
+    display: none;
+}
+
 
 /* ========================================================================== */
 /* Accordions						                                  */
