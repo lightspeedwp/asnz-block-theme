@@ -497,3 +497,22 @@ function tour_jsonld()
         . '</script>' . "\n";
 }
 add_action('wp_head', __NAMESPACE__ . '\tour_jsonld', 20);
+
+
+/**
+ * Preload the LCP hero image on the front page.
+ *
+ * The hero lives deep inside a Cover block, so the browser discovers it late.
+ * Preloading it (as the front page's largest contentful paint element) lets the
+ * request start immediately, improving LCP — especially on mobile.
+ */
+function preload_front_page_hero()
+{
+    if (! is_front_page()) {
+        return;
+    }
+
+    $hero = get_template_directory_uri() . '/assets/img/front-page-hero-image.webp';
+    echo '<link rel="preload" as="image" href="' . esc_url($hero) . '" fetchpriority="high">' . "\n";
+}
+add_action('wp_head', __NAMESPACE__ . '\preload_front_page_hero', 1);
