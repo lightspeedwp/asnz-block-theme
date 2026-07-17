@@ -660,11 +660,11 @@ header:has(> .is-position-sticky) {
 /* === Mega Menu: Base === */
 
 .is-style-mega-menu {
-    z-index: 999;
+    z-index: 999 !important;
 }
 
 .wp-block-ollie-mega-menu__menu-container {
-    z-index: 999;
+    z-index: 999 !important;
 }
 
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
