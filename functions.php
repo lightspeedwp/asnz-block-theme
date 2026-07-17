@@ -516,39 +516,3 @@ function preload_front_page_hero()
     echo '<link rel="preload" as="image" href="' . esc_url($hero) . '" fetchpriority="high">' . "\n";
 }
 add_action('wp_head', __NAMESPACE__ . '\preload_front_page_hero', 1);
-
-
-/**
- * Give generic "Read more" links (from Query Loops) an accessible name that
- * includes the post title.
- *
- * Fixes the WCAG "link has no descriptive text" issue and the matching SEO
- * warning, and helps AI agents understand where each link goes — without
- * changing the visible button design. Only the bare "Read more" text is
- * targeted; links that already have descriptive text or an aria-label are left
- * alone.
- *
- * @param string $block_content Rendered block HTML.
- * @param array  $block         Parsed block.
- * @return string
- */
-function asnz_descriptive_read_more($block_content, $block)
-{
-    if (empty($block_content) || strpos($block_content, '>Read more</a>') === false) {
-        return $block_content;
-    }
-
-    $title = get_the_title();
-    if (empty($title)) {
-        return $block_content;
-    }
-
-    $label = esc_attr('Read more: ' . wp_strip_all_tags($title));
-
-    return preg_replace(
-        '/(<a\b(?![^>]*\baria-label=)[^>]*)(>Read more<\/a>)/',
-        '$1 aria-label="' . $label . '"$2',
-        $block_content
-    );
-}
-add_filter('render_block', __NAMESPACE__ . '\asnz_descriptive_read_more', 10, 2);
