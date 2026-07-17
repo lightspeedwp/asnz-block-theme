@@ -657,22 +657,18 @@ header:has(> .is-position-sticky) {
     text-decoration: none;
 }
 
-/* LSX Secondary Sticky menu z-index override */
-
-.sticky-header {
-    z-index: 999 !important;
+/* The header context is what competes with page content — lift the whole thing */
+header:has(> .is-position-sticky) {
+    z-index: 1000;
+    /* was 100 — must exceed the LSX sticky menu's effective z-index */
 }
 
-/* === Mega Menu: Base === */
-
-.is-style-mega-menu {
-    z-index: 999 !important;
+/* Put the z-index on the element that is actually positioned/pops down */
+.wp-block-navigation.mega-menu-nav .wp-block-navigation__submenu-container,
+.wp-block-navigation .has-child>.wp-block-navigation__submenu-container {
+    z-index: 999;
+    /* now meaningful *within* the header context */
 }
-
-.wp-block-ollie-mega-menu__menu-container {
-    z-index: 999 !important;
-}
-
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
     display: block;
 }
