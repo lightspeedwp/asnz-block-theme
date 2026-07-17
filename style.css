@@ -4,7 +4,7 @@
  * Author: Lightspeed WP
  * Description: Modern WordPress block theme for African Safaris New Zealand.
  * Forked from the Ollie (OllieWP) theme by Lightspeed WP.
- * Version: 0.1.1
+ * Version: 0.1.2
  * Text Domain: asnz-block-theme
  */
 
@@ -1440,4 +1440,9 @@ ul.lsx-not_included-list li svg {
 
 .wpsr_read_more {
 	color: #0a5a91 !important;
+}
+
+/* Hide the redundant facts block on the final itinerary day (kept from live). */
+.lsx-itinerary-wrapper .itinerary-list:last-child .itinerary-facts {
+    display:none;
 }
