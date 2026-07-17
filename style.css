@@ -659,8 +659,8 @@ header:has(> .is-position-sticky) {
 
 /* LSX Secondary Sticky menu z-index override */
 
-.lsx-to-sticky-menu .wp-block-lsx-tour-operator-sticky-menu {
-    z-index: 50 !important;
+.sticky-header {
+    z-index: 999 !important;
 }
 
 /* === Mega Menu: Base === */
