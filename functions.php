@@ -43,25 +43,6 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_style_sheet', 100);
 
 
 /**
- * Enqueue WooCommerce specific stylesheet
- */
-function enqueue_woocommerce_styles()
-{
-
-    // Only enqueue if WooCommerce is active
-    if (class_exists('WooCommerce')) {
-        wp_enqueue_style(
-            'theme-woocommerce-style',
-            get_template_directory_uri() . '/assets/styles/woocommerce.css',
-            array(),
-            '1.0.0'
-        );
-    }
-}
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_woocommerce_styles');
-
-
-/**
  * Register pattern categories.
  */
 function pattern_categories()
@@ -134,8 +115,13 @@ function template_part_areas(array $areas)
 }
 add_filter('default_wp_template_part_areas', __NAMESPACE__ . '\template_part_areas');
 
-// Facet Mobile expanding menus
+// Facet Mobile expanding menus. Only emitted when FacetWP is active — otherwise
+// fUtil()/FWP are undefined and this errored on every page and pulled jQuery
+// site-wide for no reason.
 add_action('wp_head', function () {
+    if (! function_exists('FWP')) {
+        return;
+    }
     ?>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -148,6 +134,9 @@ add_action('wp_head', function () {
 
 
 add_action('wp_head', function () {
+    if (! function_exists('FWP')) {
+        return;
+    }
     ?>
     <script>
       (function($) {
@@ -448,3 +437,63 @@ function register_mega_menu_style()
     }
 }
 add_action('init', __NAMESPACE__ . '\register_mega_menu_style');
+
+
+/**
+ * Output TouristTrip JSON-LD on single tour pages.
+ *
+ * Yoast already emits the Organization / WebPage / BreadcrumbList graph, so this
+ * adds only the tour-specific type Yoast does not know about — improving how
+ * search engines and AI agents understand tour pages. Price is intentionally
+ * omitted: the tour price is a free-text field, not a clean number, so emitting
+ * a schema.org Offer from it would be unreliable. Extend via the
+ * `asnz_tour_schema` filter to add offers/duration once a numeric source exists.
+ */
+function tour_jsonld()
+{
+    if (! is_singular('tour')) {
+        return;
+    }
+
+    $post = get_queried_object();
+    if (! $post instanceof \WP_Post) {
+        return;
+    }
+
+    $description = has_excerpt($post) ? get_the_excerpt($post) : wp_trim_words(wp_strip_all_tags($post->post_content), 55);
+
+    $schema = array(
+        '@context'    => 'https://schema.org',
+        '@type'       => 'TouristTrip',
+        'name'        => get_the_title($post),
+        'description' => trim($description),
+        'url'         => get_permalink($post),
+        'provider'    => array(
+            '@type' => 'TravelAgency',
+            'name'  => get_bloginfo('name'),
+            'url'   => home_url('/'),
+        ),
+    );
+
+    $image = get_the_post_thumbnail_url($post, 'full');
+    if ($image) {
+        $schema['image'] = $image;
+    }
+
+    /**
+     * Filter the tour TouristTrip schema before output.
+     *
+     * @param array   $schema The schema array.
+     * @param \WP_Post $post   The tour post.
+     */
+    $schema = apply_filters('asnz_tour_schema', $schema, $post);
+
+    if (empty($schema)) {
+        return;
+    }
+
+    echo "\n" . '<script type="application/ld+json">'
+        . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+        . '</script>' . "\n";
+}
+add_action('wp_head', __NAMESPACE__ . '\tour_jsonld', 20);
