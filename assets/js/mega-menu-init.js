@@ -93,8 +93,5 @@
 						return;
 					}
 				}
-			}, 0 );
-		},
-		{ once: true }
-	);
+		{ once: true, capture: true }
 })();
