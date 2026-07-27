@@ -37,11 +37,11 @@
 	var panels = document.querySelectorAll(
 		'.wp-block-ollie-mega-menu__menu-container.menu-width-full'
 	);
-	var toggle = document.querySelector( '.wp-block-ollie-mega-menu__toggle' );
+	var toggles = document.querySelectorAll( '.wp-block-ollie-mega-menu__toggle' );
 
 	// Nothing to bring forward if there are no full-width panels, or if the plugin
 	// already measured inline because the document was complete.
-	if ( ! panels.length || ! toggle || 'complete' === document.readyState ) {
+	if ( ! panels.length || ! toggles.length || 'complete' === document.readyState ) {
 		return;
 	}
 
@@ -49,13 +49,25 @@
 		window.dispatchEvent( new Event( 'resize' ) );
 	}
 
-	if ( toggle.hasAttribute( 'aria-expanded' ) ) {
-		reflow();
-	} else {
+	var pendingHydrations = toggles.length;
+
+	function markHydrated() {
+		pendingHydrations--;
+		if ( 0 === pendingHydrations ) {
+			reflow();
+		}
+	}
+
+	for ( var i = 0; i < toggles.length; i++ ) {
+		if ( toggles[ i ].hasAttribute( 'aria-expanded' ) ) {
+			markHydrated();
+			continue;
+		}
+
 		new window.MutationObserver( function ( mutations, observer ) {
 			observer.disconnect();
-			reflow();
-		} ).observe( toggle, {
+			markHydrated();
+		} ).observe( toggles[ i ], {
 			attributes: true,
 			attributeFilter: [ 'aria-expanded' ],
 		} );
