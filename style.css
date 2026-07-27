@@ -4,7 +4,7 @@
  * Author: Lightspeed WP
  * Description: Modern WordPress block theme for African Safaris New Zealand.
  * Forked from the Ollie (OllieWP) theme by Lightspeed WP.
- * Version: 0.1.2
+ * Version: 0.1.3
  * Text Domain: asnz-block-theme
  */
 
@@ -669,6 +669,53 @@ header:has(> .is-position-sticky) {
     z-index: 999;
     /* now meaningful *within* the header context */
 }
+
+/* === Mega Menu: Full-width panel geometry before JS initialises === */
+
+/* Ollie Menu Designer only ships CSS widths for .menu-width-content and
+   .menu-width-wide. A .menu-width-full panel gets no width at all — its size
+   and offset are assigned by the plugin's view.js:
+
+       el.style.top    = `${el.dataset.topSpacing}px`;
+       el.style.width  = el.style.maxWidth = `${window.innerWidth}px`;
+       el.style.left   = `${-panelRect.left}px`;   // measure-and-negate
+
+   and that runs from `callbacks.initMenuLayout`, which defers the whole thing to
+   the `window.load` event. Until load fires the panel is position:absolute with
+   width:auto, so it shrink-wraps to its content — the thin-column flash. On
+   production `load` waits on ~70 eager images, a YouTube embed, GTM, Chaty,
+   Popup Maker and Font Awesome from an external CDN, so the wrong state is
+   visible for 1-2s whenever the nav is hovered early. Locally `load` fires
+   almost immediately, which is why this only ever showed up on live.
+
+   The panel's containing block is the mega menu <li> (core nav sets
+   position:relative on .wp-block-navigation-item), so the vertical target is
+   exactly `top: <top spacing>` and we can state that up front. The horizontal
+   target is viewport x=0, which is `left: -<the li's own x>` — not expressible
+   in CSS, so it stays view.js's job. mega-menu-init.js makes that happen at
+   hydration instead of at load; this block is the safety net that keeps the
+   panel usable (full-bleed, correctly placed vertically, just not yet pulled
+   left) if the script is blocked or errors.
+
+   The :not([style*='width']) guard scopes this to the pre-init state only: the
+   panels ship with no style attribute at all, and view.js always sets an inline
+   width on a full-width panel, so once it has run these declarations stop
+   applying and the plugin's own measured geometry takes over cleanly. */
+@media (min-width: 600px) {
+    /* 600px is the plugin's own desktop threshold (state.isDesktop). Below it
+       the panel becomes a full-screen overlay driven by the plugin's
+       .is-menu-open rules, which are !important and override everything here. */
+    .wp-block-ollie-mega-menu__menu-container.menu-width-full:not(
+            [style*='width']
+        ) {
+        /* Keep the plugin's position:absolute — `top` has to resolve against
+           the <li>, exactly as the value view.js later writes does. */
+        top: var(--asnz--mega-menu-top-spacing, 100px);
+        width: 100vw;
+        max-width: 100vw;
+    }
+}
+
 .wp-block-navigation.mega-menu-nav .wp-block-navigation__container {
     display: block;
 }

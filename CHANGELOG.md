@@ -6,6 +6,25 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27
+
+### Fixed
+
+- Mega menus no longer flash as narrow columns on load. Ollie Menu Designer ships no
+  CSS width for `.menu-width-full` panels — view.js measures the viewport and writes
+  the geometry inline, but defers that to the `window.load` event. On production
+  `load` waits on ~70 eager images, a YouTube embed, GTM, Chaty, Popup Maker and
+  Font Awesome from a third-party CDN, so panels measured 2.7s (at 1440px) as
+  shrink-wrapped `width:auto` boxes before snapping to full width. Locally `load`
+  fires almost immediately, which is why it only showed on live.
+  - `style.css` now states the panel's width and vertical offset up front, so a
+    pre-init panel is full-bleed and correctly placed rather than collapsed. Scoped
+    to `:not([style*='width'])` so it applies only before view.js has run.
+  - New `assets/js/mega-menu-init.js` triggers the plugin's own resize path once the
+    Interactivity store hydrates, bringing correct geometry ~2.4s forward, and
+    re-runs it after `load` because the plugin's load handler calls a reset-less
+    `adjustMegaMenu()` that would otherwise re-measure an already-corrected panel.
+
 ## 2025-10-17
 
 ### Added
