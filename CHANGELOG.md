@@ -6,6 +6,28 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27 (2)
+
+### Performance
+
+- Serve the theme's registered font faces as WOFF2 instead of raw TTF. The eight
+  faces in `theme.json` drop from 1427KB to 458KB (68% smaller); the three actually
+  fetched on the home page — Source Sans 3 variable, Lato Regular, Lato Bold — drop
+  from 774KB to 221KB.
+  - Why it mattered beyond bytes: fonts are fetched at `VeryHigh` priority, while
+    `<script type="module">` and `defer` scripts get `Low`. The mega menu's
+    Interactivity module sat behind 1307KB of `VeryHigh`/`High` requests, and module
+    scripts block `DOMContentLoaded`, so hydration — the point at which the nav can
+    respond to a hover at all — was gated on the font download.
+  - Measured on dev at 1440px, cold cache: blocking the fonts entirely moved
+    hydration from 4472ms to 2892ms, so this is the dominant term.
+  - Conversion used `woff2_compress` (Google's reference encoder) and is lossless:
+    glyph counts, cmap coverage (1615 codepoints on the variable faces) and the
+    `wght 200-900` axis are identical, verified with fontTools plus an in-browser
+    load and axis-rendering check.
+  - The superseded `.ttf` files are left in place for now — nothing references them,
+    so they are never fetched. Pruning them is a separate call.
+
 ## 2026-07-27
 
 ### Fixed

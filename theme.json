@@ -226,7 +226,7 @@
                             "fontFamily": "Lato",
                             "fontWeight": "300",
                             "fontStyle": "normal",
-                            "src": ["file:./assets/fonts/lato/Lato-Light.ttf"],
+                            "src": ["file:./assets/fonts/lato/Lato-Light.woff2"],
                             "fontDisplay": "swap"
                         },
                         {
@@ -234,7 +234,7 @@
                             "fontWeight": "300",
                             "fontStyle": "italic",
                             "src": [
-                                "file:./assets/fonts/lato/Lato-LightItalic.ttf"
+                                "file:./assets/fonts/lato/Lato-LightItalic.woff2"
                             ],
                             "fontDisplay": "swap"
                         },
@@ -243,7 +243,7 @@
                             "fontWeight": "400",
                             "fontStyle": "normal",
                             "src": [
-                                "file:./assets/fonts/lato/Lato-Regular.ttf"
+                                "file:./assets/fonts/lato/Lato-Regular.woff2"
                             ],
                             "fontDisplay": "swap"
                         },
@@ -251,14 +251,14 @@
                             "fontFamily": "Lato",
                             "fontWeight": "400",
                             "fontStyle": "italic",
-                            "src": ["file:./assets/fonts/lato/Lato-Italic.ttf"],
+                            "src": ["file:./assets/fonts/lato/Lato-Italic.woff2"],
                             "fontDisplay": "swap"
                         },
                         {
                             "fontFamily": "Lato",
                             "fontWeight": "700",
                             "fontStyle": "normal",
-                            "src": ["file:./assets/fonts/lato/Lato-Bold.ttf"],
+                            "src": ["file:./assets/fonts/lato/Lato-Bold.woff2"],
                             "fontDisplay": "swap"
                         },
                         {
@@ -266,7 +266,7 @@
                             "fontWeight": "700",
                             "fontStyle": "italic",
                             "src": [
-                                "file:./assets/fonts/lato/Lato-BoldItalic.ttf"
+                                "file:./assets/fonts/lato/Lato-BoldItalic.woff2"
                             ],
                             "fontDisplay": "swap"
                         }
@@ -282,7 +282,7 @@
                             "fontWeight": "200 900",
                             "fontStyle": "normal",
                             "src": [
-                                "file:./assets/fonts/source-sans-pro/SourceSans3-VariableFont_wght.ttf"
+                                "file:./assets/fonts/source-sans-pro/SourceSans3-VariableFont_wght.woff2"
                             ],
                             "fontDisplay": "swap"
                         },
@@ -291,7 +291,7 @@
                             "fontWeight": "200 900",
                             "fontStyle": "italic",
                             "src": [
-                                "file:./assets/fonts/source-sans-pro/SourceSans3-Italic-VariableFont_wght.ttf"
+                                "file:./assets/fonts/source-sans-pro/SourceSans3-Italic-VariableFont_wght.woff2"
                             ],
                             "fontDisplay": "swap"
                         }
