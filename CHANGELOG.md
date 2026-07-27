@@ -6,6 +6,24 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27 (5)
+
+### Fixed
+
+- Reverted the 0.1.8 "collapsed panel" recovery (see (4) below) — it was the
+  cause of a new regression, not the fix: user confirmed on a fresh
+  cache-cleared incognito load, "About" rendered correctly for an instant
+  then broke. The plugin holds a just-opened panel at `visibility:hidden`
+  for 100-175ms (its own CSS transition-delay) before it's actually laid
+  out. Our recovery checked one `requestAnimationFrame` (~16ms) after
+  `aria-expanded` flipped true — squarely inside that window — read a
+  legitimately-still-hidden panel as "collapsed", and dispatched another
+  `resize`, which (per point 1 above) cancels an in-progress hover-open.
+  So the fix broke the exact case it was trying to catch. Removed; the
+  original "About" panel blank-render report is still unresolved and needs
+  a different approach — do not re-add a fixed-delay check without first
+  confirming it runs after the plugin's transition (175ms) has settled.
+
 ## 2026-07-27 (4)
 
 ### Fixed
