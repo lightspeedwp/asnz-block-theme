@@ -10,6 +10,11 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+- Reserved 20x20px for `.wpsr-show-logo` (WP Social Reviews' Google icon).
+  Confirmed via Chrome's layout-shift culprit trace as the single largest
+  CLS contributor on the front page (desktop 0.16, mobile 0.35 — poor) —
+  the plugin's own CSS sets no dimensions on it, and it loads late (~7-12s
+  after paint), shoving all following content down when it finally renders.
 - Layout shift when opening/browsing past the header nav.
   - `assets/js/mega-menu-init.js`'s `window.load` handler cleared inline
     `left`/`width`/`maxWidth` on every mega-menu panel, including one a visitor

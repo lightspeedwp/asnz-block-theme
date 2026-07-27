@@ -4,7 +4,7 @@
  * Author: Lightspeed WP
  * Description: Modern WordPress block theme for African Safaris New Zealand.
  * Forked from the Ollie (OllieWP) theme by Lightspeed WP.
- * Version: 0.1.4
+ * Version: 0.1.5
  * Text Domain: asnz-block-theme
  */
 
@@ -1461,4 +1461,16 @@ ul.lsx-not_included-list li svg {
 /* Hide the redundant facts block on the final itinerary day (kept from live). */
 .lsx-itinerary-wrapper .itinerary-list:last-child .itinerary-facts {
     display:none;
+}
+
+/* WP Social Reviews' Google icon has no width/height attributes, so the
+   browser reserves no space for it and the reviews block loading late
+   (~7-12s after paint) shoves everything below it down. Confirmed via
+   Chrome's layout-shift culprit trace: this is the single largest CLS
+   contributor on both desktop (0.16) and mobile (0.35). Reserve its
+   natural rendered size (verified live: 20x20 — the plugin's own CSS sets
+   no dimensions at all). */
+.wpsr-show-logo {
+    width: 20px;
+    height: 20px;
 }
