@@ -42,6 +42,16 @@
  *    that exceeds `clientWidth`, regardless of which of the plugin's code paths
  *    (resize, its own `load` handler, or our reflow above) set it.
  *
+ * 5. Recover from a collapsed panel. Observed live (not reliably reproducible on
+ *    demand — looks like a narrower window of the same hydration race as #1): a
+ *    panel opens with `aria-expanded="true"`, correct-looking inline geometry, and
+ *    `opacity/visibility/display` all fine, but its whole render chain — the panel
+ *    and every descendant down to its content — collapses to a 0x0 box, so nothing
+ *    is visible except decorative absolutely-positioned children escaping the
+ *    collapse. Whenever a toggle's `aria-expanded` flips to `true`, check the
+ *    panel a frame later; if it's still 0x0, dispatch another `resize` to force
+ *    the plugin to re-run its own layout pass.
+ *
  * @package asnz-block-theme
  */
 
@@ -70,6 +80,21 @@
 		}
 	}
 
+	/**
+	 * If a panel just opened but its whole render chain collapsed to 0x0 (see
+	 * doc comment point 5), force the plugin to re-run its layout pass.
+	 *
+	 * @param {Element} panel The `.menu-width-full` panel element.
+	 */
+	function recoverFromCollapse( panel ) {
+		window.requestAnimationFrame( function () {
+			var rect = panel.getBoundingClientRect();
+			if ( 0 === rect.width || 0 === rect.height ) {
+				reflow();
+			}
+		} );
+	}
+
 	for ( var p = 0; p < panels.length; p++ ) {
 		clampPanelWidth( panels[ p ] );
 		// eslint-disable-next-line no-loop-func -- each observer must close over its own panel.
@@ -81,6 +106,20 @@
 				attributeFilter: [ 'style' ],
 			} );
 		} )( panels[ p ] );
+
+		if ( toggles[ p ] ) {
+			// eslint-disable-next-line no-loop-func -- each observer must close over its own panel.
+			( function ( panel, toggle ) {
+				new window.MutationObserver( function () {
+					if ( 'true' === toggle.getAttribute( 'aria-expanded' ) ) {
+						recoverFromCollapse( panel );
+					}
+				} ).observe( toggle, {
+					attributes: true,
+					attributeFilter: [ 'aria-expanded' ],
+				} );
+			} )( panels[ p ], toggles[ p ] );
+		}
 	}
 
 	// Nothing to bring forward if there are no full-width panels, or if the plugin

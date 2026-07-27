@@ -6,6 +6,23 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27 (4)
+
+### Fixed
+
+- Reported: the "About" mega-menu panel opening visually empty (only a
+  decorative icon visible, no links/text). Could not get a clean, reliable
+  repro across 1024-1440px viewports or hover vs. click — but did catch it
+  once: the panel opens with correct `aria-expanded`/geometry/visibility, yet
+  its entire render chain collapses to a 0x0 box while still containing real
+  content (12 links). This is consistent with a narrower window of the same
+  hydration race documented above (#1) rather than a fixed-width breakpoint
+  bug. `assets/js/mega-menu-init.js` now checks a panel a frame after its
+  toggle's `aria-expanded` flips to `true`; if it's still 0x0, it dispatches
+  another `resize` to force the plugin to re-run its layout pass. Please
+  confirm if this recurs — if it does, the exact viewport width/browser and
+  whether it was a fresh page load will help nail down the real trigger.
+
 ## 2026-07-27 (3)
 
 ### Fixed
