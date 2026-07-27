@@ -1,48 +1,32 @@
 /**
- * Apply Ollie mega menu panel geometry at hydration instead of at window.load.
+ * Make Ollie mega menus measure themselves at hydration instead of at window.load.
  *
  * Ollie Menu Designer ships no CSS width for `.menu-width-full` panels — view.js
- * measures the viewport and writes top/width/maxWidth/left as inline styles. It
- * runs that from `callbacks.initMenuLayout`, which defers to `window.load`:
+ * measures the viewport and writes the geometry inline, but defers that to the
+ * `window.load` event. On production `load` trails hydration by ~2.7s (images, a
+ * YouTube embed, GTM, Chaty, Popup Maker, Font Awesome from a third-party CDN), and
+ * a panel hovered in between opens as a shrink-wrapped column instead of a
+ * full-width bar. Locally `load` fires immediately, which is why it only showed on
+ * live. The plugin re-runs the same measurement from its own resize handler, so a
+ * single dispatched `resize` gets the correct geometry via the plugin's own path.
  *
- *     initMenuLayout() {
- *       document.readyState === 'complete'
- *         ? actions.adjustMegaMenu()
- *         : window.addEventListener( 'load', withScope( () => actions.adjustMegaMenu() ), { once: true } );
- *     }
+ * Three things are load-bearing here — please don't simplify them away:
  *
- * `load` waits on every image, iframe and script on the page. Measured on the
- * production home page at 1440px, the panels were still unsized 2.7s after
- * DOMContentLoaded — an absolutely positioned box with width:auto, shrink-wrapped
- * to a ~460-710px column at the wrong offset. Hover a nav item inside that window
- * and that is what you get. Locally `load` fires almost immediately, which is why
- * it only ever showed up on live.
+ * 1. Fire once, at hydration. `handleResize()` calls `clearHoverTimeout()`, so a
+ *    resize landing inside the plugin's 150ms hover-open delay silently cancels the
+ *    open. Hydration is the one safe moment: the handler that would start a hover
+ *    did not exist a tick earlier. `aria-expanded` is absent from the served markup
+ *    and bound via data-wp-bind, so its arrival marks that point.
  *
- * The plugin re-runs the same measurement from its own resize handler
- * (`data-wp-on-window--resize="actions.handleResize"` on each mega menu <li>), so
- * dispatching `resize` once the Interactivity store has hydrated applies the
- * plugin's own geometry, on the plugin's own code path, seconds earlier — no
- * forking or patching of the plugin's script module.
+ * 2. Clear the inline geometry on `load`. `adjustMegaMenu()` sets
+ *    `left = -rect.left`, which is only right while `left` is at its stylesheet
+ *    value. The plugin's load handler calls it without the reset its resize handler
+ *    does, so it would re-measure the panel we already corrected and push it back
+ *    off by its own offset. This listener is registered before hydration, hence
+ *    before the plugin's, so the plugin re-measures a clean panel.
  *
- * Two things make this less trivial than it sounds:
- *
- * 1. Hydration has no public "ready" signal, so phase one polls briefly and
- *    dispatches only while a full-width panel is still missing its inline width.
- *    In practice hydration lands within a tick or two.
- *
- * 2. `adjustMegaMenu()` is measure-and-negate: it reads the panel's current rect
- *    and sets `left = -rect.left`, which is only correct if `left` is still at its
- *    stylesheet value. `handleResize()` is safe because it calls
- *    `resetMenuPositionStyles()` first, but the `load` handler calls
- *    `adjustMegaMenu()` bare. So once we have positioned the panels early, the
- *    plugin's own load handler re-measures an already-corrected panel and pushes
- *    it back off by its own offset. Phase two runs after that handler and restores
- *    the correct geometry via the reset-first path.
- *
- * Both phases go through `handleResize()`, which is idempotent, so the worst case
- * is redundant work rather than a wrong position. If this script never runs at all
- * the panels still get sane width and vertical placement from the stylesheet — see
- * "Mega Menu: Full-width panel geometry before JS initialises" in style.css.
+ * 3. Keep the backstop. If that ordering ever fails, it repairs the geometry after
+ *    all load handlers have run. It only fires when the offset is actually wrong.
  *
  * @package asnz-block-theme
  */
@@ -50,68 +34,55 @@
 (function () {
 	'use strict';
 
-	var SELECTOR = '.wp-block-ollie-mega-menu__menu-container.menu-width-full';
-	var INTERVAL_MS = 100;
-	var MAX_ATTEMPTS = 8;
+	var panels = document.querySelectorAll(
+		'.wp-block-ollie-mega-menu__menu-container.menu-width-full'
+	);
+	var toggle = document.querySelector( '.wp-block-ollie-mega-menu__toggle' );
 
-	var panels = document.querySelectorAll( SELECTOR );
-
-	if ( ! panels.length ) {
+	// Nothing to bring forward if there are no full-width panels, or if the plugin
+	// already measured inline because the document was complete.
+	if ( ! panels.length || ! toggle || 'complete' === document.readyState ) {
 		return;
 	}
 
-	/**
-	 * Trigger the plugin's reset-then-measure path on every mega menu.
-	 */
 	function reflow() {
 		window.dispatchEvent( new Event( 'resize' ) );
 	}
 
-	/**
-	 * Whether view.js has written its inline width to every full-width panel.
-	 *
-	 * @return {boolean} True once all panels have been measured and sized.
-	 */
-	function isSized() {
-		for ( var i = 0; i < panels.length; i++ ) {
-			if ( ! panels[ i ].style.width ) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	// Phase one: nudge until the store has hydrated and the panels are sized.
-	var attempts = 0;
-
-	function nudgeUntilSized() {
-		// Either the plugin has sized them, or `load` has fired and its own
-		// handler has already done the work. Nothing left to do here.
-		if ( isSized() || 'complete' === document.readyState ) {
-			return;
-		}
-
-		if ( ++attempts > MAX_ATTEMPTS ) {
-			return;
-		}
-
+	if ( toggle.hasAttribute( 'aria-expanded' ) ) {
 		reflow();
-		window.setTimeout( nudgeUntilSized, INTERVAL_MS );
+	} else {
+		new window.MutationObserver( function ( mutations, observer ) {
+			observer.disconnect();
+			reflow();
+		} ).observe( toggle, {
+			attributes: true,
+			attributeFilter: [ 'aria-expanded' ],
+		} );
 	}
 
-	if ( 'complete' !== document.readyState ) {
-		window.setTimeout( nudgeUntilSized, 0 );
+	window.addEventListener(
+		'load',
+		function () {
+			var i;
 
-		// Phase two: the plugin's `load` handler runs a reset-less adjust that
-		// undoes phase one. setTimeout(0) from a load listener lands after every
-		// load handler, whatever order they registered in.
-		window.addEventListener(
-			'load',
-			function () {
-				window.setTimeout( reflow, 0 );
-			},
-			{ once: true }
-		);
-	}
+			for ( i = 0; i < panels.length; i++ ) {
+				panels[ i ].style.left = '';
+				panels[ i ].style.width = '';
+				panels[ i ].style.maxWidth = '';
+			}
+
+			window.setTimeout( function () {
+				for ( i = 0; i < panels.length; i++ ) {
+					// An empty offset, or the `0px` that measure-and-negate
+					// produces when it re-reads an already-corrected panel.
+					if ( ! panels[ i ].style.left || '0px' === panels[ i ].style.left ) {
+						reflow();
+						return;
+					}
+				}
+			}, 0 );
+		},
+		{ once: true }
+	);
 })();
