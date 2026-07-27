@@ -10,6 +10,12 @@ All notable changes to this project will be documented in this file.
 
 ### Performance
 
+- Preload the 3 font files actually used above the fold on every page
+  (Source Sans 3 variable, Lato Regular, Lato Bold) via `<link rel="preload">`
+  in `wp_head`, so the fetch starts in parallel with the CSS parse instead of
+  after the browser discovers the `@font-face` rules. Follow-up to the WOFF2
+  switch below.
+
 - Serve the theme's registered font faces as WOFF2 instead of raw TTF. The eight
   faces in `theme.json` drop from 1427KB to 458KB (68% smaller); the three actually
   fetched on the home page — Source Sans 3 variable, Lato Regular, Lato Bold — drop

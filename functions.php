@@ -549,3 +549,28 @@ function preload_front_page_hero()
     echo '<link rel="preload" as="image" href="' . esc_url($hero) . '" fetchpriority="high">' . "\n";
 }
 add_action('wp_head', __NAMESPACE__ . '\preload_front_page_hero', 1);
+
+
+/**
+ * Preload the three font files every page actually uses above the fold:
+ * Source Sans 3 (body copy, variable weight) and Lato Regular/Bold (headings,
+ * nav). These are requested at VeryHigh priority regardless, but the browser
+ * only discovers them once it parses the @font-face rules inside style.css —
+ * preloading lets the fetch start in parallel with that CSS parse instead of
+ * after it. The other five registered Lato faces (Light/Italic/BoldItalic)
+ * are not preloaded: they're only used in copy that varies by page and are
+ * not guaranteed to be above the fold everywhere.
+ */
+function preload_core_fonts()
+{
+    $fonts = [
+        get_template_directory_uri() . '/assets/fonts/source-sans-pro/SourceSans3-VariableFont_wght.woff2',
+        get_template_directory_uri() . '/assets/fonts/lato/Lato-Regular.woff2',
+        get_template_directory_uri() . '/assets/fonts/lato/Lato-Bold.woff2',
+    ];
+
+    foreach ($fonts as $font) {
+        echo '<link rel="preload" as="font" type="font/woff2" href="' . esc_url($font) . '" crossorigin="anonymous">' . "\n";
+    }
+}
+add_action('wp_head', __NAMESPACE__ . '\preload_core_fonts', 1);
