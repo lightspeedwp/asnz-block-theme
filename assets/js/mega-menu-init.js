@@ -93,5 +93,10 @@
 						return;
 					}
 				}
+			}, 0 );
+		},
+		// Capture runs this before the plugin's own bubble-phase load listener,
+		// regardless of which registered first.
 		{ once: true, capture: true }
+	);
 })();
