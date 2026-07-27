@@ -445,9 +445,7 @@ add_action('init', __NAMESPACE__ . '\register_mega_menu_style');
  * Ollie Menu Designer sizes its full-width panels from view.js and defers that to
  * the `window.load` event, which on this site lands 1-2s after first paint. Until
  * then a `.menu-width-full` panel has no width from any stylesheet and collapses
- * to a thin column. See assets/js/mega-menu-init.js for the full explanation; the
- * matching CSS safety net lives in style.css under "Mega Menu: Full-width panel
- * geometry before JS initialises".
+ * to a thin column. See assets/js/mega-menu-init.js for the full explanation.
  *
  * Only enqueued when the plugin providing the block is actually active, and only
  * on the front end — the editor renders panels through its own code path.
