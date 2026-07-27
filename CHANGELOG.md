@@ -30,6 +30,8 @@ All notable changes to this project will be documented in this file.
   (`.wp-block-ollie-mega-menu__menu-container`) instead of
   `.wp-block-navigation__submenu-container`, which never matches these panels, and
   drops the LSX sticky menu below it.
+- Removed gap below the header on the front page by wrapping the front-page content in a `<main>` landmark with zero top/bottom margin.
+- Hid the redundant facts block on the final itinerary day.
 
 ## 2025-10-17
 
