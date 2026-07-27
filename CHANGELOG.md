@@ -10,6 +10,29 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+- Layout shift when opening/browsing past the header nav.
+  - `assets/js/mega-menu-init.js`'s `window.load` handler cleared inline
+    `left`/`width`/`maxWidth` on every mega-menu panel, including one a visitor
+    already had open if `load` fired mid-hover (plausible given the ~2.7s load
+    delay from GTM/YouTube/Chaty/Font Awesome noted above) — resetting a
+    painted, visible panel's geometry for a frame before it got re-measured is
+    a real layout shift. The cleanup now skips any panel whose toggle has
+    `aria-expanded="true"`.
+  - `style.css`: added `html { scrollbar-gutter: stable; }` so the vertical
+    scrollbar's width is always reserved. Without it, navigating between a
+    tall page (scrollbar present) and a short one (no scrollbar) changes the
+    viewport's content width by ~15-17px, shifting the whole centred layout —
+    including the sticky nav — sideways. This is what "menu should remain
+    static when browsing through the site" was pointing at.
+  - Could not reproduce a `layout-shift` PerformanceObserver entry from
+    opening/closing the mega menu or mobile drawer on desktop (1280px) or
+    mobile (375px) viewports in this environment — the panel is
+    `position: absolute`/`fixed` and the drawer render was instant, so no
+    shift fired here. The `mega-menu-init.js` fix targets the exact race the
+    file's own doc comment already flags as live-only (fast local loads never
+    hit it); the `scrollbar-gutter` fix is a general hardening for the
+    cross-page "remain static" ask. Please confirm on a slow connection/live
+    if the reported shift persists.
 - Mega menus no longer open as narrow columns overlapping the header. Ollie Menu
   Designer ships no CSS width for `.menu-width-full` panels — view.js measures the
   viewport and writes the geometry inline, but defers that to the `window.load`

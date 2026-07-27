@@ -78,7 +78,19 @@
 		function () {
 			var i;
 
+			// Skip any panel that is currently open. On a slow real-world load
+			// (GTM, a YouTube embed, Chaty, Font Awesome from a third-party CDN —
+			// see doc comment above), `load` can fire while a visitor already has
+			// a mega menu open. Clearing an open, painted panel's inline geometry
+			// here snaps it to its unstyled size for a frame before the plugin's
+			// own resize handler (or the backstop below) re-measures it — a real,
+			// visible layout shift of the open panel. Closed panels are still
+			// cleared so the plugin can re-measure them cleanly before they're
+			// ever shown.
 			for ( i = 0; i < panels.length; i++ ) {
+				if ( toggles[ i ] && 'true' === toggles[ i ].getAttribute( 'aria-expanded' ) ) {
+					continue;
+				}
 				panels[ i ].style.left = '';
 				panels[ i ].style.width = '';
 				panels[ i ].style.maxWidth = '';
@@ -86,6 +98,9 @@
 
 			window.setTimeout( function () {
 				for ( i = 0; i < panels.length; i++ ) {
+					if ( toggles[ i ] && 'true' === toggles[ i ].getAttribute( 'aria-expanded' ) ) {
+						continue;
+					}
 					// An empty offset, or the `0px` that measure-and-negate
 					// produces when it re-reads an already-corrected panel.
 					if ( ! panels[ i ].style.left || '0px' === panels[ i ].style.left ) {

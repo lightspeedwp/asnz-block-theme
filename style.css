@@ -4,7 +4,7 @@
  * Author: Lightspeed WP
  * Description: Modern WordPress block theme for African Safaris New Zealand.
  * Forked from the Ollie (OllieWP) theme by Lightspeed WP.
- * Version: 0.1.3
+ * Version: 0.1.4
  * Text Domain: asnz-block-theme
  */
 
@@ -183,6 +183,16 @@ label {
 /* Header / Sticky & Mobile Utilities (From Ollie Theme)                      */
 
 /* ========================================================================== */
+
+/* Reserve the vertical scrollbar's width unconditionally. Without this, a page
+   short enough to not need a scrollbar renders ~15-17px wider (viewport minus
+   scrollbar vs full viewport) than a page that does, so the whole centred
+   layout - including the sticky header/nav - shifts sideways when navigating
+   between pages of different heights. This keeps the nav's horizontal
+   position static across the site regardless of individual page length. */
+html {
+    scrollbar-gutter: stable;
+}
 
 /* Sticky header when .is-position-sticky class is applied to a direct child */
 header:has(> .is-position-sticky) {
