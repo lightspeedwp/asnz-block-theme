@@ -28,6 +28,20 @@
  * 3. Keep the backstop. If that ordering ever fails, it repairs the geometry after
  *    all load handlers have run. It only fires when the offset is actually wrong.
  *
+ * 4. Clamp the width to the scrollbar. The plugin's own measurement
+ *    (`getMenuMeasurements` in its `view.js`) sizes a `menu-width-full` panel from
+ *    `window.innerWidth`, which on every desktop-width browser tested (Chrome,
+ *    scrollbar always visible) is ~15-17px WIDER than
+ *    `document.documentElement.clientWidth` — the actual visible viewport, since
+ *    `innerWidth` includes the scrollbar gutter and `clientWidth` does not. The
+ *    panel's `left` is set to butt its left edge against x=0, which is correct, but
+ *    its `width` then runs past the true right edge by exactly the scrollbar's
+ *    width, clipping the last column under/behind the scrollbar. This reproduces at
+ *    every desktop width (confirmed 1280px and 1440px), not only narrow ones — a
+ *    `MutationObserver` on each panel's `style` attribute clamps any inline width
+ *    that exceeds `clientWidth`, regardless of which of the plugin's code paths
+ *    (resize, its own `load` handler, or our reflow above) set it.
+ *
  * @package asnz-block-theme
  */
 
@@ -38,6 +52,36 @@
 		'.wp-block-ollie-mega-menu__menu-container.menu-width-full'
 	);
 	var toggles = document.querySelectorAll( '.wp-block-ollie-mega-menu__toggle' );
+
+	/**
+	 * Clamp a full-width panel's inline width/max-width to the actual visible
+	 * viewport (`clientWidth`) whenever the plugin (or our own reflow) sets it
+	 * from `window.innerWidth`, which over-shoots by the scrollbar's width.
+	 *
+	 * @param {Element} panel The `.menu-width-full` panel element.
+	 */
+	function clampPanelWidth( panel ) {
+		var visible = document.documentElement.clientWidth;
+		var current = parseFloat( panel.style.width );
+
+		if ( current && current > visible ) {
+			panel.style.width = visible + 'px';
+			panel.style.maxWidth = visible + 'px';
+		}
+	}
+
+	for ( var p = 0; p < panels.length; p++ ) {
+		clampPanelWidth( panels[ p ] );
+		// eslint-disable-next-line no-loop-func -- each observer must close over its own panel.
+		( function ( panel ) {
+			new window.MutationObserver( function () {
+				clampPanelWidth( panel );
+			} ).observe( panel, {
+				attributes: true,
+				attributeFilter: [ 'style' ],
+			} );
+		} )( panels[ p ] );
+	}
 
 	// Nothing to bring forward if there are no full-width panels, or if the plugin
 	// already measured inline because the document was complete.

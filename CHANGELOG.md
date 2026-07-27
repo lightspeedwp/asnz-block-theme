@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27 (3)
+
+### Fixed
+
+- Mega menu `menu-width-full` panels overflowed past the right edge of the
+  viewport on every desktop width (reproduced at 1280px and 1440px). Ollie
+  Menu Designer's `view.js` sizes the panel from `window.innerWidth`, which
+  includes the scrollbar gutter and is ~15-17px wider than
+  `document.documentElement.clientWidth` (the actual visible viewport) on any
+  page with a vertical scrollbar. `assets/js/mega-menu-init.js` now clamps
+  each panel's inline `width`/`max-width` to `clientWidth` via a
+  `MutationObserver` on its `style` attribute, so the correction applies no
+  matter which code path (resize, the plugin's own `load` handler, or our
+  hydration reflow) set the oversized geometry.
+
 ## 2026-07-27 (2)
 
 ### Performance
