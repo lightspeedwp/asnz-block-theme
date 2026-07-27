@@ -6,6 +6,31 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-27
+
+### Fixed
+
+- Mega menus no longer open as narrow columns overlapping the header. Ollie Menu
+  Designer ships no CSS width for `.menu-width-full` panels — view.js measures the
+  viewport and writes the geometry inline, but defers that to the `window.load`
+  event. On production `load` waits on ~70 eager images, a YouTube embed, GTM,
+  Chaty, Popup Maker and Font Awesome from a third-party CDN, so for 2.7s after
+  hydration a hovered panel opened as a ~626px shrink-wrapped box at the wrong
+  offset. Locally `load` fires immediately, which is why it only showed on live.
+  - New `assets/js/mega-menu-init.js` dispatches a single `resize` once the
+    Interactivity store hydrates, so the plugin measures via its own handler.
+    Measured at 1440px, the window in which a panel can open mis-sized drops from
+    2699ms to 18ms.
+  - It fires exactly once, at hydration, because the plugin's resize handler clears
+    the pending hover timeout — a resize inside the 150ms hover-open delay silently
+    cancels the open. It also clears the inline geometry on `load`, because the
+    plugin's load handler calls `adjustMegaMenu()` without the reset its resize
+    handler does and would otherwise re-measure an already-corrected panel.
+- Mega menu stacking now targets the Ollie panel element
+  (`.wp-block-ollie-mega-menu__menu-container`) instead of
+  `.wp-block-navigation__submenu-container`, which never matches these panels, and
+  drops the LSX sticky menu below it.
+
 ## 2025-10-17
 
 ### Added

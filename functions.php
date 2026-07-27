@@ -440,6 +440,39 @@ add_action('init', __NAMESPACE__ . '\register_mega_menu_style');
 
 
 /**
+ * Apply Ollie mega menu panel geometry at hydration instead of at window.load.
+ *
+ * Ollie Menu Designer sizes its full-width panels from view.js and defers that to
+ * the `window.load` event, which on this site lands 1-2s after first paint. Until
+ * then a `.menu-width-full` panel has no width from any stylesheet and collapses
+ * to a thin column. See assets/js/mega-menu-init.js for the full explanation.
+ *
+ * Only enqueued when the plugin providing the block is actually active, and only
+ * on the front end — the editor renders panels through its own code path.
+ */
+function enqueue_mega_menu_init()
+{
+    // The panels live in the header template part rather than post content, so
+    // gate on the block type existing at all, not on has_block().
+    if (! \WP_Block_Type_Registry::get_instance()->is_registered('ollie/mega-menu')) {
+        return;
+    }
+
+    wp_enqueue_script(
+        'asnz-mega-menu-init',
+        get_template_directory_uri() . '/assets/js/mega-menu-init.js',
+        array(),
+        wp_get_theme()->get('Version'),
+        array(
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        )
+    );
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_mega_menu_init');
+
+
+/**
  * Output TouristTrip JSON-LD on single tour pages.
  *
  * Yoast already emits the Organization / WebPage / BreadcrumbList graph, so this
