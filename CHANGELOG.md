@@ -6,6 +6,47 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-28 (2)
+
+### Fixed
+
+- Pair each mega-menu panel with its own toggle structurally instead of by list
+  index. `panels` is filtered to `.menu-width-full` while `toggles` is not, so
+  `toggles[ i ]` only described `panels[ i ]` while every mega menu happened to be
+  full-width — true today, but set one to Content or Wide in the editor and every
+  index shifts. Demonstrated by setting "Destinations" to Content width with "About"
+  open: `panels` becomes 4 against 5 toggles, and the open About panel reads as
+  closed (so it would be cleared mid-view) while the closed Blog panel reads as open
+  (so it would be skipped). The structural lookup — `closest( '.wp-block-ollie-mega-menu' )`
+  then its own toggle — gets both right.
+
+- Corrected the `capture: true` comment on the `load` listener. It claimed capture
+  runs the handler ahead of the plugin's regardless of registration order; it does
+  not. `load` is fired at `window` with the legacy-target-override flag, so `window`
+  is the only object in the propagation path — the listener is `AT_TARGET`, and
+  at-target listeners run in registration order whatever the capture flag says.
+  Running first depends on this script executing before hydration (measured: theme
+  registers at ~3.7s, the plugin's five at ~5.1s), with the backstop as the covering
+  guarantee. Behaviour unchanged; only the comment was wrong, and it was the kind of
+  wrong that invites someone to lean on it.
+
+### Resolved without a code change
+
+- The "About panel opens empty, only a decorative icon" report (see (4) and (5) under
+  2026-07-27) is the *same defect* as the client's misalignment report, already fixed
+  in 0.1.10 — not a separate hydration or collapse bug. Proof: force `left: 0px` (what
+  the defect wrote) on the About panel at 1440px and the panel spans x=983→2408. Its
+  layout is icon-column-first, so column 1 stays on screen at x=1075 while column 2 —
+  all 13 links — lands at x=1502, past the 1440px edge. Measured `iconOnScreen: true`,
+  `visibleLinks: 0/13`: exactly "only a decorative icon visible, no links/text".
+  - So the 0.1.8 "collapsed panel" recovery was chasing a symptom of the `left: 0px`
+    write, which is why a fixed-delay re-check could never fix it and instead broke
+    hover-open. Confirmed unreproducible on 0.1.10 across 1200-1920px and three
+    cold-cache loads hovering About at hydration (13/13 links every time).
+  - The 0x0-with-content measurement in that report is explained too: below ~1100px
+    the desktop nav collapses to the mobile overlay, so every panel measures 0x0 at
+    `visibility: hidden` while still holding its links. That is normal, not a fault.
+
 ## 2026-07-28
 
 ### Fixed
