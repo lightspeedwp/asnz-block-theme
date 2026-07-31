@@ -6,6 +6,30 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-07-28
+
+### Fixed
+
+- Mega menu panel permanently offset by its own x-position when a visitor opened it
+  before `window.load`. Reported by the client, reproduced at 1920px: open the page
+  fresh, hover a mega menu quickly enough to catch it, and the panel renders starting
+  at its nav item instead of the viewport edge, overflowing right with the last column
+  cut off. It stays wrong until a reload.
+  - Cause: 0.1.6 added a guard skipping any panel with `aria-expanded="true"` in the
+    `load` handler, to avoid a visible reset of an open panel. The guard was applied to
+    the backstop as well as the clear loop, which removed *both* defences from the one
+    panel a visitor can actually see. The plugin's own `load` handler still runs its
+    reset-less `adjustMegaMenu()` on it, re-measures a panel we already corrected
+    (`menuRect.left === 0`) and writes `left: 0px` — and with the backstop also
+    skipping it, nothing ever detected or repaired that.
+  - Fix: the backstop now checks every panel, including an open one. The clear loop
+    still skips open panels, so 0.1.6's reason for the guard is preserved. Repairing an
+    open panel costs one frame at the wrong offset; leaving it broken cost the whole
+    pageview.
+  - Verified A/B against live at 1920px with a menu held open through `load`: deployed
+    build leaves exactly one broken panel (the open one, `left: 0px`), this build
+    leaves none.
+
 ## 2026-07-27 (5)
 
 ### Fixed

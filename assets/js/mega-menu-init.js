@@ -140,11 +140,16 @@
 				panels[ i ].style.maxWidth = '';
 			}
 
+			// The backstop deliberately checks EVERY panel, including an open one
+			// skipped above. Skipping it here too left the open panel with no
+			// defence at all: the plugin's load handler still runs its reset-less
+			// adjustMegaMenu() on it, re-measures a panel we already corrected,
+			// and writes left:0px — which then went undetected, so the panel the
+			// visitor is actually looking at stayed offset by its own x until a
+			// reload. Repairing it costs a frame at the wrong offset; leaving it
+			// broken costs the whole pageview.
 			window.setTimeout( function () {
 				for ( i = 0; i < panels.length; i++ ) {
-					if ( toggles[ i ] && 'true' === toggles[ i ].getAttribute( 'aria-expanded' ) ) {
-						continue;
-					}
 					// An empty offset, or the `0px` that measure-and-negate
 					// produces when it re-reads an already-corrected panel.
 					if ( ! panels[ i ].style.left || '0px' === panels[ i ].style.left ) {
