@@ -54,6 +54,28 @@
 	var toggles = document.querySelectorAll( '.wp-block-ollie-mega-menu__toggle' );
 
 	/**
+	 * Whether a panel's own mega menu is currently open.
+	 *
+	 * Pair a panel with its toggle structurally, never by index. `panels` is
+	 * filtered to `.menu-width-full` while `toggles` is not, so `toggles[ i ]`
+	 * only describes `panels[ i ]` for as long as every mega menu happens to be
+	 * full-width. Set one to Content or Wide in the editor and index pairing
+	 * silently starts consulting the wrong toggle — which is how an open panel
+	 * ends up treated as closed (and vice versa).
+	 *
+	 * @param {Element} panel The `.menu-width-full` panel element.
+	 * @return {boolean} True when this panel's menu is open.
+	 */
+	function isPanelOpen( panel ) {
+		var item = panel.closest( '.wp-block-ollie-mega-menu' );
+		var toggle = item
+			? item.querySelector( '.wp-block-ollie-mega-menu__toggle' )
+			: null;
+
+		return !! toggle && 'true' === toggle.getAttribute( 'aria-expanded' );
+	}
+
+	/**
 	 * Clamp a full-width panel's inline width/max-width to the actual visible
 	 * viewport (`clientWidth`) whenever the plugin (or our own reflow) sets it
 	 * from `window.innerWidth`, which over-shoots by the scrollbar's width.
@@ -132,7 +154,7 @@
 			// cleared so the plugin can re-measure them cleanly before they're
 			// ever shown.
 			for ( i = 0; i < panels.length; i++ ) {
-				if ( toggles[ i ] && 'true' === toggles[ i ].getAttribute( 'aria-expanded' ) ) {
+				if ( isPanelOpen( panels[ i ] ) ) {
 					continue;
 				}
 				panels[ i ].style.left = '';
@@ -159,8 +181,13 @@
 				}
 			}, 0 );
 		},
-		// Capture runs this before the plugin's own bubble-phase load listener,
-		// regardless of which registered first.
+		// NB: capture does NOT reorder this ahead of the plugin's listener. `load`
+		// is fired at `window` with the legacy-target-override flag, so `window`
+		// is the only object in the propagation path — the listener is AT_TARGET,
+		// and at-target listeners run in registration order whatever the capture
+		// flag says. Running first depends on this script executing before
+		// hydration (verified: theme registers at ~3.7s, plugin's at ~5.1s), and
+		// the backstop below is what covers us if that ever stops holding.
 		{ once: true, capture: true }
 	);
 })();
