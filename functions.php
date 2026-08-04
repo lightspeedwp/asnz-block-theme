@@ -184,10 +184,79 @@ add_action(
 );
 
 /**
+ * Split a list meta value into its individual items.
+ *
+ * `included` and `not_included` are CMB2 wysiwyg fields that the WETU importer
+ * also writes to verbatim, so the same field arrives in several shapes and none
+ * of the separators are interchangeable:
+ *
+ * - `<p>One<br>Two</p>`    TinyMCE soft breaks, and every WETU payload.
+ * - `<p>One</p><p>Two</p>` TinyMCE hard breaks.
+ * - `"One\r\nTwo"`         Legacy plain text, entered before the fields were wysiwyg.
+ *
+ * Every separator is normalised to one delimiter before splitting, so importing
+ * a tour or editing the field cannot collapse the list into a single item.
+ *
+ * @param string $value  The raw meta value.
+ *
+ * @return array List items, trimmed, with empty items removed.
+ */
+function asnz_split_list_meta_value($value)
+{
+    $delimiter = "\n";
+
+    // Normalise every separator variant to the delimiter.
+    $value = preg_replace('/<br\s*\/?\s*>/i', $delimiter, $value);
+    $value = preg_replace('/<\/?p\b[^>]*>/i', $delimiter, $value);
+    $value = preg_replace('/\r\n|\r/', $delimiter, $value);
+
+    $items = array_map(
+        function ($item) {
+            // Non-breaking spaces are what empty wysiwyg paragraphs leave behind.
+            $item = str_replace(array('&nbsp;', "\xc2\xa0"), ' ', $item);
+            return trim($item);
+        },
+        explode($delimiter, $value)
+    );
+
+    return array_values(array_filter($items, 'strlen'));
+}
+
+/**
+ * Add the icon list class to the list tags in already-formatted meta markup.
+ *
+ * Values entered as real lists in the editor keep their own markup, but still
+ * need the class so the icons can be injected on render.
+ *
+ * @param string $html  The meta markup.
+ * @param string $list_class  The class to add.
+ *
+ * @return string Markup with the class applied to its list tags.
+ */
+function asnz_add_list_meta_class($html, $list_class)
+{
+    if (!class_exists('\WP_HTML_Tag_Processor')) {
+        return $html;
+    }
+
+    $tags = new \WP_HTML_Tag_Processor($html);
+
+    while ($tags->next_tag()) {
+        if (!in_array($tags->get_tag(), array('UL', 'OL'), true)) {
+            continue;
+        }
+
+        $tags->add_class($list_class);
+    }
+
+    return $tags->get_updated_html();
+}
+
+/**
  * Process list meta fields (included/not_included) to ensure consistent list output.
  *
- * Converts newline-separated text into HTML lists while preserving existing list
- * markup. Adds appropriate icons for included/excluded items.
+ * Converts the value into an HTML list while preserving existing list markup.
+ * Icons are added separately, by the render_block filter below.
  *
  * @param string $return_html  The formatted HTML output.
  * @param string $meta_key  The meta key being queried.
@@ -195,7 +264,7 @@ add_action(
  * @param string $before  HTML before content.
  * @param string $after  HTML after content.
  *
- * @return string Processed HTML with list formatting and icons.
+ * @return string Processed HTML with list formatting.
  */
 add_filter(
     'lsx_to_custom_field_query',
@@ -205,32 +274,27 @@ add_filter(
             return $return_html;
         }
 
-        if (empty($value)) {
+        if (!is_string($value) || '' === trim($value)) {
             return $return_html;
         }
 
-        // Strip out paragraph tags that WYSIWYG editors often add
-        $processed_value = preg_replace('/<p[^>]*>|<\/p>/i', '', $value);
+        $list_class = 'lsx-' . $meta_key . '-list';
 
-        // If already contains list markup, keep as-is for now
-        if (preg_match('/<[ou]l[^>]*>/i', $processed_value)) {
-            return $before . $processed_value . $after;
+        // Values already stored as list markup only need the class adding.
+        if (preg_match('/<[ou]l\b/i', $value)) {
+            return $before . asnz_add_list_meta_class($value, $list_class) . $after;
         }
 
-        // Split by line breaks (handles different line ending types)
-        $lines = preg_split('/\r\n|\r|\n/', $processed_value);
+        $items = asnz_split_list_meta_value($value);
 
-        // Filter out empty lines
-        $lines = array_filter(array_map('trim', $lines));
-
-        if (empty($lines)) {
-            return $return_html;
+        // Whitespace-only markup, such as the paragraph an emptied wysiwyg leaves behind.
+        if (empty($items)) {
+            return '';
         }
 
-        // Build unordered list without icons (icons added via render_block filter)
-        $output = '<ul class="lsx-' . esc_attr($meta_key) . '-list">';
-        foreach ($lines as $line) {
-            $output .= '<li>' . wp_kses_post($line) . '</li>';
+        $output = '<ul class="' . esc_attr($list_class) . '">';
+        foreach ($items as $item) {
+            $output .= '<li>' . wp_kses_post($item) . '</li>';
         }
         $output .= '</ul>';
 
@@ -259,64 +323,34 @@ add_filter(
             return $block_content;
         }
 
-        // Check if this has our list classes
-        $has_included = strpos($block_content, 'lsx-included-list') !== false;
-        $has_excluded = strpos($block_content, 'lsx-not_included-list') !== false;
+        // Define icons, keyed by the list class they belong to
+        $icons = array(
+            'lsx-included-list'     => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
+                . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+                . '<path d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21'
+                . 'C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 '
+                . '7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" '
+                . 'stroke-linecap="round" stroke-linejoin="round"/></svg>',
+            'lsx-not_included-list' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
+                . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+                . '<path d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12C21 '
+                . '16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 '
+                . '7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" '
+                . 'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+                . '</svg>',
+        );
 
-        if (!$has_included && !$has_excluded) {
-            return $block_content;
-        }
+        foreach ($icons as $list_class => $icon) {
+            // Check if this has our list class
+            if (false === strpos($block_content, $list_class)) {
+                continue;
+            }
 
-        // Define icons
-        $check_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
-            . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-            . '<path d="M9 12.75L11.25 15L15 9.75M21 12C21 16.9706 16.9706 21 12 21'
-            . 'C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 '
-            . '7.02944 21 12Z" stroke="currentColor" stroke-width="1.5" '
-            . 'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            // A bound paragraph holds exactly one meta value, so every list item in
+            // the block belongs to this list, including any the editor nested.
+            $block_content = preg_replace('/(<li\b[^>]*>)/i', '$1' . $icon, $block_content);
 
-        $cross_icon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" '
-            . 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-            . '<path d="M9.75 9.75L14.25 14.25M14.25 9.75L9.75 14.25M21 12C21 '
-            . '16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 '
-            . '7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" '
-            . 'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
-            . '</svg>';
-
-        // Inject check icon into included list items
-        if ($has_included) {
-            $block_content = preg_replace_callback(
-                '/<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
-                function ($matches) use ($check_icon) {
-                    $ul_content = $matches[1];
-                    // Add check icon to each <li> in this ul
-                    $ul_content = preg_replace('/(<li>)/i', '$1' . $check_icon, $ul_content);
-                    // Rebuild the ul
-                    // Find the opening <ul ...> tag
-                    preg_match('/^<ul[^>]*class="[^"]*lsx-included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
-                    $ul_tag = $ul_open[0];
-                    return $ul_tag . $ul_content . '</ul>';
-                },
-                $block_content
-            );
-        }
-
-        // Inject cross icon into not_included list items
-        if ($has_excluded) {
-            $block_content = preg_replace_callback(
-                '/<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>(.*?)<\/ul>/si',
-                function ($matches) use ($cross_icon) {
-                    $ul_content = $matches[1];
-                    // Add cross icon to each <li> in this ul
-                    $ul_content = preg_replace('/(<li>)/i', '$1' . $cross_icon, $ul_content);
-                    // Rebuild the ul
-                    // Find the opening <ul ...> tag
-                    preg_match('/^<ul[^>]*class="[^"]*lsx-not_included-list[^"]*"[^>]*>/i', $matches[0], $ul_open);
-                    $ul_tag = $ul_open[0];
-                    return $ul_tag . $ul_content . '</ul>';
-                },
-                $block_content
-            );
+            break;
         }
 
         return $block_content;
