@@ -6,6 +6,32 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-08-06
+
+### Fixed
+
+- Price Includes/Excludes lists collapsed into a single bullet whenever a tour
+  was imported from WETU or the field was touched in the editor. `included` and
+  `not_included` are CMB2 wysiwyg fields that the WETU importer also writes to
+  verbatim, so a value arrives in one of four shapes: `<p>One<br>Two</p>`
+  (TinyMCE soft breaks, and every WETU payload), `<p>One</p><p>Two</p>`
+  (TinyMCE hard breaks), `"One\r\nTwo"` (legacy plain text, the only shape that
+  worked), and `<ul><li>One</li></ul>` (real list markup, passed through
+  without the class, so it never received its icons). The filter split on
+  newline characters only, so only 4 of 76 stored values were in the shape it
+  understood.
+  - Fix: normalise `<br>`, `<p>`/`</p>` and `\r\n`/`\r` to one delimiter before
+    splitting, and add the list class to values already stored as list markup
+    so those also get icons. `&nbsp;` is collapsed too, so an emptied wysiwyg
+    field renders nothing instead of a stray non-breaking space. Icon
+    injection now matches `<li>` with attributes and handles `<ol>` and nested
+    lists, collapsing two near-identical branches into one loop; the CSS drops
+    its `ul` qualifier so an editor-entered `<ol>` keeps the layout.
+  - Verified against every stored value on a local copy of the site: 76/76
+    rows render as multi-item lists (563 items, up from ~76), 563/563 icons
+    injected, correct icon on all 76 lists, plus a 12-case edge matrix. No
+    stored data changed; the fix is entirely in the render path.
+
 ## 2026-07-28 (2)
 
 ### Fixed
