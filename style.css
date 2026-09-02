@@ -1344,6 +1344,10 @@ body .facetwp-flyout {
 	color: var(--wp--preset--color--contrast) !important;
 }
 
+.lsx-itinerary-wrapper .itinerary-list:last-child .itinerary-facts {
+    display: none;
+}
+
 
 /* ========================================================================== */
 /* Accordions						                                  */
