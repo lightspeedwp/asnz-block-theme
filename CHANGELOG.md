@@ -32,6 +32,120 @@ All notable changes to this project will be documented in this file.
     injected, correct icon on all 76 lists, plus a 12-case edge matrix. No
     stored data changed; the fix is entirely in the render path.
 
+## 2026-08-04
+
+### Added
+
+- `TO Gallery` block style for `core/gallery` (`.is-style-to-gallery`), giving the
+  Tour Operator gallery the Envira layout it replaces: four fixed-size images per
+  row, a 2px gutter, and a 4:3 crop — Envira's `envira-gallery-4-columns` at
+  gutter/margin 2 with its 640x480 hard crop. Applied to the gallery in
+  `single-accommodation`, `single-country`, `single-destination`, `single-region`
+  and `single-tour`, and re-applied on the front end by
+  `asnz_to_gallery_style_class()` so a hand-inserted TO Gallery matches too
+  (priority 11 — Tour Operator's own `render_block` callback runs at 10 and
+  rebuilds the whole `<figure>`).
+
+  Two core gallery behaviours are deliberately undone: `flex-grow: 1` on the
+  items, which stretched a short final row so three leftover images filled the
+  full width, and the `columns-default` special cases that widened a one- or
+  two-image gallery. Core inflates its own width rule with
+  `:not(#individual-image)`, so the theme rules match that trick rather than
+  reaching for `!important`.
+
+  Verified in headless Chrome against a copy of the plugin's rendered markup:
+  4/3/2/1 across at Envira's own 768/460/321 breakpoints, tiles a uniform 4:3,
+  and a 3-image final row holding its size instead of stretching.
+
+### Changed
+
+- Normalised the five TO Gallery instances to `columns: 4` and dropped the
+  per-image `align: center` (and the 4px border radius on `single-tour`) so the
+  editor preview matches the front end. Those attributes never reached the front
+  end anyway — the plugin rebuilds each item as a bare `figure.wp-block-image`.
+
+### Fixed
+
+- The Tour Operator gallery lightbox. No new library was needed: Tour Operator's
+  custom.js already binds slick-lightbox to `.wp-block-gallery.has-nested-images`
+  on `window.load`, and `linkTo: media` in the templates gives it the `<a>` it
+  needs. It just did not work, for two reasons this fixes inside
+  `.slick-lightbox`:
+
+  - The unscoped `.slick-track` / `.slick-slide` / `.slick-slide > div` rules in
+    the Slider Buttons section are written for the card sliders and turn every
+    slide into a full-height flex column. slick-lightbox centres its image with an
+    inline-block `::before` and `vertical-align: middle` instead, so the image
+    landed below the fold at natural size — measured 900x600 at y=974 in a 950px
+    viewport. Undone for this subtree only; the card sliders still need the
+    originals.
+  - The plugin enqueues `slick.css` but not `slick-theme.css`, so the arrows were
+    unstyled `<button>Previous</button>` text stacked in the top-left corner, and
+    being static they pushed the slide track 24px down.
+
+  Sizing needs three `!important`s, all against inline styles written by the two
+  libraries' own JS and each commented at the point of use: slick writes a
+  `height` on every slide measured from the tallest slide's content (732px in a
+  620px viewport), and slick-lightbox writes a `max-height` on both the item
+  wrapper and the image from its `imageMaxHeight: 0.9` option — 90% of the
+  viewport, which knows nothing about the thumbnail strip. Without them a tall
+  image overran the strip and, at 1000x500, the bottom of the viewport itself.
+
+  Chrome is matched to the Envira captioned lightbox, measured off the live
+  gallery: `#1e1e1e` at 87% for the backdrop, 35px round arrows, a light caption
+  pill inside the image's bottom edge, and a 72x50 thumbnail strip on an 88px
+  pitch 10px off the bottom. Two deliberate deviations: Envira anchors its arrows
+  10px inside the image's own edges, which needs the image box at layout time —
+  slick's arrows are siblings of the slide track, so these sit a fixed distance
+  from the stage edges instead and stay put while paging; and there is no white
+  frame around the image.
+
+  The fixes to centring and arrows also land on the other gallery Tour Operator
+  lightboxes (`.lsx-units-wrapper .unit-image`), which were broken the same way.
+  Only the `.wp-block-gallery` ones get a thumbnail strip.
+
+- Gallery images are no longer served with `alt=""`. The plugin hardcodes an empty
+  alt on every image, which left them unlabelled for screen readers and — because
+  slick-lightbox is configured to read its caption from the alt attribute — left
+  the lightbox caption blank where Envira showed the image title.
+  `asnz_to_gallery_markup()` now fills it from the attachment's alt text, falling
+  back to its title, and never overwrites alt text that is already there. The
+  attachment ID is available because the plugin keys the `gallery` meta by it and
+  writes it out as `wp-image-{id}`.
+
+  `.slick-lightbox-slick-caption:empty` is hidden regardless, so galleries whose
+  attachments have neither alt nor title do not get an empty pill over the photo.
+
+### Added
+
+- `assets/js/gallery-lightbox.js` — the thumbnail strip, the one part of the
+  Envira lightbox with no slick-lightbox equivalent. Notes which gallery was
+  clicked (capture phase, ahead of slick-lightbox's delegated handler) and watches
+  for the modal being inserted, because slick-lightbox appends it to `<body>` with
+  no reference back to the gallery and exposes no open event. Thumbnails are
+  buttons with `aria-label` and `aria-current`, reuse the grid's already-loaded
+  image so there are no extra requests, drive the carousel via `slickGoTo`, follow
+  it back through `afterChange`, and are dropped below 600px where the strip costs
+  more space than it earns.
+
+  Enqueued only when `slick-lightbox` is actually enqueued — the plugin registers
+  it on `wp_enqueue_scripts` at priority 1, so the answer is known by the time
+  this runs, and without it there is no lightbox to attach to.
+
+- `assets/icons/lightbox-arrow.svg` — a white disc with a dark chevron. The
+  existing `slider-button-default.svg` is a dark outline on transparent, designed
+  for light backgrounds, and is invisible on the lightbox backdrop.
+
+### Verified
+
+- In headless Chromium against the shipping markup and the plugin's own
+  slick/slick-lightbox: open from any tile lands on the right slide; thumbnail
+  clicks, arrow keys, Escape, the close button and backdrop clicks all behave;
+  reopening builds exactly one strip; no console errors. The image stays inside
+  the viewport and clears the strip at 1400x950, 1400x620 and 1000x500. One bug
+  found and fixed this way: a full-width strip swallowed backdrop clicks across
+  the whole bottom band, so it is `width: fit-content` now.
+
 ## 2026-07-28 (2)
 
 ### Fixed
