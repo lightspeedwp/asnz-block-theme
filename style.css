@@ -1666,58 +1666,102 @@ body .facetwp-flyout {
     width: auto;
     height: auto;
     object-fit: contain;
+
+    /*
+     * Envira's white frame. `box-shadow` rather than `border` so the frame sits
+     * outside the image's own box: a border would be inside the `max-height`
+     * above, so the photo would shrink by the frame's width on every slide.
+     */
+    box-shadow: 0 0 0 var(--to-lb-frame, 8px)
+        var(--wp--preset--color--base, #fff);
 }
 
-/* Arrows: 35px white disc with a dark chevron, as Envira's. */
-.slick-lightbox .slick-arrow {
+/*
+ * Arrows and close button.
+ *
+ * Envira draws both as a small black disc with a white ring and a white glyph,
+ * anchored just inside the image's own edges. Two things get in the way:
+ *
+ *   1. Tour Operator styles the lightbox arrows itself. Its
+ *      `.slick-lightbox-inner .slick-arrow` (0,2,0) makes them a 4rem
+ *      transparent circle, and its
+ *      `.slick-lightbox-inner .slick-arrow.slick-prev:before` (0,3,1) paints a
+ *      40px chevron of its own — the second chevron that was showing through
+ *      the disc. A `content: none` at 0,2,1 lost to it, so the rules below
+ *      carry an extra `.slick-lightbox` and the direction class to reach 0,3,0
+ *      and 0,4,1, winning on specificity rather than on stylesheet order.
+ *   2. slick's arrows are siblings of the slide track, so CSS alone cannot know
+ *      where the image is — and it moves, since every slide has its own aspect
+ *      ratio. assets/js/gallery-lightbox.js measures the active image and
+ *      writes the insets as inline styles; the values here are the fallback
+ *      used until it runs, and on the `.lsx-units-wrapper` galleries, which get
+ *      the same chrome but no script.
+ */
+.slick-lightbox {
+    --to-lb-chrome-size: 28px;
+    --to-lb-chrome-inset: 10px;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 35px;
-    height: 35px;
+    z-index: 3;
+    width: var(--to-lb-chrome-size);
+    height: var(--to-lb-chrome-size);
+
+    /* Tour Operator nudges the arrows down with a `margin-top` calc. */
+    margin: 0;
     padding: 0;
-    border: 0;
+    border: 1px solid var(--wp--preset--color--base, #fff);
+    border-radius: 50%;
     font-size: 0;
     color: transparent;
-    background: url('./assets/icons/lightbox-arrow.svg') no-repeat center / contain;
+    background-color: rgba(0, 0, 0, 0.85);
+    background-image: url('./assets/icons/lightbox-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+    opacity: 1;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+/* Tour Operator's own chevron — see (1) above. */
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-prev::before,
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-next::before {
+    display: none;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-prev {
+    left: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-next {
+    right: 1.5rem;
+
+    /* One chevron asset, flipped, rather than a second near-identical file. */
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow:hover,
+.slick-lightbox .slick-lightbox-inner .slick-arrow:focus-visible {
+    background-color: #000;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow:focus-visible {
+    outline: 2px solid var(--wp--preset--color--base, #fff);
+    outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .slick-lightbox .slick-arrow {
+    .slick-lightbox .slick-lightbox-inner .slick-arrow {
         transition: none;
     }
 }
 
-.slick-lightbox .slick-arrow::before {
-    content: none;
-}
-
-.slick-lightbox .slick-prev {
-    left: 1.5rem;
-}
-
-.slick-lightbox .slick-next {
-    right: 1.5rem;
-    transform: translateY(-50%) rotate(180deg);
-}
-
-.slick-lightbox .slick-arrow:hover,
-.slick-lightbox .slick-arrow:focus-visible {
-    opacity: 0.75;
-}
-
-.slick-lightbox .slick-arrow:focus-visible {
-    outline: 2px solid var(--wp--preset--color--base, #fff);
-    outline-offset: 3px;
-    border-radius: 50%;
-}
-
-/* slick-lightbox hides its arrows by moving them off-screen when there is
-   nothing to page to; keep that working against the positioning above. */
-.slick-lightbox .slick-arrow.slick-hidden {
+/* slick hides its arrows when there is nothing to page to. */
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-hidden {
     display: none;
 }
 
@@ -1742,16 +1786,25 @@ body .facetwp-flyout {
     display: none;
 }
 
-/* Close button: the vendor CSS draws a 20px glyph from the slick icon font,
-   which is not loaded here. Use the theme's own close icon instead. */
+/*
+ * Close button: matched to the arrows and pulled in to the image's top-right
+ * corner the same way. The vendor CSS draws its glyph from the slick icon
+ * font, which is not loaded here, so the ::before carries a white X of our own
+ * — `close icon.svg` is the dark one used elsewhere in the theme.
+ */
 .slick-lightbox .slick-lightbox-close {
+    position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 3;
-    width: 35px;
-    height: 35px;
-    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 4;
+    width: var(--to-lb-chrome-size, 28px);
+    height: var(--to-lb-chrome-size, 28px);
+    padding: 0;
+    border: 1px solid var(--wp--preset--color--base, #fff);
     border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+    transition: background-color 0.2s ease;
 }
 
 .slick-lightbox .slick-lightbox-close::before {
@@ -1759,14 +1812,26 @@ body .facetwp-flyout {
     display: block;
     width: 100%;
     height: 100%;
-    background: url('./assets/icons/close%20icon.svg') no-repeat center / 20px
-        20px;
+    font-size: 0;
+    background: url('./assets/icons/lightbox-close.svg') no-repeat center / 14px
+        14px;
     opacity: 1;
+}
+
+.slick-lightbox .slick-lightbox-close:hover,
+.slick-lightbox .slick-lightbox-close:focus-visible {
+    background-color: #000;
 }
 
 .slick-lightbox .slick-lightbox-close:focus-visible {
     outline: 2px solid var(--wp--preset--color--base, #fff);
-    outline-offset: 3px;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slick-lightbox .slick-lightbox-close {
+        transition: none;
+    }
 }
 
 /* Thumbnail strip — built by assets/js/gallery-lightbox.js. */

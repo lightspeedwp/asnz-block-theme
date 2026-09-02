@@ -4,10 +4,15 @@
  * Tour Operator already opens a lightbox for the TO gallery: its custom.js binds
  * slick-lightbox to `.wp-block-gallery.has-nested-images` on window.load, and our
  * templates link each image to the media file so there is an <a> for it to catch.
- * The one part of the Envira lightbox it has no equivalent for is the thumbnail
- * strip along the bottom, which this adds. Everything else — backdrop, arrows,
- * caption, keyboard nav, Escape, backdrop click — is slick-lightbox plus the
+ * The two parts of the Envira lightbox it has no equivalent for are added here:
+ * the thumbnail strip along the bottom, and the arrows and close button sitting
+ * just inside the image's own edges. Everything else — backdrop, caption,
+ * keyboard nav, Escape, backdrop click — is slick-lightbox plus the
  * `.slick-lightbox` rules in style.css.
+ *
+ * The chrome needs JavaScript because slick's arrows are siblings of the slide
+ * track: nothing in CSS can see the image box, and it changes with every
+ * slide's aspect ratio.
  *
  * slick-lightbox appends its modal to <body> with no reference back to the gallery
  * that opened it, so we note the gallery on the way in (capture phase, before
@@ -143,15 +148,153 @@
 		setCurrent($(slider).slick('slickCurrentSlide'));
 	}
 
+	/**
+	 * The box that a positioned child of `el` measures its insets against.
+	 *
+	 * Both the arrows and the close button are absolutely positioned, but they sit
+	 * in different parents inside the modal, and Tour Operator gives at least one
+	 * of them `position: relative` — so neither can be assumed to resolve against
+	 * the viewport. Insets resolve against the containing block's padding box,
+	 * hence discounting the border.
+	 *
+	 * @param {HTMLElement} el The positioned element.
+	 * @return {{left: number, right: number, top: number}} Viewport-relative edges.
+	 */
+	function chromeOrigin(el) {
+		var parent = el.offsetParent;
+
+		if (!parent || parent === document.body || parent === document.documentElement) {
+			return { left: 0, right: window.innerWidth, top: 0 };
+		}
+
+		var rect = parent.getBoundingClientRect();
+		var style = window.getComputedStyle(parent);
+
+		return {
+			left: rect.left + (parseFloat(style.borderLeftWidth) || 0),
+			right: rect.right - (parseFloat(style.borderRightWidth) || 0),
+			top: rect.top + (parseFloat(style.borderTopWidth) || 0)
+		};
+	}
+
+	/**
+	 * Pull the arrows and close button in to the active image's edges.
+	 *
+	 * @param {HTMLElement} modal The `.slick-lightbox` element.
+	 */
+	function positionChrome(modal) {
+		var slide = modal.querySelector('.slick-slide.slick-active');
+		var image = slide && slide.querySelector('.slick-lightbox-slick-img');
+
+		if (!image) {
+			return;
+		}
+
+		var box = image.getBoundingClientRect();
+
+		// Zero while the photo is still loading; a later call will catch it.
+		if (!box.width || !box.height) {
+			return;
+		}
+
+		var inset =
+			parseFloat(
+				window.getComputedStyle(modal).getPropertyValue('--to-lb-chrome-inset')
+			) || 10;
+
+		var prev = modal.querySelector('.slick-prev');
+		var next = modal.querySelector('.slick-next');
+		var close = modal.querySelector('.slick-lightbox-close');
+		var origin;
+
+		/*
+		 * The arrows also need their vertical position from the image. Their `top:
+		 * 50%` resolves against the slide track, which is the full viewport, but
+		 * the image is centred inside the slide's padding box — and that padding is
+		 * deliberately lopsided to leave room for the thumbnail strip, so the two
+		 * centres are tens of pixels apart. `translateY(-50%)` still does the
+		 * centring; this just moves the point it centres on.
+		 */
+		if (prev) {
+			origin = chromeOrigin(prev);
+			prev.style.left = box.left - origin.left + inset + 'px';
+			prev.style.top = box.top - origin.top + box.height / 2 + 'px';
+		}
+
+		if (next) {
+			origin = chromeOrigin(next);
+			next.style.right = origin.right - box.right + inset + 'px';
+			next.style.top = box.top - origin.top + box.height / 2 + 'px';
+		}
+
+		if (close) {
+			origin = chromeOrigin(close);
+			close.style.top = box.top - origin.top + inset + 'px';
+			close.style.right = origin.right - box.right + inset + 'px';
+		}
+	}
+
+	/**
+	 * Keep the chrome on the image for as long as the modal is open.
+	 *
+	 * @param {HTMLElement} modal The `.slick-lightbox` element.
+	 */
+	function trackChrome(modal) {
+		var $ = window.jQuery;
+		var slider = modal.querySelector('.slick-lightbox-slick');
+		var observer = null;
+
+		var reposition = function () {
+			// slick-lightbox drops the modal on close; stop listening with it.
+			if (!modal.isConnected) {
+				window.removeEventListener('resize', reposition);
+
+				if (observer) {
+					observer.disconnect();
+				}
+
+				return;
+			}
+
+			positionChrome(modal);
+		};
+
+		if ($ && slider) {
+			$(slider).on('afterChange setPosition', reposition);
+		}
+
+		window.addEventListener('resize', reposition);
+
+		/*
+		 * The photos are usually still loading when the modal opens, so the box we
+		 * need is not final yet. Watching the images covers that and any later
+		 * reflow, without polling.
+		 */
+		if (window.ResizeObserver) {
+			observer = new window.ResizeObserver(reposition);
+			Array.prototype.forEach.call(
+				modal.querySelectorAll('.slick-lightbox-slick-img'),
+				function (image) {
+					observer.observe(image);
+				}
+			);
+		}
+
+		reposition();
+	}
+
 	// slick-lightbox creates its modal on demand, so wait for it to be inserted.
 	new MutationObserver(function (mutations) {
 		mutations.forEach(function (mutation) {
 			Array.prototype.forEach.call(mutation.addedNodes, function (node) {
-				if (
-					node.nodeType === 1 &&
-					node.classList.contains('slick-lightbox') &&
-					openedFrom
-				) {
+				if (node.nodeType !== 1 || !node.classList.contains('slick-lightbox')) {
+					return;
+				}
+
+				// Also wanted on the unit-image galleries, which get no strip.
+				trackChrome(node);
+
+				if (openedFrom) {
 					addThumbs(node, openedFrom);
 				}
 			});
