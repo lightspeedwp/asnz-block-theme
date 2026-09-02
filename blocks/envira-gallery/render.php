@@ -99,7 +99,7 @@ $separator_style = 'flex-grow:1;' .
     'margin-bottom:0';
 ?>
 
-<div id="gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
+<div id="envira-gallery" class="<?php echo esc_attr($section_classes); ?>" style="margin-top:0;margin-bottom:0">
     <div class="wp-block-group alignwide" style="<?php echo esc_attr($heading_wrapper_style); ?>">
         <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background" style="<?php echo esc_attr($separator_style); ?>"/>
         <h2 class="wp-block-heading has-text-align-center" style="margin:0">
