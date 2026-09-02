@@ -1703,7 +1703,6 @@ body .facetwp-flyout {
 }
 
 .slick-lightbox .slick-lightbox-inner .slick-arrow {
-    content: '';
     position: absolute;
     top: 50%;
     z-index: 3;
@@ -1802,8 +1801,8 @@ body .facetwp-flyout {
     top: 1.5rem;
     right: 1.5rem;
     z-index: 4;
-    width: var(--to-lb-chrome-size, 24px);
-    height: var(--to-lb-chrome-size, 24x);
+    width: var(--to-lb-chrome-size, 28px);
+    height: var(--to-lb-chrome-size, 28x);
     padding: 0;
     border: 2px solid var(--wp--preset--color--base, #fff);
     border-radius: 50%;
