@@ -474,6 +474,139 @@ add_action('init', __NAMESPACE__ . '\register_mega_menu_style');
 
 
 /**
+ * Register the TO Gallery block style.
+ *
+ * Tour Operator registers `lsx-tour-operator/gallery` as a core/gallery variation
+ * and injects its images server-side from the `gallery` post meta. The layout that
+ * makes it read like the Envira galleries it replaces — four fixed-size images per
+ * row, 2px gutter, 4:3 crop — lives in style.css behind `.is-style-to-gallery`.
+ * Registering it as a block style makes it selectable and previewable in the editor.
+ */
+function register_to_gallery_style()
+{
+    register_block_style(
+        'core/gallery',
+        array(
+            'name'  => 'to-gallery',
+            'label' => __('TO Gallery', 'asnz-block-theme'),
+        )
+    );
+}
+add_action('init', __NAMESPACE__ . '\register_to_gallery_style');
+
+
+/**
+ * Finish off the Tour Operator gallery's front-end markup.
+ *
+ * Two passes over the figure the plugin builds:
+ *
+ * 1. Add `is-style-to-gallery`. The single-* templates ship the class so the editor
+ *    previews the right layout, but the variation can be inserted anywhere, and
+ *    Tour_Operator's own render_block callback rebuilds the gallery <figure> from
+ *    whatever classes the saved markup carried.
+ *
+ * 2. Give each image alt text. The plugin hardcodes `alt=""` on every gallery image,
+ *    which leaves them unlabelled for screen readers and — because Tour Operator's
+ *    slick-lightbox is configured to read its caption from the alt attribute — leaves
+ *    the lightbox caption blank where Envira showed the image title. The attachment
+ *    ID is available: the plugin keys the `gallery` meta by it and writes it out as
+ *    `wp-image-{id}`. Existing alt text is never overwritten.
+ *
+ * Priority 11: the plugin's callback runs at 10 and replaces the whole figure, so
+ * anything added earlier would be thrown away.
+ *
+ * @param string $block_content The block content.
+ * @param array  $parsed_block  The parsed block.
+ * @return string Block content with the style class and alt text applied.
+ */
+function asnz_to_gallery_markup($block_content, $parsed_block)
+{
+    if (! isset($parsed_block['blockName']) || 'core/gallery' !== $parsed_block['blockName']) {
+        return $block_content;
+    }
+
+    $source = $parsed_block['attrs']['metadata']['bindings']['content']['source'] ?? '';
+
+    if ('lsx/gallery' !== $source) {
+        return $block_content;
+    }
+
+    // The plugin returns an empty string when the post has no gallery images.
+    if ('' === trim($block_content)) {
+        return $block_content;
+    }
+
+    $tags    = new \WP_HTML_Tag_Processor($block_content);
+    $changed = false;
+
+    if ($tags->next_tag(array('class_name' => 'wp-block-gallery'))) {
+        if (! str_contains($block_content, 'is-style-to-gallery')) {
+            $tags->add_class('is-style-to-gallery');
+            $changed = true;
+        }
+    }
+
+    while ($tags->next_tag(array('tag_name' => 'IMG'))) {
+        if ('' !== (string) $tags->get_attribute('alt')) {
+            continue;
+        }
+
+        if (! preg_match('/\bwp-image-(\d+)\b/', (string) $tags->get_attribute('class'), $match)) {
+            continue;
+        }
+
+        $attachment_id = (int) $match[1];
+        $alt           = trim((string) get_post_meta($attachment_id, '_wp_attachment_image_alt', true));
+
+        if ('' === $alt) {
+            $alt = trim((string) get_the_title($attachment_id));
+        }
+
+        if ('' !== $alt) {
+            $tags->set_attribute('alt', $alt);
+            $changed = true;
+        }
+    }
+
+    return $changed ? $tags->get_updated_html() : $block_content;
+}
+add_filter('render_block', __NAMESPACE__ . '\asnz_to_gallery_markup', 11, 2);
+
+
+/**
+ * Add the thumbnail strip to the Tour Operator gallery lightbox.
+ *
+ * Tour Operator already binds slick-lightbox to `.wp-block-gallery.has-nested-images`
+ * in its custom.js, and the `.slick-lightbox` rules in style.css skin it to match the
+ * Envira lightbox this replaces. The thumbnail strip is the one part with no
+ * slick-lightbox equivalent, so it is built in JS — see the file for why it has to
+ * watch for the modal rather than hook an event.
+ *
+ * Gated on the plugin's script actually being enqueued: it registers on
+ * `wp_enqueue_scripts` at priority 1, so by the time this runs the answer is known,
+ * and without slick-lightbox there is no lightbox for the strip to attach to.
+ */
+function enqueue_gallery_lightbox()
+{
+    if (! wp_script_is('slick-lightbox', 'enqueued')) {
+        return;
+    }
+
+    wp_enqueue_script(
+        'asnz-gallery-lightbox',
+        get_template_directory_uri() . '/assets/js/gallery-lightbox.js',
+        array('jquery', 'slick-lightbox'),
+        wp_get_theme()->get('Version'),
+        array(
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        )
+    );
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_gallery_lightbox', 100);
+
+
+/**
  * Apply Ollie mega menu panel geometry at hydration instead of at window.load.
  *
  * Ollie Menu Designer sizes its full-width panels from view.js and defers that to

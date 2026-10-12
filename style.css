@@ -1478,3 +1478,464 @@ body .facetwp-flyout {
     width: 20px;
     height: 20px;
 }
+
+
+/* ========================================================================== */
+/* Tour Operator Gallery                                                      */
+/* ========================================================================== */
+
+/*
+ * The TO Gallery is a core/gallery variation (lsx-tour-operator/gallery) whose
+ * images are injected server-side from the `gallery` post meta. It has to read
+ * identically to the Envira galleries it replaces, which used Envira's
+ * `envira-gallery-4-columns` layout with gutter/margin 2 and a 640x480 hard
+ * crop: four fixed-size images per row, a 2px gutter, 4:3 aspect ratio.
+ *
+ * Two core gallery behaviours are deliberately undone:
+ *   1. `flex-grow: 1` on the items, which stretches a short final row so that
+ *      e.g. three leftover images balloon out to fill the full width.
+ *   2. The `columns-default` special cases that widen a one- or two-image
+ *      gallery to 100%/50% per item.
+ *
+ * Core inflates the specificity of its own width rule with
+ * `:not(#individual-image)`, so the rules below carry the same `:not()` plus
+ * the style class in order to win without `!important`. The trailing
+ * `:first-child`/`:nth-last-child` selectors exist purely to outrank core's
+ * `columns-default` rules, which are a class more specific again.
+ */
+
+.wp-block-gallery.has-nested-images.is-style-to-gallery {
+    --asnz-to-gallery-gap: 2px;
+    --asnz-to-gallery-item-width: calc(25% - var(--asnz-to-gallery-gap) * 0.75);
+
+    /* Feeds core's own width calc if these rules are ever bypassed. */
+    --wp--style--unstable-gallery-gap: var(--asnz-to-gallery-gap);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--asnz-to-gallery-gap);
+
+    /* Leave a short last row left-aligned rather than centred. */
+    justify-content: flex-start;
+}
+
+/* Envira's breakpoints: 4 across, then 3, 2 and 1 on narrower screens. */
+@media (max-width: 767px) {
+    .wp-block-gallery.has-nested-images.is-style-to-gallery {
+        --asnz-to-gallery-item-width: calc(33.3333% - var(--asnz-to-gallery-gap) * 0.6667);
+    }
+}
+
+@media (max-width: 459px) {
+    .wp-block-gallery.has-nested-images.is-style-to-gallery {
+        --asnz-to-gallery-item-width: calc(50% - var(--asnz-to-gallery-gap) * 0.5);
+    }
+}
+
+@media (max-width: 320px) {
+    .wp-block-gallery.has-nested-images.is-style-to-gallery {
+        --asnz-to-gallery-item-width: 100%;
+    }
+}
+
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image:not(#individual-image),
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image:not(#individual-image):first-child:last-child,
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2),
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2) ~ figure.wp-block-image:not(#individual-image) {
+    /* `flex: 0 0 auto` is what stops a short row from stretching. */
+    flex: 0 0 auto;
+    width: var(--asnz-to-gallery-item-width);
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+/*
+ * Fill the fixed 4:3 box. Core already does this when the gallery is marked
+ * `is-cropped`; repeating it here keeps the layout intact if that toggle is
+ * ever switched off, and if the images are unlinked (no wrapping <a>).
+ */
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image > a,
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image > div:not(.components-drop-zone) {
+    display: flex;
+    flex: 1 0 0%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.wp-block-gallery.has-nested-images.is-style-to-gallery figure.wp-block-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Lightbox ------------------------------------------------------------- */
+
+/*
+ * Tour Operator's custom.js binds slick-lightbox to
+ * `.wp-block-gallery.has-nested-images` on window.load, so the TO gallery already
+ * opens a lightbox — our templates set `linkTo: media`, which gives it the <a> it
+ * needs. Two things stop that working as shipped:
+ *
+ *   1. The unscoped `.slick-track` / `.slick-slide` / `.slick-slide > div` rules in
+ *      the Slider Buttons section above are written for the card sliders and turn
+ *      every slide into a full-height flex column. slick-lightbox instead centres
+ *      its image with an inline-block `::before` and `vertical-align: middle`, so
+ *      under those rules the image lands below the fold at its natural size
+ *      (measured: 900x600 at y=974 in a 950px viewport). Undone inside
+ *      `.slick-lightbox` rather than by narrowing the originals, which the card
+ *      sliders still rely on.
+ *   2. The plugin enqueues `slick.css` but not `slick-theme.css`, so the arrows are
+ *      unstyled `<button>Previous</button>` text stacked in the top-left corner —
+ *      and static, which is what pushed the slide track 24px down.
+ *
+ * The chrome is matched to the Envira captioned lightbox this replaces, measured off
+ * the live gallery: #1e1e1e at 87% for the backdrop, 35px round arrows, a light
+ * caption pill inside the image's bottom edge, and a 72x50 thumbnail strip on an
+ * 88px pitch sitting 10px off the bottom of the viewport. One deliberate deviation:
+ * Envira anchors its arrows 10px inside the image's own edges, which needs the image
+ * box at layout time; slick's arrows are siblings of the slide track, so these sit a
+ * fixed distance from the stage edges and stay put as you page through.
+ */
+
+/* slick-lightbox sets `background` as an inline style from its JS options, so the
+   backdrop colour can only be matched from CSS with `!important`. */
+.slick-lightbox {
+    background: rgba(30, 30, 30, 0.87) !important;
+}
+
+/* Undo the card-slider rules for this subtree only (see note above). */
+.slick-lightbox .slick-track {
+    display: block !important;
+}
+
+/*
+ * Sized against the viewport rather than `height: 100%`, and with `!important`,
+ * because two things fight for this height:
+ *   - slick floats its slides, so the track collapses to zero height and any
+ *     percentage here resolves against nothing;
+ *   - slick writes an inline `height` on every slide, measured from the tallest
+ *     slide's content — the full-size photo — so the slide ends up taller than the
+ *     screen (measured: 732px in a 620px viewport) and centres its contents below
+ *     the fold.
+ * Everything below sizes off this one definite height, and since the box is
+ * border-box the padding is what reserves room for the arrows either side and the
+ * thumbnail strip beneath.
+ */
+.slick-lightbox .slick-initialized .slick-lightbox-slick-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh !important;
+    height: 100dvh !important;
+    padding: var(--wp--preset--spacing--30, 1.5rem) 5rem 5.5rem;
+}
+
+/* The flex centring above replaces slick-lightbox's vertical-align trick. */
+.slick-lightbox .slick-lightbox-slick-item::before {
+    content: none;
+}
+
+/*
+ * `height: 100%` rather than `auto` so that the image's own `max-height: 100%` has
+ * a definite height to resolve against — with an auto-height flex parent the
+ * percentage is simply dropped, and a tall image then overruns both the thumbnail
+ * strip and the bottom of the viewport on short screens.
+ *
+ * The `max-height` is `!important` for the same reason as the height above:
+ * slick-lightbox writes an inline `max-height` onto both this wrapper and the image
+ * from its `imageMaxHeight: 0.9` option — 90% of the viewport, which knows nothing
+ * about the thumbnail strip. The slide's padding is what reserves that space, so
+ * both need to defer to it.
+ */
+.slick-lightbox .slick-lightbox-slick-item-inner {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100% !important;
+    height: 100%;
+    min-height: 0;
+}
+
+/* `max-height` !important: see the wrapper above — slick-lightbox writes an inline
+   one here as well. */
+.slick-lightbox .slick-lightbox-slick-img {
+    max-width: 100%;
+    max-height: 100% !important;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    /*
+     * Envira's white frame. `box-shadow` rather than `border` so the frame sits
+     * outside the image's own box: a border would be inside the `max-height`
+     * above, so the photo would shrink by the frame's width on every slide.
+     */
+    box-shadow: 0 0 0 var(--to-lb-frame, 6px)
+        var(--wp--preset--color--base, #fff);
+}
+
+/*
+ * Arrows and close button.
+ *
+ * Envira draws both as a small black disc with a white ring and a white glyph,
+ * anchored just inside the image's own edges. Two things get in the way:
+ *
+ *   1. Tour Operator styles the lightbox arrows itself. Its
+ *      `.slick-lightbox-inner .slick-arrow` (0,2,0) makes them a 4rem
+ *      transparent circle, and its
+ *      `.slick-lightbox-inner .slick-arrow.slick-prev:before` (0,3,1) paints a
+ *      40px chevron of its own — the second chevron that was showing through
+ *      the disc. A `content: none` at 0,2,1 lost to it, so the rules below
+ *      carry an extra `.slick-lightbox` and the direction class to reach 0,3,0
+ *      and 0,4,1, winning on specificity rather than on stylesheet order.
+ *   2. slick's arrows are siblings of the slide track, so CSS alone cannot know
+ *      where the image is — and it moves, since every slide has its own aspect
+ *      ratio. assets/js/gallery-lightbox.js measures the active image and
+ *      writes the insets as inline styles; the values here are the fallback
+ *      used until it runs, and on the `.lsx-units-wrapper` galleries, which get
+ *      the same chrome but no script.
+ */
+.slick-lightbox {
+    --to-lb-chrome-size: 28px;
+    --to-lb-chrome-inset: 10px;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: var(--to-lb-chrome-size);
+    height: var(--to-lb-chrome-size);
+
+    /* Tour Operator nudges the arrows down with a `margin-top` calc. */
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--wp--preset--color--base, #fff);
+    border-radius: 50%;
+    font-size: 0;
+    color: transparent;
+    background-color: rgba(0, 0, 0, 0.85);
+    /*
+     * Inlined from assets/icons/lightbox-arrow.svg. The file stays the
+     * editable source, but the copy below is what actually renders, so
+     * regenerate this when the artwork changes.
+     *
+     * Inline rather than a `url()` to the file because the icon is
+     * referenced from inside this stylesheet, and WordPress's `?=<ver>`
+     * query is only appended to style.css itself — never to the assets it
+     * points at. The server sends those with `max-age=31536000`, so three
+     * revisions of this chevron under one filename left every browser that
+     * had visited before holding a stale copy for a year. Inlined, the icon
+     * is versioned with the stylesheet, and costs one fewer request.
+     */
+    background-image: url('data:image/svg+xml,%3Csvg width=%2212%22 height=%2220%22 viewBox=%220 0 12 20%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E %3Cpolyline points=%229 2 3 10 9 18%22 stroke=%22%23FFFFFF%22 stroke-width=%222.25%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    /*
+     * The chevron asset is 12x20 with the glyph filling it, so this is the
+     * glyph's real size — matching the aspect keeps it from stretching.
+     */
+    background-size: 9px 15px;
+    opacity: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Tour Operator's own chevron — see (1) above. */
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-prev::before,
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-next::before {
+    display: none;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-prev {
+    left: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-next {
+    right: 1.5rem;
+
+    /* One chevron asset, flipped, rather than a second near-identical file. */
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow:hover,
+.slick-lightbox .slick-lightbox-inner .slick-arrow:focus-visible {
+    background-color: #000;
+}
+
+.slick-lightbox .slick-lightbox-inner .slick-arrow:focus-visible {
+    outline: 2px solid var(--wp--preset--color--base, #fff);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slick-lightbox .slick-lightbox-inner .slick-arrow {
+        transition: none;
+    }
+}
+
+/* slick hides its arrows when there is nothing to page to. */
+.slick-lightbox .slick-lightbox-inner .slick-arrow.slick-hidden {
+    display: none;
+}
+
+/*
+ * Caption: sits on the image's bottom edge, as Envira's "inside" title does. The
+ * plugin's caption callback reads the image's alt attribute, so this is empty
+ * unless the attachment has alt text — hence the `:empty` guard, which stops an
+ * empty pill rendering over the photo.
+ */
+.slick-lightbox .slick-lightbox-slick-caption {
+    position: relative;
+    margin: -2rem 0 0;
+    padding: 0.25rem 0.75rem;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--wp--preset--color--contrast, #090909);
+    font-size: var(--wp--preset--font-size--300, 1rem);
+    text-align: center;
+}
+
+.slick-lightbox .slick-lightbox-slick-caption:empty {
+    display: none;
+}
+
+/*
+ * Close button: matched to the arrows and pulled in to the image's top-right
+ * corner the same way. The vendor CSS draws its glyph from the slick icon
+ * font, which is not loaded here, so the ::before carries a white X of our own
+ * — `close icon.svg` is the dark one used elsewhere in the theme.
+ */
+.slick-lightbox .slick-lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 4;
+    width: var(--to-lb-chrome-size, 24px);
+    height: var(--to-lb-chrome-size, 24px);
+    padding: 0;
+    border: 2px solid var(--wp--preset--color--base, #fff);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+    transition: background-color 0.2s ease;
+}
+
+.slick-lightbox .slick-lightbox-close::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    /* Inlined from assets/icons/lightbox-close.svg — see the chevron above. */
+    background-image: url('data:image/svg+xml,%3Csvg width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E %3Cpath d=%22M3 13L13 3M3 3L13 13%22 stroke=%22%23FFFFFF%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    opacity: 1;
+}
+
+.slick-lightbox .slick-lightbox-close:hover,
+.slick-lightbox .slick-lightbox-close:focus-visible {
+    background-color: #000;
+}
+
+.slick-lightbox .slick-lightbox-close:focus-visible {
+    outline: 2px solid var(--wp--preset--color--base, #fff);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slick-lightbox .slick-lightbox-close {
+        transition: none;
+    }
+}
+
+/* Thumbnail strip — built by assets/js/gallery-lightbox.js. */
+/* `width: fit-content` rather than 100%: slick-lightbox closes on any click that
+   is not on its own content, and a full-width strip would swallow those clicks
+   across the whole bottom band of the viewport, not just over the thumbnails. */
+.to-lightbox-thumbs {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 2;
+    width: fit-content;
+    max-width: 100%;
+    padding: 0 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+}
+
+.to-lightbox-thumbs::-webkit-scrollbar {
+    display: none;
+}
+
+.to-lightbox-thumbs ul {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.to-lightbox-thumbs button {
+    display: block;
+    width: 72px;
+    height: 50px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .to-lightbox-thumbs button {
+        transition: none;
+    }
+}
+
+.to-lightbox-thumbs button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.to-lightbox-thumbs button:hover,
+.to-lightbox-thumbs button:focus-visible,
+.to-lightbox-thumbs .is-current button {
+    opacity: 1;
+}
+
+.to-lightbox-thumbs .is-current button {
+    outline: 2px solid var(--wp--preset--color--base, #fff);
+    outline-offset: -2px;
+}
+
+.to-lightbox-thumbs button:focus-visible {
+    outline: 2px solid var(--wp--preset--color--primary, #f7941c);
+    outline-offset: 2px;
+}
+
+/* Below Envira's smallest lightbox breakpoint the strip costs more than it
+   gives, so drop it and hand the space back to the image. */
+@media (max-width: 600px) {
+    .to-lightbox-thumbs {
+        display: none;
+    }
+
+    .slick-lightbox .slick-initialized .slick-lightbox-slick-item {
+        padding: var(--wp--preset--spacing--30, 1.5rem) 3.25rem;
+    }
+}
